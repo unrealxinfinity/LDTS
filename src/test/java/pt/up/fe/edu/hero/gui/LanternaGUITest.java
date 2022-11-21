@@ -1,5 +1,6 @@
 package pt.up.fe.edu.hero.gui;
 
+import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
@@ -59,7 +60,10 @@ public class LanternaGUITest {
 
     @Test
     void drawBoulderInTarget() {
-        gui.drawBoulder(new Position(1, 1), true);
+        TextCharacter textChar = Mockito.mock(TextCharacter.class);
+        Mockito.when(textChar.getCharacterString()).thenReturn("T");
+        Mockito.when(graphics.getCharacter(Mockito.anyInt(), Mockito.anyInt())).thenReturn(textChar);
+        gui.drawBoulder(new Position(1, 1));
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#D05E3B"));
         Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "B");
@@ -67,7 +71,10 @@ public class LanternaGUITest {
 
     @Test
     void drawBoulderOffTarget() {
-        gui.drawBoulder(new Position(1, 1), false);
+        TextCharacter textChar = Mockito.mock(TextCharacter.class);
+        Mockito.when(textChar.getCharacterString()).thenReturn(null);
+        Mockito.when(graphics.getCharacter(Mockito.anyInt(), Mockito.anyInt())).thenReturn(textChar);
+        gui.drawBoulder(new Position(1, 1));
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#362F2D"));
         Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "B");
