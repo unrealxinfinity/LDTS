@@ -56,7 +56,7 @@ public class Arena {
 
     }
 
-    public boolean isNotWall(Position position) {
+    public boolean isWall(Position position) {
         for (ImportantWall importantWall : collisionWalls)
             if (importantWall.getPosition().equals(position))
                 return true;
