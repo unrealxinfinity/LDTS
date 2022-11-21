@@ -1,5 +1,6 @@
 package pt.up.fe.edu.hero.model.game.arena;
 
+import pt.up.fe.edu.hero.model.Position;
 import pt.up.fe.edu.hero.model.game.elements.*;
 
 import java.util.List;
@@ -38,5 +39,27 @@ public class Arena {
 
     public void setTargets(List<Target> targets) {
         this.targets = targets;
+    }
+
+    public boolean isBoulder(Position position) {
+        for (Boulder boulder : boulders)
+            if (boulder.getPosition().equals(position))
+                return true;
+        return false;
+    }
+
+    public boolean isTarget(Position position) {
+        for (Target target : targets)
+            if (target.getPosition().equals(position))
+                return true;
+        return false;
+
+    }
+
+    public boolean isNotWall(Position position) {
+        for (ImportantWall importantWall : collisionWalls)
+            if (importantWall.getPosition().equals(position))
+                return true;
+        return false;
     }
 }
