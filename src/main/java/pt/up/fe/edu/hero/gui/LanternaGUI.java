@@ -8,6 +8,7 @@ import com.googlecode.lanterna.screen.Screen;
 import pt.up.fe.edu.hero.model.Position;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class LanternaGUI implements GUI{
     private final Screen screen;
@@ -48,8 +49,8 @@ public class LanternaGUI implements GUI{
     }
 
     @Override
-    public void drawBoulder(Position position, Boolean isInTarget) {
-        if (isInTarget) drawCharacter(position, 'B', "#D05E3B");
+    public void drawBoulder(Position position) {
+        if (Objects.equals(screen.newTextGraphics().getCharacter(position.getX(), position.getY() + 1).getCharacterString(), "T")) drawCharacter(position, 'B', "#D05E3B");
         else drawCharacter(position, 'B', "#362F2D");
     }
 

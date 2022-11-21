@@ -19,7 +19,7 @@ public interface GUI {
 
     void drawTarget(Position position);
 
-    void drawBoulder(Position position, Boolean isInTarget);
+    void drawBoulder(Position position);
 
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, PAUSE};
 }
