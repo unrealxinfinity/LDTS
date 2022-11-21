@@ -2,7 +2,10 @@ package pt.up.fe.edu.hero.gui;
 
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.input.KeyStroke;
+import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -84,5 +87,103 @@ public class LanternaGUITest {
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#FF0000"));
         Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "T");
+    }
+
+    @Test
+    void getNextActionNone() throws IOException {
+        Mockito.when(screen.pollInput()).thenReturn(null);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.NONE, action);
+    }
+
+    @Test
+    void getNextActionQuitEOF() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.EOF);
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.QUIT, action);
+    }
+
+    @Test
+    void getNextActionQuitQ() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Character);
+        Mockito.when(stroke.getCharacter()).thenReturn('q');
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.QUIT, action);
+    }
+
+    @Test
+    void getNextActionUp() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.ArrowUp);
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.UP, action);
+    }
+
+    @Test
+    void getNextActionLeft() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.ArrowLeft);
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.LEFT, action);
+    }
+
+    @Test
+    void getNextActionRight() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.ArrowRight);
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.RIGHT, action);
+    }
+
+    @Test
+    void getNextActionDown() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.ArrowDown);
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.DOWN, action);
+    }
+
+    @Test
+    void getNextActionPause() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Escape);
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.PAUSE, action);
+    }
+
+    @Test
+    void getNextActionUnknown() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Backspace);
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.NONE, action);
     }
 }
