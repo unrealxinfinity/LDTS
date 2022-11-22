@@ -8,17 +8,19 @@ import pt.up.fe.edu.hero.viewer.Viewer;
 import java.util.List;
 
 public class GameViewer extends Viewer<Arena> {
-    public GameViewer(Arena arena) {
+    private ElementViewerBuilder builder;
+    public GameViewer(Arena arena, ElementViewerBuilder builder) {
         super(arena);
+        this.builder = builder;
     }
 
     @Override
     public void drawElements(GUI gui) {
-        drawElements(gui, getModel().getWalls(), new WallViewer());
-        drawElements(gui, getModel().getCollisionWalls(), new WallViewer());
-        drawElements(gui, getModel().getTargets(), new TargetViewer());
-        drawElements(gui, getModel().getBoulders(), new BoulderViewer());
-        drawElement(gui, getModel().getDozer(), new DozerViewer());
+        drawElements(gui, getModel().getWalls(), builder.getWallViewer());
+        drawElements(gui, getModel().getCollisionWalls(), builder.getWallViewer());
+        drawElements(gui, getModel().getTargets(), builder.getTargetViewer());
+        drawElements(gui, getModel().getBoulders(), builder.getBoulderViewer());
+        drawElement(gui, getModel().getDozer(), builder.getDozerViewer());
     }
 
     private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {
