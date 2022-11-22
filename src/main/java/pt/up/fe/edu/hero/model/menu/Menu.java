@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class Menu {
-    private final List<String> entries;
-    private int currentEntry = 0;
+    private List<String> entries;
+    protected int currentEntry = 0;
 
     public Menu(String... strings) {
         entries = Arrays.asList(strings);
@@ -32,5 +32,9 @@ public abstract class Menu {
 
     public int getNumberEntries() {
         return this.entries.size();
+    }
+
+    protected void setCurrentEntryTo(String s) {
+        entries.set(currentEntry, s);
     }
 }
