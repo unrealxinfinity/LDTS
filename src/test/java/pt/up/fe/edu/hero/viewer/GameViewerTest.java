@@ -45,4 +45,48 @@ public class GameViewerTest {
         Mockito.verify(boulderViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
         Mockito.verify(wallViewer, Mockito.times(6)).draw(Mockito.any(), Mockito.eq(gui));
     }
+
+    @Test
+    public void dozerViewerTest() {
+        DozerViewer viewer = new DozerViewer();
+        Dozer mock = Mockito.mock(Dozer.class);
+        Mockito.when(mock.getPosition()).thenReturn(null);
+
+        viewer.draw(mock, gui);
+
+        Mockito.verify(gui, Mockito.times(1)).drawDozer(Mockito.any());
+    }
+
+    @Test
+    public void boulderViewerTest() {
+        BoulderViewer viewer = new BoulderViewer();
+        Boulder mock = Mockito.mock(Boulder.class);
+        Mockito.when(mock.getPosition()).thenReturn(null);
+
+        viewer.draw(mock, gui);
+
+        Mockito.verify(gui, Mockito.times(1)).drawBoulder(Mockito.any());
+    }
+
+    @Test
+    public void targetViewerTest() {
+        TargetViewer viewer = new TargetViewer();
+        Target mock = Mockito.mock(Target.class);
+        Mockito.when(mock.getPosition()).thenReturn(null);
+
+        viewer.draw(mock, gui);
+
+        Mockito.verify(gui, Mockito.times(1)).drawTarget(Mockito.any());
+    }
+
+    @Test
+    public void wallViewerTest() {
+        WallViewer viewer = new WallViewer();
+        Wall mock = Mockito.mock(Wall.class);
+        Mockito.when(mock.getPosition()).thenReturn(null);
+
+        viewer.draw(mock, gui);
+
+        Mockito.verify(gui, Mockito.times(1)).drawWall(Mockito.any());
+    }
 }
