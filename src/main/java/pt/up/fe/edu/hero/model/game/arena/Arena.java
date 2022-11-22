@@ -82,4 +82,5 @@ public class Arena {
     public Dozer getDozer() {
         return dozer;
     }
+
 }

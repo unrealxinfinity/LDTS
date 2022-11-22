@@ -35,4 +35,30 @@ public class PositionTest {
         Assertions.assertNotEquals(position, position_other);
         Assertions.assertNotEquals(position_other, position);
     }
+    @Test
+    public void moveLeftTest(){
+        Position position= new Position(1,0);
+        Position target = new Position(0,0);
+        Assertions.assertEquals(target,position.moveLeft());
+    }
+    @Test
+    public void moveRightTest(){
+        Position position= new Position(0,0);
+        Position target = new Position(1,0);
+        Assertions.assertEquals(target,position.moveRight());
+    }
+    @Test
+    public void moveUpTest(){
+        Position position= new Position(0,1);
+        Position target = new Position(0,0);
+        Assertions.assertEquals(target,position.moveUp());
+    }
+    @Test
+    public void moveDownTest(){
+        Position position= new Position(0,0);
+        Position target = new Position(0,1);
+        Assertions.assertEquals(target,position.moveDown());
+    }
+
+
 }
