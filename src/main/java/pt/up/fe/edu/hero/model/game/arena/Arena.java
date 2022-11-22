@@ -13,7 +13,7 @@ public class Arena {
 
     private List<Target> targets;
     private List<Wall> walls;
-    private List<ImportantWall> collisionWalls;
+    private List<Wall> collisionWalls;
     private List<Boulder> boulders;
 
     public Arena(int width, int height) {
@@ -29,7 +29,7 @@ public class Arena {
         this.boulders = boulders;
     }
 
-    public void setCollisionWalls(List<ImportantWall> collisionWalls) {
+    public void setCollisionWalls(List<Wall> collisionWalls) {
         this.collisionWalls = collisionWalls;
     }
 
@@ -57,9 +57,29 @@ public class Arena {
     }
 
     public boolean isWall(Position position) {
-        for (ImportantWall importantWall : collisionWalls)
+        for (Wall importantWall : collisionWalls)
             if (importantWall.getPosition().equals(position))
                 return true;
         return false;
+    }
+
+    public List<Wall> getWalls() {
+        return walls;
+    }
+
+    public List<Target> getTargets() {
+        return targets;
+    }
+
+    public List<Wall> getCollisionWalls() {
+        return collisionWalls;
+    }
+
+    public List<Boulder> getBoulders() {
+        return boulders;
+    }
+
+    public Dozer getDozer() {
+        return dozer;
     }
 }

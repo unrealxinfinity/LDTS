@@ -7,6 +7,7 @@ import pt.up.fe.edu.hero.model.game.arena.Arena;
 import pt.up.fe.edu.hero.model.game.elements.Boulder;
 import pt.up.fe.edu.hero.model.game.elements.ImportantWall;
 import pt.up.fe.edu.hero.model.game.elements.Target;
+import pt.up.fe.edu.hero.model.game.elements.Wall;
 
 import java.util.Arrays;
 import java.util.List;
@@ -61,7 +62,7 @@ public class ArenaTest {
 
     @Test
     public void isNotWallTest() {
-        List<ImportantWall> collisionWalls = Arrays.asList(new ImportantWall(3,4), new ImportantWall(6,5));
+        List<Wall> collisionWalls = Arrays.asList(new ImportantWall(3,4), new ImportantWall(6,5));
         arena.setCollisionWalls(collisionWalls);
 
         boolean bool = arena.isWall(new Position(2,5));
@@ -71,7 +72,7 @@ public class ArenaTest {
 
     @Test
     public void isWallTest() {
-        List<ImportantWall> collisionWalls = Arrays.asList(new ImportantWall(3,4), new ImportantWall(6,5));
+        List<Wall> collisionWalls = Arrays.asList(new ImportantWall(3,4), new ImportantWall(6,5));
         arena.setCollisionWalls(collisionWalls);
 
         boolean bool = arena.isWall(new Position(3,4));
