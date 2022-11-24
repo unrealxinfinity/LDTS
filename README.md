@@ -13,6 +13,7 @@ Yet to be done
 - **Activate Targets** - The targets receive information about the Boulder being pushed onto it and switches state accordingly;
 - **Graphical interface aka GUI** - Allows user to interact before the game starts to select levels, start a game or exit the game;
 - **Level selection** - As the name suggests, allows user to select pretended level to play.
+- **Level editor** - Allows user to create and play their own levels
 
 ### Design Problems
 
@@ -31,6 +32,18 @@ Yet to be done
 **Solution** : **State Pattern**
 
 - By using this pattern we can avoid what we stated before by integrating states to the game. We can also avoid a chunk of if statements by using polymorphism to switch to the right state.
+
+#### **Checking every boulder/target combination after every move is inefficient**
+
+**Solution** : **Observer Pattern**
+
+- By implementing this pattern with target controllers as observers and boulder controllers as subjects, we can avoid unnecessary checks. Only when a boulder moves, its controller will notify the target controllers, which will then determine if the boulder has stepped into a target, out of a target, both, or neither. This result could then be used to increment/decrement an integer variable that determines how many boulders are in targets. When this is equal to the number of targets, the level is completed.
+
+#### **Checking collision with every wall is inefficient**
+
+**Solution** : **Have two Wall classes**
+
+- By creating an "ImportantWall" class that is a subclass of Wall and is functionally identical, we can differentiate between walls that are just decoration (notably, walls behind walls) and walls that matter for collision. Thus, the level saves two lists of walls.
 
 [Heres a link to show UML Class Diagram, click to see their interactions](.....)
 
