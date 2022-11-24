@@ -1,4 +1,4 @@
-gqqq# BullDozer
+# BullDozer
 ### > A game that is all about moving boulders and thinking
 
 This is a game where you control a tank called _Dozer_ and try to move the boulders to the specific locations where _targets_ are located in order to pass the level
