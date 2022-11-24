@@ -25,5 +25,5 @@ public interface GUI {
     void drawText(Position position, String text, String color);
 
 
-    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, PAUSE};
+    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, PAUSE, SELECT};
 }

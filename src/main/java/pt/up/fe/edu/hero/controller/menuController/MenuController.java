@@ -11,6 +11,5 @@ public class MenuController extends Controller<Menu> {
     public MenuController(Menu menu){super(menu);}
     @Override
     public void step(MainGame game, GUI gui, long time) throws IOException{
-
     }
 }

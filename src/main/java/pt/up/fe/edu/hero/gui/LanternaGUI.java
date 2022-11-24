@@ -44,6 +44,7 @@ public class LanternaGUI implements GUI{
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
 
         if (keyStroke.getKeyType() == KeyType.Escape) return ACTION.PAUSE;
+        if(keyStroke.getKeyType()==KeyType.Enter) return ACTION.SELECT;
 
         return ACTION.NONE;
     }
