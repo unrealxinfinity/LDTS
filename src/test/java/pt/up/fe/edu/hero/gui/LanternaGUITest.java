@@ -14,6 +14,8 @@ import pt.up.fe.edu.hero.model.Position;
 
 import java.io.IOException;
 
+import static org.mockito.Mockito.spy;
+
 public class LanternaGUITest {
     private Screen screen;
     private LanternaGUI gui;
@@ -193,4 +195,13 @@ public class LanternaGUITest {
 
         Assertions.assertEquals(GUI.ACTION.NONE, action);
     }
+    @Test
+    void drawTextTest() {
+        gui.drawText(new Position(5,5),"Welcome","#FFFFFA");
+
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#FFFFFA"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "Welcome");
+
+    }
+
 }

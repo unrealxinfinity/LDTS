@@ -44,6 +44,7 @@ public class LanternaGUI implements GUI{
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
 
         if (keyStroke.getKeyType() == KeyType.Escape) return ACTION.PAUSE;
+        if(keyStroke.getKeyType()==KeyType.Enter) return ACTION.SELECT;
 
         return ACTION.NONE;
     }
@@ -73,5 +74,11 @@ public class LanternaGUI implements GUI{
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(colour));
         graphics.putString(position.getX(), position.getY() +1, c.toString());
+    }
+    @Override
+    public void drawText(Position position, String text, String color) {
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setForegroundColor(TextColor.Factory.fromString(color));
+        graphics.putString(position.getX(), position.getY(), text);
     }
 }
