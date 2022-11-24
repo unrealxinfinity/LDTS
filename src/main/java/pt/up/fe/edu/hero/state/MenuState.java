@@ -1,6 +1,7 @@
 package pt.up.fe.edu.hero.state;
 
 import pt.up.fe.edu.hero.controller.Controller;
+import pt.up.fe.edu.hero.controller.menuController.MenuController;
 import pt.up.fe.edu.hero.model.menu.Menu;
 import pt.up.fe.edu.hero.viewer.Viewer;
 import pt.up.fe.edu.hero.viewer.menu.MenuViewer;
@@ -14,6 +15,6 @@ public class MenuState extends State<Menu> {
 
     @Override
     protected Controller<Menu> getController() {
-        return null;
+        return new MenuController(getModel());
     }
 }
