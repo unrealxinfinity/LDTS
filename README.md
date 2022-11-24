@@ -1,7 +1,8 @@
 # BullDozer
 ### > A game that is all about moving boulders and thinking
 
-This is a game where you control a tank called _Dozer_ and try to move the boulders to the specific locations where _targets_ are located in order to pass the level
+This is a game where you control a tank called _Dozer_ and try to move the boulders to the specific locations where _targets_ are located in order to pass the level.
+
 Project done by a group of students called Afonso Osório(up202108700@fe.up.pt) ,HaoChang(up202108730@fe.up.pt) and Ines(up202108674@edu.fe.up.pt).
 
 ### _Implemented Features_
