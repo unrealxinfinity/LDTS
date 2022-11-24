@@ -2,12 +2,15 @@ package pt.up.fe.edu.hero.viewer;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
 import org.mockito.Mockito;
 import pt.up.fe.edu.hero.gui.GUI;
 import pt.up.fe.edu.hero.model.game.arena.Arena;
 import pt.up.fe.edu.hero.model.game.elements.*;
 import pt.up.fe.edu.hero.viewer.game.*;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GameViewerTest {
@@ -32,6 +35,7 @@ public class GameViewerTest {
         DozerViewer dozerViewer = Mockito.mock(DozerViewer.class);
         TargetViewer targetViewer = Mockito.mock(TargetViewer.class);
         BoulderViewer boulderViewer = Mockito.mock(BoulderViewer.class);
+        InOrder order = Mockito.inOrder(dozerViewer, targetViewer, boulderViewer, wallViewer);
 
         GameViewer viewer = new GameViewer(arena, builder);
         Mockito.when(builder.getBoulderViewer()).thenReturn(boulderViewer);
@@ -40,53 +44,26 @@ public class GameViewerTest {
         Mockito.when(builder.getWallViewer()).thenReturn(wallViewer).thenReturn(wallViewer);
         viewer.drawElements(gui);
 
-        Mockito.verify(dozerViewer, Mockito.times(1)).draw(Mockito.any(), Mockito.eq(gui));
-        Mockito.verify(targetViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
-        Mockito.verify(boulderViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
-        Mockito.verify(wallViewer, Mockito.times(6)).draw(Mockito.any(), Mockito.eq(gui));
+        order.verify(wallViewer, Mockito.times(6)).draw(Mockito.any(), Mockito.eq(gui));
+        order.verify(targetViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
+        order.verify(boulderViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
+        order.verify(dozerViewer, Mockito.times(1)).draw(Mockito.any(), Mockito.eq(gui));
     }
 
     @Test
-    public void dozerViewerTest() {
-        DozerViewer viewer = new DozerViewer();
-        Dozer mock = Mockito.mock(Dozer.class);
-        Mockito.when(mock.getPosition()).thenReturn(null);
+    public void drawTest() throws IOException {
+    InOrder order = Mockito.inOrder(gui);
+    Arena arena = Mockito.mock(Arena.class);
+    Mockito.when(arena.getBoulders()).thenReturn(new ArrayList<>());
+    Mockito.when(arena.getDozer()).thenReturn(new Dozer(1,1));
+    Mockito.when(arena.getCollisionWalls()).thenReturn(new ArrayList<>());
+    Mockito.when(arena.getWalls()).thenReturn(new ArrayList<>());
+    Mockito.when(arena.getTargets()).thenReturn(new ArrayList<>());
+    GameViewer viewer = new GameViewer(arena, new ElementViewerBuilder());
 
-        viewer.draw(mock, gui);
+    viewer.draw(gui);
 
-        Mockito.verify(gui, Mockito.times(1)).drawDozer(Mockito.any());
-    }
-
-    @Test
-    public void boulderViewerTest() {
-        BoulderViewer viewer = new BoulderViewer();
-        Boulder mock = Mockito.mock(Boulder.class);
-        Mockito.when(mock.getPosition()).thenReturn(null);
-
-        viewer.draw(mock, gui);
-
-        Mockito.verify(gui, Mockito.times(1)).drawBoulder(Mockito.any());
-    }
-
-    @Test
-    public void targetViewerTest() {
-        TargetViewer viewer = new TargetViewer();
-        Target mock = Mockito.mock(Target.class);
-        Mockito.when(mock.getPosition()).thenReturn(null);
-
-        viewer.draw(mock, gui);
-
-        Mockito.verify(gui, Mockito.times(1)).drawTarget(Mockito.any());
-    }
-
-    @Test
-    public void wallViewerTest() {
-        WallViewer viewer = new WallViewer();
-        Wall mock = Mockito.mock(Wall.class);
-        Mockito.when(mock.getPosition()).thenReturn(null);
-
-        viewer.draw(mock, gui);
-
-        Mockito.verify(gui, Mockito.times(1)).drawWall(Mockito.any());
+    order.verify(gui, Mockito.times(1)).clear();
+    order.verify(gui, Mockito.times(1)).refresh();
     }
 }
