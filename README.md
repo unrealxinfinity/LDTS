@@ -15,6 +15,8 @@ Yet to be done
 - **Level selection** - As the name suggests, allows user to select pretended level to play.
 - **Level editor** - Allows user to create and play their own levels. In the level editor, the player will move around a "cursor" with the arrow keys that shows a character corresponding to one of the elements in the game in purple (here, a wall). There will be a key to cycle between elements and a key to place an element.
 
+Heres a drawing for the level editor
+
 ![Heres a mock up for the level editor feature](https://cdn.discordapp.com/attachments/1030861260406935632/1045265120147820544/image.png)
 
 ### Design Problems
