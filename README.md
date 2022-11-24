@@ -13,7 +13,9 @@ Yet to be done
 - **Activate Targets** - The targets receive information about the Boulder being pushed onto it and switches state accordingly;
 - **Graphical interface aka GUI** - Allows user to interact before the game starts to select levels, start a game or exit the game;
 - **Level selection** - As the name suggests, allows user to select pretended level to play.
-- **Level editor** - Allows user to create and play their own levels
+- **Level editor** - Allows user to create and play their own levels. In the level editor, the player will move around a "cursor" with the arrow keys that shows a character corresponding to one of the elements in the game in purple (here, a wall). There will be a key to cycle between elements and a key to place an element.
+
+![Heres a mock up for the level editor feature](https://cdn.discordapp.com/attachments/1030861260406935632/1045265120147820544/image.png)
 
 ### Design Problems
 
@@ -27,7 +29,7 @@ Yet to be done
 
 #### **The game needs a main "Control Unit" to check the state of itself and evolve throught time accordingly** 
 
-- With so many components that needs to interact with each other, we need something that makes the interaction and to avoid _Dependency hell_ ( a lot of dependencies where a lot of modules depends on a lot of other modules) and we also need the states to control the current situation of the game and future events of the game.
+- With so many components that needs to interact with each other, we need something that makes the interaction to avoid _Dependency hell_ ( a lot of dependencies where a lot of modules depends on a lot of other modules).We also need the states to control the current situation of the game and future events of the game.
 
 **Solution** : **State Pattern**
 
