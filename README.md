@@ -35,11 +35,15 @@ Yet to be done
 
 #### **Checking every boulder/target combination after every move is inefficient**
 
+- Since there is no need to check boulder/target collision in moves where a given boulder does not move, we should find a way to only check for it when said boulder moves.
+
 **Solution** : **Observer Pattern**
 
 - By implementing this pattern with target controllers as observers and boulder controllers as subjects, we can avoid unnecessary checks. Only when a boulder moves, its controller will notify the target controllers, which will then determine if the boulder has stepped into a target, out of a target, both, or neither. This result could then be used to increment/decrement an integer variable that determines how many boulders are in targets. When this is equal to the number of targets, the level is completed.
 
 #### **Checking collision with every wall is inefficient**
+
+- In this game's levels, the areas of the screen that aren't relevant to the level are filled with walls, and since nothing will ever touch them, checking for collision with them is not necessary.
 
 **Solution** : **Have two Wall classes**
 
