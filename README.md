@@ -30,7 +30,7 @@ Yet to be done
 
 **Solution** : **State Pattern**
 
-- By using this pattern we can avoid what we stated before by integrating states to the game.
+- By using this pattern we can avoid what we stated before by integrating states to the game. We can also avoid a chunk of if statements by using polymorphism to switch to the right state.
 
 [Heres a link to show UML Class Diagram, click to see their interactions](.....)
 
