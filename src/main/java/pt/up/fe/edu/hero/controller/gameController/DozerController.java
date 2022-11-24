@@ -7,8 +7,8 @@ import pt.up.fe.edu.hero.model.game.arena.Arena;
 
 import java.io.IOException;
 
-public class HeroController extends GameController{
-    public HeroController(Arena arena){super(arena);}
+public class DozerController extends GameController{
+    public DozerController(Arena arena){super(arena);}
     private void moveDozer(Position p){
         if(getModel().isWall(p)){
             getModel().getDozer().setPosition(p);
