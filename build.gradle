@@ -1,9 +1,10 @@
 plugins {
     id 'java'
-    id 'info.solidsoft.pitest' version '1.6.0'
+    id 'info.solidsoft.pitest' version '1.9.0'
+    id 'application'
 }
 
-group 'pt.up.fe.edu'
+group 'pt.up.fe.edu.dozer'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -23,5 +24,9 @@ test {
 }
 
 pitest {
-    junit5PluginVersion = '0.12'
+    junit5PluginVersion = '1.0.0'
+}
+
+application {
+    mainClass.set("MainGame")
 }
