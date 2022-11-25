@@ -1,7 +1,7 @@
 package pt.up.fe.edu.dozer;
 
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.state.MenuState;
+import pt.up.fe.edu.dozer.state.MenuState.MenuState;
 import pt.up.fe.edu.dozer.state.State;
 
 import java.awt.*;
