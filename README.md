@@ -60,5 +60,9 @@ Heres a drawing for the level editor
 
 - [Folder where all the classes are listed] (https://github.com/FEUP-LDTS-2022/project-l07gr08/tree/States/src/main/java/pt/up/fe/edu/hero)
 
+### Code Smells
+Throught the process of making the game, we encountered many code smells that involve bad programing practise:
+
+- Making the class Position alter the position when the class is only responsible for storing position information. According to single responsability principle the class dozerController should be the only class responsible for altering it's position. Removing some member functions from the class Position implementing them in dozerController.
 
  
