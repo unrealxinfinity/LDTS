@@ -13,10 +13,7 @@ public class Position {
     public int getY() {
         return y;
     }
-    public Position moveLeft(){return new Position(x-1,y);}
-    public Position moveRight(){return  new Position(x+1,y);}
-    public Position moveUp(){return new Position(x,y-1);}
-    public Position moveDown(){return new Position(x,y+1);}
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

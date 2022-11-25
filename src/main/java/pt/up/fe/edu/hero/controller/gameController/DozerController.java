@@ -15,16 +15,16 @@ public class DozerController extends GameController{
         }
     }
     public void moveDozerLeft() {
-        moveDozer(getModel().getDozer().getPosition().moveLeft());
+        moveDozer(new Position(getModel().getDozer().getPosition().getX()-1 , getModel().getDozer().getPosition().getY()));
     }
     public void moveDozerRight(){
-        moveDozer(getModel().getDozer().getPosition().moveRight());
+        moveDozer(new Position(getModel().getDozer().getPosition().getX()+1 , getModel().getDozer().getPosition().getY()));
     }
     public void moveDozerUP(){
-        moveDozer(getModel().getDozer().getPosition().moveUp());
+        moveDozer(new Position(getModel().getDozer().getPosition().getX(),getModel().getDozer().getPosition().getY()-1));
     }
     public void moveDozerDown(){
-        moveDozer(getModel().getDozer().getPosition().moveDown());
+        moveDozer(new Position(getModel().getDozer().getPosition().getX(),getModel().getDozer().getPosition().getY()+1));
     }
 
     @Override
