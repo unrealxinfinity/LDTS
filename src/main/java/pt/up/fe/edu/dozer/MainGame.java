@@ -45,6 +45,7 @@ public class MainGame {
         while (this.state != null) {
             state.step(this,gui,0);
         }
+        gui.close();
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException {
