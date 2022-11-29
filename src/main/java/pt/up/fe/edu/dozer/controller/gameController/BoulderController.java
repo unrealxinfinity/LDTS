@@ -10,11 +10,16 @@ import java.io.IOException;
 import java.util.List;
 
 public class BoulderController extends GameController{
-    public BoulderController(Arena arena) {super(arena);}
+    private TargetController targetController;
+    public BoulderController(Arena arena, TargetController targetController) {
+        super(arena);
+        this.targetController = targetController;
+    }
 
     private boolean moveBoulder(Position p, Boulder boulder) {
         if(!getModel().isWall(p) && !getModel().isBoulder(p)){
             boulder.setPosition(p);
+            targetController.notify();
             return true;
         }
         else return false;
