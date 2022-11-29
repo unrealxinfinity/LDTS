@@ -5,9 +5,11 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import pt.up.fe.edu.dozer.controller.gameController.BoulderController;
 import pt.up.fe.edu.dozer.controller.gameController.DozerController;
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
+import pt.up.fe.edu.dozer.model.game.elements.Boulder;
 import pt.up.fe.edu.dozer.model.game.elements.Dozer;
 import pt.up.fe.edu.dozer.model.game.elements.ImportantWall;
 import pt.up.fe.edu.dozer.model.game.elements.Wall;
@@ -39,7 +41,9 @@ public class MainGame {
         arena.setDozer(new Dozer(5,5));
         java.util.List<Wall> walls = Arrays.asList(new ImportantWall(1,1), new ImportantWall(2,2));
         arena.setCollisionWalls(walls);
-        DozerController controller = new DozerController(arena, null);
+        java.util.List<Boulder> boulders = Arrays.asList(new Boulder(3,3), new Boulder(6,6));
+        arena.setBoulders(boulders);
+        DozerController controller = new DozerController(arena, new BoulderController(arena));
 
         TerminalSize terminalSize = new TerminalSize(40, 20);
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);

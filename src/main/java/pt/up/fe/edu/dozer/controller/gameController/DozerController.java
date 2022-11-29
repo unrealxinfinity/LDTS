@@ -19,10 +19,10 @@ public class DozerController extends GameController{
         if (getModel().isBoulder(p)) {
             boolean hasMoved = false;
             switch (direction) {
-                case UP -> {hasMoved = moveBoulderUp(p);}
-                case LEFT -> {hasMoved = moveBoulderLeft(p);}
-                case RIGHT -> {hasMoved = moveBoulderRight(p);}
-                case DOWN -> {hasMoved = moveBoulderDown(p);}
+                case UP -> {hasMoved = boulderController.moveBoulderUp(p);}
+                case LEFT -> {hasMoved = boulderController.moveBoulderLeft(p);}
+                case RIGHT -> {hasMoved = boulderController.moveBoulderRight(p);}
+                case DOWN -> {hasMoved = boulderController.moveBoulderDown(p);}
             }
             if (hasMoved) getModel().getDozer().setPosition(p);
         }
@@ -48,7 +48,7 @@ public class DozerController extends GameController{
     }
 
     @Override
-    public void step(MainGame game, GUI.ACTION action, long time) throws IOException{
+    public void step(MainGame game, GUI.ACTION action, long time) {
         switch (action){
             case UP -> moveDozerUP();
             case DOWN -> moveDozerDown();
