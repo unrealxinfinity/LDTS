@@ -19,9 +19,11 @@ public class LevelSelectController extends Controller<Menu> {
         switch (action) {
             case UP:
                 getModel().previousEntry();
+                if(getModel().isSelected(0)) getModel().previousEntry();
                 break;
             case DOWN:
                 getModel().nextEntry();
+                if(getModel().isSelected(0)) getModel().nextEntry();
                 break;
             case SELECT:
                 if (getModel().getCurrentEntry() == "Start") ;//algo para adicionar;
