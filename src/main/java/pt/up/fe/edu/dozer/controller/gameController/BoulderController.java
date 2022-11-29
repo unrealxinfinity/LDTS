@@ -19,7 +19,7 @@ public class BoulderController extends GameController{
     private boolean moveBoulder(Position p, Boulder boulder) {
         if(!getModel().isWall(p) && !getModel().isBoulder(p)){
             boulder.setPosition(p);
-            targetController.notify();
+            notifyObserver();
             return true;
         }
         else return false;
@@ -51,5 +51,9 @@ public class BoulderController extends GameController{
     @Override
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
 
+    }
+
+    private void notifyObserver() {
+        targetController.update();
     }
 }
