@@ -40,12 +40,6 @@ public class MainGame {
         screen.setCursorPosition(null);
         screen.startScreen();
         screen.doResizeIfNecessary();
-        this.gui=new LanternaGUI(screen);
-
-        MainMenu mainMenu=new MainMenu();
-        menuController=new MenuController(mainMenu);
-        menuViewer=new MenuViewer(mainMenu);
-
         this.gui = new LanternaGUI(screen);
 
         while (this.state != null) {

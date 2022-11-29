@@ -13,12 +13,12 @@ public class LevelSelectState extends State<Menu> {
 
     @Override
     protected Viewer<Menu> getViewer() {
-        return new MenuViewer(new LevelSelect());
+        return new MenuViewer(getModel());
     }
 
     @Override
     protected Controller<Menu> getController() {
-        return new LevelSelectController(new LevelSelect());
+        return new LevelSelectController( (LevelSelect)getModel());
     }
 
 }
