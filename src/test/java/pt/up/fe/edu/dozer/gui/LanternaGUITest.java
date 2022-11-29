@@ -100,7 +100,7 @@ public class LanternaGUITest {
 
     @Test
     void getNextActionNone() throws IOException {
-        Mockito.when(screen.pollInput()).thenReturn(null);
+        Mockito.when(screen.readInput()).thenReturn(null);
 
         GUI.ACTION action = gui.getNextAction();
 
@@ -111,7 +111,7 @@ public class LanternaGUITest {
     void getNextActionQuitEOF() throws IOException {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
         Mockito.when(stroke.getKeyType()).thenReturn(KeyType.EOF);
-        Mockito.when(screen.pollInput()).thenReturn(stroke);
+        Mockito.when(screen.readInput()).thenReturn(stroke);
 
         GUI.ACTION action = gui.getNextAction();
 
@@ -123,7 +123,7 @@ public class LanternaGUITest {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
         Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Character);
         Mockito.when(stroke.getCharacter()).thenReturn('q');
-        Mockito.when(screen.pollInput()).thenReturn(stroke);
+        Mockito.when(screen.readInput()).thenReturn(stroke);
 
         GUI.ACTION action = gui.getNextAction();
 
@@ -134,7 +134,7 @@ public class LanternaGUITest {
     void getNextActionUp() throws IOException {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
         Mockito.when(stroke.getKeyType()).thenReturn(KeyType.ArrowUp);
-        Mockito.when(screen.pollInput()).thenReturn(stroke);
+        Mockito.when(screen.readInput()).thenReturn(stroke);
 
         GUI.ACTION action = gui.getNextAction();
 
@@ -145,7 +145,7 @@ public class LanternaGUITest {
     void getNextActionLeft() throws IOException {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
         Mockito.when(stroke.getKeyType()).thenReturn(KeyType.ArrowLeft);
-        Mockito.when(screen.pollInput()).thenReturn(stroke);
+        Mockito.when(screen.readInput()).thenReturn(stroke);
 
         GUI.ACTION action = gui.getNextAction();
 
@@ -156,7 +156,7 @@ public class LanternaGUITest {
     void getNextActionRight() throws IOException {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
         Mockito.when(stroke.getKeyType()).thenReturn(KeyType.ArrowRight);
-        Mockito.when(screen.pollInput()).thenReturn(stroke);
+        Mockito.when(screen.readInput()).thenReturn(stroke);
 
         GUI.ACTION action = gui.getNextAction();
 
@@ -167,7 +167,7 @@ public class LanternaGUITest {
     void getNextActionDown() throws IOException {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
         Mockito.when(stroke.getKeyType()).thenReturn(KeyType.ArrowDown);
-        Mockito.when(screen.pollInput()).thenReturn(stroke);
+        Mockito.when(screen.readInput()).thenReturn(stroke);
 
         GUI.ACTION action = gui.getNextAction();
 
@@ -178,7 +178,7 @@ public class LanternaGUITest {
     void getNextActionPause() throws IOException {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
         Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Escape);
-        Mockito.when(screen.pollInput()).thenReturn(stroke);
+        Mockito.when(screen.readInput()).thenReturn(stroke);
 
         GUI.ACTION action = gui.getNextAction();
 
@@ -189,7 +189,7 @@ public class LanternaGUITest {
     void getNextActionUnknown() throws IOException {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
         Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Backspace);
-        Mockito.when(screen.pollInput()).thenReturn(stroke);
+        Mockito.when(screen.readInput()).thenReturn(stroke);
 
         GUI.ACTION action = gui.getNextAction();
 
