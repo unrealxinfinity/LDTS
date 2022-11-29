@@ -1,8 +1,19 @@
 package pt.up.fe.edu.dozer;
 
+import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.screen.Screen;
+import com.googlecode.lanterna.screen.TerminalScreen;
+import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+import com.googlecode.lanterna.terminal.Terminal;
+import pt.up.fe.edu.dozer.controller.gameController.DozerController;
+import pt.up.fe.edu.dozer.gui.LanternaGUI;
+import pt.up.fe.edu.dozer.model.game.arena.Arena;
+import pt.up.fe.edu.dozer.model.game.elements.Dozer;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.MenuState;
 import pt.up.fe.edu.dozer.state.State;
+import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
+import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 
 import java.awt.*;
 import java.io.IOException;
@@ -19,7 +30,27 @@ public class MainGame {
         this.state = new MenuState(new MainMenu());
     }
 
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static void main(String[] args) throws IOException {
+        Arena arena = new Arena(20,20);
+        arena.setDozer(new Dozer(5,5));
+        DozerController controller = new DozerController(arena);
+
+        TerminalSize terminalSize = new TerminalSize(40, 20);
+        DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
+        Terminal terminal = terminalFactory.createTerminal();
+        Screen screen = new TerminalScreen(terminal);
+
+        screen.setCursorPosition(null);
+        screen.startScreen();
+        screen.doResizeIfNecessary();
+
+        LanternaGUI gui = new LanternaGUI(screen);
+
+        GameViewer viewer = new GameViewer(arena, new ElementViewerBuilder());
+
+        while (true) {
+            viewer.draw(gui);
+            controller.step(null, gui, 0);
+        }
     }
 }
