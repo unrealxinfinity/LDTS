@@ -9,10 +9,7 @@ import pt.up.fe.edu.dozer.controller.gameController.BoulderController;
 import pt.up.fe.edu.dozer.controller.gameController.DozerController;
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
-import pt.up.fe.edu.dozer.model.game.elements.Boulder;
-import pt.up.fe.edu.dozer.model.game.elements.Dozer;
-import pt.up.fe.edu.dozer.model.game.elements.ImportantWall;
-import pt.up.fe.edu.dozer.model.game.elements.Wall;
+import pt.up.fe.edu.dozer.model.game.elements.*;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.MenuState;
 import pt.up.fe.edu.dozer.state.State;
@@ -43,6 +40,8 @@ public class MainGame {
         arena.setCollisionWalls(walls);
         java.util.List<Boulder> boulders = Arrays.asList(new Boulder(3,3), new Boulder(6,6));
         arena.setBoulders(boulders);
+        java.util.List<Target> targets = Arrays.asList(new Target(8,8), new Target(10,11));
+        arena.setTargets(targets);
         DozerController controller = new DozerController(arena, new BoulderController(arena));
 
         TerminalSize terminalSize = new TerminalSize(40, 20);
