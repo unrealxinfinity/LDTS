@@ -12,8 +12,8 @@ import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
 
 import java.io.IOException;
 
-public class LevelSelectController extends Controller<Menu> {
-    public LevelSelectController(Menu menu){super(menu);}
+public class LevelSelectController extends Controller<LevelSelect> {
+    public LevelSelectController(LevelSelect menu){super(menu);}
     @Override
     public void step(MainGame game, GUI gui, long time) throws IOException {
         switch (gui.getNextAction()) {
@@ -27,7 +27,10 @@ public class LevelSelectController extends Controller<Menu> {
 
                 if (getModel().getCurrentEntry() == "Start") ;//algo para adicionar;
                 if (getModel().getCurrentEntry() == "Back") game.setState(new MenuState(new MainMenu()));
+                break;
 
+            case LEFT:
+                (LevelSelect)getModel().
         }
     }
 }

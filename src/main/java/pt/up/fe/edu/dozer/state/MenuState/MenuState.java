@@ -7,16 +7,13 @@ import pt.up.fe.edu.dozer.viewer.Viewer;
 import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
 
 
-public class MenuState extends State<Menu> {
+public abstract class MenuState<T extends Menu> extends State<Menu> {
     public MenuState(Menu menu){super(menu);}
     @Override
     public Viewer<Menu> getViewer(){
         return new MenuViewer(getModel());
     }
 
-    @Override
-    protected Controller<Menu> getController() {
-        return new MenuController(getModel());
-    }
+    abstract protected Controller<Menu> getController();
 
 }
