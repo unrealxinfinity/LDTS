@@ -8,23 +8,43 @@ import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import java.io.IOException;
 
 public class DozerController extends GameController{
-    public DozerController(Arena arena){super(arena);}
+    private BoulderController boulderController;
+    public enum directions {UP, DOWN, LEFT, RIGHT};
+    private directions direction;
+    public DozerController(Arena arena, BoulderController boulderController){
+        super(arena);
+        this.boulderController = boulderController;
+    }
     private void moveDozer(Position p){
-        if(!getModel().isWall(p)){
+        if (getModel().isBoulder(p)) {
+            boolean hasMoved = false;
+            switch (direction) {
+                case UP -> {hasMoved = moveBoulderUp(p);}
+                case LEFT -> {hasMoved = moveBoulderLeft(p);}
+                case RIGHT -> {hasMoved = moveBoulderRight(p);}
+                case DOWN -> {hasMoved = moveBoulderDown(p);}
+            }
+            if (hasMoved) getModel().getDozer().setPosition(p);
+        }
+        else if(!getModel().isWall(p)){
             getModel().getDozer().setPosition(p);
         }
     }
     public void moveDozerLeft() {
-        moveDozer(new Position(getModel().getDozer().getPosition().getX()-1 , getModel().getDozer().getPosition().getY()));
+        this.direction = directions.LEFT;
+        moveDozer(getModel().getDozer().getPosition().moveLeft());
     }
     public void moveDozerRight(){
-        moveDozer(new Position(getModel().getDozer().getPosition().getX()+1 , getModel().getDozer().getPosition().getY()));
+        this.direction = directions.RIGHT;
+        moveDozer(getModel().getDozer().getPosition().moveRight());
     }
     public void moveDozerUP(){
-        moveDozer(new Position(getModel().getDozer().getPosition().getX(),getModel().getDozer().getPosition().getY()-1));
+        this.direction = directions.UP;
+        moveDozer(getModel().getDozer().getPosition().moveUp());
     }
     public void moveDozerDown(){
-        moveDozer(new Position(getModel().getDozer().getPosition().getX(),getModel().getDozer().getPosition().getY()+1));
+        this.direction = directions.DOWN;
+        moveDozer(getModel().getDozer().getPosition().moveDown());
     }
 
     @Override

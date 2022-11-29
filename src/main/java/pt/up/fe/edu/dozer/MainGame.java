@@ -39,7 +39,7 @@ public class MainGame {
         arena.setDozer(new Dozer(5,5));
         java.util.List<Wall> walls = Arrays.asList(new ImportantWall(1,1), new ImportantWall(2,2));
         arena.setCollisionWalls(walls);
-        DozerController controller = new DozerController(arena);
+        DozerController controller = new DozerController(arena, null);
 
         TerminalSize terminalSize = new TerminalSize(40, 20);
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
