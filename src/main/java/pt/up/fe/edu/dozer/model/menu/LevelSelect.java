@@ -5,22 +5,7 @@ public class LevelSelect extends Menu{
         super("0","0","Start", "Back");
     }
 
-    public boolean isSelectedFirstDigit() {
-        return isSelected(0);
-    }
-
-    public boolean isSelectedSecondDigit() {
-        return isSelected(1);
-    }
-
-    public boolean isSelectedStart() {
-        return isSelected(2);
-    }
-
-    public boolean isSelectedBack() {
-        return isSelected(3);
-    }
-
+    @Override
     public void decrementCurrentDigit() {
         if (getSelectedNum() == 2 || getSelectedNum() == 3) return;
         int digit = Integer.parseInt(getCurrentEntry());
@@ -28,7 +13,7 @@ public class LevelSelect extends Menu{
         else digit--;
         setCurrentEntryTo(Integer.toString(digit));
     }
-
+    @Override
     public void incrementCurrentDigit() {
         if (getSelectedNum() == 2 || getSelectedNum() == 3) return;
         int digit = Integer.parseInt(getCurrentEntry());
@@ -36,7 +21,6 @@ public class LevelSelect extends Menu{
         else digit++;
         setCurrentEntryTo(Integer.toString(digit));
     }
-
     protected void setCurrentEntryTo(String s) {
         entries.set(getSelectedNum(), s);
     }

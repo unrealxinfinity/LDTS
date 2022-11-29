@@ -5,15 +5,14 @@ public class MainMenu extends Menu{
         super("Level Select", "Level Editor", "Quit");
     }
 
-    public boolean isSelectedLevelSelect() {
-        return isSelected(0);
+    @Override
+    public void incrementCurrentDigit() {
+
     }
 
-    public boolean isSelectedLevelEditor() {
-        return isSelected(1);
+    @Override
+    public void decrementCurrentDigit() {
+
     }
 
-    public boolean isSelectedQuit() {
-        return isSelected(2);
-    }
 }

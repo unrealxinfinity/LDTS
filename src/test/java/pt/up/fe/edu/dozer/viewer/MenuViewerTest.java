@@ -34,11 +34,10 @@ public class MenuViewerTest {
         Menu main = new MainMenu();
         MenuViewer menu= new MenuViewer(main);
         menu.drawElements(gui);
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#FF0000"));
-        Mockito.verify(graphics, Mockito.times(1)).putString(10, 10, "Main Menu");
+
         Mockito.verify(graphics, Mockito.times(1)).putString(10,13 ,"Level Select");
         Mockito.verify(graphics, Mockito.times(1)).putString(10,14 ,"Level Editor");
         Mockito.verify(graphics, Mockito.times(1)).putString(10,15 ,"Quit");
-        Mockito.verify(graphics, Mockito.times(4)).setForegroundColor(TextColor.Factory.fromString(Mockito.any()));
+        Mockito.verify(graphics, Mockito.times(3)).setForegroundColor(TextColor.Factory.fromString(Mockito.any()));
     }
 }

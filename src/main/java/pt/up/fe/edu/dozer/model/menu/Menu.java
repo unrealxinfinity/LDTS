@@ -27,6 +27,7 @@ public abstract class Menu {
 
     public boolean isSelected(int i) {
         return currentEntry == i;
+
     }
 
     public int getNumberEntries() {
@@ -40,4 +41,11 @@ public abstract class Menu {
     public int getSelectedNum() {
         return currentEntry;
     }
+
+
+    public abstract void incrementCurrentDigit();
+    public abstract void decrementCurrentDigit();
+
+
+
 }

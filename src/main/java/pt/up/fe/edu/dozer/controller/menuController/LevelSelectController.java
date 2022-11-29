@@ -12,11 +12,11 @@ import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
 
 import java.io.IOException;
 
-public class LevelSelectController extends Controller<LevelSelect> {
+public class LevelSelectController extends Controller<Menu> {
     public LevelSelectController(LevelSelect menu){super(menu);}
     @Override
-    public void step(MainGame game, GUI gui, long time) throws IOException {
-        switch (gui.getNextAction()) {
+    public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
+        switch (action) {
             case UP:
                 getModel().previousEntry();
                 break;
@@ -24,13 +24,19 @@ public class LevelSelectController extends Controller<LevelSelect> {
                 getModel().nextEntry();
                 break;
             case SELECT:
-
                 if (getModel().getCurrentEntry() == "Start") ;//algo para adicionar;
                 if (getModel().getCurrentEntry() == "Back") game.setState(new MenuState(new MainMenu()));
                 break;
 
             case LEFT:
-                (LevelSelect)getModel().
+                if(getModel().isSelected(0) || getModel().isSelected(1))
+                getModel().decrementCurrentDigit();
+                break;
+            case RIGHT:
+                if(getModel().isSelected(0) || getModel().isSelected(1))
+                getModel().incrementCurrentDigit();
+                break;
+
         }
     }
 }

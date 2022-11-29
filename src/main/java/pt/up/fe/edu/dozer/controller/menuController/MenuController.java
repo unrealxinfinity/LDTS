@@ -11,8 +11,21 @@ import pt.up.fe.edu.dozer.state.MenuState.MenuState;
 
 import java.io.IOException;
 
-public abstract class MenuController extends Controller<Menu> {
-    public MenuController(Menu menu){super(menu);}
+public class MenuController extends Controller<Menu> {
+    public MenuController(MainMenu menu){super(menu);}
+    @Override
+    public void step(MainGame game, GUI.ACTION action, long time) throws IOException{
+        switch (action){
+            case UP : getModel().previousEntry();
+                break;
+            case DOWN : getModel().nextEntry();
+                break;
+            case SELECT :
+                if (getModel().isSelected(2)) game.setState(null);
+                if(getModel().isSelected(0)) game.setState(new LevelSelectState(new LevelSelect()));
+                if(getModel().isSelected(1));//to be implemented
 
+
+        }
     }
 }
