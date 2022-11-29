@@ -28,8 +28,8 @@ public class DozerController extends GameController{
     }
 
     @Override
-    public void step(MainGame game, GUI gui, long time) throws IOException{
-        switch (gui.getNextAction()){
+    public void step(MainGame game, GUI.ACTION action, long time) throws IOException{
+        switch (action){
             case UP -> moveDozerUP();
             case DOWN -> moveDozerDown();
             case LEFT -> moveDozerLeft();

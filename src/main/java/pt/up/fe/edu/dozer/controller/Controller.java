@@ -15,5 +15,5 @@ public abstract class Controller<T> {
         return model;
     }
 
-    public abstract void step(MainGame game, GUI gui, long time) throws IOException;
+    public abstract void step(MainGame game, GUI.ACTION action, long time) throws IOException;
 }

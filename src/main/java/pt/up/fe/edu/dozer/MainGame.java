@@ -50,7 +50,7 @@ public class MainGame {
 
         while (true) {
             viewer.draw(gui);
-            controller.step(null, gui, 0);
+            controller.step(null, gui.getNextAction(), 0);
         }
     }
 }
