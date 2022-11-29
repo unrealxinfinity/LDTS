@@ -49,8 +49,7 @@ public class MainGame {
         this.gui = new LanternaGUI(screen);
 
         while (this.state != null) {
-            menuController.step(this,gui.getNextAction(),0);
-            menuViewer.draw(gui);
+            state.step(this,gui,0);
         }
     }
 

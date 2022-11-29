@@ -12,6 +12,5 @@ public class MenuViewer extends Viewer<Menu> {
         for (int i=0;i< getModel().getNumberEntries();i++){
             gui.drawText(new Position(10,10+i) , getModel().getEntry(i) , (getModel().isSelected(i)) ? "#FF0000" :"#FFFFFF");
         }
-        System.out.println(getModel().getCurrentEntry());
     }
 }
