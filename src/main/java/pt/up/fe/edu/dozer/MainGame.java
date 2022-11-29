@@ -9,15 +9,19 @@ import pt.up.fe.edu.dozer.controller.gameController.DozerController;
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.elements.Dozer;
+import pt.up.fe.edu.dozer.model.game.elements.ImportantWall;
+import pt.up.fe.edu.dozer.model.game.elements.Wall;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.MenuState;
 import pt.up.fe.edu.dozer.state.State;
 import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
 import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 
+
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 public class MainGame {
     private State state;
@@ -33,6 +37,8 @@ public class MainGame {
     public static void main(String[] args) throws IOException {
         Arena arena = new Arena(20,20);
         arena.setDozer(new Dozer(5,5));
+        java.util.List<Wall> walls = Arrays.asList(new ImportantWall(1,1), new ImportantWall(2,2));
+        arena.setCollisionWalls(walls);
         DozerController controller = new DozerController(arena);
 
         TerminalSize terminalSize = new TerminalSize(40, 20);
