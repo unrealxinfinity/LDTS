@@ -10,7 +10,7 @@ import java.io.IOException;
 public class DozerController extends GameController{
     public DozerController(Arena arena){super(arena);}
     private void moveDozer(Position p){
-        if(getModel().isWall(p)){
+        if(!getModel().isWall(p)){
             getModel().getDozer().setPosition(p);
         }
     }

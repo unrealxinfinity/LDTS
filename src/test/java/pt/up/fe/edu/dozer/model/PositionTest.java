@@ -39,25 +39,25 @@ public class PositionTest {
     public void moveLeftTest(){
         Position position= new Position(1,0);
         Position target = new Position(0,0);
-        Assertions.assertEquals(target,position.moveLeft());
+        Assertions.assertEquals(target,position.setLeft());
     }
     @Test
     public void moveRightTest(){
         Position position= new Position(0,0);
         Position target = new Position(1,0);
-        Assertions.assertEquals(target,position.moveRight());
+        Assertions.assertEquals(target,position.setRight());
     }
     @Test
     public void moveUpTest(){
         Position position= new Position(0,1);
         Position target = new Position(0,0);
-        Assertions.assertEquals(target,position.moveUp());
+        Assertions.assertEquals(target,position.setUp());
     }
     @Test
     public void moveDownTest(){
         Position position= new Position(0,0);
         Position target = new Position(0,1);
-        Assertions.assertEquals(target,position.moveDown());
+        Assertions.assertEquals(target,position.setDown());
     }
 
 
