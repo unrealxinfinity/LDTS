@@ -40,7 +40,7 @@ public class MainGame {
         Arena arena = builder.createArena();
         DozerController controller = new DozerController(arena, new BoulderController(arena));
 
-        TerminalSize terminalSize = new TerminalSize(40, 20);
+        TerminalSize terminalSize = new TerminalSize(arena.getWidth(), arena.getHeight()+1);
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
         Terminal terminal = terminalFactory.createTerminal();
         Screen screen = new TerminalScreen(terminal);

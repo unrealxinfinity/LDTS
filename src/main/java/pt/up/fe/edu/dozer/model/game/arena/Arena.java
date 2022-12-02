@@ -88,4 +88,11 @@ public class Arena {
         return dozer;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
 }
