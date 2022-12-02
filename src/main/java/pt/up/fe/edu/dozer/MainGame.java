@@ -7,9 +7,10 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import pt.up.fe.edu.dozer.controller.gameController.BoulderController;
 import pt.up.fe.edu.dozer.controller.gameController.DozerController;
-import pt.up.fe.edu.dozer.controller.gameController.TargetController;
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
+import pt.up.fe.edu.dozer.model.game.arena.ArenaBuilder;
+import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.game.elements.*;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.MenuState;
@@ -35,17 +36,11 @@ public class MainGame {
     }
 
     public static void main(String[] args) throws IOException {
-        Arena arena = new Arena(20,20);
-        arena.setDozer(new Dozer(5,5));
-        java.util.List<Wall> walls = Arrays.asList(new ImportantWall(1,1), new ImportantWall(2,2));
-        arena.setCollisionWalls(walls);
-        java.util.List<Boulder> boulders = Arrays.asList(new Boulder(3,3), new Boulder(6,6));
-        arena.setBoulders(boulders);
-        java.util.List<Target> targets = Arrays.asList(new Target(8,8), new Target(10,11));
-        arena.setTargets(targets);
-        DozerController controller = new DozerController(arena, new BoulderController(arena, new TargetController(arena)));
+        ArenaBuilder builder = new LoaderArenaBuilder(1);
+        Arena arena = builder.createArena();
+        DozerController controller = new DozerController(arena, new BoulderController(arena));
 
-        TerminalSize terminalSize = new TerminalSize(40, 20);
+        TerminalSize terminalSize = new TerminalSize(arena.getWidth(), arena.getHeight()+1);
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
         Terminal terminal = terminalFactory.createTerminal();
         Screen screen = new TerminalScreen(terminal);
