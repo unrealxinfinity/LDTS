@@ -7,6 +7,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import pt.up.fe.edu.dozer.controller.gameController.BoulderController;
 import pt.up.fe.edu.dozer.controller.gameController.DozerController;
+import pt.up.fe.edu.dozer.controller.gameController.TargetController;
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.arena.ArenaBuilder;
@@ -38,7 +39,7 @@ public class MainGame {
     public static void main(String[] args) throws IOException {
         ArenaBuilder builder = new LoaderArenaBuilder(1);
         Arena arena = builder.createArena();
-        DozerController controller = new DozerController(arena, new BoulderController(arena));
+        DozerController controller = new DozerController(arena, new BoulderController(arena, new TargetController(arena)));
 
         TerminalSize terminalSize = new TerminalSize(arena.getWidth(), arena.getHeight()+1);
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
