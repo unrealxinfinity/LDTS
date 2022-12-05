@@ -8,27 +8,48 @@ import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import java.io.IOException;
 
 public class DozerController extends GameController{
-    public DozerController(Arena arena){super(arena);}
+    private BoulderController boulderController;
+    public enum directions {UP, DOWN, LEFT, RIGHT};
+    private directions direction;
+    public DozerController(Arena arena, BoulderController boulderController){
+        super(arena);
+        this.boulderController = boulderController;
+    }
     private void moveDozer(Position p){
-        if(!getModel().isWall(p)){
+
+        if (getModel().isBoulder(p)) {
+            boolean hasMoved = false;
+            switch (direction) {
+                case UP -> {hasMoved = boulderController.moveBoulderUp(p);}
+                case LEFT -> {hasMoved = boulderController.moveBoulderLeft(p);}
+                case RIGHT -> {hasMoved = boulderController.moveBoulderRight(p);}
+                case DOWN -> {hasMoved = boulderController.moveBoulderDown(p);}
+            }
+            if (hasMoved) getModel().getDozer().setPosition(p);
+        }
+        else if(!getModel().isWall(p)){
             getModel().getDozer().setPosition(p);
         }
     }
     public void moveDozerLeft() {
-        moveDozer(getModel().getDozer().getPosition().setLeft());
+        this.direction = directions.LEFT;
+        moveDozer(getModel().getDozer().getPosition().moveLeft());
     }
     public void moveDozerRight(){
-        moveDozer( getModel().getDozer().getPosition().setRight());
+        this.direction = directions.RIGHT;
+        moveDozer(getModel().getDozer().getPosition().moveRight());
     }
     public void moveDozerUP(){
-        moveDozer(getModel().getDozer().getPosition().setUp());
+        this.direction = directions.UP;
+        moveDozer(getModel().getDozer().getPosition().moveUp());
     }
     public void moveDozerDown(){
-        moveDozer(getModel().getDozer().getPosition().setDown());
+        this.direction = directions.DOWN;
+        moveDozer(getModel().getDozer().getPosition().moveDown());
     }
 
     @Override
-    public void step(MainGame game, GUI.ACTION action, long time) throws IOException{
+    public void step(MainGame game, GUI.ACTION action, long time) {
         switch (action){
             case UP -> moveDozerUP();
             case DOWN -> moveDozerDown();

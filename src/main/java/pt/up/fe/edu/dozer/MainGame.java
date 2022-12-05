@@ -14,10 +14,12 @@ import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.MenuState.MenuState;
 import pt.up.fe.edu.dozer.state.State;
 import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
-
+import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
+import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 public class MainGame {
     private State state;
@@ -41,7 +43,6 @@ public class MainGame {
         screen.startScreen();
         screen.doResizeIfNecessary();
         this.gui = new LanternaGUI(screen);
-
         while (this.state != null) {
             state.step(this,gui,0);
         }

@@ -1,6 +1,10 @@
 package pt.up.fe.edu.dozer.state;
 
 import pt.up.fe.edu.dozer.controller.Controller;
+import pt.up.fe.edu.dozer.controller.gameController.BoulderController;
+import pt.up.fe.edu.dozer.controller.gameController.DozerController;
+import pt.up.fe.edu.dozer.controller.gameController.GameController;
+import pt.up.fe.edu.dozer.controller.gameController.TargetController;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.viewer.Viewer;
 import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
@@ -15,7 +19,7 @@ public class GameState extends State<Arena>{
 
     @Override
     protected Controller<Arena> getController() {
-        return null;
+        return new DozerController(getModel(),new BoulderController(getModel(), new TargetController(getModel()))) ;
     }
 
 }

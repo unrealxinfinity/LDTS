@@ -64,7 +64,7 @@ public class LanternaGUITest {
     void drawBoulderInTarget() {
         TextCharacter textChar = Mockito.mock(TextCharacter.class);
         Mockito.when(textChar.getCharacterString()).thenReturn("T");
-        Mockito.when(graphics.getCharacter(Mockito.anyInt(), Mockito.anyInt())).thenReturn(textChar);
+        Mockito.when(graphics.getCharacter(Mockito.eq(1), Mockito.eq(2))).thenReturn(textChar);
         gui.drawBoulder(new Position(1, 1));
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#D05E3B"));
@@ -194,6 +194,17 @@ public class LanternaGUITest {
         GUI.ACTION action = gui.getNextAction();
 
         Assertions.assertEquals(GUI.ACTION.NONE, action);
+    }
+
+    @Test
+    void getNextActionSelect() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Enter);
+        Mockito.when(screen.readInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.SELECT, action);
     }
     @Test
     void drawTextTest() {

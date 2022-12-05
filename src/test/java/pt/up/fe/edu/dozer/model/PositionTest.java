@@ -60,5 +60,24 @@ public class PositionTest {
         Assertions.assertEquals(target,position.setDown());
     }
 
+    @Test
+    public void sameTest() {
+        Position position = new Position(37, 42);
+        Position positioncopy = position;
+        Assertions.assertEquals(position, positioncopy);
+    }
 
+    @Test
+    public void nullTest() {
+        Position position = new Position(37, 42);
+        Position nullP = null;
+        Assertions.assertNotEquals(position, nullP);
+    }
+
+    @Test
+    public void notPositionTest() {
+        Position position = new Position(37,42);
+        Object object = new Object();
+        Assertions.assertNotEquals(position, object);
+    }
 }

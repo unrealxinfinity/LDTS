@@ -4,10 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
-import pt.up.fe.edu.dozer.model.game.elements.Boulder;
-import pt.up.fe.edu.dozer.model.game.elements.ImportantWall;
-import pt.up.fe.edu.dozer.model.game.elements.Target;
-import pt.up.fe.edu.dozer.model.game.elements.Wall;
+import pt.up.fe.edu.dozer.model.game.elements.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -78,5 +75,14 @@ public class ArenaTest {
         boolean bool = arena.isWall(new Position(3,4));
 
         Assertions.assertTrue(bool);
+    }
+
+    @Test
+    public void dozerNotNullTest() {
+        arena.setDozer(new Dozer(1,2));
+
+        Dozer dozer = arena.getDozer();
+
+        Assertions.assertNotNull(dozer);
     }
 }

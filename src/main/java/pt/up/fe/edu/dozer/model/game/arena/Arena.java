@@ -3,6 +3,7 @@ package pt.up.fe.edu.dozer.model.game.arena;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.elements.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Arena {
@@ -19,6 +20,10 @@ public class Arena {
     public Arena(int width, int height) {
         this.width = width;
         this.height = height;
+        this.boulders = new ArrayList<>();
+        this.walls = new ArrayList<>();
+        this.collisionWalls = new ArrayList<>();
+        this.targets = new ArrayList<>();
     }
 
     public void setDozer(Dozer dozer) {
@@ -83,4 +88,11 @@ public class Arena {
         return dozer;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
 }
