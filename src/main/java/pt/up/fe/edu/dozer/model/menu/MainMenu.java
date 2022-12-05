@@ -7,12 +7,10 @@ public class MainMenu extends Menu{
 
     @Override
     public void incrementCurrentDigit() {
-
     }
 
     @Override
     public void decrementCurrentDigit() {
-
     }
 
 }

@@ -16,7 +16,6 @@ public class DozerController extends GameController{
         this.boulderController = boulderController;
     }
     private void moveDozer(Position p){
-
         if (getModel().isBoulder(p)) {
             boolean hasMoved = false;
             switch (direction) {
