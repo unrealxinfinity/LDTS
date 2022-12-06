@@ -47,7 +47,7 @@ public class MainGame {
     }
 
     public void start() throws IOException, FontFormatException, URISyntaxException {
-        URL resource = getClass().getClassLoader().getResource("/font/square.ttf");
+        URL resource = MainGame.class.getResource("/font/Square-Regular.ttf");
         File fontFile = new File(resource.toURI());
         Font font =  Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
@@ -56,7 +56,7 @@ public class MainGame {
 
         DefaultTerminalFactory factory = new DefaultTerminalFactory();
 
-        Font loadedFont = font.deriveFont(Font.PLAIN, 10);
+        Font loadedFont = font.deriveFont(Font.PLAIN, 20);
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         factory.setTerminalEmulatorFontConfiguration(fontConfig);
         factory.setForceAWTOverSwing(true);
@@ -74,7 +74,7 @@ public class MainGame {
         LanternaGUI gui = new LanternaGUI(screen);
 
         int frameTime = 50;
-        while (true) {
+        while (this.state!=null) {
             long startTime = System.currentTimeMillis();
             state.step(this, gui, 0);
             long elapsedTime = System.currentTimeMillis() - startTime;
@@ -83,5 +83,6 @@ public class MainGame {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
             } catch (InterruptedException e ) {}
         }
+        screen.close();
     }
 }
