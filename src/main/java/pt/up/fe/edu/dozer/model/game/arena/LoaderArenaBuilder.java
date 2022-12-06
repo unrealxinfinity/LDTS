@@ -99,4 +99,9 @@ public class LoaderArenaBuilder extends ArenaBuilder{
         }
         return targets;
     }
+
+    @Override
+    protected int getLevelNum() {
+        return level;
+    }
 }

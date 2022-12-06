@@ -16,6 +16,7 @@ public class Arena {
     private List<Wall> walls;
     private List<Wall> collisionWalls;
     private List<Boulder> boulders;
+    private int levelNum = -1;
 
     public Arena(int width, int height) {
         this.width = width;
@@ -24,6 +25,11 @@ public class Arena {
         this.walls = new ArrayList<>();
         this.collisionWalls = new ArrayList<>();
         this.targets = new ArrayList<>();
+    }
+
+    public Arena(int width, int height, int levelNum) {
+        this(width, height);
+        this.levelNum = levelNum;
     }
 
     public void setDozer(Dozer dozer) {
@@ -94,5 +100,9 @@ public class Arena {
 
     public int getWidth() {
         return width;
+    }
+
+    public int getLevelNum() {
+        return levelNum;
     }
 }
