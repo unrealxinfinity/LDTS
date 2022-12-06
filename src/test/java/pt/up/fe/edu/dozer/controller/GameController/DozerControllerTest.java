@@ -1,4 +1,4 @@
-package pt.up.fe.edu.dozer.controller;
+package pt.up.fe.edu.dozer.controller.GameController;
 
 import org.junit.jupiter.api.BeforeEach;
 
