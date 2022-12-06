@@ -31,7 +31,7 @@ public class LevelSelectController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().getCurrentEntry() == "Start") {
-                    int selectedLevel= getModel().getSelectedLevel();
+                    int selectedLevel= ((LevelSelect)getModel()).getSelectedLevel();
                     Arena arena = new  LoaderArenaBuilder(selectedLevel).createArena();
                     game.setState(new GameState(arena));
                 }
@@ -40,11 +40,11 @@ public class LevelSelectController extends Controller<Menu> {
 
             case LEFT:
                 if(getModel().isSelected(0) || getModel().isSelected(1))
-                getModel().decrementCurrentDigit();
+                    ((LevelSelect)getModel()).decrementCurrentDigit();
                 break;
             case RIGHT:
                 if(getModel().isSelected(0) || getModel().isSelected(1))
-                getModel().incrementCurrentDigit();
+                    ((LevelSelect)getModel()).incrementCurrentDigit();
                 break;
 
         }

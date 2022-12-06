@@ -5,12 +5,4 @@ public class MainMenu extends Menu{
         super("Level Select", "Level Editor", "Quit");
     }
 
-    @Override
-    public void incrementCurrentDigit() {
-    }
-
-    @Override
-    public void decrementCurrentDigit() {
-    }
-
 }

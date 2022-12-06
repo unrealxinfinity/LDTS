@@ -24,7 +24,7 @@ public abstract class Menu {
     public String getEntry(int i) {
         return entries.get(i);
     }
-    public int getSelectedLevel(){return Integer.parseInt(entries.get(1));}
+
     public boolean isSelected(int i) {
         return currentEntry == i;
 
@@ -43,8 +43,7 @@ public abstract class Menu {
     }
 
 
-    public abstract void incrementCurrentDigit();
-    public abstract void decrementCurrentDigit();
+
 
 
 

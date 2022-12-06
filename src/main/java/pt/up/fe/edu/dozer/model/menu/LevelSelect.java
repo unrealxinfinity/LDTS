@@ -7,7 +7,6 @@ public class LevelSelect extends Menu{
         super("Select Level:","0","Start", "Back");
     }
 
-    @Override
     public void decrementCurrentDigit() {
         if (getSelectedNum() !=1) return;
         int digit = Integer.parseInt(getCurrentEntry());
@@ -15,7 +14,7 @@ public class LevelSelect extends Menu{
         else digit--;
         setCurrentEntryTo(Integer.toString(digit));
     }
-    @Override
+
     public void incrementCurrentDigit() {
         if (getSelectedNum() !=1) return;
         int digit = Integer.parseInt(getCurrentEntry());
@@ -26,4 +25,5 @@ public class LevelSelect extends Menu{
     protected void setCurrentEntryTo(String s) {
         entries.set(getSelectedNum(), s);
     }
+    public int getSelectedLevel(){return Integer.parseInt(entries.get(1));}
 }
