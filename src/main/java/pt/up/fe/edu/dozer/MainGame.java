@@ -14,6 +14,7 @@ import pt.up.fe.edu.dozer.model.game.arena.ArenaBuilder;
 import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.game.elements.*;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
+import pt.up.fe.edu.dozer.state.GameState;
 import pt.up.fe.edu.dozer.state.MenuState;
 import pt.up.fe.edu.dozer.state.State;
 import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
@@ -36,12 +37,13 @@ public class MainGame {
         this.state = new MenuState(new MainMenu());
     }
 
-    public static void main(String[] args) throws IOException {
-        ArenaBuilder builder = new LoaderArenaBuilder(1);
-        Arena arena = builder.createArena();
-        DozerController controller = new DozerController(arena, new BoulderController(arena, new TargetController(arena)));
+    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException {
+        new MainGame().start();
+    }
 
-        TerminalSize terminalSize = new TerminalSize(arena.getWidth(), arena.getHeight()+1);
+    public void start() throws IOException {
+        this.state = new GameState(new LoaderArenaBuilder(1).createArena());
+        TerminalSize terminalSize = new TerminalSize(20, 12);
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
         Terminal terminal = terminalFactory.createTerminal();
         Screen screen = new TerminalScreen(terminal);
@@ -52,11 +54,8 @@ public class MainGame {
 
         LanternaGUI gui = new LanternaGUI(screen);
 
-        GameViewer viewer = new GameViewer(arena, new ElementViewerBuilder());
-
         while (true) {
-            viewer.draw(gui);
-            controller.step(null, gui.getNextAction(), 0);
+            state.step(this, gui, 0);
         }
     }
 }
