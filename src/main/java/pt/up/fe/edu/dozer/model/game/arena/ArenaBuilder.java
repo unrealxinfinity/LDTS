@@ -9,7 +9,7 @@ import java.util.List;
 
 public abstract class ArenaBuilder {
     public Arena createArena() {
-        Arena arena = new Arena(getWidth(), getHeight());
+        Arena arena = new Arena(getWidth(), getHeight(), getLevelNum());
 
         arena.setDozer(createDozer());
         arena.setWalls(createWalls());
@@ -27,4 +27,7 @@ public abstract class ArenaBuilder {
     protected abstract List<Wall> createCollisionWalls();
     protected abstract List<Boulder> createBoulders();
     protected abstract List<Target> createTargets();
+    protected int getLevelNum() {
+        return -1;
+    }
 }
