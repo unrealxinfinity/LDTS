@@ -43,7 +43,7 @@ public class MainGame {
 
     public void start() throws IOException {
         this.state = new GameState(new LoaderArenaBuilder(1).createArena());
-        TerminalSize terminalSize = new TerminalSize(21, 12);
+        TerminalSize terminalSize = new TerminalSize(20, 13);
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
         Terminal terminal = terminalFactory.createTerminal();
         Screen screen = new TerminalScreen(terminal);
