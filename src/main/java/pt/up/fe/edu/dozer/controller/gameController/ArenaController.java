@@ -30,6 +30,10 @@ public class ArenaController extends GameController{
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
         if (action == GUI.ACTION.QUIT)
             game.setState(new MenuState(new MainMenu()));
+        else if (action == GUI.ACTION.RESTART) {
+            ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum());
+            game.setState(new GameState(builder.createArena()));
+        }
         else if (this.numTargets == this.targetController.getBouldersInTargets()) {
             ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1);
             game.setState(new GameState(builder.createArena()));

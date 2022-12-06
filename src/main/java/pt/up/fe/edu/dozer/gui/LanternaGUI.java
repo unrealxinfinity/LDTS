@@ -7,7 +7,11 @@ import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import pt.up.fe.edu.dozer.model.Position;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Objects;
 
 public class LanternaGUI implements GUI{
@@ -37,6 +41,7 @@ public class LanternaGUI implements GUI{
 
         if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
         if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.QUIT;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'r') return ACTION.RESTART;
 
         if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
         if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
@@ -52,25 +57,25 @@ public class LanternaGUI implements GUI{
     @Override
     public void drawBoulder(Position position) {
         if (Objects.equals(screen.newTextGraphics().getCharacter(position.getX(), position.getY() + 1).getCharacterString(), "T")) drawCharacter(position, 'B', "#D05E3B");
-        else drawCharacter(position, 'B', "#362F2D");
+        else drawCharacter(position, 'o', "#362F2D");
     }
 
     @Override
     public void drawDozer(Position position) {
-        drawCharacter(position, 'D', "#F3DF2B");
+        drawCharacter(position, 'g', "#F3DF2B");
     }
 
     @Override
     public void drawTarget(Position position) {
-        drawCharacter(position, 'T', "#FF0000");
+        drawCharacter(position, 't', "#FF0000");
     }
 
     @Override
     public void drawWall(Position position) {
-        drawCharacter(position,'#', "#E0E0E0");
+        drawCharacter(position,'m', "#E0E0E0");
     }
 
-    private void drawCharacter(Position position, Character c, String colour) {
+    private void drawCharacter(Position position, Character c, String colour)  {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(colour));
         graphics.putString(position.getX(), position.getY() +1, c.toString());
