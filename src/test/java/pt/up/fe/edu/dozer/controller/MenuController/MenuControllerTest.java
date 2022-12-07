@@ -46,7 +46,7 @@ public class MenuControllerTest {
     }
     @Test
     public void MenuControllerTest(){
-        //Assertions.assertEquals(valuesCheck.getModel().getNumberEntries(),3);
+        //Assertions.assertEquals(valuesCheck.getModel().getNumberEntries(),3);g
     }
     @Test
     public void stepTest() throws IOException {
@@ -56,18 +56,6 @@ public class MenuControllerTest {
         Mockito.verify(gui,Mockito.times(1)).getNextAction();
         behaviourCheck.step(game,gui.getNextAction(),0);
         Mockito.verify(behaviourCheck,Mockito.times(1)).step(game,gui.getNextAction(),0);
-
-
-
-
-
-        //Gostava de testar se o getModel esta a ser chamado com o step neste mock aqui mas alguma coisa n esta certo
-        // pois o getModel nao esta a ser chamado
-
-
-
-
-
 
     }
 }

@@ -56,7 +56,7 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawBoulder(Position position) {
-        if (Objects.equals(screen.newTextGraphics().getCharacter(position.getX(), position.getY() + 1).getCharacterString(), "T")) drawCharacter(position, 'B', "#D05E3B");
+        if (Objects.equals(screen.newTextGraphics().getCharacter(position.getX(), position.getY() + 1).getCharacterString(), "+")) drawCharacter(position, '~', "#D05E3B");
         else drawCharacter(position, '&', "#362F2D");
     }
 
