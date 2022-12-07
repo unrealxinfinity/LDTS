@@ -28,7 +28,7 @@ public class ArenaController extends GameController{
 
     @Override
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
-        if (action == GUI.ACTION.QUIT)
+        if (action == GUI.ACTION.PAUSE)
             game.setState(new MenuState(new MainMenu()));
         else if (action == GUI.ACTION.RESTART) {
             ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum());

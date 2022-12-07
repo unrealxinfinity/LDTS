@@ -53,16 +53,17 @@ public class MainGame {
 
 
         LanternaGUI gui = new LanternaGUI(screen);
-
+        long initialTime=System.currentTimeMillis();
         int frameTime = 50;
-        while (true) {
+        while (this.state!=null) {
             long startTime = System.currentTimeMillis();
-            state.step(this, gui, 0);
             long elapsedTime = System.currentTimeMillis() - startTime;
+            state.step(this, gui, (startTime-initialTime)/1000);
             long sleepTime = frameTime - elapsedTime;
             try {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
             } catch (InterruptedException e ) {}
         }
+        screen.close();
     }
 }
