@@ -7,7 +7,11 @@ import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import pt.up.fe.edu.dozer.model.Position;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Objects;
 
 public class LanternaGUI implements GUI{
@@ -52,18 +56,18 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawBoulder(Position position) {
-        if (Objects.equals(screen.newTextGraphics().getCharacter(position.getX(), position.getY() + 1).getCharacterString(), "T")) drawCharacter(position, 'B', "#D05E3B");
-        else drawCharacter(position, 'B', "#362F2D");
+        if (Objects.equals(screen.newTextGraphics().getCharacter(position.getX(), position.getY() + 1).getCharacterString(), "+")) drawCharacter(position, '~', "#D05E3B");
+        else drawCharacter(position, '&', "#362F2D");
     }
 
     @Override
     public void drawDozer(Position position) {
-        drawCharacter(position, 'D', "#F3DF2B");
+        drawCharacter(position, '*', "#F3DF2B");
     }
 
     @Override
     public void drawTarget(Position position) {
-        drawCharacter(position, 'T', "#FF0000");
+        drawCharacter(position, '+', "#FF0000");
     }
 
     @Override
@@ -71,7 +75,7 @@ public class LanternaGUI implements GUI{
         drawCharacter(position,'#', "#E0E0E0");
     }
 
-    private void drawCharacter(Position position, Character c, String colour) {
+    private void drawCharacter(Position position, Character c, String colour)  {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(colour));
         graphics.putString(position.getX(), position.getY() +1, c.toString());
@@ -91,6 +95,12 @@ public class LanternaGUI implements GUI{
     private String getStringTime(long time){
         long minutes = time/60;
         long seconds = time - minutes*60;
-        return String.valueOf(minutes) + ":" + String.valueOf(seconds);
+        String m = String.valueOf(minutes);
+        String s= String.valueOf(seconds);
+        /*if(m.length()<2 && s.length()<2) return "0"+ m + ":" +"0"+ s;
+        else if(m.length() < 2 && s.length()>2) return "0"+ m + ":" + s ;
+        else if(m.length()>2 && s.length()<2) return  m + ":" +"0"+s;
+        else */
+        return m+":"+s;
     }
 }

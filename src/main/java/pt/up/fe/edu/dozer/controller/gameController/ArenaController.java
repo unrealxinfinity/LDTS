@@ -38,7 +38,6 @@ public class ArenaController extends GameController{
             ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1);
             game.setState(new GameState(builder.createArena()));
         }
-        else
-            this.dozerController.step(game, action, time);
+        else this.dozerController.step(game, action, time);
     }
 }
