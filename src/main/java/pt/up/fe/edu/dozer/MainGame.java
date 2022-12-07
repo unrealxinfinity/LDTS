@@ -24,6 +24,7 @@ import java.net.URISyntaxException;
 
 public class MainGame {
     private State state;
+    private long initialTime=System.currentTimeMillis();
 
     private LanternaGUI gui;
     private MenuController menuController;
@@ -31,6 +32,7 @@ public class MainGame {
 
     public void setState(State s){
         state=s;
+        initialTime=System.currentTimeMillis();
     }
     public MainGame() throws FontFormatException, IOException, URISyntaxException {
         this.state = new MenuState(new MainMenu());
@@ -53,7 +55,6 @@ public class MainGame {
 
 
         LanternaGUI gui = new LanternaGUI(screen);
-        long initialTime=System.currentTimeMillis();
         int frameTime = 50;
         while (this.state!=null) {
             long startTime = System.currentTimeMillis();

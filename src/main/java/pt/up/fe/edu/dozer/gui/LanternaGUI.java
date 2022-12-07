@@ -82,4 +82,15 @@ public class LanternaGUI implements GUI{
         graphics.setForegroundColor(TextColor.Factory.fromString(color));
         graphics.putString(position.getX(), position.getY(), text);
     }
+    @Override
+    public void drawTime(Position position,long time,String color){
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setForegroundColor(TextColor.Factory.fromString(color));
+        graphics.putString(position.getX(),position.getY(),getStringTime(time));
+    }
+    private String getStringTime(long time){
+        long minutes = time/60;
+        long seconds = time - minutes*60;
+        return String.valueOf(minutes) + ":" + String.valueOf(seconds);
+    }
 }

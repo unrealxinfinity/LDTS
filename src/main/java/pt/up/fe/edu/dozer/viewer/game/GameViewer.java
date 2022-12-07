@@ -1,6 +1,7 @@
 package pt.up.fe.edu.dozer.viewer.game;
 
 import pt.up.fe.edu.dozer.gui.GUI;
+import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.elements.Element;
 import pt.up.fe.edu.dozer.viewer.Viewer;
@@ -15,12 +16,13 @@ public class GameViewer extends Viewer<Arena> {
     }
 
     @Override
-    public void drawElements(GUI gui) {
+    public void drawElements(GUI gui,long time) {
         drawElements(gui, getModel().getWalls(), builder.getWallViewer());
         drawElements(gui, getModel().getCollisionWalls(), builder.getWallViewer());
         drawElements(gui, getModel().getTargets(), builder.getTargetViewer());
         drawElements(gui, getModel().getBoulders(), builder.getBoulderViewer());
         drawElement(gui, getModel().getDozer(), builder.getDozerViewer());
+        gui.drawTime(new Position(16,0),time,"#FFFFFF");
 
     }
 
@@ -33,4 +35,5 @@ public class GameViewer extends Viewer<Arena> {
     private <T extends Element> void drawElement(GUI gui, T element, ElementViewer<T> viewer) {
         viewer.draw(element, gui);
     }
+
 }

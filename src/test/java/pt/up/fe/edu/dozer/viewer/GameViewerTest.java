@@ -42,7 +42,7 @@ public class GameViewerTest {
         Mockito.when(builder.getDozerViewer()).thenReturn(dozerViewer);
         Mockito.when(builder.getTargetViewer()).thenReturn(targetViewer);
         Mockito.when(builder.getWallViewer()).thenReturn(wallViewer).thenReturn(wallViewer);
-        viewer.drawElements(gui);
+        viewer.drawElements(gui,0);
 
         order.verify(wallViewer, Mockito.times(6)).draw(Mockito.any(), Mockito.eq(gui));
         order.verify(targetViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
@@ -61,7 +61,7 @@ public class GameViewerTest {
     Mockito.when(arena.getTargets()).thenReturn(new ArrayList<>());
     GameViewer viewer = new GameViewer(arena, new ElementViewerBuilder());
 
-    viewer.draw(gui);
+    viewer.draw(gui,0);
 
     order.verify(gui, Mockito.times(1)).clear();
     order.verify(gui, Mockito.times(1)).refresh();
