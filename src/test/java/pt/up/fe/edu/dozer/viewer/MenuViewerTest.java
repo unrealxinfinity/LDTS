@@ -35,9 +35,9 @@ public class MenuViewerTest {
         MenuViewer menu= new MenuViewer(main);
         menu.drawElements(gui);
 
-        Mockito.verify(graphics, Mockito.times(1)).putString(10,13 ,"Level Select");
-        Mockito.verify(graphics, Mockito.times(1)).putString(10,14 ,"Level Editor");
-        Mockito.verify(graphics, Mockito.times(1)).putString(10,15 ,"Quit");
+        Mockito.verify(graphics, Mockito.times(1)).putString(4,5 ,"Level Select");
+        Mockito.verify(graphics, Mockito.times(1)).putString(4,6 ,"Level Editor");
+        Mockito.verify(graphics, Mockito.times(1)).putString(4,7 ,"Quit");
         Mockito.verify(graphics, Mockito.times(3)).setForegroundColor(TextColor.Factory.fromString(Mockito.any()));
     }
 }
