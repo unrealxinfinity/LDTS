@@ -57,18 +57,18 @@ public class LanternaGUITest {
         gui.drawDozer(new Position(1, 1));
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F3DF2B"));
-        Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "D");
+        Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "*");
     }
 
     @Test
     void drawBoulderInTarget() {
         TextCharacter textChar = Mockito.mock(TextCharacter.class);
-        Mockito.when(textChar.getCharacterString()).thenReturn("T");
+        Mockito.when(textChar.getCharacterString()).thenReturn("+");
         Mockito.when(graphics.getCharacter(Mockito.eq(1), Mockito.eq(2))).thenReturn(textChar);
         gui.drawBoulder(new Position(1, 1));
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#D05E3B"));
-        Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "B");
+        Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "~");
     }
 
     @Test
@@ -79,7 +79,7 @@ public class LanternaGUITest {
         gui.drawBoulder(new Position(1, 1));
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#362F2D"));
-        Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "B");
+        Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "&");
     }
 
     @Test
@@ -95,7 +95,7 @@ public class LanternaGUITest {
         gui.drawTarget(new Position(1, 1));
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#FF0000"));
-        Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "T");
+        Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "+");
     }
 
     @Test

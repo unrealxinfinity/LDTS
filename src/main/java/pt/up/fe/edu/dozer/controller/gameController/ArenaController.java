@@ -7,7 +7,7 @@ import pt.up.fe.edu.dozer.model.game.arena.ArenaBuilder;
 import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.GameState;
-import pt.up.fe.edu.dozer.state.MenuState;
+import pt.up.fe.edu.dozer.state.MenuState.MenuState;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ public class ArenaController extends GameController{
 
     @Override
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
-        if (action == GUI.ACTION.QUIT)
+        if (action == GUI.ACTION.PAUSE)
             game.setState(new MenuState(new MainMenu()));
         else if (action == GUI.ACTION.RESTART) {
             ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum());
@@ -38,7 +38,6 @@ public class ArenaController extends GameController{
             ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1);
             game.setState(new GameState(builder.createArena()));
         }
-        else
-            this.dozerController.step(game, action, time);
+        else this.dozerController.step(game, action, time);
     }
 }

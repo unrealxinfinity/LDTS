@@ -1,8 +1,9 @@
-package pt.up.fe.edu.dozer.controller;
+package pt.up.fe.edu.dozer.controller.GameController;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
 import org.mockito.Mockito;
+import org.junit.jupiter.api.Test;
 import pt.up.fe.edu.dozer.controller.gameController.DozerController;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.Position;
