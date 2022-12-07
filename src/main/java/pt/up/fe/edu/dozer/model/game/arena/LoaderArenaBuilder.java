@@ -61,7 +61,7 @@ public class LoaderArenaBuilder extends ArenaBuilder{
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'B') boulders.add(new Boulder(x, y));
+                if (line.charAt(x) == '$') boulders.add(new Boulder(x, y));
         }
         return boulders;
     }
@@ -71,7 +71,7 @@ public class LoaderArenaBuilder extends ArenaBuilder{
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'D') return new Dozer(x, y);
+                if (line.charAt(x) == '*') return new Dozer(x, y);
         }
         return null;
     }
@@ -95,7 +95,7 @@ public class LoaderArenaBuilder extends ArenaBuilder{
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'T') targets.add(new Target(x, y));
+                if (line.charAt(x) == '+') targets.add(new Target(x, y));
         }
         return targets;
     }
