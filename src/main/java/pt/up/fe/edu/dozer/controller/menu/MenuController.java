@@ -1,4 +1,4 @@
-package pt.up.fe.edu.dozer.controller.menuController;
+package pt.up.fe.edu.dozer.controller.menu;
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.gui.GUI;
@@ -6,10 +6,8 @@ import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.model.menu.Menu;
-import pt.up.fe.edu.dozer.state.DozerEditorState;
-import pt.up.fe.edu.dozer.state.EditorState;
-import pt.up.fe.edu.dozer.state.MenuState.LevelSelectState;
-import pt.up.fe.edu.dozer.state.MenuState.MenuState;
+import pt.up.fe.edu.dozer.state.editor.DozerEditorState;
+import pt.up.fe.edu.dozer.state.menu.LevelSelectState;
 
 
 import java.io.IOException;

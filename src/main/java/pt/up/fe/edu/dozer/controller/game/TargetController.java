@@ -1,4 +1,4 @@
-package pt.up.fe.edu.dozer.controller.gameController;
+package pt.up.fe.edu.dozer.controller.game;
 
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.gui.GUI;

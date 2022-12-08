@@ -1,22 +1,18 @@
 package pt.up.fe.edu.dozer;
 
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
-import pt.up.fe.edu.dozer.controller.menuController.MenuController;
+import pt.up.fe.edu.dozer.controller.menu.MenuController;
 
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 
-import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.state.GameState;
-import pt.up.fe.edu.dozer.state.MenuState.MenuState;
+import pt.up.fe.edu.dozer.state.menu.MenuState;
 import pt.up.fe.edu.dozer.state.State;
 import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
 

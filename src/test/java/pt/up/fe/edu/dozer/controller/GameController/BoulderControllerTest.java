@@ -3,8 +3,8 @@ package pt.up.fe.edu.dozer.controller.GameController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import pt.up.fe.edu.dozer.controller.gameController.BoulderController;
-import pt.up.fe.edu.dozer.controller.gameController.TargetController;
+import pt.up.fe.edu.dozer.controller.game.BoulderController;
+import pt.up.fe.edu.dozer.controller.game.TargetController;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 
 public class BoulderControllerTest {

@@ -1,4 +1,4 @@
-package pt.up.fe.edu.dozer.controller.gameController;
+package pt.up.fe.edu.dozer.controller.editor;
 
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;

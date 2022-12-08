@@ -2,21 +2,15 @@ package pt.up.fe.edu.dozer.controller.MenuController;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.MainGame;
-import pt.up.fe.edu.dozer.controller.Controller;
-import pt.up.fe.edu.dozer.controller.menuController.MenuController;
+import pt.up.fe.edu.dozer.controller.menu.MenuController;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.model.menu.Menu;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
