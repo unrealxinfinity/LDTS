@@ -6,7 +6,7 @@ import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 
 public class DozerEditorState extends EditorState{
     public DozerEditorState(EditorArena arena) {
-        super(arena);
+        super(arena,"*");
     }
 
     @Override

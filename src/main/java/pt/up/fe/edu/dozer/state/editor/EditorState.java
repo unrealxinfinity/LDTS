@@ -7,13 +7,25 @@ import pt.up.fe.edu.dozer.viewer.Viewer;
 import pt.up.fe.edu.dozer.viewer.game.EditorViewer;
 
 public abstract class EditorState extends State<EditorArena> {
-    public EditorState(EditorArena arena) {
+    //NEW
+    private String placingElem;
+    //added another parameter which each of the subclasses will do super(arena,string);
+    public EditorState(EditorArena arena,String elem) {
         super(arena);
+        //NEW to pass the placingelem to the editor viewer
+        this.placingElem=elem;
+        System.out.print(placingElem);
+    }
+    //this was an attempt
+    private String getPlacingElem(){
+        return placingElem;
     }
 
     @Override
     protected Viewer<EditorArena> getViewer() {
-        return new EditorViewer(getModel());
+        System.out.print(getPlacingElem());
+
+        return new EditorViewer(getModel(),placingElem);
     }
 
     @Override
