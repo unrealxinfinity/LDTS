@@ -6,10 +6,7 @@ import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.elements.*;
-import pt.up.fe.edu.dozer.viewer.game.BoulderViewer;
-import pt.up.fe.edu.dozer.viewer.game.DozerViewer;
-import pt.up.fe.edu.dozer.viewer.game.TargetViewer;
-import pt.up.fe.edu.dozer.viewer.game.WallViewer;
+import pt.up.fe.edu.dozer.viewer.game.*;
 
 public class ElementViewerTest {
     GUI gui;
@@ -79,5 +76,17 @@ public class ElementViewerTest {
 
         Mockito.verify(element, Mockito.times(1)).getPosition();
         Mockito.verify(gui, Mockito.times(1)).drawWall(Mockito.eq(position));
+    }
+
+    @Test
+    public void placerViewerTest() {
+        PlacerViewer viewer = new PlacerViewer();
+        Placer element = Mockito.mock(Placer.class);
+        Mockito.when(element.getPosition()).thenReturn(position);
+
+        viewer.draw(element, gui);
+
+        Mockito.verify(element, Mockito.times(1)).getPosition();
+        Mockito.verify(gui, Mockito.times(1)).drawPlacer(Mockito.eq(position));
     }
 }
