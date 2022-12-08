@@ -94,13 +94,15 @@ public class LanternaGUI implements GUI{
     }
     private String getStringTime(long time){
         long minutes = time/60;
+        if(minutes>59) minutes=0;
         long seconds = time - minutes*60;
         String m = String.valueOf(minutes);
+
         String s= String.valueOf(seconds);
-        /*if(m.length()<2 && s.length()<2) return "0"+ m + ":" +"0"+ s;
-        else if(m.length() < 2 && s.length()>2) return "0"+ m + ":" + s ;
-        else if(m.length()>2 && s.length()<2) return  m + ":" +"0"+s;
-        else */
-        return m+":"+s;
+        if(m.length()<2 && s.length()<2) return "0"+ m + ":" +"0"+ s;
+        else if(m.length() < 2 && s.length()==2) return "0"+ m + ":" + s ;
+        else if(m.length()==2 && s.length()<2) return  m + ":" +"0"+s;
+        else return m+":"+s;
+
     }
 }
