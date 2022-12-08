@@ -22,6 +22,8 @@ public interface GUI {
     void drawBoulder(Position position);
     void drawText(Position position, String text, String color);
 
+    void drawPlacer(Position position);
+
 
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, PAUSE, SELECT, RESTART};
 }

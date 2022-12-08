@@ -86,4 +86,9 @@ public class LanternaGUI implements GUI{
         graphics.setForegroundColor(TextColor.Factory.fromString(color));
         graphics.putString(position.getX(), position.getY(), text);
     }
+
+    @Override
+    public void drawPlacer(Position position) {
+        drawCharacter(position, 'p', "B41EE2");
+    }
 }
