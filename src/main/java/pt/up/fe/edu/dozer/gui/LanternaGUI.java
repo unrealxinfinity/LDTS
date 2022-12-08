@@ -49,7 +49,8 @@ public class LanternaGUI implements GUI{
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
 
         if (keyStroke.getKeyType() == KeyType.Escape) return ACTION.PAUSE;
-        if(keyStroke.getKeyType()==KeyType.Enter) return ACTION.SELECT;
+        if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
+        if (keyStroke.getKeyType() == KeyType.Tab) return ACTION.CYCLE;
 
         return ACTION.NONE;
     }
@@ -103,6 +104,11 @@ public class LanternaGUI implements GUI{
         else if(m.length() < 2 && s.length()==2) return "0"+ m + ":" + s ;
         else if(m.length()==2 && s.length()<2) return  m + ":" +"0"+s;
         else return m+":"+s;
+    }
 
+
+    @Override
+    public void drawPlacer(Position position) {
+        drawCharacter(position, 'p', "#B41EE2");
     }
 }

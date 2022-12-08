@@ -9,6 +9,9 @@ public abstract class Element {
         this.position = new Position(x,y);
     }
 
+    public Element(Position position) {
+        this.position = position;
+    }
     public Position getPosition() {
         return this.position;
     }
