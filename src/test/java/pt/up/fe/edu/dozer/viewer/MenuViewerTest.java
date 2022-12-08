@@ -33,7 +33,7 @@ public class MenuViewerTest {
     public void drawElementTest() {
         Menu main = new MainMenu();
         MenuViewer menu= new MenuViewer(main);
-        menu.drawElements(gui);
+        menu.drawElements(gui,0);
 
         Mockito.verify(graphics, Mockito.times(1)).putString(4,5 ,"Level Select");
         Mockito.verify(graphics, Mockito.times(1)).putString(4,6 ,"Level Editor");

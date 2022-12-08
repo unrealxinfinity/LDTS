@@ -29,6 +29,7 @@ import java.net.URL;
 
 public class MainGame {
     private State state;
+    private long initialTime=System.currentTimeMillis();
 
     private LanternaGUI gui;
     private MenuController menuController;
@@ -36,6 +37,7 @@ public class MainGame {
 
     public void setState(State s){
         state=s;
+        initialTime=System.currentTimeMillis();
     }
     public MainGame() throws FontFormatException, IOException, URISyntaxException {
         this.state = new MenuState(new MainMenu());
@@ -46,8 +48,9 @@ public class MainGame {
         new MainGame().start();
     }
 
+
     public void start() throws IOException, FontFormatException, URISyntaxException {
-        URL resource = MainGame.class.getResource("/font/Square-Regular.ttf");
+        URL resource = MainGame.class.getResource("/font/JoystixMonospace-Regular.ttf");
         File fontFile = new File(resource.toURI());
         Font font =  Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
@@ -60,7 +63,7 @@ public class MainGame {
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         factory.setTerminalEmulatorFontConfiguration(fontConfig);
         factory.setForceAWTOverSwing(true);
-        factory.setInitialTerminalSize(new TerminalSize(20, 13));
+        factory.setInitialTerminalSize(new TerminalSize(20, 15));
         Terminal terminal = factory.createTerminal();
 
         Screen screen = new TerminalScreen(terminal);
@@ -72,12 +75,11 @@ public class MainGame {
 
 
         LanternaGUI gui = new LanternaGUI(screen);
-
-        int frameTime = 25;
+        int frameTime = 50;
         while (this.state!=null) {
             long startTime = System.currentTimeMillis();
-            state.step(this, gui, 0);
             long elapsedTime = System.currentTimeMillis() - startTime;
+            state.step(this, gui, (startTime-initialTime)/1000);
             long sleepTime = frameTime - elapsedTime;
             try {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
