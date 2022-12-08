@@ -14,7 +14,7 @@ import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 
 import java.io.IOException;
 
-public class EditorState extends State<EditorArena>{
+public abstract class EditorState extends State<EditorArena>{
     public EditorState(EditorArena arena) {
         super(arena);
     }
@@ -25,7 +25,5 @@ public class EditorState extends State<EditorArena>{
     }
 
     @Override
-    protected Controller<EditorArena> getController() {
-        return new EditorArenaController(getModel());
-    }
+    protected abstract Controller<EditorArena> getController();
 }
