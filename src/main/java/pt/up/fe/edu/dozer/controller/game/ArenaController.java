@@ -35,8 +35,10 @@ public class ArenaController extends GameController{
             game.setState(new GameState(builder.createArena()));
         }
         else if (this.numTargets == this.targetController.getBouldersInTargets()) {
-            ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1);
-            game.setState(new GameState(builder.createArena()));
+            try {
+                ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1);
+                game.setState(new GameState(builder.createArena()));
+            } catch (NullPointerException ignored) {}
         }
         else this.dozerController.step(game, action, time);
     }

@@ -28,9 +28,11 @@ public class LevelSelectController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().getCurrentEntry() == "Start") {
-                    int selectedLevel= ((LevelSelect)getModel()).getSelectedLevel();
-                    Arena arena = new  LoaderArenaBuilder(selectedLevel).createArena();
-                    game.setState(new GameState(arena));
+                    try {
+                        int selectedLevel = ((LevelSelect) getModel()).getSelectedLevel();
+                        Arena arena = new LoaderArenaBuilder(selectedLevel).createArena();
+                        game.setState(new GameState(arena));
+                    } catch (NullPointerException ignored) {}
                 }
                 if (getModel().getCurrentEntry() == "Back") game.setState(new MenuState(new MainMenu()));
                 break;
