@@ -50,7 +50,7 @@ public class MainGame {
 
 
     public void start() throws IOException, FontFormatException, URISyntaxException {
-        URL resource = MainGame.class.getResource("/font/Square-Regular.ttf");
+        URL resource = MainGame.class.getResource("/font/JoystixMonospace-Regular.ttf");
         File fontFile = new File(resource.toURI());
         Font font =  Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
@@ -63,7 +63,7 @@ public class MainGame {
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         factory.setTerminalEmulatorFontConfiguration(fontConfig);
         factory.setForceAWTOverSwing(true);
-        factory.setInitialTerminalSize(new TerminalSize(20, 13));
+        factory.setInitialTerminalSize(new TerminalSize(20, 15));
         Terminal terminal = factory.createTerminal();
 
         Screen screen = new TerminalScreen(terminal);

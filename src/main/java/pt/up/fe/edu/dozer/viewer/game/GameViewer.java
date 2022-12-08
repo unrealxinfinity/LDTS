@@ -23,6 +23,8 @@ public class GameViewer extends Viewer<Arena> {
         drawElements(gui, getModel().getBoulders(), builder.getBoulderViewer());
         drawElement(gui, getModel().getDozer(), builder.getDozerViewer());
         gui.drawTime(new Position(15,0),time,"#FFFFFF");
+        gui.drawText(new Position(1,13),"Press R to restart","#0000FF");
+        gui.drawText(new Position(1,14),"Press ESC for menu","#0000FF");
 
     }
 
