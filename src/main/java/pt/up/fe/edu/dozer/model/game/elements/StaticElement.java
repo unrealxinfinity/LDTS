@@ -7,6 +7,10 @@ public abstract class StaticElement extends Element{
         super(x,y);
     }
 
+    public StaticElement(Position position) {
+        super(position);
+    }
+
     @Override
     public void setPosition(Position position) {}
 }
