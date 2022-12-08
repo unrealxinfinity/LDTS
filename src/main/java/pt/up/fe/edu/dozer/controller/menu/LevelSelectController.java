@@ -4,6 +4,7 @@ import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
+import pt.up.fe.edu.dozer.model.game.arena.LevelReader;
 import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
@@ -30,7 +31,7 @@ public class LevelSelectController extends Controller<Menu> {
                 if (getModel().getCurrentEntry() == "Start") {
                     try {
                         int selectedLevel = ((LevelSelect) getModel()).getSelectedLevel();
-                        Arena arena = new LoaderArenaBuilder(selectedLevel).createArena();
+                        Arena arena = new LoaderArenaBuilder(selectedLevel, new LevelReader()).createArena();
                         game.setState(new GameState(arena));
                     } catch (NullPointerException ignored) {}
                 }

@@ -13,20 +13,10 @@ public class LoaderArenaBuilder extends ArenaBuilder{
     private final int level;
     private final List<String> lines;
 
-    public LoaderArenaBuilder(int level) throws IOException {
+    public LoaderArenaBuilder(int level, LevelReader reader) throws IOException {
         this.level = level;
 
-        URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
-        BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
-
-        lines = readLines(br);
-    }
-
-    private List<String> readLines(BufferedReader br) throws IOException {
-        List<String> lines = new ArrayList<>();
-        for (String line; (line = br.readLine()) != null; )
-            lines.add(line);
-        return lines;
+        lines = reader.readLevel(level);
     }
 
     @Override

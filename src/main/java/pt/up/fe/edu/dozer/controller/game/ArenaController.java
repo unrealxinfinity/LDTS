@@ -4,6 +4,7 @@ import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.arena.ArenaBuilder;
+import pt.up.fe.edu.dozer.model.game.arena.LevelReader;
 import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.GameState;
@@ -31,12 +32,12 @@ public class ArenaController extends GameController{
         if (action == GUI.ACTION.PAUSE)
             game.setState(new MenuState(new MainMenu()));
         else if (action == GUI.ACTION.RESTART) {
-            ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum());
+            ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum(), new LevelReader());
             game.setState(new GameState(builder.createArena()));
         }
         else if (this.numTargets == this.targetController.getBouldersInTargets()) {
             try {
-                ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1);
+                ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1, new LevelReader());
                 game.setState(new GameState(builder.createArena()));
             } catch (NullPointerException ignored) {}
         }
