@@ -12,7 +12,7 @@ public class EditorPositionClearer {
     }
 
     public void clearPosition(Position position) {
-        if (arena.getDozer().getPosition().equals(position)) arena.setDozer(null);
+        if (arena.getDozer() != null && arena.getDozer().getPosition().equals(position)) arena.setDozer(null);
         arena.getCollisionWalls().removeIf(w -> w.getPosition().equals(position));
         arena.getBoulders().removeIf(b -> b.getPosition().equals(position));
         arena.getTargets().removeIf(t -> t.getPosition().equals(position));
