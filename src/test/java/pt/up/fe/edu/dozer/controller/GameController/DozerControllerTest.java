@@ -4,13 +4,11 @@ import org.junit.jupiter.api.BeforeEach;
 
 import org.mockito.Mockito;
 import org.junit.jupiter.api.Test;
-import pt.up.fe.edu.dozer.controller.gameController.DozerController;
+import pt.up.fe.edu.dozer.controller.game.DozerController;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.elements.Dozer;
-
-import java.io.IOException;
 
 public class DozerControllerTest {
     private Arena arena;

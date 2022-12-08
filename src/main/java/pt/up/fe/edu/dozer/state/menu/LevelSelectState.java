@@ -1,7 +1,7 @@
-package pt.up.fe.edu.dozer.state.MenuState;
+package pt.up.fe.edu.dozer.state.menu;
 
 import pt.up.fe.edu.dozer.controller.Controller;
-import pt.up.fe.edu.dozer.controller.menuController.LevelSelectController;
+import pt.up.fe.edu.dozer.controller.menu.LevelSelectController;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.Menu;
 import pt.up.fe.edu.dozer.state.State;

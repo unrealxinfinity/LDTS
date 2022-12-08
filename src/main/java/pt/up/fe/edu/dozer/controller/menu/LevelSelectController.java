@@ -1,18 +1,15 @@
-package pt.up.fe.edu.dozer.controller.menuController;
+package pt.up.fe.edu.dozer.controller.menu;
 
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
-import pt.up.fe.edu.dozer.model.game.arena.ArenaBuilder;
 import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.model.menu.Menu;
 import pt.up.fe.edu.dozer.state.GameState;
-import pt.up.fe.edu.dozer.state.MenuState.MenuState;
-import pt.up.fe.edu.dozer.viewer.Viewer;
-import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
+import pt.up.fe.edu.dozer.state.menu.MenuState;
 
 import java.io.IOException;
 

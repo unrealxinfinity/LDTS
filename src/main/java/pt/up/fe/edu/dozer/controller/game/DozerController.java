@@ -1,11 +1,9 @@
-package pt.up.fe.edu.dozer.controller.gameController;
+package pt.up.fe.edu.dozer.controller.game;
 
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
-
-import java.io.IOException;
 
 public class DozerController extends GameController{
     private BoulderController boulderController;
