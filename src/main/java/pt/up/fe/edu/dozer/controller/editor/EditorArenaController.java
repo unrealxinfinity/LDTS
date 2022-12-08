@@ -21,6 +21,7 @@ public abstract class EditorArenaController extends EditorController{
             game.setState(cycleState());
         }
         else if (action == GUI.ACTION.SELECT) {
+            clearPosition();
             placeElement();
         }
         else this.controller.step(game, action, time);
@@ -28,4 +29,9 @@ public abstract class EditorArenaController extends EditorController{
 
     protected abstract EditorState cycleState();
     protected abstract void placeElement();
+
+    private void clearPosition() {
+        EditorPositionClearer clearer = new EditorPositionClearer(getModel());
+        clearer.clearPosition(getModel().getPlacer().getPosition());
+    }
 }
