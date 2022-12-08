@@ -20,7 +20,7 @@ public class GameViewer extends Viewer<Arena> {
         drawElements(gui, getModel().getCollisionWalls(), builder.getWallViewer());
         drawElements(gui, getModel().getTargets(), builder.getTargetViewer());
         drawElements(gui, getModel().getBoulders(), builder.getBoulderViewer());
-        drawElement(gui, getModel().getDozer(), builder.getDozerViewer());
+        if (getModel().getDozer() != null) drawElement(gui, getModel().getDozer(), builder.getDozerViewer());
     }
 
     private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {

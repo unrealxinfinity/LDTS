@@ -15,22 +15,21 @@ public class PlacerController extends EditorController{
     }
 
     private void movePlacer(Position position) {
-        Position placerPosition = getModel().getPlacer().getPosition();
-        boolean vertical = placerPosition.getY() >= 0 && placerPosition.getY() < getModel().getHeight();
-        boolean horizontal = placerPosition.getX() >= 0 && placerPosition.getX() < getModel().getWidth();
+        boolean vertical = position.getY() >= 0 && position.getY() < getModel().getHeight();
+        boolean horizontal = position.getX() >= 0 && position.getX() < getModel().getWidth();
         if (vertical && horizontal) getModel().getPlacer().setPosition(position);
     }
     public void movePlacerLeft() {
-        movePlacer(getModel().getDozer().getPosition().moveLeft());
+        movePlacer(getModel().getPlacer().getPosition().moveLeft());
     }
     public void movePlacerRight(){
-        movePlacer(getModel().getDozer().getPosition().moveRight());
+        movePlacer(getModel().getPlacer().getPosition().moveRight());
     }
     public void movePlacerUp(){
-        movePlacer(getModel().getDozer().getPosition().moveUp());
+        movePlacer(getModel().getPlacer().getPosition().moveUp());
     }
     public void movePlacerDown(){
-        movePlacer(getModel().getDozer().getPosition().moveDown());
+        movePlacer(getModel().getPlacer().getPosition().moveDown());
     }
 
     @Override

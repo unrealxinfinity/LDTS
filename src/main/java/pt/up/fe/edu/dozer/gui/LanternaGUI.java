@@ -89,6 +89,6 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawPlacer(Position position) {
-        drawCharacter(position, 'p', "B41EE2");
+        drawCharacter(position, 'p', "#B41EE2");
     }
 }
