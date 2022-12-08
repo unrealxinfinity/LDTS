@@ -1,6 +1,7 @@
 package pt.up.fe.edu.dozer.state;
 
 import pt.up.fe.edu.dozer.controller.Controller;
+import pt.up.fe.edu.dozer.controller.gameController.EditorArenaDozerController;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 
 public class DozerEditorState extends EditorState{
@@ -10,6 +11,6 @@ public class DozerEditorState extends EditorState{
 
     @Override
     protected Controller<EditorArena> getController() {
-        return null;
+        return new EditorArenaDozerController(getModel());
     }
 }
