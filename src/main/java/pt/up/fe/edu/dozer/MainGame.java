@@ -47,7 +47,7 @@ public class MainGame {
     }
 
     public void start() throws IOException, FontFormatException, URISyntaxException {
-        URL resource = MainGame.class.getResource("/font/Square-Regular.ttf");
+        URL resource = MainGame.class.getResource("/font/JoystixMonospace-Regular.ttf");
         File fontFile = new File(resource.toURI());
         Font font =  Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
