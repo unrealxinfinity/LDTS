@@ -6,16 +6,18 @@ import pt.up.fe.edu.dozer.viewer.Viewer;
 
 public class EditorViewer extends Viewer<EditorArena> {
     private final GameViewer viewer;
+    private final PlacerViewerBuilder builder;
 
-    public EditorViewer(EditorArena arena) {
+    public EditorViewer(EditorArena arena, PlacerViewerBuilder builder, GameViewer viewer) {
         super(arena);
-        this.viewer = new GameViewer(arena, new ElementViewerBuilder());
+        this.builder = builder;
+        this.viewer = viewer;
     }
 
     @Override
     protected void drawElements(GUI gui, long time) {
         viewer.drawElements(gui, time);
-        PlacerViewer placerViewer = new PlacerViewer();
+        PlacerViewer placerViewer = builder.getPlacerViewer();
         placerViewer.draw(getModel().getPlacer(), gui);
     }
 
