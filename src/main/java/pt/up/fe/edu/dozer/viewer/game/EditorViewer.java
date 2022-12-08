@@ -13,8 +13,8 @@ public class EditorViewer extends Viewer<EditorArena> {
     }
 
     @Override
-    protected void drawElements(GUI gui) {
-        viewer.drawElements(gui);
+    protected void drawElements(GUI gui, long time) {
+        viewer.drawElements(gui, time);
         PlacerViewer placerViewer = new PlacerViewer();
         placerViewer.draw(getModel().getPlacer(), gui);
     }
