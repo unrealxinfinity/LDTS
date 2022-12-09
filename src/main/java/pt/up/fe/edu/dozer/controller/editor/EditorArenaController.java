@@ -43,11 +43,11 @@ public abstract class EditorArenaController extends EditorController{
             game.setState(new MenuState(new MainMenu()));
         }
         else if(action == GUI.ACTION.SAVE) {
-            try {
+            if (getModel().getDozer() != null) {
                 game.resetTimer();
                 //game.setState(new LevelEditorMenuState(new LevelEditorMenu()));
                 game.setState(new GameState(getModel().getArena()));
-            } catch (NullPointerException ignored) {}
+            }
         }
         else this.controller.step(game, action, time);
     }
