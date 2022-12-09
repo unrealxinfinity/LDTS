@@ -18,7 +18,7 @@ public class ElementTest {
     
     @Test
     public void moveBoulderTest() {
-        Boulder boulder = new Boulder(1,2);
+        Boulder boulder = new Boulder(new Position(1,2));
 
         boulder.setPosition(new Position(6,6));
 
