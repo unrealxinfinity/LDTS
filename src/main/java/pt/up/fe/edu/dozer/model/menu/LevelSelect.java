@@ -6,6 +6,9 @@ public class LevelSelect extends Menu{
     public LevelSelect() {
         super("Select Level:","0","Start", "Back");
     }
+    public LevelSelect(String... strings){
+        super(strings);
+    }
 
     public void decrementCurrentDigit() {
         if (getSelectedNum() !=1) return;
