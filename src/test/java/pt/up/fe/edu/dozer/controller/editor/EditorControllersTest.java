@@ -63,4 +63,18 @@ public class EditorControllersTest {
         Mockito.verify(arena, Mockito.times(2)).getPlacer();
         Mockito.verify(placer, Mockito.times(2)).getPosition();
     }
+
+    @Test
+    public void stepRemove() throws IOException {
+        EditorArena arena = Mockito.mock(EditorArena.class);
+        MainGame game = Mockito.mock(MainGame.class);
+        Placer placer = Mockito.mock(Placer.class);
+        Mockito.when(arena.getPlacer()).thenReturn(placer);
+        EditorArenaDozerController controller = new EditorArenaDozerController(arena);
+
+        controller.step(game, GUI.ACTION.REMOVE, 0);
+
+        Mockito.verify(arena, Mockito.times(1)).getPlacer();
+        Mockito.verify(placer, Mockito.times(1)).getPosition();
+    }
 }

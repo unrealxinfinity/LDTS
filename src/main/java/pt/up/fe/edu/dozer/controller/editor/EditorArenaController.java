@@ -24,6 +24,9 @@ public abstract class EditorArenaController extends EditorController{
             clearPosition();
             placeElement();
         }
+        else if (action == GUI.ACTION.REMOVE) {
+            clearPosition();
+        }
         else this.controller.step(game, action, time);
     }
 
