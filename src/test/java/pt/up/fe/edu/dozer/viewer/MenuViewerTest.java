@@ -38,6 +38,6 @@ public class MenuViewerTest {
         Mockito.verify(graphics, Mockito.times(1)).putString(4,5 ,"Level Select");
         Mockito.verify(graphics, Mockito.times(1)).putString(4,6 ,"Level Editor");
         Mockito.verify(graphics, Mockito.times(1)).putString(4,7 ,"Quit");
-        Mockito.verify(graphics, Mockito.times(3)).setForegroundColor(TextColor.Factory.fromString(Mockito.any()));
+        Mockito.verify(graphics, Mockito.times(4)).setForegroundColor(TextColor.Factory.fromString(Mockito.any()));
     }
 }

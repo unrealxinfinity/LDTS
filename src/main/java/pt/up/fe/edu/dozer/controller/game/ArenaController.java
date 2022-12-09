@@ -33,11 +33,13 @@ public class ArenaController extends GameController{
             game.setState(new MenuState(new MainMenu()));
         else if (action == GUI.ACTION.RESTART) {
             ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum(), new LevelReader());
+            game.resetTimer();
             game.setState(new GameState(builder.createArena(new Arena())));
         }
         else if (this.numTargets == this.targetController.getBouldersInTargets()) {
             try {
                 ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1, new LevelReader());
+                game.resetTimer();
                 game.setState(new GameState(builder.createArena(new Arena())));
             } catch (NullPointerException ignored) {}
         }

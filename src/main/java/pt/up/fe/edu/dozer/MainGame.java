@@ -11,7 +11,9 @@ import pt.up.fe.edu.dozer.controller.menu.MenuController;
 
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 
+import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
+import pt.up.fe.edu.dozer.state.editor.*;
 import pt.up.fe.edu.dozer.state.menu.MenuState;
 import pt.up.fe.edu.dozer.state.State;
 import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
@@ -25,15 +27,15 @@ import java.net.URL;
 
 public class MainGame {
     private State state;
-    private long initialTime=System.currentTimeMillis();
+    private long initialTime = System.currentTimeMillis();
 
-    private LanternaGUI gui;
-    private MenuController menuController;
-    private MenuViewer menuViewer;
 
     public void setState(State s){
         state=s;
-        initialTime=System.currentTimeMillis();
+    }
+
+    public void resetTimer() {
+        initialTime = System.currentTimeMillis();
     }
     public MainGame() throws FontFormatException, IOException, URISyntaxException {
         this.state = new MenuState(new MainMenu());
@@ -68,7 +70,6 @@ public class MainGame {
         screen.startScreen();             // screens must be started
         screen.doResizeIfNecessary();     // resize screen if necessary
         screen.refresh();
-
 
         LanternaGUI gui = new LanternaGUI(screen);
         int frameTime = 50;
