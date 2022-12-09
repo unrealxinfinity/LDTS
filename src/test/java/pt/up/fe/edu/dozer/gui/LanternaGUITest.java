@@ -99,6 +99,13 @@ public class LanternaGUITest {
     }
 
     @Test
+    void drawPlacer() {
+        gui.drawPlacer(new Position(2,3));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#B41EE2"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(2, 4, "p");
+    }
+
+    @Test
     void getNextActionNone() throws IOException {
         Mockito.when(screen.pollInput()).thenReturn(null);
 
@@ -206,13 +213,48 @@ public class LanternaGUITest {
 
         Assertions.assertEquals(GUI.ACTION.SELECT, action);
     }
+
+    @Test
+    void getNextActionRestart() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Character);
+        Mockito.when(stroke.getCharacter()).thenReturn('r');
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.RESTART, action);
+    }
+
+    @Test
+    void getNextActionCycle() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Tab);
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.CYCLE, action);
+    }
     @Test
     void drawTextTest() {
         gui.drawText(new Position(5,5),"Welcome","#FFFFFA");
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#FFFFFA"));
         Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "Welcome");
-
     }
 
+    @Test
+    void drawTimeTest() {
+        gui.drawTime(new Position(5,5), 0, "#F0F0F0");
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "00:00");
+    }
+
+    @Test
+    void drawTimeTestMinute() {
+        gui.drawTime(new Position(5, 5), 120, "#F0F0F0");
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "02:00");
+    }
 }
