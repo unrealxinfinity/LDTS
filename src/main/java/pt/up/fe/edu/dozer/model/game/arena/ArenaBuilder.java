@@ -8,8 +8,10 @@ import pt.up.fe.edu.dozer.model.game.elements.Wall;
 import java.util.List;
 
 public abstract class ArenaBuilder {
-    public Arena createArena() {
-        Arena arena = new Arena(getWidth(), getHeight(), getLevelNum());
+    public Arena createArena(Arena arena) {
+        arena.setHeight(getHeight());
+        arena.setWidth(getWidth());
+        arena.setLevelNum(getLevelNum());
 
         arena.setDozer(createDozer());
         arena.setWalls(createWalls());

@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Arena {
-    private final int height;
-    private final int width;
+    private int height;
+    private int width;
 
     private Dozer dozer;
 
@@ -19,8 +19,12 @@ public class Arena {
     private int levelNum = -1;
 
     public Arena(int width, int height) {
+        this();
         this.width = width;
         this.height = height;
+    }
+
+    public Arena() {
         this.boulders = new ArrayList<>();
         this.walls = new ArrayList<>();
         this.collisionWalls = new ArrayList<>();
@@ -104,5 +108,17 @@ public class Arena {
 
     public int getLevelNum() {
         return levelNum;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setLevelNum(int levelNum) {
+        this.levelNum = levelNum;
     }
 }

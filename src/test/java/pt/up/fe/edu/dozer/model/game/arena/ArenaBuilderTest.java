@@ -3,6 +3,7 @@ package pt.up.fe.edu.dozer.model.game.arena;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
 import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.LevelReader;
@@ -97,7 +98,20 @@ public class ArenaBuilderTest{
     }
 
     @Test
-    public void createArenaTest() {
+    public void createArenaTest() throws IOException {
+    LoaderArenaBuilder builder = new LoaderArenaBuilder(42, reader);
+    Arena arena = Mockito.mock(Arena.class);
+    InOrder order = Mockito.inOrder(arena);
 
+    builder.createArena(arena);
+
+    order.verify(arena, Mockito.times(1)).setHeight(Mockito.anyInt());
+    order.verify(arena, Mockito.times(1)).setWidth(Mockito.anyInt());
+    order.verify(arena, Mockito.times(1)).setLevelNum(Mockito.anyInt());
+    order.verify(arena, Mockito.times(1)).setDozer(Mockito.any());
+    order.verify(arena, Mockito.times(1)).setWalls(Mockito.any());
+    order.verify(arena, Mockito.times(1)).setCollisionWalls(Mockito.any());
+    order.verify(arena, Mockito.times(1)).setBoulders(Mockito.any());
+    order.verify(arena, Mockito.times(1)).setTargets(Mockito.any());
     }
 }
