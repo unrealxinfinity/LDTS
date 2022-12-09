@@ -6,7 +6,12 @@ import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 
 public class BoulderEditorState extends EditorState{
     public BoulderEditorState(EditorArena arena) {
-        super(arena,"&");
+        super(arena);
+    }
+
+    @Override
+    protected void setPlacingElem() {
+        placingElem = "&";
     }
 
     @Override
