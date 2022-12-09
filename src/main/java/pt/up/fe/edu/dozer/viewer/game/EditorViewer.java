@@ -20,7 +20,7 @@ public class EditorViewer extends Viewer<EditorArena> {
     protected void drawElements(GUI gui, long time) {
         viewer.drawElements(gui, time);
         PlacerViewer placerViewer = new PlacerViewer();
-        gui.drawText(new Position(0,12),"Now placing: "+placingElem,"#FFFFFF");
+        gui.drawText(new Position(0,0),"Placing: "+placingElem,"#FFFFFF");
         placerViewer.draw(getModel().getPlacer(), gui);
     }
 
