@@ -227,6 +227,17 @@ public class LanternaGUITest {
     }
 
     @Test
+    void getNextActionRemove() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Backspace);
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.REMOVE, action);
+    }
+
+    @Test
     void getNextActionCycle() throws IOException {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
         Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Tab);
