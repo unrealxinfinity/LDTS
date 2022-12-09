@@ -32,9 +32,10 @@ public class MainGame {
 
     public void setState(State s){
         state=s;
-        if(s!=null&&!s.get_is_editor()) initialTime=System.currentTimeMillis();
+    }
 
-
+    public void resetTimer() {
+        initialTime = System.currentTimeMillis();
     }
     public MainGame() throws FontFormatException, IOException, URISyntaxException {
         this.state = new MenuState(new MainMenu());

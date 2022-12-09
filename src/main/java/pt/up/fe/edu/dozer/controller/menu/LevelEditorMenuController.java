@@ -47,7 +47,9 @@ public class LevelEditorMenuController extends Controller<Menu> {
                     ((LevelSelect)getModel()).incrementCurrentDigit();
                 break;
             case PAUSE:
+                game.resetTimer();
                 game.setState(new MenuState(new MainMenu()));
+                break;
         }
     }
 

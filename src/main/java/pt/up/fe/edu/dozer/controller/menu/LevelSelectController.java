@@ -12,6 +12,7 @@ import pt.up.fe.edu.dozer.state.GameState;
 import pt.up.fe.edu.dozer.state.menu.MenuState;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class LevelSelectController extends Controller<Menu> {
     public LevelSelectController(LevelSelect menu){super(menu);}
@@ -27,16 +28,20 @@ public class LevelSelectController extends Controller<Menu> {
                 if(getModel().isSelected(0)) getModel().nextEntry();
                 break;
             case SELECT:
-                if (getModel().getCurrentEntry() == "Start") {
+                if (Objects.equals(getModel().getCurrentEntry(), "Start")) {
                     try {
                         int selectedLevel = ((LevelSelect) getModel()).getSelectedLevel();
                         Arena arena = new LoaderArenaBuilder(selectedLevel).createArena();
+                        game.resetTimer();
                         game.setState(new GameState(arena));
                     } catch (NullPointerException ignored) {
                         System.out.print("No correspondent level");
                     }
                 }
-                if (getModel().getCurrentEntry() == "Back") game.setState(new MenuState(new MainMenu()));
+                if (Objects.equals(getModel().getCurrentEntry(), "Back")) {
+                    game.resetTimer();
+                    game.setState(new MenuState(new MainMenu()));
+                }
                 break;
 
             case LEFT:

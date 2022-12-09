@@ -23,10 +23,14 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT :
                 if (getModel().isSelected(2)) game.setState(null);
-                if(getModel().isSelected(0)) game.setState(new LevelSelectState(new LevelSelect()));
-                if(getModel().isSelected(1)) game.setState(new DozerEditorState(new EditorArena(20,12)));
-
-
+                if(getModel().isSelected(0)) {
+                    game.resetTimer();
+                    game.setState(new LevelSelectState(new LevelSelect()));
+                }
+                if(getModel().isSelected(1)) {
+                    game.resetTimer();
+                    game.setState(new DozerEditorState(new EditorArena(20, 12)));
+                }
         }
     }
 }

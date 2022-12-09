@@ -11,7 +11,7 @@ public abstract class EditorState extends State<EditorArena> {
     protected String placingElem;
     //added another parameter which each of the subclasses will do super(arena,string);
     public EditorState(EditorArena arena) {
-        super(arena,true);
+        super(arena);
         //NEW to pass the placingelem to the editor viewer
     }
     //this was an attempt

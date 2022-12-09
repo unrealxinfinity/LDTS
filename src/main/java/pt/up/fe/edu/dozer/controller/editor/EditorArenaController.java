@@ -35,10 +35,13 @@ public abstract class EditorArenaController extends EditorController{
             game.setState(new DozerEditorState(new EditorArena(20,12)));
         }
         else if(action == GUI.ACTION.PAUSE){
+            game.resetTimer();
             game.setState(new MenuState(new MainMenu()));
         }
-        else if(action == GUI.ACTION.SAVE)
+        else if(action == GUI.ACTION.SAVE) {
+            game.resetTimer();
             game.setState(new LevelEditorMenuState(new LevelEditorMenu()));
+        }
         else this.controller.step(game, action, time);
     }
 
