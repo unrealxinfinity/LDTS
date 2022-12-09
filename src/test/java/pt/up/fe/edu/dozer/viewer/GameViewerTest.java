@@ -35,7 +35,7 @@ public class GameViewerTest {
         DozerViewer dozerViewer = Mockito.mock(DozerViewer.class);
         TargetViewer targetViewer = Mockito.mock(TargetViewer.class);
         BoulderViewer boulderViewer = Mockito.mock(BoulderViewer.class);
-        InOrder order = Mockito.inOrder(dozerViewer, targetViewer, boulderViewer, wallViewer);
+        InOrder order = Mockito.inOrder(dozerViewer, targetViewer, boulderViewer, wallViewer, gui);
 
         GameViewer viewer = new GameViewer(arena, builder);
         Mockito.when(builder.getBoulderViewer()).thenReturn(boulderViewer);
@@ -48,6 +48,8 @@ public class GameViewerTest {
         order.verify(targetViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
         order.verify(boulderViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
         order.verify(dozerViewer, Mockito.times(1)).draw(Mockito.any(), Mockito.eq(gui));
+        order.verify(gui, Mockito.times(1)).drawTime(Mockito.any(), Mockito.eq((long)0), Mockito.any());
+        order.verify(gui, Mockito.times(2)).drawText(Mockito.any(),Mockito.any(),Mockito.any());
     }
 
     @Test

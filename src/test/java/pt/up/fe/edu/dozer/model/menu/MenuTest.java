@@ -1,4 +1,4 @@
-package pt.up.fe.edu.dozer.model;
+package pt.up.fe.edu.dozer.model.menu;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

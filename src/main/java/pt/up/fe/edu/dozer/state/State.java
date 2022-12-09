@@ -15,7 +15,7 @@ public abstract class State<T> {
     public State(T model) {
         this.model = model;
         this.viewer = getViewer();
-      this.controller=getController();
+        this.controller=getController();
     }
 
     protected abstract Viewer<T> getViewer();
@@ -31,4 +31,5 @@ public abstract class State<T> {
         controller.step(game, action, time);
         viewer.draw(gui,time);
     }
+
 }

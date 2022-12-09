@@ -9,6 +9,15 @@ public class EditorArena extends Arena{
         this.placer = new Placer(5, 5, new Dozer(5,5));
     }
 
+    public Arena getArena() {
+        Arena arena = new Arena(getWidth(), getHeight());
+        arena.setDozer(getDozer());
+        arena.setCollisionWalls(getCollisionWalls());
+        arena.setTargets(getTargets());
+        arena.setBoulders(getBoulders());
+        return arena;
+    }
+
     public Placer getPlacer() {
         return placer;
     }

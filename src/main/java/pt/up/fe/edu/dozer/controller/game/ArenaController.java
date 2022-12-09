@@ -5,6 +5,7 @@ import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.arena.ArenaBuilder;
+import pt.up.fe.edu.dozer.model.game.arena.LevelReader;
 import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.GameState;
@@ -34,21 +35,25 @@ public class ArenaController extends GameController{
         if (action == GUI.ACTION.PAUSE)
             game.setState(new MenuState(new MainMenu()));
         else if (action == GUI.ACTION.RESTART) {
-            ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum());
-            game.setState(new GameState(builder.createArena()));
+            ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum(), new LevelReader());
+            game.resetTimer();
+            game.setState(new GameState(builder.createArena(new Arena())));
         }
         else if (this.numTargets == this.targetController.getBouldersInTargets()) {
             try {
-                ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1);
+                ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1, new LevelReader());
+                game.resetTimer();
                 AudioManager passLevelAudio= new AudioManager("/audio/monkeyApplause.wav");
                 passLevelAudio.play();
-                game.setState(new GameState(builder.createArena()));
-
+                game.setState(new GameState(builder.createArena(new Arena())));
+            } catch (NullPointerException e) {
+                game.resetTimer();
+                game.setState(new MenuState(new MainMenu()));
 
             }
-            catch (NullPointerException ignored) {}
             catch (UnsupportedAudioFileException ignored) {}
             catch (LineUnavailableException ignored) {}
+
         }
         else this.dozerController.step(game, action, time);
     }
