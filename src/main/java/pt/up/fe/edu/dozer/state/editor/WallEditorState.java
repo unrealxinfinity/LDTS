@@ -10,6 +10,11 @@ public class WallEditorState extends EditorState{
     }
 
     @Override
+    protected void setPlacingElem() {
+        placingElem = "#";
+    }
+
+    @Override
     protected Controller<EditorArena> getController() {
         return new EditorArenaWallController(getModel());
     }

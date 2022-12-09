@@ -15,9 +15,11 @@ import java.io.IOException;
 public abstract class EditorArenaController extends EditorController{
     private final PlacerController controller;
 
+
     public EditorArenaController(EditorArena arena) {
         super(arena);
         this.controller = new PlacerController(arena);
+
     }
 
     @Override

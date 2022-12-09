@@ -10,6 +10,11 @@ public class TargetEditorState extends EditorState{
     }
 
     @Override
+    protected void setPlacingElem() {
+        placingElem = "+";
+    }
+
+    @Override
     protected Controller<EditorArena> getController() {
         return new EditorArenaTargetController(getModel());
     }
