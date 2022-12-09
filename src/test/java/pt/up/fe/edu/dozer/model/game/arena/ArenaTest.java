@@ -86,4 +86,19 @@ public class ArenaTest {
 
         Assertions.assertNotNull(dozer);
     }
+
+    @Test
+    public void getHeight() {
+        Assertions.assertEquals(20, arena.getHeight());
+    }
+
+    @Test
+    public void getWidth() {
+        Assertions.assertEquals(20, arena.getWidth());
+    }
+
+    @Test
+    public void getLevelNum() {
+        Assertions.assertEquals(-1, arena.getLevelNum());
+    }
 }
