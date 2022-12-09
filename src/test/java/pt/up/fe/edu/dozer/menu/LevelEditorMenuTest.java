@@ -27,27 +27,27 @@ public class LevelEditorMenuTest {
     @Test
     public void incrementCurrentDigitTest(){
 
-        Assertions.assertEquals(0,valuesCheck.getSelectedLevel());
-        valuesCheck.incrementCurrentDigit();
-        Assertions.assertEquals(0,valuesCheck.getSelectedLevel());
-        valuesCheck.nextEntry();
+        Assertions.assertEquals(1,valuesCheck.getSelectedLevel());
         valuesCheck.incrementCurrentDigit();
         Assertions.assertEquals(1,valuesCheck.getSelectedLevel());
+        valuesCheck.nextEntry();
+        valuesCheck.incrementCurrentDigit();
+        Assertions.assertEquals(2,valuesCheck.getSelectedLevel());
 
     }
 
     @Test
     public void decrementCurrentDigitTest(){
-        Assertions.assertEquals(0,valuesCheck.getSelectedLevel());
+        Assertions.assertEquals(1,valuesCheck.getSelectedLevel());
         valuesCheck.nextEntry();
         valuesCheck.incrementCurrentDigit();
-        Assertions.assertEquals(1,valuesCheck.getSelectedLevel());
+        Assertions.assertEquals(2,valuesCheck.getSelectedLevel());
         valuesCheck.nextEntry();
         valuesCheck.decrementCurrentDigit();
-        Assertions.assertEquals(1,valuesCheck.getSelectedLevel());
+        Assertions.assertEquals(2,valuesCheck.getSelectedLevel());
         valuesCheck.previousEntry();
         valuesCheck.decrementCurrentDigit();
-        Assertions.assertEquals(0,valuesCheck.getSelectedLevel());
+        Assertions.assertEquals(1,valuesCheck.getSelectedLevel());
 
 
     }
