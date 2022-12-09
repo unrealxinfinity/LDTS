@@ -32,17 +32,19 @@ public class LevelSelectController extends Controller<Menu> {
                         int selectedLevel = ((LevelSelect) getModel()).getSelectedLevel();
                         Arena arena = new LoaderArenaBuilder(selectedLevel).createArena();
                         game.setState(new GameState(arena));
-                    } catch (NullPointerException ignored) {}
+                    } catch (NullPointerException ignored) {
+                        System.out.print("No correspondent level");
+                    }
                 }
                 if (getModel().getCurrentEntry() == "Back") game.setState(new MenuState(new MainMenu()));
                 break;
 
             case LEFT:
-                if(getModel().isSelected(0) || getModel().isSelected(1))
+                if( getModel().isSelected(1))
                     ((LevelSelect)getModel()).decrementCurrentDigit();
                 break;
             case RIGHT:
-                if(getModel().isSelected(0) || getModel().isSelected(1))
+                if( getModel().isSelected(1))
                     ((LevelSelect)getModel()).incrementCurrentDigit();
                 break;
 

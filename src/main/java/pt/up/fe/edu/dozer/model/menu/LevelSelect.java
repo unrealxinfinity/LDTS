@@ -4,7 +4,7 @@ import static java.lang.Math.abs;
 
 public class LevelSelect extends Menu{
     public LevelSelect() {
-        super("Select Level:","0","Start", "Back");
+        super("Select Level:","1","Start", "Back");
     }
     public LevelSelect(String... strings){
         super(strings);
@@ -13,16 +13,13 @@ public class LevelSelect extends Menu{
     public void decrementCurrentDigit() {
         if (getSelectedNum() !=1) return;
         int digit = Integer.parseInt(getCurrentEntry());
-        if(digit==0)digit=10;
-        else digit--;
-        setCurrentEntryTo(Integer.toString(digit));
+        setCurrentEntryTo(Integer.toString((digit==1)?digit:--digit));
     }
 
     public void incrementCurrentDigit() {
         if (getSelectedNum() !=1) return;
         int digit = Integer.parseInt(getCurrentEntry());
         digit++;
-        digit = digit%11;
         setCurrentEntryTo(Integer.toString(digit));
     }
     protected void setCurrentEntryTo(String s) {

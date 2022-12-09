@@ -32,16 +32,18 @@ public class LevelEditorMenuController extends Controller<Menu> {
                 if (getModel().getSelectedNum()==2) {
                     try {
                         //Something to implement to save the levels
-                    } catch (NullPointerException ignored) {}
+                    } catch (NullPointerException ignored) {
+
+                    }
                 }
                 break;
 
             case LEFT:
-                if(getModel().isSelected(0) || getModel().isSelected(1))
+                if( getModel().isSelected(1))
                     ((LevelSelect)getModel()).decrementCurrentDigit();
                 break;
             case RIGHT:
-                if(getModel().isSelected(0) || getModel().isSelected(1))
+                if(getModel().isSelected(1))
                     ((LevelSelect)getModel()).incrementCurrentDigit();
                 break;
             case PAUSE:
