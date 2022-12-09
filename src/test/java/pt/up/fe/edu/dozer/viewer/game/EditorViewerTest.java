@@ -24,7 +24,7 @@ public class EditorViewerTest {
         Mockito.when(builder.getPlacerViewer()).thenReturn(placerViewer);
         Mockito.when(arena.getPlacer()).thenReturn(placer);
 
-        EditorViewer editorViewer = new EditorViewer(arena, builder, gameViewer);
+        EditorViewer editorViewer = new EditorViewer(arena, builder, gameViewer, null);
         InOrder order = Mockito.inOrder(gameViewer, builder, placerViewer);
         editorViewer.drawElements(gui, 0);
 

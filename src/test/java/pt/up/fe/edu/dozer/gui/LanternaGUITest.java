@@ -195,7 +195,7 @@ public class LanternaGUITest {
     @Test
     void getNextActionUnknown() throws IOException {
         KeyStroke stroke = Mockito.mock(KeyStroke.class);
-        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Backspace);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Unknown);
         Mockito.when(screen.pollInput()).thenReturn(stroke);
 
         GUI.ACTION action = gui.getNextAction();
