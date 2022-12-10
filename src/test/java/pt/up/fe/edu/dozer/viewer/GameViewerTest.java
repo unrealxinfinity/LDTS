@@ -53,6 +53,37 @@ public class GameViewerTest {
     }
 
     @Test
+    public void drawElementsTestWithLevel() {
+        Arena arena = new Arena(20,20, 2);
+        arena.setDozer(new Dozer(5,5));
+        arena.setBoulders(Arrays.asList(new Boulder(3,4), new Boulder(7,7)));
+        arena.setTargets(Arrays.asList(new Target(7,7), new Target(8,9)));
+        arena.setWalls(Arrays.asList(new Wall(1,1), new Wall(2,2), new Wall(10,10)));
+        arena.setCollisionWalls(Arrays.asList(new ImportantWall(3,3), new ImportantWall(11,11), new ImportantWall(13,14)));
+
+        ElementViewerBuilder builder = Mockito.mock(ElementViewerBuilder.class);
+        WallViewer wallViewer = Mockito.mock(WallViewer.class);
+        DozerViewer dozerViewer = Mockito.mock(DozerViewer.class);
+        TargetViewer targetViewer = Mockito.mock(TargetViewer.class);
+        BoulderViewer boulderViewer = Mockito.mock(BoulderViewer.class);
+        InOrder order = Mockito.inOrder(dozerViewer, targetViewer, boulderViewer, wallViewer, gui);
+
+        GameViewer viewer = new GameViewer(arena, builder);
+        Mockito.when(builder.getBoulderViewer()).thenReturn(boulderViewer);
+        Mockito.when(builder.getDozerViewer()).thenReturn(dozerViewer);
+        Mockito.when(builder.getTargetViewer()).thenReturn(targetViewer);
+        Mockito.when(builder.getWallViewer()).thenReturn(wallViewer).thenReturn(wallViewer);
+        viewer.drawElements(gui,0);
+
+        order.verify(wallViewer, Mockito.times(6)).draw(Mockito.any(), Mockito.eq(gui));
+        order.verify(targetViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
+        order.verify(boulderViewer, Mockito.times(2)).draw(Mockito.any(), Mockito.eq(gui));
+        order.verify(dozerViewer, Mockito.times(1)).draw(Mockito.any(), Mockito.eq(gui));
+        order.verify(gui, Mockito.times(1)).drawTime(Mockito.any(), Mockito.eq((long)0), Mockito.any());
+        order.verify(gui, Mockito.times(3)).drawText(Mockito.any(),Mockito.any(),Mockito.any());
+    }
+
+    @Test
     public void drawTest() throws IOException {
     InOrder order = Mockito.inOrder(gui);
     Arena arena = Mockito.mock(Arena.class);
