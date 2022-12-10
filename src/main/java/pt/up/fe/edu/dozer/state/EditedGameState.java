@@ -8,13 +8,17 @@ import pt.up.fe.edu.dozer.viewer.Viewer;
 import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
 import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class EditedGameState extends GameState{
     public EditedGameState(EditorArena arena) {
         super(arena);
     }
 
     @Override
-    protected Controller<Arena> getController() {
+    protected Controller<Arena> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         return new EditedArenaController((EditorArena)getModel());
     }
 }
