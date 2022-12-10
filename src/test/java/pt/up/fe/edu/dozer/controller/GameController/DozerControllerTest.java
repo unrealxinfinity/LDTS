@@ -10,6 +10,10 @@ import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.elements.Dozer;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class DozerControllerTest {
     private Arena arena;
     private Dozer dozer;
@@ -25,7 +29,7 @@ public class DozerControllerTest {
     }
 
     @Test
-    public void stepTestLeft() {
+    public void stepTestLeft() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         DozerController dozerController = new DozerController(arena, null);
 
         dozerController.step(null, GUI.ACTION.LEFT, 0);
@@ -34,7 +38,7 @@ public class DozerControllerTest {
     }
 
     @Test
-    public void stepTestRight() {
+    public void stepTestRight() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         DozerController dozerController = new DozerController(arena, null);
 
         dozerController.step(null, GUI.ACTION.RIGHT, 0);
@@ -43,7 +47,7 @@ public class DozerControllerTest {
     }
 
     @Test
-    public void stepTestDown() {
+    public void stepTestDown() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         DozerController dozerController = new DozerController(arena, null);
 
         dozerController.step(null, GUI.ACTION.DOWN, 0);
@@ -52,7 +56,7 @@ public class DozerControllerTest {
     }
 
     @Test
-    public void stepTestUp() {
+    public void stepTestUp() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         DozerController dozerController = new DozerController(arena, null);
 
         dozerController.step(null, GUI.ACTION.UP, 0);

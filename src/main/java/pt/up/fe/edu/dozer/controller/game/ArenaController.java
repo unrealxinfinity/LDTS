@@ -21,9 +21,8 @@ public class ArenaController extends GameController{
     private final TargetController targetController;
     private final int numTargets;
 
-    public ArenaController(Arena arena) {
-        super(arena);
-
+    public ArenaController(Arena arena) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        super(arena,new AudioManager("/audio/monkeyApplause.wav"));
         this.targetController = new TargetController(arena);
         this.boulderController = new BoulderController(arena, this.targetController);
         this.dozerController = new DozerController(arena, this.boulderController);
@@ -43,16 +42,13 @@ public class ArenaController extends GameController{
             try {
                 ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1, new LevelReader());
                 game.resetTimer();
-                AudioManager passLevelAudio= new AudioManager("/audio/monkeyApplause.wav");
-                passLevelAudio.play();
+                getSound().play();
                 game.setState(new GameState(builder.createArena(new Arena())));
             } catch (NullPointerException e) {
                 game.resetTimer();
                 game.setState(new MenuState(new MainMenu()));
 
             }
-            catch (UnsupportedAudioFileException ignored) {}
-            catch (LineUnavailableException ignored) {}
 
         }
         else this.dozerController.step(game, action, time);

@@ -12,22 +12,12 @@ import java.io.IOException;
 
 public class DozerController extends GameController{
     private BoulderController boulderController;
-    private AudioManager movingSound;
-
     public enum directions {UP, DOWN, LEFT, RIGHT};
     private directions direction;
-    public DozerController(Arena arena, BoulderController boulderController){
-        super(arena);
+    public DozerController(Arena arena, BoulderController boulderController) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        super(arena,new AudioManager("/audio/movement.wav"));
         this.boulderController = boulderController;
-        try{
-            movingSound= new AudioManager("/audio/jumpCoin.wav");
-        }catch (UnsupportedAudioFileException e) {
-            System.out.print("Audio file format not supported for dozerController");
-        } catch (LineUnavailableException e) {
-            System.out.print("Audio already in use in dozerController");
-        } catch (IOException e) {
-            System.out.print("Audio not found");
-        }
+
     }
     private void moveDozer(Position p){
         if (getModel().isBoulder(p)) {
@@ -47,23 +37,26 @@ public class DozerController extends GameController{
     public void moveDozerLeft() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         this.direction = directions.LEFT;
         moveDozer(getModel().getDozer().getPosition().moveLeft());
-
-        movingSound.play();
+        getSound().restartAudio();
+        getSound().play();
     }
     public void moveDozerRight() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         this.direction = directions.RIGHT;
         moveDozer(getModel().getDozer().getPosition().moveRight());
-        movingSound.play();
+        getSound().restartAudio();
+        getSound().play();
     }
     public void moveDozerUP() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         this.direction = directions.UP;
         moveDozer(getModel().getDozer().getPosition().moveUp());
-        movingSound.play();
+        getSound().restartAudio();
+        getSound().play();
     }
     public void moveDozerDown() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         this.direction = directions.DOWN;
         moveDozer(getModel().getDozer().getPosition().moveDown());
-        movingSound.play();
+        getSound().restartAudio();
+        getSound().play();
     }
 
     @Override
@@ -76,9 +69,9 @@ public class DozerController extends GameController{
                case RIGHT -> moveDozerRight();
            }
        }catch (UnsupportedAudioFileException e) {
-           System.out.print("Audio file format not supported for dozerController");
+           System.out.print("Audio file format not supported ");
        } catch (LineUnavailableException e) {
-           System.out.print("Audio already in use in dozerController");
+           System.out.print("Audio already in use");
        } catch (IOException e) {
            System.out.print("Audio not found");
        }

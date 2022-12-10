@@ -11,6 +11,8 @@ import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -25,7 +27,7 @@ public class MenuControllerTest {
     MainMenu menuMock;
     TextGraphics graphics;
     @BeforeEach
-    public void setUp() throws IOException, URISyntaxException, FontFormatException {
+    public void setUp() throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
         behaviourCheck= Mockito.mock(MenuController.class);
         menuMock=Mockito.mock(MainMenu.class);
         InternalsCheck=new MenuController(menuMock); // Passar para construtor para testar se o mock for chamado dentro dos metodos

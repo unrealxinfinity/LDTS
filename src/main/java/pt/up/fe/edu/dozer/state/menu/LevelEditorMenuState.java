@@ -10,6 +10,10 @@ import pt.up.fe.edu.dozer.state.State;
 import pt.up.fe.edu.dozer.viewer.Viewer;
 import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class LevelEditorMenuState extends State<Menu> {
     public LevelEditorMenuState(LevelEditorMenu menu){
         super(menu);
@@ -21,7 +25,7 @@ public class LevelEditorMenuState extends State<Menu> {
     }
 
     @Override
-    protected Controller<Menu> getController() {
+    protected Controller<Menu> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         return new LevelEditorMenuController( (LevelEditorMenu) getModel());
     }
 }
