@@ -1,6 +1,7 @@
 package pt.up.fe.edu.dozer.controller.menu;
 
 import pt.up.fe.edu.dozer.MainGame;
+import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
@@ -12,45 +13,68 @@ import pt.up.fe.edu.dozer.model.menu.Menu;
 import pt.up.fe.edu.dozer.state.GameState;
 import pt.up.fe.edu.dozer.state.menu.MenuState;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class LevelEditorMenuController extends Controller<Menu> {
-    public LevelEditorMenuController(LevelEditorMenu menu){
-        super(menu);
+    public LevelEditorMenuController(LevelEditorMenu menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        super(menu,new AudioManager("/audio/menu.wav"));
     }
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
-        switch (action) {
-            case UP:
-                getModel().previousEntry();
-                if(getModel().isSelected(0)) getModel().previousEntry();
-                break;
-            case DOWN:
-                getModel().nextEntry();
-                if(getModel().isSelected(0)) getModel().nextEntry();
-                break;
-            case SELECT:
-                if (getModel().getSelectedNum()==2) {
-                    try {
-                        //Something to implement to save the levels
-                    } catch (NullPointerException ignored) {
+        try {
+            switch (action) {
+                case UP:
+                    getSound().restartAudio();
+                    getSound().play();
+                    getModel().previousEntry();
+                    if (getModel().isSelected(0)) getModel().previousEntry();
+                    break;
+                case DOWN:
+                    getSound().restartAudio();
+                    getSound().play();
+                    getModel().nextEntry();
+                    if (getModel().isSelected(0)) getModel().nextEntry();
+                    break;
+                case SELECT:
+                    getSound().restartAudio();
+                    getSound().play();
+                    if (getModel().getSelectedNum() == 2) {
+                        try {
+                            //Something to implement to save the levels
+                        } catch (NullPointerException ignored) {
 
+                        }
                     }
-                }
-                break;
+                    break;
 
-            case LEFT:
-                if( getModel().isSelected(1))
-                    ((LevelSelect)getModel()).decrementCurrentDigit();
-                break;
-            case RIGHT:
-                if(getModel().isSelected(1))
-                    ((LevelSelect)getModel()).incrementCurrentDigit();
-                break;
-            case PAUSE:
-                game.resetTimer();
-                game.setState(new MenuState(new MainMenu()));
-                break;
+                case LEFT:
+                    getSound().restartAudio();
+                    getSound().play();
+                    if (getModel().isSelected(1))
+                        ((LevelSelect) getModel()).decrementCurrentDigit();
+                    break;
+                case RIGHT:
+                    getSound().restartAudio();
+                    getSound().play();
+                    if (getModel().isSelected(1))
+                        ((LevelSelect) getModel()).incrementCurrentDigit();
+                    break;
+                case PAUSE:
+                    getSound().restartAudio();
+                    getSound().play();
+                    game.resetTimer();
+                    game.setState(new MenuState(new MainMenu()));
+                    break;
+            }
+        } catch (UnsupportedAudioFileException e) {
+            System.out.print("File not Supported");
+            throw new RuntimeException(e);
+        } catch (LineUnavailableException e) {
+            System.out.print("Audio in use");
+            throw new RuntimeException(e);
         }
     }
+
 
 }

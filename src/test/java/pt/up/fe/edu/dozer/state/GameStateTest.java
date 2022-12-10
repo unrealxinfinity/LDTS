@@ -7,6 +7,8 @@ import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class GameStateTest {
@@ -25,7 +27,7 @@ public class GameStateTest {
     }
 
     @Test
-    public void getController() {
+    public void getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         GameState state = new GameState(new Arena(20,20));
 
         Assertions.assertNotNull(state.getController());

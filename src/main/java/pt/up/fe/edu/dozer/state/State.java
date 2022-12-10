@@ -5,6 +5,8 @@ import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.viewer.Viewer;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public abstract class State<T> {
@@ -15,12 +17,24 @@ public abstract class State<T> {
     public State(T model) {
         this.model = model;
         this.viewer = getViewer();
-        this.controller=getController();
+
+        try{
+            this.controller=getController();
+        } catch (UnsupportedAudioFileException e) {
+            System.out.print("File not Supported");
+            throw new RuntimeException(e);
+        } catch (LineUnavailableException e) {
+            System.out.print("Audio in use");
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            System.out.print("File doenst exist");
+            throw new RuntimeException(e);
+        }
     }
 
     protected abstract Viewer<T> getViewer();
 
-    protected abstract Controller<T> getController();
+    protected abstract Controller<T> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException;
 
     public T getModel() {
         return model;

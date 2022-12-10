@@ -8,6 +8,10 @@ import pt.up.fe.edu.dozer.viewer.Viewer;
 import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
 import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class GameState extends State<Arena>{
     public GameState(Arena arena){super(arena);}
     @Override
@@ -16,7 +20,7 @@ public class GameState extends State<Arena>{
     }
 
     @Override
-    protected Controller<Arena> getController() {
+    protected Controller<Arena> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 
         return new ArenaController(getModel());
 

@@ -49,6 +49,8 @@ public abstract class EditorArenaController extends EditorController{
                 //game.setState(new LevelEditorMenuState(new LevelEditorMenu()));
                 game.setState(new EditedGameState(getModel()));
             }
+            game.setState(new LevelEditorMenuState(new LevelEditorMenu()));
+
         }
         else this.controller.step(game, action, time);
     }
