@@ -29,7 +29,7 @@ public class EditorArena extends Arena{
         for (Boulder boulder : getBoulders())
             boulders.add(new Boulder(boulder.getPosition().getX(), boulder.getPosition().getY()));
         arena.setBoulders(boulders);
-        
+
         return arena;
     }
 
