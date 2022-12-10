@@ -80,7 +80,7 @@ public class MainGame {
 
 
         LanternaGUI gui = new LanternaGUI(screen);
-        int frameTime = 50;
+        int frameTime = 25;
         while (this.state!=null) {
             long startTime = System.currentTimeMillis();
             long elapsedTime = System.currentTimeMillis() - startTime;
