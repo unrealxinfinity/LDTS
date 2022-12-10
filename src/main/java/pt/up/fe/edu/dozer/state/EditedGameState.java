@@ -4,9 +4,6 @@ import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.controller.game.EditedArenaController;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
-import pt.up.fe.edu.dozer.viewer.Viewer;
-import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
-import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;

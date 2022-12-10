@@ -2,10 +2,7 @@ package pt.up.fe.edu.dozer.model.game.arena;
 
 import pt.up.fe.edu.dozer.model.game.elements.*;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 

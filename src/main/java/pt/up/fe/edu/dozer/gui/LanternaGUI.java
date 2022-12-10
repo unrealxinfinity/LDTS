@@ -7,11 +7,7 @@ import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import pt.up.fe.edu.dozer.model.Position;
 
-import java.awt.*;
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Objects;
 
 public class LanternaGUI implements GUI{

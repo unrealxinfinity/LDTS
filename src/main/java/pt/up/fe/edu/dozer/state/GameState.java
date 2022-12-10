@@ -1,7 +1,6 @@
 package pt.up.fe.edu.dozer.state;
 
 import pt.up.fe.edu.dozer.controller.Controller;
-
 import pt.up.fe.edu.dozer.controller.game.ArenaController;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.viewer.Viewer;

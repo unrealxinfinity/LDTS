@@ -1,7 +1,10 @@
 package pt.up.fe.edu.dozer.model.game.arena;
 
 import pt.up.fe.edu.dozer.model.Position;
-import pt.up.fe.edu.dozer.model.game.elements.*;
+import pt.up.fe.edu.dozer.model.game.elements.Boulder;
+import pt.up.fe.edu.dozer.model.game.elements.Dozer;
+import pt.up.fe.edu.dozer.model.game.elements.Target;
+import pt.up.fe.edu.dozer.model.game.elements.Wall;
 
 import java.util.ArrayList;
 import java.util.List;

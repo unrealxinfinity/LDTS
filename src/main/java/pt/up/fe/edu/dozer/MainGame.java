@@ -5,19 +5,11 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import pt.up.fe.edu.dozer.audio.AudioManager;
-import pt.up.fe.edu.dozer.controller.menu.MenuController;
-
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
-
-import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.state.editor.*;
-import pt.up.fe.edu.dozer.state.menu.MenuState;
 import pt.up.fe.edu.dozer.state.State;
-import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
+import pt.up.fe.edu.dozer.state.menu.MenuState;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;

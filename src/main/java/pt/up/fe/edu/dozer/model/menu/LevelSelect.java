@@ -1,7 +1,5 @@
 package pt.up.fe.edu.dozer.model.menu;
 
-import static java.lang.Math.abs;
-
 public class LevelSelect extends Menu{
     public LevelSelect() {
         super("Select Level:","1","Start", "Back");
