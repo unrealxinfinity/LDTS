@@ -11,8 +11,8 @@ public class EditorArena extends Arena{
         this.placer = new Placer(5, 5, new Dozer(5,5));
     }
 
-    public Arena getArena() {
-        Arena arena = new Arena(getWidth(), getHeight());
+    public EditorArena getArena() {
+        EditorArena arena = new EditorArena(getWidth(), getHeight());
         arena.setDozer(new Dozer(getDozer().getPosition().getX(), getDozer().getPosition().getY()));
 
         List<Wall> walls = new ArrayList<>();

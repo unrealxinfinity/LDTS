@@ -9,14 +9,12 @@ import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
 import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 
 public class EditedGameState extends GameState{
-    private EditorArena baseArena;
     public EditedGameState(EditorArena arena) {
-        super(arena.getArena());
-        this.baseArena = arena;
+        super(arena);
     }
 
     @Override
     protected Controller<Arena> getController() {
-        return new EditedArenaController(baseArena, getModel());
+        return new EditedArenaController((EditorArena)getModel());
     }
 }

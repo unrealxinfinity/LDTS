@@ -10,9 +10,9 @@ import java.io.IOException;
 
 public class EditedArenaController extends ArenaController{
     private final EditorArena baseArena;
-    public EditedArenaController(EditorArena baseArena, Arena model) {
-        super(model);
-        this.baseArena = baseArena;
+    public EditedArenaController(EditorArena baseArena) {
+        super(baseArena);
+        this.baseArena = baseArena.getArena();
     }
 
     @Override
