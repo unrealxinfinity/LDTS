@@ -1,6 +1,7 @@
 package pt.up.fe.edu.dozer.state;
 
 import pt.up.fe.edu.dozer.MainGame;
+import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.viewer.Viewer;
@@ -13,6 +14,7 @@ public abstract class State<T> {
     private final T model;
     private final Controller<T> controller;
     private final Viewer<T> viewer;
+
 
     public State(T model) {
         this.model = model;
@@ -31,7 +33,6 @@ public abstract class State<T> {
             throw new RuntimeException(e);
         }
     }
-
     protected abstract Viewer<T> getViewer();
 
     protected abstract Controller<T> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException;
@@ -39,6 +40,7 @@ public abstract class State<T> {
     public T getModel() {
         return model;
     }
+
 
     public void step(MainGame game, GUI gui, long time) throws IOException {
         GUI.ACTION action = gui.getNextAction();

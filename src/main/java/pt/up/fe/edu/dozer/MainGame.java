@@ -8,16 +8,12 @@ import com.googlecode.lanterna.terminal.Terminal;
 
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import pt.up.fe.edu.dozer.audio.AudioManager;
-import pt.up.fe.edu.dozer.controller.menu.MenuController;
 
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
 
-import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.state.editor.*;
 import pt.up.fe.edu.dozer.state.menu.MenuState;
 import pt.up.fe.edu.dozer.state.State;
-import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -31,6 +27,9 @@ import java.net.URL;
 public class MainGame {
     private State state;
     private long initialTime = System.currentTimeMillis();
+    private AudioManager BGM;
+    private boolean bgmMuted;
+
 
 
     public void setState(State s){
@@ -40,15 +39,28 @@ public class MainGame {
     public void resetTimer() {
         initialTime = System.currentTimeMillis();
     }
-    public MainGame() throws FontFormatException, IOException, URISyntaxException {
-        this.state = new MenuState(new MainMenu());
+    public void muteBGM(){
+        BGM.mute();
+        bgmMuted=true;
     }
-
+    public void resumeBGM(){
+        BGM.loop_sound();
+        bgmMuted=false;
+    }
+    public boolean isBgmMuted(){
+        return bgmMuted;
+    }
+    public AudioManager getBGM(){
+        return BGM;
+    }
+    public MainGame() throws FontFormatException, IOException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
+        this.state = new MenuState(new MainMenu());
+        this.BGM=new AudioManager("/audio/initSound.wav");
+    }
 
     public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
         new MainGame().start();
     }
-
 
     public void start() throws IOException, FontFormatException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
         URL resource = MainGame.class.getResource("/font/JoystixMonospace-Regular.ttf");
@@ -73,11 +85,10 @@ public class MainGame {
         screen.startScreen();             // screens must be started
         screen.doResizeIfNecessary();     // resize screen if necessary
         screen.refresh();
-
         //audio test -OK
         //AudioManager valuescheck=new AudioManager("/audio/monkeyApplause.wav");
         //valuescheck.play();
-
+        BGM.loop_sound();
 
         LanternaGUI gui = new LanternaGUI(screen);
         int frameTime = 50;

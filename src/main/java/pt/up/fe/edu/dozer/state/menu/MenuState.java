@@ -1,4 +1,5 @@
 package pt.up.fe.edu.dozer.state.menu;
+import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.controller.menu.MenuController;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
@@ -13,7 +14,10 @@ import java.io.IOException;
 
 
 public class MenuState extends State<Menu> {
-    public MenuState(MainMenu menu){super(menu);}
+    public MenuState(MainMenu menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        super(menu);
+
+    }
 
     @Override
     protected Viewer<Menu> getViewer() {

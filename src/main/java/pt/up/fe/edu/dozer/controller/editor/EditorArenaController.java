@@ -11,6 +11,8 @@ import pt.up.fe.edu.dozer.state.editor.EditorState;
 import pt.up.fe.edu.dozer.state.menu.LevelEditorMenuState;
 import pt.up.fe.edu.dozer.state.menu.MenuState;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public abstract class EditorArenaController extends EditorController{
@@ -40,7 +42,13 @@ public abstract class EditorArenaController extends EditorController{
         }
         else if(action == GUI.ACTION.PAUSE){
             game.resetTimer();
-            game.setState(new MenuState(new MainMenu()));
+            try {
+                game.setState(new MenuState(new MainMenu()));
+            } catch (UnsupportedAudioFileException e) {
+                throw new RuntimeException(e);
+            } catch (LineUnavailableException e) {
+                throw new RuntimeException(e);
+            }
         }
         else if(action == GUI.ACTION.SAVE) {
             if (getModel().getDozer() != null) {
@@ -50,6 +58,12 @@ public abstract class EditorArenaController extends EditorController{
             }
             game.setState(new LevelEditorMenuState(new LevelEditorMenu()));
 
+        }
+        else if(action== GUI.ACTION.MUTE){
+            if(game.isBgmMuted()){
+                game.resumeBGM();
+            }
+            else game.muteBGM();
         }
         else this.controller.step(game, action, time);
     }

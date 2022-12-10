@@ -36,7 +36,11 @@ public class MenuController extends Controller<Menu> {
                 case SELECT:
                     getSound().restartAudio();
                     getSound().play();
-                    if (getModel().isSelected(2)) game.setState(null);
+                    if (getModel().isSelected(2)) {
+                        game.getBGM().close();
+                        getSound().close();
+                        game.setState(null);
+                    }
                     if (getModel().isSelected(0)) {
                         game.resetTimer();
                         game.setState(new LevelSelectState(new LevelSelect()));
@@ -45,6 +49,11 @@ public class MenuController extends Controller<Menu> {
                         game.resetTimer();
                         game.setState(new DozerEditorState(new EditorArena(20, 12)));
                     }
+                    break;
+                case MUTE:
+                    if(game.isBgmMuted()) game.resumeBGM();
+                    else game.muteBGM();
+                    break;
 
             }
         } catch (UnsupportedAudioFileException e) {
@@ -54,6 +63,8 @@ public class MenuController extends Controller<Menu> {
             System.out.print("Audio in use");
             throw new RuntimeException(e);
         }
+
+
     }
 }
 

@@ -67,6 +67,11 @@ public class LevelSelectController extends Controller<Menu> {
                     if (getModel().isSelected(1))
                         ((LevelSelect) getModel()).incrementCurrentDigit();
                     break;
+                case MUTE:
+                    if(game.isBgmMuted()) game.resumeBGM();
+                    else game.muteBGM();
+                    break;
+
 
             }
         } catch (UnsupportedAudioFileException e) {

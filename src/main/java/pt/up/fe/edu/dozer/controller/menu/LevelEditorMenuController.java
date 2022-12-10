@@ -64,7 +64,12 @@ public class LevelEditorMenuController extends Controller<Menu> {
                     getSound().restartAudio();
                     getSound().play();
                     game.resetTimer();
+                    getSound().close();
                     game.setState(new MenuState(new MainMenu()));
+                    break;
+                case MUTE:
+                    if(game.isBgmMuted()) game.resumeBGM();
+                    else game.muteBGM();
                     break;
             }
         } catch (UnsupportedAudioFileException e) {
