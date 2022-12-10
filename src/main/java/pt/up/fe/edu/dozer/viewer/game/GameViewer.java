@@ -9,7 +9,7 @@ import pt.up.fe.edu.dozer.viewer.Viewer;
 import java.util.List;
 
 public class GameViewer extends Viewer<Arena> {
-    private ElementViewerBuilder builder;
+    private final ElementViewerBuilder builder;
     public GameViewer(Arena arena, ElementViewerBuilder builder) {
         super(arena);
         this.builder = builder;

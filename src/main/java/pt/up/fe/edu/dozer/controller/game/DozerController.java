@@ -11,8 +11,9 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class DozerController extends GameController{
-    private BoulderController boulderController;
-    public enum directions {UP, DOWN, LEFT, RIGHT};
+    private final BoulderController boulderController;
+    public enum directions {UP, DOWN, LEFT, RIGHT}
+
     private directions direction;
     public DozerController(Arena arena, BoulderController boulderController) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         super(arena,new AudioManager("/audio/movement.wav"));

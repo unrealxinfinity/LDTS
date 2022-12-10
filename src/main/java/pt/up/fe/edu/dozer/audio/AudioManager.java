@@ -11,7 +11,7 @@ import java.net.URL;
 public class AudioManager {
     private AudioInputStream soundStream;
     private Clip clip;
-    private String filepath;
+    private final String filepath;
 
     public AudioManager(String soundFilePath) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         filepath=soundFilePath;

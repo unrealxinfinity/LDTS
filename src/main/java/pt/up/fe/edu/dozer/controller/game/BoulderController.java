@@ -9,7 +9,7 @@ import pt.up.fe.edu.dozer.model.game.elements.Boulder;
 import java.io.IOException;
 
 public class BoulderController extends GameController{
-    private TargetController targetController;
+    private final TargetController targetController;
     public BoulderController(Arena arena, TargetController targetController) {
         super(arena);
         this.targetController = targetController;

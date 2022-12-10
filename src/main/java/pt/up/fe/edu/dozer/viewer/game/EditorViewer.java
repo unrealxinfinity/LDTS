@@ -7,7 +7,7 @@ import pt.up.fe.edu.dozer.viewer.Viewer;
 
 public class EditorViewer extends Viewer<EditorArena> {
     private final GameViewer viewer;
-    private String placingElem;
+    private final String placingElem;
     private final PlacerViewerBuilder builder;
 
     public EditorViewer(EditorArena arena, PlacerViewerBuilder builder, GameViewer viewer, String elem) {
