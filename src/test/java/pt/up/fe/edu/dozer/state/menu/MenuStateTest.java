@@ -6,6 +6,10 @@ import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class MenuStateTest  {
     @Test
     public void getViewerMain() {
@@ -15,7 +19,7 @@ public class MenuStateTest  {
     }
 
     @Test
-    public void getControllerMain() {
+    public void getControllerMain() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuState state = new MenuState(new MainMenu());
 
         Assertions.assertNotNull(state.getController());
@@ -29,7 +33,7 @@ public class MenuStateTest  {
     }
 
     @Test
-    public void getControllerSelect() {
+    public void getControllerSelect() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         LevelSelectState state = new LevelSelectState(new LevelSelect());
 
         Assertions.assertNotNull(state.getController());
