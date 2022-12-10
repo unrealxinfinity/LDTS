@@ -15,7 +15,7 @@ public abstract class Viewer<T> {
         return model;
     }
 
-    public void draw(GUI gui,long time) throws IOException {
+    public void draw(GUI gui, long time) throws IOException {
         gui.clear();
         drawElements(gui, time);
         gui.refresh();

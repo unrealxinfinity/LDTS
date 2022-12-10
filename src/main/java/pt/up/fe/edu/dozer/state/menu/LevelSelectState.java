@@ -13,7 +13,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class LevelSelectState extends State<Menu> {
-    public LevelSelectState(LevelSelect menu){
+    public LevelSelectState(LevelSelect menu) {
         super(menu);
         getModel().nextEntry();
     }
@@ -25,7 +25,7 @@ public class LevelSelectState extends State<Menu> {
 
     @Override
     protected Controller<Menu> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        return new LevelSelectController( (LevelSelect)getModel());
+        return new LevelSelectController((LevelSelect) getModel());
     }
 
 }

@@ -5,7 +5,7 @@ import pt.up.fe.edu.dozer.model.game.elements.ImportantWall;
 import pt.up.fe.edu.dozer.state.editor.DozerEditorState;
 import pt.up.fe.edu.dozer.state.editor.EditorState;
 
-public class EditorArenaWallController extends EditorArenaController{
+public class EditorArenaWallController extends EditorArenaController {
     public EditorArenaWallController(EditorArena arena) {
         super(arena);
     }

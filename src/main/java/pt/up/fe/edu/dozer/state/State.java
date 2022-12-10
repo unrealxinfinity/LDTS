@@ -18,8 +18,8 @@ public abstract class State<T> {
         this.model = model;
         this.viewer = getViewer();
 
-        try{
-            this.controller=getController();
+        try {
+            this.controller = getController();
         } catch (UnsupportedAudioFileException e) {
             System.out.print("File not Supported");
             throw new RuntimeException(e);
@@ -43,7 +43,7 @@ public abstract class State<T> {
     public void step(MainGame game, GUI gui, long time) throws IOException {
         GUI.ACTION action = gui.getNextAction();
         controller.step(game, action, time);
-        viewer.draw(gui,time);
+        viewer.draw(gui, time);
     }
 
 }

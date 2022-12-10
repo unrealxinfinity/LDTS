@@ -13,12 +13,12 @@ public abstract class Menu {
 
     public void nextEntry() {
         currentEntry++;
-        if (currentEntry > this.entries.size() -1) currentEntry = 0;
+        if (currentEntry > this.entries.size() - 1) currentEntry = 0;
     }
 
     public void previousEntry() {
         currentEntry--;
-        if (currentEntry < 0) currentEntry = this.entries.size()-1;
+        if (currentEntry < 0) currentEntry = this.entries.size() - 1;
     }
 
     public String getEntry(int i) {
@@ -41,10 +41,6 @@ public abstract class Menu {
     public int getSelectedNum() {
         return currentEntry;
     }
-
-
-
-
 
 
 }

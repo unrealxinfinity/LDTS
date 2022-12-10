@@ -15,14 +15,14 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
-public class ArenaController extends GameController{
+public class ArenaController extends GameController {
     private final DozerController dozerController;
     private final BoulderController boulderController;
     private final TargetController targetController;
     private final int numTargets;
 
     public ArenaController(Arena arena) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(arena,new AudioManager("/audio/monkeyApplause.wav"));
+        super(arena, new AudioManager("/audio/monkeyApplause.wav"));
         this.targetController = new TargetController(arena);
         this.boulderController = new BoulderController(arena, this.targetController);
         this.dozerController = new DozerController(arena, this.boulderController);
@@ -35,8 +35,7 @@ public class ArenaController extends GameController{
             game.setState(new MenuState(new MainMenu()));
         else if (action == GUI.ACTION.RESTART) {
             restartArena(game);
-        }
-        else if (this.numTargets == this.targetController.getBouldersInTargets()) {
+        } else if (this.numTargets == this.targetController.getBouldersInTargets()) {
             try {
                 ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1, new LevelReader());
                 game.resetTimer();
@@ -48,8 +47,7 @@ public class ArenaController extends GameController{
 
             }
 
-        }
-        else this.dozerController.step(game, action, time);
+        } else this.dozerController.step(game, action, time);
     }
 
     protected void restartArena(MainGame game) throws IOException {

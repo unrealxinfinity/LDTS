@@ -10,10 +10,12 @@ import pt.up.fe.edu.dozer.model.Position;
 import java.io.IOException;
 import java.util.Objects;
 
-public class LanternaGUI implements GUI{
+public class LanternaGUI implements GUI {
     private final Screen screen;
 
-    public LanternaGUI(Screen screen) {this.screen = screen;}
+    public LanternaGUI(Screen screen) {
+        this.screen = screen;
+    }
 
     @Override
     public void clear() {
@@ -38,7 +40,7 @@ public class LanternaGUI implements GUI{
         if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
         if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.QUIT;
         if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'r') return ACTION.RESTART;
-        if(keyStroke.getKeyType()==KeyType.Character && keyStroke.getCharacter()=='s') return ACTION.SAVE;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 's') return ACTION.SAVE;
 
         if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
         if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
@@ -55,7 +57,8 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawBoulder(Position position) {
-        if (Objects.equals(screen.newTextGraphics().getCharacter(position.getX(), position.getY() + 1).getCharacterString(), "+")) drawCharacter(position, '~', "#D05E3B");
+        if (Objects.equals(screen.newTextGraphics().getCharacter(position.getX(), position.getY() + 1).getCharacterString(), "+"))
+            drawCharacter(position, '~', "#D05E3B");
         else drawCharacter(position, '&', "#362F2D");
     }
 
@@ -71,37 +74,40 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawWall(Position position) {
-        drawCharacter(position,'#', "#E0E0E0");
+        drawCharacter(position, '#', "#E0E0E0");
     }
 
-    private void drawCharacter(Position position, Character c, String colour)  {
+    private void drawCharacter(Position position, Character c, String colour) {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(colour));
-        graphics.putString(position.getX(), position.getY() +1, c.toString());
+        graphics.putString(position.getX(), position.getY() + 1, c.toString());
     }
+
     @Override
     public void drawText(Position position, String text, String color) {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(color));
         graphics.putString(position.getX(), position.getY(), text);
     }
+
     @Override
-    public void drawTime(Position position,long time,String color){
+    public void drawTime(Position position, long time, String color) {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(color));
-        graphics.putString(position.getX(),position.getY(),getStringTime(time));
+        graphics.putString(position.getX(), position.getY(), getStringTime(time));
     }
-    private String getStringTime(long time){
-        long minutes = time/60;
-        if(minutes>59) minutes=0;
-        long seconds = time - minutes*60;
+
+    private String getStringTime(long time) {
+        long minutes = time / 60;
+        if (minutes > 59) minutes = 0;
+        long seconds = time - minutes * 60;
         String m = String.valueOf(minutes);
 
-        String s= String.valueOf(seconds);
-        if(m.length()<2 && s.length()<2) return "0"+ m + ":" +"0"+ s;
-        else if(m.length() < 2 && s.length()==2) return "0"+ m + ":" + s ;
-        else if(m.length()==2 && s.length()<2) return  m + ":" +"0"+s;
-        else return m+":"+s;
+        String s = String.valueOf(seconds);
+        if (m.length() < 2 && s.length() < 2) return "0" + m + ":" + "0" + s;
+        else if (m.length() < 2 && s.length() == 2) return "0" + m + ":" + s;
+        else if (m.length() == 2 && s.length() < 2) return m + ":" + "0" + s;
+        else return m + ":" + s;
     }
 
 

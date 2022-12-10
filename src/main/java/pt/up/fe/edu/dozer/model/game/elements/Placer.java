@@ -1,8 +1,8 @@
 package pt.up.fe.edu.dozer.model.game.elements;
 
-public class Placer extends Element{
+public class Placer extends Element {
     public Placer(int x, int y, Element element) {
-        super(x,y);
+        super(x, y);
     }
 
     public void updateElement(Element element) {

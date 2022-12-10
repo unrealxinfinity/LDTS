@@ -25,13 +25,14 @@ public class MainGame {
     private long initialTime = System.currentTimeMillis();
 
 
-    public void setState(State s){
-        state=s;
+    public void setState(State s) {
+        state = s;
     }
 
     public void resetTimer() {
         initialTime = System.currentTimeMillis();
     }
+
     public MainGame() throws FontFormatException, IOException, URISyntaxException {
         this.state = new MenuState(new MainMenu());
     }
@@ -45,7 +46,7 @@ public class MainGame {
     public void start() throws IOException, FontFormatException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
         URL resource = MainGame.class.getResource("/font/JoystixMonospace-Regular.ttf");
         File fontFile = new File(resource.toURI());
-        Font font =  Font.createFont(Font.TRUETYPE_FONT, fontFile);
+        Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
@@ -73,14 +74,15 @@ public class MainGame {
 
         LanternaGUI gui = new LanternaGUI(screen);
         int frameTime = 25;
-        while (this.state!=null) {
+        while (this.state != null) {
             long startTime = System.currentTimeMillis();
             long elapsedTime = System.currentTimeMillis() - startTime;
-            state.step(this, gui, (startTime-initialTime)/1000);
+            state.step(this, gui, (startTime - initialTime) / 1000);
             long sleepTime = frameTime - elapsedTime;
             try {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
-            } catch (InterruptedException e ) {}
+            } catch (InterruptedException e) {
+            }
         }
         screen.close();
     }

@@ -5,7 +5,7 @@ import pt.up.fe.edu.dozer.model.game.elements.Boulder;
 import pt.up.fe.edu.dozer.state.editor.EditorState;
 import pt.up.fe.edu.dozer.state.editor.TargetEditorState;
 
-public class EditorArenaBoulderController extends EditorArenaController{
+public class EditorArenaBoulderController extends EditorArenaController {
     public EditorArenaBoulderController(EditorArena arena) {
         super(arena);
     }

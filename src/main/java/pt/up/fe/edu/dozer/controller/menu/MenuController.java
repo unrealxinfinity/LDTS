@@ -17,8 +17,9 @@ import java.io.IOException;
 
 public class MenuController extends Controller<Menu> {
     public MenuController(MainMenu menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(menu,new AudioManager("/audio/menu.wav"));
+        super(menu, new AudioManager("/audio/menu.wav"));
     }
+
     @Override
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
         try {

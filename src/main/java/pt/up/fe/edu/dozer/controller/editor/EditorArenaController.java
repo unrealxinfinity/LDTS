@@ -11,7 +11,7 @@ import pt.up.fe.edu.dozer.state.menu.MenuState;
 
 import java.io.IOException;
 
-public abstract class EditorArenaController extends EditorController{
+public abstract class EditorArenaController extends EditorController {
     private final PlacerController controller;
 
 
@@ -25,32 +25,27 @@ public abstract class EditorArenaController extends EditorController{
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
         if (action == GUI.ACTION.CYCLE) {
             game.setState(cycleState());
-        }
-        else if (action == GUI.ACTION.SELECT) {
+        } else if (action == GUI.ACTION.SELECT) {
             clearPosition();
             placeElement();
-        }
-        else if (action == GUI.ACTION.REMOVE) {
+        } else if (action == GUI.ACTION.REMOVE) {
             clearPosition();
-        }
-        else if(action == GUI.ACTION.RESTART){
-            game.setState(new DozerEditorState(new EditorArena(20,12)));
-        }
-        else if(action == GUI.ACTION.PAUSE){
+        } else if (action == GUI.ACTION.RESTART) {
+            game.setState(new DozerEditorState(new EditorArena(20, 12)));
+        } else if (action == GUI.ACTION.PAUSE) {
             game.resetTimer();
             game.setState(new MenuState(new MainMenu()));
-        }
-        else if(action == GUI.ACTION.SAVE) {
+        } else if (action == GUI.ACTION.SAVE) {
             if (getModel().getDozer() != null) {
                 game.resetTimer();
                 //game.setState(new LevelEditorMenuState(new LevelEditorMenu()));
                 game.setState(new EditedGameState(getModel()));
             }
-        }
-        else this.controller.step(game, action, time);
+        } else this.controller.step(game, action, time);
     }
 
     protected abstract EditorState cycleState();
+
     protected abstract void placeElement();
 
     private void clearPosition() {

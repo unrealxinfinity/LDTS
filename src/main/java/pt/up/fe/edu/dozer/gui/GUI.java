@@ -20,8 +20,10 @@ public interface GUI {
     void drawTarget(Position position);
 
     void drawBoulder(Position position);
+
     void drawText(Position position, String text, String color);
-    void drawTime(Position position,long time ,String color);
+
+    void drawTime(Position position, long time, String color);
 
     void drawPlacer(Position position);
 

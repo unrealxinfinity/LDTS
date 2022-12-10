@@ -8,8 +8,9 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
-public class EditedArenaController extends ArenaController{
+public class EditedArenaController extends ArenaController {
     private final EditorArena baseArena;
+
     public EditedArenaController(EditorArena baseArena) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         super(baseArena);
         this.baseArena = baseArena.getArena();

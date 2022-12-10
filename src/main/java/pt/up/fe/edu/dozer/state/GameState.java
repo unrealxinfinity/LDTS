@@ -11,11 +11,14 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
-public class GameState extends State<Arena>{
-    public GameState(Arena arena){super(arena);}
+public class GameState extends State<Arena> {
+    public GameState(Arena arena) {
+        super(arena);
+    }
+
     @Override
     protected Viewer<Arena> getViewer() {
-        return new GameViewer(getModel(),new ElementViewerBuilder());
+        return new GameViewer(getModel(), new ElementViewerBuilder());
     }
 
     @Override

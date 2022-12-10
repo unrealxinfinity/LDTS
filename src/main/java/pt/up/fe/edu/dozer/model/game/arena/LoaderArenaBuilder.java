@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoaderArenaBuilder extends ArenaBuilder{
+public class LoaderArenaBuilder extends ArenaBuilder {
     private final int level;
     private final List<String> lines;
 
