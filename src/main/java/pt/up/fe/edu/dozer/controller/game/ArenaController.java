@@ -32,9 +32,7 @@ public class ArenaController extends GameController{
         if (action == GUI.ACTION.PAUSE)
             game.setState(new MenuState(new MainMenu()));
         else if (action == GUI.ACTION.RESTART) {
-            ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum(), new LevelReader());
-            game.resetTimer();
-            game.setState(new GameState(builder.createArena(new Arena())));
+            restartArena(game);
         }
         else if (this.numTargets == this.targetController.getBouldersInTargets()) {
             try {
@@ -47,5 +45,11 @@ public class ArenaController extends GameController{
             }
         }
         else this.dozerController.step(game, action, time);
+    }
+
+    protected void restartArena(MainGame game) throws IOException {
+        ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum(), new LevelReader());
+        game.resetTimer();
+        game.setState(new GameState(builder.createArena(new Arena())));
     }
 }
