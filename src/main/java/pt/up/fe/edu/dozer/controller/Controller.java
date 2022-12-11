@@ -9,15 +9,18 @@ import java.io.IOException;
 public abstract class Controller<T> {
     private final T model;
     private AudioManager sound;
-    public Controller(T model){
-        this.model=model;
+
+    public Controller(T model) {
+        this.model = model;
     }
-    public Controller(T model,AudioManager audio){
-        this.model=model;
-        this.sound=audio;
+
+    public Controller(T model, AudioManager audio) {
+        this.model = model;
+        this.sound = audio;
 
     }
-    public AudioManager getSound(){
+
+    public AudioManager getSound() {
         return sound;
     }
 

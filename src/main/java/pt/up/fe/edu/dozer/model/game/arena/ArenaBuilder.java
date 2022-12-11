@@ -23,12 +23,19 @@ public abstract class ArenaBuilder {
     }
 
     protected abstract int getWidth();
+
     protected abstract int getHeight();
+
     protected abstract Dozer createDozer();
+
     protected abstract List<Wall> createWalls();
+
     protected abstract List<Wall> createCollisionWalls();
+
     protected abstract List<Boulder> createBoulders();
+
     protected abstract List<Target> createTargets();
+
     protected int getLevelNum() {
         return -1;
     }

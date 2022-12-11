@@ -22,6 +22,7 @@ public class LevelSelectController extends Controller<Menu> {
     public LevelSelectController(LevelSelect menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         super(menu,new AudioManager("/audio/menu.wav"));
     }
+
     @Override
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
         try {

@@ -10,19 +10,21 @@ public class AudioManager {
     private String filepath;
     private long time;
 
+
     public AudioManager(String soundFilePath) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        filepath=soundFilePath;
-        URL resource= AudioManager.class.getResource(soundFilePath);
-        soundStream= AudioSystem.getAudioInputStream(resource);
-        DataLine.Info info = new DataLine.Info(Clip.class,soundStream.getFormat());
-        clip=(Clip) AudioSystem.getLine(info);
+        filepath = soundFilePath;
+        URL resource = AudioManager.class.getResource(soundFilePath);
+        soundStream = AudioSystem.getAudioInputStream(resource);
+        DataLine.Info info = new DataLine.Info(Clip.class, soundStream.getFormat());
+        clip = (Clip) AudioSystem.getLine(info);
         clip.open(soundStream);
     }
 
-    public void play(){
+    public void play() {
         clip.setFramePosition(0);
         clip.start();
     }
+
     public void restartAudio() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         // implementacao mais custosa mas menos bug
         //clip.close();

@@ -7,7 +7,7 @@ import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 
 import java.io.IOException;
 
-public class PlacerController extends EditorController{
+public class PlacerController extends EditorController {
 
     public PlacerController(EditorArena arena) {
         super(arena);
@@ -18,22 +18,26 @@ public class PlacerController extends EditorController{
         boolean horizontal = position.getX() >= 0 && position.getX() < getModel().getWidth();
         if (vertical && horizontal) getModel().getPlacer().setPosition(position);
     }
+
     public void movePlacerLeft() {
         movePlacer(getModel().getPlacer().getPosition().moveLeft());
     }
-    public void movePlacerRight(){
+
+    public void movePlacerRight() {
         movePlacer(getModel().getPlacer().getPosition().moveRight());
     }
-    public void movePlacerUp(){
+
+    public void movePlacerUp() {
         movePlacer(getModel().getPlacer().getPosition().moveUp());
     }
-    public void movePlacerDown(){
+
+    public void movePlacerDown() {
         movePlacer(getModel().getPlacer().getPosition().moveDown());
     }
 
     @Override
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
-        switch (action){
+        switch (action) {
             case UP -> movePlacerUp();
             case DOWN -> movePlacerDown();
             case LEFT -> movePlacerLeft();

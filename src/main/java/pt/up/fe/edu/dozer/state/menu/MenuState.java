@@ -1,5 +1,4 @@
 package pt.up.fe.edu.dozer.state.menu;
-import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.controller.menu.MenuController;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
@@ -21,7 +20,7 @@ public class MenuState extends State<Menu> {
 
     @Override
     protected Viewer<Menu> getViewer() {
-        return new MenuViewer( getModel());
+        return new MenuViewer(getModel());
     }
 
     @Override

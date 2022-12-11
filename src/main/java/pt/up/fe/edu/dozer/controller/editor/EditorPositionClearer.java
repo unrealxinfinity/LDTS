@@ -2,10 +2,9 @@ package pt.up.fe.edu.dozer.controller.editor;
 
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
-import pt.up.fe.edu.dozer.model.game.elements.Wall;
 
 public class EditorPositionClearer {
-    private EditorArena arena;
+    private final EditorArena arena;
 
     public EditorPositionClearer(EditorArena arena) {
         this.arena = arena;

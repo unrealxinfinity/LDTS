@@ -7,7 +7,7 @@ import pt.up.fe.edu.dozer.viewer.Viewer;
 
 public class EditorViewer extends Viewer<EditorArena> {
     private final GameViewer viewer;
-    private String placingElem;
+    private final String placingElem;
     private final PlacerViewerBuilder builder;
 
     public EditorViewer(EditorArena arena, PlacerViewerBuilder builder, GameViewer viewer, String elem) {
@@ -21,7 +21,7 @@ public class EditorViewer extends Viewer<EditorArena> {
     protected void drawElements(GUI gui, long time) {
         viewer.drawElements(gui, time);
         PlacerViewer placerViewer = builder.getPlacerViewer();
-        gui.drawText(new Position(0,0),"Placing: "+placingElem,"#FFFFFF");
+        gui.drawText(new Position(0, 0), "Placing: " + placingElem, "#FFFFFF");
         placerViewer.draw(getModel().getPlacer(), gui);
     }
 

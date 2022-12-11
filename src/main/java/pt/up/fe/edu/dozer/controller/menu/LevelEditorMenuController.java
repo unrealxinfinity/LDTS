@@ -4,13 +4,10 @@ import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.gui.GUI;
-import pt.up.fe.edu.dozer.model.game.arena.Arena;
-import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.menu.LevelEditorMenu;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.model.menu.Menu;
-import pt.up.fe.edu.dozer.state.GameState;
 import pt.up.fe.edu.dozer.state.menu.MenuState;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -19,8 +16,9 @@ import java.io.IOException;
 
 public class LevelEditorMenuController extends Controller<Menu> {
     public LevelEditorMenuController(LevelEditorMenu menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(menu,new AudioManager("/audio/menu.wav"));
+        super(menu, new AudioManager("/audio/menu.wav"));
     }
+
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
         try {
             switch (action) {

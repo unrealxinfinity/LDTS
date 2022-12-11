@@ -1,4 +1,5 @@
 package pt.up.fe.edu.dozer.controller.menu;
+
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
@@ -10,15 +11,15 @@ import pt.up.fe.edu.dozer.model.menu.Menu;
 import pt.up.fe.edu.dozer.state.editor.DozerEditorState;
 import pt.up.fe.edu.dozer.state.menu.LevelSelectState;
 
-
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class MenuController extends Controller<Menu> {
     public MenuController(MainMenu menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(menu,new AudioManager("/audio/menu.wav"));
+        super(menu, new AudioManager("/audio/menu.wav"));
     }
+
     @Override
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
         try {

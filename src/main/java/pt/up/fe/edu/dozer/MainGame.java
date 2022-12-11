@@ -5,7 +5,6 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import pt.up.fe.edu.dozer.audio.AudioManager;
 
@@ -14,6 +13,7 @@ import pt.up.fe.edu.dozer.gui.LanternaGUI;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.menu.MenuState;
 import pt.up.fe.edu.dozer.state.State;
+
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -32,8 +32,8 @@ public class MainGame {
 
 
 
-    public void setState(State s){
-        state=s;
+    public void setState(State s) {
+        state = s;
     }
 
     public void resetTimer() {
@@ -65,7 +65,7 @@ public class MainGame {
     public void start() throws IOException, FontFormatException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
         URL resource = MainGame.class.getResource("/font/JoystixMonospace-Regular.ttf");
         File fontFile = new File(resource.toURI());
-        Font font =  Font.createFont(Font.TRUETYPE_FONT, fontFile);
+        Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
@@ -91,15 +91,16 @@ public class MainGame {
         BGM.loopSound();
 
         LanternaGUI gui = new LanternaGUI(screen);
-        int frameTime = 50;
-        while (this.state!=null) {
+        int frameTime = 25;
+        while (this.state != null) {
             long startTime = System.currentTimeMillis();
             long elapsedTime = System.currentTimeMillis() - startTime;
-            state.step(this, gui, (startTime-initialTime)/1000);
+            state.step(this, gui, (startTime - initialTime) / 1000);
             long sleepTime = frameTime - elapsedTime;
             try {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
-            } catch (InterruptedException e ) {}
+            } catch (InterruptedException e) {
+            }
         }
         screen.close();
     }
