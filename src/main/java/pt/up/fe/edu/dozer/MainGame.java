@@ -44,7 +44,7 @@ public class MainGame {
         bgmMuted=true;
     }
     public void resumeBGM(){
-        BGM.loop_sound();
+        BGM.loopSound();
         bgmMuted=false;
     }
     public boolean isBgmMuted(){
@@ -88,7 +88,7 @@ public class MainGame {
         //audio test -OK
         //AudioManager valuescheck=new AudioManager("/audio/monkeyApplause.wav");
         //valuescheck.play();
-        BGM.loop_sound();
+        BGM.loopSound();
 
         LanternaGUI gui = new LanternaGUI(screen);
         int frameTime = 50;

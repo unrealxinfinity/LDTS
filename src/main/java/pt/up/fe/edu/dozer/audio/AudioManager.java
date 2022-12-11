@@ -1,10 +1,6 @@
 package pt.up.fe.edu.dozer.audio;
 
-import pt.up.fe.edu.dozer.MainGame;
-
 import javax.sound.sampled.*;
-import javax.xml.crypto.Data;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -39,7 +35,7 @@ public class AudioManager {
         //clip.setFramePosition(0);
 
     }
-    public void loop_sound(){
+    public void loopSound(){
         clip.start();
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
