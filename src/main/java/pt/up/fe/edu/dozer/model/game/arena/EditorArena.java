@@ -23,7 +23,7 @@ public class EditorArena extends Arena{
     }
 
     public void setPlacer(Placer placer) {
-        this.placer = placer;
+        this .placer = placer;
     }
 
     private Placer placer;
