@@ -50,7 +50,15 @@ public abstract class EditorArenaController extends EditorController {
                 //game.setState(new LevelEditorMenuState(new LevelEditorMenu()));
                 game.setState(new EditedGameState(getModel()));
             }
-        } else this.controller.step(game, action, time);
+
+        }
+        else if(action==GUI.ACTION.MUTE){
+            if(game.isBgmMuted()){
+                game.resumeBGM();
+            }
+            else game.muteBGM();
+        }
+        else this.controller.step(game, action, time);
     }
 
     protected abstract EditorState cycleState();
