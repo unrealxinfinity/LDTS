@@ -46,9 +46,7 @@ public class MenuControllerTest {
     }
     @Test
     public void stepTest() throws IOException {
-        Mockito.when(gui.getNextAction()).thenReturn(GUI.ACTION.DOWN);
-        InternalsCheck.step(game,gui.getNextAction(),0);
+        InternalsCheck.step(game, GUI.ACTION.DOWN,0);
         Mockito.verify(menuMock,Mockito.times(1)).nextEntry();
-        Mockito.verify(gui,Mockito.times(1)).getNextAction();
     }
 }
