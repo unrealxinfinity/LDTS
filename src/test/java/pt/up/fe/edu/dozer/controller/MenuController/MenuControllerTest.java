@@ -41,7 +41,7 @@ public class MenuControllerTest {
 
     }
     @Test
-    public void MenuControllerTest(){
+    public void menuControllerTest(){
         //Assertions.assertEquals(valuesCheck.getModel().getNumberEntries(),3);g
     }
     @Test
@@ -50,8 +50,5 @@ public class MenuControllerTest {
         InternalsCheck.step(game,gui.getNextAction(),0);
         Mockito.verify(menuMock,Mockito.times(1)).nextEntry();
         Mockito.verify(gui,Mockito.times(1)).getNextAction();
-        behaviourCheck.step(game,gui.getNextAction(),0);
-        Mockito.verify(behaviourCheck,Mockito.times(1)).step(game,gui.getNextAction(),0);
-
     }
 }

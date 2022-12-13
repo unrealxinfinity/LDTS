@@ -8,7 +8,6 @@ public class AudioManager {
     private AudioInputStream soundStream;
     private Clip clip;
     private String filepath;
-    private long time;
 
 
     public AudioManager(String soundFilePath) throws UnsupportedAudioFileException, IOException, LineUnavailableException {

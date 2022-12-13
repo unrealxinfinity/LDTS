@@ -34,8 +34,6 @@ public class LevelSelectMenuTest {
     @Test
     public void levelIncrementDigitTest(){
 
-        behaviourCheck.incrementCurrentDigit();
-        Mockito.verify(behaviourCheck,Mockito.times(1)).incrementCurrentDigit();
         Assertions.assertEquals(1, valuesCheck.getSelectedLevel());
         valuesCheck.nextEntry();
         Assertions.assertEquals(1, valuesCheck.getSelectedLevel());
@@ -50,21 +48,14 @@ public class LevelSelectMenuTest {
         Assertions.assertEquals(1, valuesCheck.getSelectedLevel());
         valuesCheck.incrementCurrentDigit();
 
-        behaviourCheck.decrementCurrentDigit();
-        Mockito.verify(behaviourCheck,Mockito.times(1)).decrementCurrentDigit();
-
         valuesCheck.decrementCurrentDigit();
         Assertions.assertEquals(1, valuesCheck.getSelectedLevel());
     }
     @Test
     public void isSelectedLevel(){
-        behaviourCheck.getSelectedLevel();
-        Mockito.verify(behaviourCheck,Mockito.times(1)).getSelectedLevel();
     }
     @Test
     public void  getSelectedLevel(){
-        behaviourCheck.getSelectedLevel();
-        Mockito.verify(behaviourCheck,Mockito.times(1)).getSelectedLevel();
         Assertions.assertEquals(1, valuesCheck.getSelectedLevel());
         Assertions.assertEquals(valuesCheck.getSelectedNum(),0);
         valuesCheck.nextEntry();

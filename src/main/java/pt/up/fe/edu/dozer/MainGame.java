@@ -99,7 +99,7 @@ public class MainGame {
             long sleepTime = frameTime - elapsedTime;
             try {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
         }
         screen.close();

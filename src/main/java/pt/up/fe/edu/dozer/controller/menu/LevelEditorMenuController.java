@@ -19,6 +19,7 @@ public class LevelEditorMenuController extends Controller<Menu> {
         super(menu, new AudioManager("/audio/menu.wav"));
     }
 
+    @Override
     public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
         try {
             switch (action) {
@@ -68,6 +69,8 @@ public class LevelEditorMenuController extends Controller<Menu> {
                 case MUTE:
                     if(game.isBgmMuted()) game.resumeBGM();
                     else game.muteBGM();
+                    break;
+                default:
                     break;
             }
         } catch (UnsupportedAudioFileException e) {

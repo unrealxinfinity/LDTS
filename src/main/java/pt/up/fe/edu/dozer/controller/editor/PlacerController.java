@@ -42,6 +42,7 @@ public class PlacerController extends EditorController {
             case DOWN -> movePlacerDown();
             case LEFT -> movePlacerLeft();
             case RIGHT -> movePlacerRight();
+            default -> {}
         }
     }
 }

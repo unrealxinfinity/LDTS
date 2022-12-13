@@ -55,7 +55,8 @@ public class MenuController extends Controller<Menu> {
                     if(game.isBgmMuted()) game.resumeBGM();
                     else game.muteBGM();
                     break;
-
+                default:
+                    break;
             }
         } catch (UnsupportedAudioFileException e) {
             System.out.print("File not Supported");
