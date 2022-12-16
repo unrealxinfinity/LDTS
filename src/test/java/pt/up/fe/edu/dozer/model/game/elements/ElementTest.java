@@ -24,4 +24,14 @@ public class ElementTest {
 
         Assertions.assertEquals(new Position(6,6), boulder.getPosition());
     }
+
+    @Test
+    public void moveStaticElement() {
+        Position position = new Position(3, 4);
+        Wall wall = new Wall(position);
+
+        wall.setPosition(new Position(4,4));
+
+        Assertions.assertEquals(position, wall.getPosition());
+    }
 }
