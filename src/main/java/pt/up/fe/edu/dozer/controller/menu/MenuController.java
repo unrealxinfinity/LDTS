@@ -37,16 +37,16 @@ public class MenuController extends Controller<MainMenu> {
                 case SELECT:
                     getSound().restartAudio();
                     getSound().play();
-                    if (getModel().isSelected(2)) {
+                    if (getModel().isSelectedQuit()) {
                         game.getBGM().close();
                         getSound().close();
                         game.setState(null);
                     }
-                    if (getModel().isSelected(0)) {
+                    if (getModel().isSelectedSelect()) {
                         game.resetTimer();
                         game.setState(new LevelSelectState(new LevelSelect()));
                     }
-                    if (getModel().isSelected(1)) {
+                    if (getModel().isSelectedEditor()) {
                         game.resetTimer();
                         game.setState(new DozerEditorState(new EditorArena(20, 12)));
                     }

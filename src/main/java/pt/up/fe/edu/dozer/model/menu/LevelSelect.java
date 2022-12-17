@@ -29,4 +29,20 @@ public class LevelSelect extends Menu {
     public int getSelectedLevel() {
         return Integer.parseInt(entries.get(1));
     }
+
+    public boolean isSelectedNumber() {
+        return isSelected(1);
+    }
+
+    public boolean isSelectedStart() {
+        return isSelected(2);
+    }
+
+    public boolean isSelectedBack() {
+        return isSelected(3);
+    }
+
+    public boolean isSelectedTitle() {
+        return isSelected(0);
+    }
 }

@@ -31,20 +31,20 @@ public class LevelSelectController extends Controller<LevelSelect> {
                     getSound().restartAudio();
                     getSound().play();
                     getModel().previousEntry();
-                    if (getModel().isSelected(0)) getModel().previousEntry();
+                    if (getModel().isSelectedTitle()) getModel().previousEntry();
                     break;
                 case DOWN:
                     getSound().restartAudio();
                     getSound().play();
                     getModel().nextEntry();
-                    if (getModel().isSelected(0)) getModel().nextEntry();
+                    if (getModel().isSelectedTitle()) getModel().nextEntry();
                     break;
                 case SELECT:
                     getSound().restartAudio();
                     getSound().play();
-                    if (Objects.equals(getModel().getCurrentEntry(), "Start")) {
+                    if (getModel().isSelectedStart()) {
                         try {
-                            int selectedLevel = ((LevelSelect) getModel()).getSelectedLevel();
+                            int selectedLevel = getModel().getSelectedLevel();
                             Arena arena = new LoaderArenaBuilder(selectedLevel, new LevelReader()).createArena(new Arena());
                             game.resetTimer();
                             game.setState(new GameState(arena));
@@ -52,7 +52,7 @@ public class LevelSelectController extends Controller<LevelSelect> {
                             System.out.print("No correspondent level");
                         }
                     }
-                    if (Objects.equals(getModel().getCurrentEntry(), "Back")) {
+                    if (getModel().isSelectedBack()) {
                         game.resetTimer();
                         game.setState(new MenuState(new MainMenu()));
                     }
@@ -61,14 +61,14 @@ public class LevelSelectController extends Controller<LevelSelect> {
                 case LEFT:
                     getSound().restartAudio();
                     getSound().play();
-                    if (getModel().isSelected(1))
-                        ((LevelSelect) getModel()).decrementCurrentDigit();
+                    if (getModel().isSelectedNumber())
+                        getModel().decrementCurrentDigit();
                     break;
                 case RIGHT:
                     getSound().restartAudio();
                     getSound().play();
-                    if (getModel().isSelected(1))
-                        ((LevelSelect) getModel()).incrementCurrentDigit();
+                    if (getModel().isSelectedNumber())
+                        getModel().incrementCurrentDigit();
                     break;
                 case MUTE:
                     if(game.isBgmMuted()) game.resumeBGM();
