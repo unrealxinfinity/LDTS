@@ -24,7 +24,7 @@ public class LevelSelectController extends Controller<LevelSelect> {
     }
 
     @Override
-    public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
+    public void step(MainGame game, GUI.ACTION action) throws IOException {
         try {
             switch (action) {
                 case UP:

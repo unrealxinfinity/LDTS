@@ -30,15 +30,13 @@ public class ArenaController extends GameController {
     }
 
     @Override
-    public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
+    public void step(MainGame game, GUI.ACTION action) throws IOException {
         if (action == GUI.ACTION.PAUSE)
             try{
                 dozerController.getSound().close();
                 getSound().close();
                 game.setState(new MenuState(new MainMenu()));
-            } catch (UnsupportedAudioFileException e) {
-                throw new RuntimeException(e);
-            } catch (LineUnavailableException e) {
+            } catch (UnsupportedAudioFileException | LineUnavailableException e) {
                 throw new RuntimeException(e);
             }
         else if (action == GUI.ACTION.RESTART) {
@@ -68,7 +66,7 @@ public class ArenaController extends GameController {
             }
             else game.muteBGM();
         }
-        else this.dozerController.step(game, action, time);
+        else this.dozerController.step(game, action);
 
     }
 

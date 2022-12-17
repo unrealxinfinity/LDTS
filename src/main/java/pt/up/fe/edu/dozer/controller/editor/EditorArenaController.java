@@ -24,7 +24,7 @@ public abstract class EditorArenaController extends EditorController {
     }
 
     @Override
-    public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
+    public void step(MainGame game, GUI.ACTION action) throws IOException {
         if (action == GUI.ACTION.CYCLE) {
             game.setState(cycleState());
         } else if (action == GUI.ACTION.SELECT) {
@@ -38,9 +38,7 @@ public abstract class EditorArenaController extends EditorController {
             game.resetTimer();
             try {
                 game.setState(new MenuState(new MainMenu()));
-            } catch (UnsupportedAudioFileException e) {
-                throw new RuntimeException(e);
-            } catch (LineUnavailableException e) {
+            } catch (UnsupportedAudioFileException | LineUnavailableException e) {
                 throw new RuntimeException(e);
             }
         }
@@ -58,7 +56,7 @@ public abstract class EditorArenaController extends EditorController {
             }
             else game.muteBGM();
         }
-        else this.controller.step(game, action, time);
+        else this.controller.step(game, action);
     }
 
     protected abstract EditorState cycleState();

@@ -75,7 +75,7 @@ public class DozerController extends GameController {
     }
 
     @Override
-    public void step(MainGame game, GUI.ACTION action, long time) {
+    public void step(MainGame game, GUI.ACTION action) {
         try {
             switch (action) {
                 case UP -> moveDozerUP();

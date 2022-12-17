@@ -16,7 +16,7 @@ public class TargetController extends GameController implements BoulderObserver 
     }
 
     @Override
-    public void step(MainGame game, GUI.ACTION action, long time) throws IOException {
+    public void step(MainGame game, GUI.ACTION action) throws IOException {
     }
 
 
