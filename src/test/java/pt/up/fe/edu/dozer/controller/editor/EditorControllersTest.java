@@ -45,7 +45,7 @@ public class EditorControllersTest {
         MainGame game = Mockito.mock(MainGame.class);
         EditorArenaDozerController controller = new EditorArenaDozerController(arena);
 
-        controller.step(game, GUI.ACTION.CYCLE, 0);
+        controller.step(game, GUI.ACTION.CYCLE);
 
         Mockito.verify(game, Mockito.times(1)).setState(Mockito.any());
     }
@@ -58,7 +58,7 @@ public class EditorControllersTest {
         Mockito.when(arena.getPlacer()).thenReturn(placer);
         EditorArenaDozerController controller = new EditorArenaDozerController(arena);
 
-        controller.step(game, GUI.ACTION.SELECT, 0);
+        controller.step(game, GUI.ACTION.SELECT);
 
         Mockito.verify(arena, Mockito.times(2)).getPlacer();
         Mockito.verify(placer, Mockito.times(2)).getPosition();
@@ -72,7 +72,7 @@ public class EditorControllersTest {
         Mockito.when(arena.getPlacer()).thenReturn(placer);
         EditorArenaDozerController controller = new EditorArenaDozerController(arena);
 
-        controller.step(game, GUI.ACTION.REMOVE, 0);
+        controller.step(game, GUI.ACTION.REMOVE);
 
         Mockito.verify(arena, Mockito.times(1)).getPlacer();
         Mockito.verify(placer, Mockito.times(1)).getPosition();

@@ -31,7 +31,7 @@ public class DozerControllerTest {
     public void stepTestLeft() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         DozerController dozerController = new DozerController(arena, null);
 
-        dozerController.step(null, GUI.ACTION.LEFT, 0);
+        dozerController.step(null, GUI.ACTION.LEFT);
 
         Mockito.verify(position, Mockito.times(1)).moveLeft();
     }
@@ -40,7 +40,7 @@ public class DozerControllerTest {
     public void stepTestRight() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         DozerController dozerController = new DozerController(arena, null);
 
-        dozerController.step(null, GUI.ACTION.RIGHT, 0);
+        dozerController.step(null, GUI.ACTION.RIGHT);
 
         Mockito.verify(position, Mockito.times(1)).moveRight();
     }
@@ -49,7 +49,7 @@ public class DozerControllerTest {
     public void stepTestDown() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         DozerController dozerController = new DozerController(arena, null);
 
-        dozerController.step(null, GUI.ACTION.DOWN, 0);
+        dozerController.step(null, GUI.ACTION.DOWN);
 
         Mockito.verify(position, Mockito.times(1)).moveDown();
     }
@@ -58,7 +58,7 @@ public class DozerControllerTest {
     public void stepTestUp() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         DozerController dozerController = new DozerController(arena, null);
 
-        dozerController.step(null, GUI.ACTION.UP, 0);
+        dozerController.step(null, GUI.ACTION.UP);
 
         Mockito.verify(position, Mockito.times(1)).moveUp();
     }

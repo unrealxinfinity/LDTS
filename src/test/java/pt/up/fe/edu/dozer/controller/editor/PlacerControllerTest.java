@@ -28,28 +28,28 @@ public class PlacerControllerTest {
 
     @Test
     public void moveUp() throws IOException {
-        controller.step(null, GUI.ACTION.UP, 0);
+        controller.step(null, GUI.ACTION.UP);
 
         Mockito.verify(placer, Mockito.times(0)).setPosition(Mockito.any());
     }
 
     @Test
     public void moveLeft() throws IOException {
-        controller.step(null, GUI.ACTION.LEFT, 0);
+        controller.step(null, GUI.ACTION.LEFT);
 
         Mockito.verify(placer, Mockito.times(1)).setPosition(Mockito.eq(new Position(13, 0)));
     }
 
     @Test
     public void moveRight() throws IOException {
-        controller.step(null, GUI.ACTION.RIGHT, 0);
+        controller.step(null, GUI.ACTION.RIGHT);
 
         Mockito.verify(placer, Mockito.times(0)).setPosition(Mockito.any());
     }
 
     @Test
     public void moveDown() throws IOException {
-        controller.step(null, GUI.ACTION.DOWN, 0);
+        controller.step(null, GUI.ACTION.DOWN);
 
         Mockito.verify(placer, Mockito.times(1)).setPosition(Mockito.eq(new Position(14, 1)));
     }
