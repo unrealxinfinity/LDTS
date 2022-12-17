@@ -12,20 +12,20 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 
-public class MenuState extends State<Menu> {
+public class MenuState extends State<MainMenu> {
     public MenuState(MainMenu menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         super(menu);
 
     }
 
     @Override
-    protected Viewer<Menu> getViewer() {
-        return new MenuViewer(getModel());
+    protected Viewer<MainMenu> getViewer() {
+        return new MenuViewer<>(getModel());
     }
 
     @Override
-    protected Controller<Menu> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        return new MenuController((MainMenu) getModel());
+    protected Controller<MainMenu> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        return new MenuController(getModel());
     }
 
 }

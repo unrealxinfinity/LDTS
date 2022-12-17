@@ -5,8 +5,8 @@ import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.menu.Menu;
 import pt.up.fe.edu.dozer.viewer.Viewer;
 
-public class MenuViewer extends Viewer<Menu> {
-    public MenuViewer(Menu menu) {
+public class MenuViewer<T extends Menu> extends Viewer<T> {
+    public MenuViewer(T menu) {
         super(menu);
     }
 

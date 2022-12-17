@@ -33,7 +33,7 @@ public class MenuViewerTest {
     @Test
     public void drawElementTest() {
         Menu main = new MainMenu();
-        MenuViewer menu= new MenuViewer(main);
+        MenuViewer<Menu> menu= new MenuViewer<>(main);
         menu.drawElements(gui,0);
         InOrder order = Mockito.inOrder(graphics);
         

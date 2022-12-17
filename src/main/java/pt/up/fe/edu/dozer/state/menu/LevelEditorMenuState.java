@@ -20,7 +20,7 @@ public class LevelEditorMenuState extends State<Menu> {
 
     @Override
     protected Viewer<Menu> getViewer() {
-        return new MenuViewer(getModel());
+        return new MenuViewer<>(getModel());
     }
 
     @Override
