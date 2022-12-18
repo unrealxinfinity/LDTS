@@ -77,12 +77,22 @@ public class MenuControllerTest {
         valuesCheck.getModel().nextEntry();
         Assertions.assertEquals(true,valuesCheck.getModel().isSelectedQuit());
 
-
         Mockito.when(gameMock.getBGM()).thenReturn(audiomock);
         valuesCheck.step(gameMock,GUI.ACTION.SELECT);
         Mockito.verify(audiomock,Mockito.times(1)).close();
         Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
         audiomock = Mockito.mock(AudioManager.class);
+        gameMock=Mockito.mock(MainGame.class);
+
+        Mockito.when(gameMock.isBgmMuted()).thenReturn(true);
+        valuesCheck.step(gameMock,GUI.ACTION.MUTE);
+        Mockito.verify(gameMock,Mockito.times(1)).resumeBGM();
+        gameMock=Mockito.mock(MainGame.class);
+
+        Mockito.when(gameMock.isBgmMuted()).thenReturn(false);
+        valuesCheck.step(gameMock,GUI.ACTION.MUTE);
+        Mockito.verify(gameMock,Mockito.times(1)).muteBGM();
+
     }
 
 }
