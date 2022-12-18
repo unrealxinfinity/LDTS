@@ -20,4 +20,18 @@ public class AudioManagerTest {
     public void playTest(){
         valuesCheck.play();
     }
+    @Test
+    public void restartAudioTest() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+       try{ valuesCheck.restartAudio();}
+       catch (UnsupportedAudioFileException e) {
+           System.out.print("Audio file isn't supported by your program");
+           throw new UnsupportedAudioFileException();
+       } catch (LineUnavailableException e) {
+           System.out.print("A LineUnavailableException is an exception indicating that a line cannot be opened because it is unavailable. This situation arises most commonly when a requested line is already in use by another application,in this case the line in the buffer of the clip.");
+           throw new LineUnavailableException();
+       } catch (IOException e) {
+           System.out.print("IOException");
+           throw new IOException();
+       }
+    }
 }

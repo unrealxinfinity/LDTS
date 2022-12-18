@@ -1,20 +1,58 @@
 package pt.up.fe.edu.dozer.model.menu;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pt.up.fe.edu.dozer.model.menu.LevelSelect;
-import pt.up.fe.edu.dozer.model.menu.MainMenu;
+import org.mockito.Mockito;
 
 public class MenuTest {
+    Menu valueCheck;
+    Menu behaviousCheck;
+
+    @BeforeEach
+    public void SetUp(){
+        valueCheck=new MainMenu();
+    }
+    @Test
+    public void MenuTest(){
+
+        Assertions.assertEquals(3,valueCheck.getNumberEntries());
+    }
+    @Test
+    public void nextPrevEntryTest(){
+
+        valueCheck.nextEntry();
+        Assertions.assertEquals(1,valueCheck.getSelectedNum());
+        valueCheck.previousEntry();
+        Assertions.assertEquals(0,valueCheck.getSelectedNum());
+        valueCheck.previousEntry();
+        Assertions.assertEquals(2,valueCheck.getSelectedNum());
+        valueCheck.nextEntry();
+        Assertions.assertEquals(0,valueCheck.getSelectedNum());
+    }
+    @Test
+    public void getEntryTest(){
+        Assertions.assertEquals("Level Select",valueCheck.getEntry(0));
+    }
+
     @Test
     public void getCurrentEntryTest() {
-        MainMenu menu = new MainMenu();
-        String entry;
-
-        entry = menu.getCurrentEntry();
-
-        Assertions.assertEquals("Level Select", entry);
+        Assertions.assertEquals("Level Select", valueCheck.getCurrentEntry());
     }
+    @Test
+    public void getNumberEntriesTest() {
+        Assertions.assertEquals(3, valueCheck.getNumberEntries());
+    }
+    @Test
+    public void isSelectedTest() {
+        valueCheck.nextEntry();
+        valueCheck.nextEntry();
+        Assertions.assertTrue(valueCheck.isSelected(2));
+        Assertions.assertFalse(valueCheck.isSelected(1000));
+    }
+
+
+
 
     /*@Test
     public void loopAroundIncrementTest() {
@@ -42,14 +80,7 @@ public class MenuTest {
         Assertions.assertEquals("Quit", entry);
     }
 
-    @Test
-    public void getNumberEntriesTest() {
-        MainMenu menu = new MainMenu();
 
-        int number = menu.getNumberEntries();
-
-        Assertions.assertEquals(3, number);
-    }
 
     @Test
     public void isSelectedTest() {
@@ -70,14 +101,7 @@ public class MenuTest {
         Assertions.assertEquals("Level Editor", entry);
     }
 
-    @Test
-    public void decrementDigitTest() {
-        LevelSelect menu = new LevelSelect();
 
-        menu.decrementCurrentDigit();
-
-        Assertions.assertEquals("9", menu.getEntry(0));
-    }
 
     @Test
     public void incrementDigitTest() {

@@ -85,9 +85,6 @@ public class MainGame {
         screen.startScreen();             // screens must be started
         screen.doResizeIfNecessary();     // resize screen if necessary
         screen.refresh();
-        //audio test -OK
-        //AudioManager valuescheck=new AudioManager("/audio/monkeyApplause.wav");
-        //valuescheck.play();
         BGM.loopSound();
 
         LanternaGUI gui = new LanternaGUI(screen);
