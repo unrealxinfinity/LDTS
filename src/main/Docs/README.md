@@ -37,7 +37,12 @@ For example, checking every cobblestone/target combination after every move is i
 By implementing the **_Observer Pattern_** with target controllers as observers and boulder controllers as subjects, we can avoid unnecessary checks. Only when a boulder moves, its controller will notify the target controllers, which will then determine if the boulder has stepped into a target, out of a target, both, or neither. This result could then be used to increment/decrement an integer variable that determines how many boulders are in targets. When this is equal to the number of targets, the level is completed.
 #### Implementation:
 The BoulderController notifies the TargetController (which implements the BoulderObserver interface) that it has to do this check.
-![](/home/becca/Transferências/image.png)
+<p align="center" justify="center">
+  <img src="Images/image.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 2. Observers screenshot </i></b>
+</p>
 In target controller, we have a private field that tells the number of boulders on the target and the boulder controller has the notify observer that at each movement or step of the bolder makes the target (observer) check if the bolder is in the target position to all targets. If so, it increments the number of bouldersInTargets.
 #### Consequences:
 This strategy made de code cleaner and easier to read, also respects the single responsibility principle (the observers only activate on their respective game state, when receiving an input warning).
@@ -50,8 +55,19 @@ Checking collision with every wall is inefficient. In this game's levels, the ar
 The design pattern used is **_Decorator Pattern_**. It allows adding a behavior to an existing object at runtime, that is, it dynamically adds additional responsibilities to an object.
 #### Implementation:
 By creating an "ImportantWall" class that is a subclass of Wall and is functionally identical, we can differentiate between walls that are just decoration (notably, walls behind walls) and walls that matter for collision. Thus, the level saves two lists of walls.
-![](/home/becca/Imagens/Capturas de ecrã/Captura de ecrã de 2022-12-18 19-06-19.png)
-![](/home/becca/Imagens/Capturas de ecrã/Captura de ecrã de 2022-12-18 19-06-26.png)
+<p align="center" justify="center">
+<img src="Images/Captura de ecrã de 2022-12-18 19-06-19.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 3. Field Builder and loader </i></b>
+</p>
+<p align="center" justify="center">
+<img src="Images/Captura de ecrã de 2022-12-18 19-06-26.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 4. Field Builder and loader </i></b>
+</p>
+
 #### Consequences:
 The biggest advantage of the used pattern is that it can enhance the extensibility of the object, because changes are made by coding new classes. It simplifies the coding by allowing you to develop a series of functionality from targeted classes instead of coding all of the behavior into the object.
 
@@ -59,17 +75,30 @@ The biggest advantage of the used pattern is that it can enhance the extensibili
 #### Problem in Context:
 As we have many objects that we need to instantiate, it becomes difficult to maintain Rigidity of the game , having to make changes to all the components and functionalities everytime we add new type of objects.
 #### The Pattern:
-**_Factory Pattern_** was the chosen one. By using this design pattern,we ensure that we can instantiate different objects regardless their types by using their corresponding superclass so we can add new features like new types of objects(ex: enemies or powerups) without the need to worry about rigidity.
+**_Factory Pattern_** was the chosen one. By using this design pattern,we ensure that we can instantiate different objects regardless their types by using their corresponding superclass, so we can add new features like new types of objects(ex: enemies or powerups) without the need to worry about rigidity.
 #### Implementation:
-(...)
+Products were created (abstract and concrete) that execute the decision made in the factory. At runtime we don't know who will be called, instead of having if's and else's in the client, we have all the decision logic in the factory.
+<p align="center" justify="center">
+<img src="Images/Captura de ecrã de 2022-12-18 19-06-19.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 5. Factory pattern</i></b>
+</p>
+<p align="center" justify="center">
+<img src="Images/Captura de ecrã de 2022-12-18 19-06-19.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 6. Factory pattern </i></b>
+</p>
+
 #### Consequences:
-(...)
+The pattern gives us a way to turn off the implementation of a Product. Adding or changing Products will not affect the Creator as they are not tightly linked. It encapsulates the code that creates objects and avoids duplication, plus we have a single place to maintain it.
 
 ### GUI
 #### Problem in Context:
-(...)
+(The lanterna library contains various functions that aren't useful to our program, Interface Segregation Principle violation, and lacks some other functions that our interface needs. Also, if using the raw library, our game (high level module) would be directly depending on a low level module. This is a violation of the Dependency Inversion Principle (DIP). A need to implement an interface that solves these problems was born.)
 #### The Pattern:
-**_Facade Pattern_**
+**_Facade Pattern_** was the chosen method. The intent of this pattern is to encapsulate complicated logic in a high-level interface that makes accessing a subsystem very simple and easy to use.
 #### Implementation:
 (...)
 #### Consequences:
