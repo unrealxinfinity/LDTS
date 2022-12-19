@@ -83,6 +83,17 @@ public class LanternaGUITest {
     }
 
     @Test
+    public void drawNullBoulder() {
+        TextCharacter textChar = Mockito.mock(TextCharacter.class);
+        Mockito.when(textChar.getCharacterString()).thenThrow(NullPointerException.class);
+        Mockito.when(graphics.getCharacter(Mockito.anyInt(), Mockito.anyInt())).thenReturn(textChar);
+        gui.drawBoulder(new Position(1, 1));
+
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#362F2D"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(1, 2, "&");
+    }
+
+    @Test
     void drawWall() {
         gui.drawWall(new Position(1, 1));
 
@@ -135,6 +146,30 @@ public class LanternaGUITest {
         GUI.ACTION action = gui.getNextAction();
 
         Assertions.assertEquals(GUI.ACTION.QUIT, action);
+    }
+
+    @Test
+    void getNextActionSave() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Character);
+        Mockito.when(stroke.getCharacter()).thenReturn('s');
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.SAVE, action);
+    }
+
+    @Test
+    void getNextActionMute() throws IOException {
+        KeyStroke stroke = Mockito.mock(KeyStroke.class);
+        Mockito.when(stroke.getKeyType()).thenReturn(KeyType.Character);
+        Mockito.when(stroke.getCharacter()).thenReturn('m');
+        Mockito.when(screen.pollInput()).thenReturn(stroke);
+
+        GUI.ACTION action = gui.getNextAction();
+
+        Assertions.assertEquals(GUI.ACTION.MUTE, action);
     }
 
     @Test
