@@ -10,6 +10,7 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.model.Position;
 
 import java.awt.*;
@@ -38,27 +39,28 @@ public class LanternaGUI implements GUI {
         screen.setCursorPosition(null);
         screen.startScreen();
         screen.doResizeIfNecessary();
+        screen.refresh();
         return screen;
     }
 
     private Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration fontConfig) throws IOException {
-        TerminalSize terminalSize = new TerminalSize(width, height + 1);
-        DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory()
-                .setInitialTerminalSize(terminalSize);
+        TerminalSize terminalSize = new TerminalSize(width, height);
+        DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory();
+        terminalFactory.setInitialTerminalSize(terminalSize);
         terminalFactory.setForceAWTOverSwing(true);
         terminalFactory.setTerminalEmulatorFontConfiguration(fontConfig);
         return terminalFactory.createTerminal();
     }
 
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
-        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+        URL resource = getClass().getClassLoader().getResource("font/JoystixMonospace-Regular.ttf");
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
 
-        Font loadedFont = font.deriveFont(Font.PLAIN, 25);
+        Font loadedFont = font.deriveFont(Font.PLAIN, 20);
         return AWTTerminalFontConfiguration.newInstance(loadedFont);
     }
 
