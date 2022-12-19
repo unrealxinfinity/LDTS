@@ -46,7 +46,6 @@ public class ArenaControllerTest {
     @Test
     public void stepTestNextLevel() throws IOException {
 
-
         Assertions.assertEquals(0,arenaMock.getTargets().size());
         internalCheck.step(gameMock,null);
         Mockito.verify(gameMock,Mockito.times(1)).resetTimer();
@@ -66,7 +65,12 @@ public class ArenaControllerTest {
         Mockito.when(gameMock.isBgmMuted()).thenReturn(false);
         internalCheck.step(gameMock, GUI.ACTION.MUTE);
         Mockito.verify(gameMock,Mockito.times(1)).muteBGM();
-
     }
-
+    @Test
+    public void restartArenaTest() throws IOException {
+        Mockito.when(arenaMock.getLevelNum()).thenReturn(1);
+        internalCheck.restartArena(gameMock);
+        Mockito.verify(gameMock,Mockito.times(1)).resetTimer();
+        Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
+    }
 }
