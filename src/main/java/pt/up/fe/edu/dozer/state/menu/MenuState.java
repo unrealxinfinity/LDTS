@@ -1,8 +1,8 @@
 package pt.up.fe.edu.dozer.state.menu;
+
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.controller.menu.MenuController;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.model.menu.Menu;
 import pt.up.fe.edu.dozer.state.State;
 import pt.up.fe.edu.dozer.viewer.Viewer;
 import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;

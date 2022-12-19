@@ -9,14 +9,12 @@ import pt.up.fe.edu.dozer.model.game.arena.LevelReader;
 import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.model.menu.Menu;
 import pt.up.fe.edu.dozer.state.GameState;
 import pt.up.fe.edu.dozer.state.menu.MenuState;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
-import java.util.Objects;
 
 public class LevelSelectController extends Controller<LevelSelect> {
     public LevelSelectController(LevelSelect menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {

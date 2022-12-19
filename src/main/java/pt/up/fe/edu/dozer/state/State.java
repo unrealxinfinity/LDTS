@@ -1,7 +1,6 @@
 package pt.up.fe.edu.dozer.state;
 
 import pt.up.fe.edu.dozer.MainGame;
-import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.viewer.Viewer;

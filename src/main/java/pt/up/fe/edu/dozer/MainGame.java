@@ -1,27 +1,16 @@
 package pt.up.fe.edu.dozer;
 
-import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.screen.TerminalScreen;
-import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import com.googlecode.lanterna.terminal.Terminal;
-import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import pt.up.fe.edu.dozer.audio.AudioManager;
-
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
-
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.state.menu.MenuState;
 import pt.up.fe.edu.dozer.state.State;
-
+import pt.up.fe.edu.dozer.state.menu.MenuState;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 
 public class MainGame {

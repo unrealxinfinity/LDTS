@@ -10,7 +10,6 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.model.Position;
 
 import java.awt.*;
