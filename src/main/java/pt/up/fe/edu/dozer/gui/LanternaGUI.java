@@ -152,6 +152,7 @@ public class LanternaGUI implements GUI {
         long minutes = time / 60;
         if (minutes > 59) minutes = 0;
         long seconds = time - minutes * 60;
+        if (seconds > 59) seconds = 0;
         String m = String.valueOf(minutes);
 
         String s = String.valueOf(seconds);

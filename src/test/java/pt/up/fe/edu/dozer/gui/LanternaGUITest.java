@@ -303,4 +303,39 @@ public class LanternaGUITest {
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
         Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "02:00");
     }
+
+    @Test
+    void drawTimeTestCheckMinuteBound() {
+        gui.drawTime(new Position(5, 5), 23123123, "#F0F0F0");
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "00:00");
+    }
+
+    @Test
+    void drawTimeTestBothLengthTwo() {
+        gui.drawTime(new Position(5, 5), 610, "#F0F0F0");
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "10:10");
+    }
+
+    @Test
+    void drawTimeTestBothLengthLow() {
+        gui.drawTime(new Position(5, 5), 62, "#F0F0F0");
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "01:02");
+    }
+
+    @Test
+    void drawTimeTestMinuteLengthLow() {
+        gui.drawTime(new Position(5, 5), 70, "#F0F0F0");
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "01:10");
+    }
+
+    @Test
+    void drawTimeTestSecondLengthLow() {
+        gui.drawTime(new Position(5, 5), 601, "#F0F0F0");
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "10:01");
+    }
 }
