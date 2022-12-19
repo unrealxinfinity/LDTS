@@ -1,13 +1,22 @@
 package pt.up.fe.edu.dozer.gui;
 
+import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
+import com.googlecode.lanterna.screen.TerminalScreen;
+import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+import com.googlecode.lanterna.terminal.Terminal;
+import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import pt.up.fe.edu.dozer.model.Position;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Objects;
 
 public class LanternaGUI implements GUI {
@@ -15,6 +24,43 @@ public class LanternaGUI implements GUI {
 
     public LanternaGUI(Screen screen) {
         this.screen = screen;
+    }
+    public LanternaGUI(int width, int height) throws URISyntaxException, IOException, FontFormatException {
+        AWTTerminalFontConfiguration fontConfig = loadSquareFont();
+        Terminal terminal = createTerminal(width, height, fontConfig);
+        this.screen = createScreen(terminal);
+    }
+
+    private Screen createScreen(Terminal terminal) throws IOException {
+        final Screen screen;
+        screen = new TerminalScreen(terminal);
+
+        screen.setCursorPosition(null);
+        screen.startScreen();
+        screen.doResizeIfNecessary();
+        screen.refresh();
+        return screen;
+    }
+
+    private Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration fontConfig) throws IOException {
+        TerminalSize terminalSize = new TerminalSize(width, height);
+        DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory();
+        terminalFactory.setInitialTerminalSize(terminalSize);
+        terminalFactory.setForceAWTOverSwing(true);
+        terminalFactory.setTerminalEmulatorFontConfiguration(fontConfig);
+        return terminalFactory.createTerminal();
+    }
+
+    private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
+        URL resource = getClass().getClassLoader().getResource("font/JoystixMonospace-Regular.ttf");
+        File fontFile = new File(resource.toURI());
+        Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        ge.registerFont(font);
+
+        Font loadedFont = font.deriveFont(Font.PLAIN, 20);
+        return AWTTerminalFontConfiguration.newInstance(loadedFont);
     }
 
     @Override
@@ -106,6 +152,7 @@ public class LanternaGUI implements GUI {
         long minutes = time / 60;
         if (minutes > 59) minutes = 0;
         long seconds = time - minutes * 60;
+        if (seconds > 59) seconds = 0;
         String m = String.valueOf(minutes);
 
         String s = String.valueOf(seconds);

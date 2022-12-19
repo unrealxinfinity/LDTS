@@ -7,7 +7,6 @@ import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.model.menu.Menu;
 import pt.up.fe.edu.dozer.state.editor.DozerEditorState;
 import pt.up.fe.edu.dozer.state.menu.LevelSelectState;
 
