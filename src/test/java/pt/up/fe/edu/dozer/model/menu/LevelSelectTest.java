@@ -40,6 +40,10 @@ public class LevelSelectTest {
         Assertions.assertEquals(0,valuesCheck.getSelectedNum());
         valuesCheck.setCurrentEntryTo("Ola");
         Assertions.assertEquals("Ola",valuesCheck.getEntry(0));
+        valuesCheck.nextEntry();
+        Assertions.assertEquals(1,valuesCheck.getSelectedNum());
+        valuesCheck.setCurrentEntryTo("Adeus");
+        Assertions.assertEquals("Adeus",valuesCheck.getCurrentEntry());
     }
     @Test
     public void getSelectedLevelTest(){

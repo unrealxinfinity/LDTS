@@ -3,6 +3,7 @@ package pt.up.fe.edu.dozer.controller.MenuController;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 import com.sun.source.tree.ModuleTree;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -45,54 +46,57 @@ public class MenuControllerTest {
         gui=Mockito.mock(LanternaGUI.class);
         audiomock=Mockito.mock(AudioManager.class);
 
-
     }
+
     @Test
     public void menuControllerTest(){
         Assertions.assertEquals(3,valuesCheck.getModel().getNumberEntries());
         Assertions.assertNotEquals(null,valuesCheck.getSound());
+        Assertions.assertNotNull(InternalsCheck.getSound());
+        Assertions.assertNotNull(valuesCheck.getModel());
+        Assertions.assertNotNull(InternalsCheck.getModel());
     }
     @Test
-    public void stepTest() throws IOException {
-        InternalsCheck.step(gameMock, GUI.ACTION.DOWN);
-        Mockito.verify(menuMock,Mockito.times(1)).nextEntry();
-
+    public void stepTestUp() throws IOException {
         InternalsCheck.step(gameMock,GUI.ACTION.UP);
         Mockito.verify(menuMock,Mockito.times(1)).previousEntry();
-
-       valuesCheck.step(gameMock,GUI.ACTION.SELECT);
-        Assertions.assertEquals(true,valuesCheck.getModel().isSelectedSelect());
+    }
+    @Test
+    public void stepTestDown() throws IOException {
+        InternalsCheck.step(gameMock, GUI.ACTION.DOWN);
+        Mockito.verify(menuMock,Mockito.times(1)).nextEntry();
+    }
+    @Test
+    public void stepTestSelect() throws IOException {
+        Mockito.when(menuMock.isSelectedSelect()).thenReturn(true);
+        InternalsCheck.step(gameMock,GUI.ACTION.SELECT);
         Mockito.verify(gameMock,Mockito.times(1)).resetTimer();
         Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
-        gameMock=Mockito.mock(MainGame.class);
+        Mockito.reset(gameMock);
+        Mockito.reset(menuMock);
 
-        valuesCheck.getModel().nextEntry();
-        Assertions.assertEquals(true,valuesCheck.getModel().isSelectedEditor());
-
-        valuesCheck.step(gameMock,GUI.ACTION.SELECT);
+        Mockito.when(menuMock.isSelectedEditor()).thenReturn(true);
+        InternalsCheck.step(gameMock,GUI.ACTION.SELECT);
         Mockito.verify(gameMock,Mockito.times(1)).resetTimer();
         Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
-        gameMock=Mockito.mock(MainGame.class);
-
-        valuesCheck.getModel().nextEntry();
-        Assertions.assertEquals(true,valuesCheck.getModel().isSelectedQuit());
-
+    }
+    @Test
+    public void stepTestMute() throws IOException {
         Mockito.when(gameMock.getBGM()).thenReturn(audiomock);
-        valuesCheck.step(gameMock,GUI.ACTION.SELECT);
+        Mockito.when(menuMock.isSelectedQuit()).thenReturn(true);
+        InternalsCheck.step(gameMock,GUI.ACTION.SELECT);
         Mockito.verify(audiomock,Mockito.times(1)).close();
         Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
-        audiomock = Mockito.mock(AudioManager.class);
-        gameMock=Mockito.mock(MainGame.class);
+        Mockito.reset(gameMock);
 
         Mockito.when(gameMock.isBgmMuted()).thenReturn(true);
-        valuesCheck.step(gameMock,GUI.ACTION.MUTE);
+        InternalsCheck.step(gameMock,GUI.ACTION.MUTE);
         Mockito.verify(gameMock,Mockito.times(1)).resumeBGM();
-        gameMock=Mockito.mock(MainGame.class);
+        Mockito.reset(gameMock);
 
         Mockito.when(gameMock.isBgmMuted()).thenReturn(false);
-        valuesCheck.step(gameMock,GUI.ACTION.MUTE);
+        InternalsCheck.step(gameMock,GUI.ACTION.MUTE);
         Mockito.verify(gameMock,Mockito.times(1)).muteBGM();
-
     }
 
 }
