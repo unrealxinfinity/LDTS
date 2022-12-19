@@ -96,13 +96,20 @@ The pattern gives us a way to turn off the implementation of a Product. Adding o
 
 ### GUI
 #### Problem in Context:
-(The lanterna library contains various functions that aren't useful to our program, Interface Segregation Principle violation, and lacks some other functions that our interface needs. Also, if using the raw library, our game (high level module) would be directly depending on a low level module. This is a violation of the Dependency Inversion Principle (DIP). A need to implement an interface that solves these problems was born.)
+The Lanterna library has a vast list of unnecessary functions for our project, which many violate the Interface Segregation Principle.
+Another point to bear in mind is, when using the raw library, the game, which is a high-level module, started to depend on a low-level module, something not very profitable.
 #### The Pattern:
 **_Facade Pattern_** was the chosen method. The intent of this pattern is to encapsulate complicated logic in a high-level interface that makes accessing a subsystem very simple and easy to use.
 #### Implementation:
-(...)
+<p align="center" justify="center">
+<img src="Images/Captura de ecrã de 2022-12-19 22-50-00.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 6. GUI implementation</i></b>
+</p>
+
 #### Consequences:
-(...)
+The Facade design pattern provides a unified interface to a set of interfaces in a subsystem. The Facade Pattern allows us to disconnect the client implementation from any subsystem. Thus, if we wanted to add new functionalities in the subsystem, it would only be necessary to change the Facade instead of changing several points of the system.
 
 ## Known Code Smells And Refactoring Suggestions
 #### **Large Class**
