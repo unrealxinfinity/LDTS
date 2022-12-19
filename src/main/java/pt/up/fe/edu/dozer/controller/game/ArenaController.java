@@ -15,12 +15,33 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
+
 public class ArenaController extends GameController {
+
     private final DozerController dozerController;
     private final BoulderController boulderController;
+
+
+
     private final TargetController targetController;
+
+
+
     private final int numTargets;
 
+    public BoulderController getBoulderController() {
+        return boulderController;
+    }
+
+    public DozerController getDozerController() {
+        return dozerController;
+    }
+    public int getNumTargets() {
+        return numTargets;
+    }
+    public TargetController getTargetController() {
+        return targetController;
+    }
     public ArenaController(Arena arena) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         super(arena, new AudioManager("/audio/monkeyApplause.wav"));
         this.targetController = new TargetController(arena);

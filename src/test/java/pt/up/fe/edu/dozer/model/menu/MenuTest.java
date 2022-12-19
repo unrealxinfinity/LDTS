@@ -33,6 +33,8 @@ public class MenuTest {
     @Test
     public void getEntryTest(){
         Assertions.assertEquals("Level Select",valueCheck.getEntry(0));
+        String entry = valueCheck.getEntry(1);
+        Assertions.assertEquals("Level Editor", entry);
     }
 
     @Test
@@ -51,10 +53,7 @@ public class MenuTest {
         Assertions.assertFalse(valueCheck.isSelected(1000));
     }
 
-
-
-
-    /*@Test
+    @Test
     public void loopAroundIncrementTest() {
         MainMenu menu = new MainMenu();
         String entry;
@@ -82,69 +81,14 @@ public class MenuTest {
 
 
 
-    @Test
-    public void isSelectedTest() {
-        MainMenu menu = new MainMenu();
-
-        menu.nextEntry();
-        menu.nextEntry();
-
-        Assertions.assertTrue(menu.isSelected(2));
-    }
-
-    @Test
-    public void getEntryTest() {
-        MainMenu menu = new MainMenu();
-
-        String entry = menu.getEntry(1);
-
-        Assertions.assertEquals("Level Editor", entry);
-    }
 
 
 
-    @Test
-    public void incrementDigitTest() {
-        LevelSelect menu = new LevelSelect();
 
-        menu.incrementCurrentDigit();
 
-        Assertions.assertEquals("1", menu.getEntry(0));
-    }
 
-    @Test
-    public void incrementDigitLoopBack() {
-        LevelSelect menu = new LevelSelect();
 
-        menu.nextEntry();
-        for (int i = 0; i < 10; i++) menu.incrementCurrentDigit();
 
-        Assertions.assertEquals("0", menu.getEntry(1));
-    }
 
-    @Test
-    public void tryIncrementNotDigit() {
-        LevelSelect menu = new LevelSelect();
 
-        menu.previousEntry();
-        menu.incrementCurrentDigit();
-
-        Assertions.assertEquals("0", menu.getEntry(0));
-        Assertions.assertEquals("0", menu.getEntry(1));
-        Assertions.assertEquals("Back", menu.getEntry(3));
-    }
-
-    @Test
-    public void tryDecrementNotDigit() {
-        LevelSelect menu = new LevelSelect();
-
-        menu.nextEntry();
-        menu.nextEntry();
-
-        menu.decrementCurrentDigit();
-
-        Assertions.assertEquals("Select Level:", menu.getEntry(0));
-        Assertions.assertEquals("0", menu.getEntry(1));
-        Assertions.assertEquals("Start", menu.getEntry(2));
-    }*/
 }

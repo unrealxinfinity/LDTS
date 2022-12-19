@@ -62,6 +62,16 @@ public class LevelSelectTest {
         valuesCheck.nextEntry();
         Assertions.assertTrue(valuesCheck.isSelectedBack());
     }
+    @Test
+    public void tryDecrementNotDigit() {
+        LevelSelect menu = new LevelSelect();
 
+        menu.nextEntry();
 
+        menu.decrementCurrentDigit();
+
+        Assertions.assertEquals("Select Level:", menu.getEntry(0));
+        Assertions.assertEquals("1", menu.getEntry(1));
+        Assertions.assertEquals("Start", menu.getEntry(2));
+    }
 }
