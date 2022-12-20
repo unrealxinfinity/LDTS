@@ -26,8 +26,7 @@ public class MenuState extends State<MainMenu> {
 
     @Override
     protected Controller<MainMenu> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        AudioManager audio=new AudioManager("/audio/menu.wav");
-        return new MenuController(getModel(),audio);
+        return new MenuController(getModel(),new AudioManager("/audio/menu.wav"));
     }
 
 }

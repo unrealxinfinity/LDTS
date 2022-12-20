@@ -25,8 +25,7 @@ public class LevelSelectState extends State<LevelSelect> {
 
     @Override
     protected Controller<LevelSelect> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        AudioManager audio= new AudioManager("/audio/menu.wav");
-        return new LevelSelectController(getModel(),audio);
+        return new LevelSelectController(getModel(),new AudioManager("/audio/menu.wav"));
     }
 
 }
