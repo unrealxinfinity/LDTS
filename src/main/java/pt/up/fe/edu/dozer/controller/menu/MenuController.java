@@ -26,7 +26,8 @@ public class MenuController extends GenericMenuController<MainMenu> {
     @Override
     protected void stepSelect(MainGame game) {
         if (getModel().isSelectedQuit()) {
-            game.getBGM().close();
+            AudioManager bgm = game.getBGM();
+            bgm.close();
             getSound().close();
             game.setState(null);
         }

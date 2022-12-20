@@ -39,7 +39,7 @@ public class LevelSelectController extends GenericMenuController<LevelSelect> {
                 Arena arena = new LoaderArenaBuilder(selectedLevel, new LevelReader()).createArena(new Arena());
                 game.resetTimer();
                 game.setState(new GameState(arena));
-            } catch (NullPointerException | IOException ignored) {
+            } catch (NullPointerException ignored) {
             }
         }
         if (getModel().isSelectedBack()) {
