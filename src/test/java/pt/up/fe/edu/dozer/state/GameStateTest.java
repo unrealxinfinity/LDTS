@@ -34,7 +34,7 @@ public class GameStateTest {
     }
 
     @Test
-    public void stepTest() throws IOException {
+    public void stepTest() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         GUI gui = Mockito.mock(GUI.class);
         MainGame game = Mockito.mock(MainGame.class);
         Mockito.when(gui.getNextAction()).thenReturn(GUI.ACTION.LEFT);

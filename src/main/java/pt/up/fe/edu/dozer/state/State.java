@@ -41,7 +41,7 @@ public abstract class State<T> {
     }
 
 
-    public void step(MainGame game, GUI gui, long time) throws IOException {
+    public void step(MainGame game, GUI gui, long time) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         GUI.ACTION action = gui.getNextAction();
         controller.step(game, action);
         viewer.draw(gui, time);

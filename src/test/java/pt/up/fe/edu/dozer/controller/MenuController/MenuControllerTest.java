@@ -111,7 +111,7 @@ public class MenuControllerTest {
 
     }
     @Test
-    public void stepTestMute() throws IOException {
+    public void stepTestMute() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         AudioManager audioMock2=Mockito.mock(AudioManager.class);
 
         Mockito.when(gameMock.getBGM()).thenReturn(audioMock2);

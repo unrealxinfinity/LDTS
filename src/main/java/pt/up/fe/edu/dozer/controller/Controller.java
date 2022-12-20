@@ -4,6 +4,8 @@ import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.gui.GUI;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public abstract class Controller<T> {
@@ -28,6 +30,6 @@ public abstract class Controller<T> {
         return model;
     }
 
-    public abstract void step(MainGame game, GUI.ACTION action) throws IOException;
+    public abstract void step(MainGame game, GUI.ACTION action) throws IOException, UnsupportedAudioFileException, LineUnavailableException;
 
 }

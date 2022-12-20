@@ -57,7 +57,7 @@ public class LevelSelectControllerTest {
 
         Mockito.when(menuMock.isSelectedTitle()).thenReturn(true);
         internalCheck.step(gameMock, GUI.ACTION.UP);
-        Mockito.verify(menuMock,Mockito.times(2)).previousEntry();
+        Mockito.verify(menuMock,Mockito.times(1)).previousEntry();
 
     }
     @Test
@@ -72,7 +72,7 @@ public class LevelSelectControllerTest {
 
         Mockito.when(menuMock.isSelectedTitle()).thenReturn(true);
         internalCheck.step(gameMock, GUI.ACTION.DOWN);
-        Mockito.verify(menuMock,Mockito.times(2)).nextEntry();
+        Mockito.verify(menuMock,Mockito.times(1)).nextEntry();
     }
     @Test
     public void stepTestSelect() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
@@ -111,7 +111,7 @@ public class LevelSelectControllerTest {
         Mockito.verify(menuMock,Mockito.times(1)).incrementCurrentDigit();
     }
     @Test
-    public void stepTestMute() throws IOException {
+    public void stepTestMute() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         Mockito.when(gameMock.isBgmMuted()).thenReturn(true);
         internalCheck.step(gameMock,GUI.ACTION.MUTE);
         Mockito.verify(gameMock,Mockito.times(1)).resumeBGM();
