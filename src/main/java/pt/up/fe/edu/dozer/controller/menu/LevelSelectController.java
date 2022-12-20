@@ -2,8 +2,6 @@ package pt.up.fe.edu.dozer.controller.menu;
 
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.audio.AudioManager;
-import pt.up.fe.edu.dozer.controller.Controller;
-import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.arena.LevelReader;
 import pt.up.fe.edu.dozer.model.game.arena.LoaderArenaBuilder;

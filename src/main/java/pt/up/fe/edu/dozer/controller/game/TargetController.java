@@ -24,8 +24,8 @@ public class TargetController extends GameController implements BoulderObserver 
     public void update() {
         this.bouldersInTargets = 0;
         for (Target target : getModel().getTargets())
-            for (Boulder boudler : getModel().getBoulders())
-                if (target.getPosition().equals(boudler.getPosition())) bouldersInTargets++;
+            for (Boulder boulder : getModel().getBoulders())
+                if (target.getPosition().equals(boulder.getPosition())) bouldersInTargets++;
     }
 
     public int getBouldersInTargets() {

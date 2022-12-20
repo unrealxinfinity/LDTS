@@ -2,20 +2,14 @@ package pt.up.fe.edu.dozer.controller.menu;
 
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.audio.AudioManager;
-import pt.up.fe.edu.dozer.controller.Controller;
-import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.editor.DozerEditorState;
 import pt.up.fe.edu.dozer.state.menu.LevelSelectState;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.IOException;
-
 public class MenuController extends GenericMenuController<MainMenu> {
-    public MenuController(MainMenu menu,AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public MenuController(MainMenu menu,AudioManager audio) {
         super(menu,audio);
     }
 

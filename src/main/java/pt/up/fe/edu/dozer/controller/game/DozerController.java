@@ -27,18 +27,10 @@ public class DozerController extends GameController {
         if (getModel().isBoulder(p)) {
             boolean hasMoved = false;
             switch (direction) {
-                case UP -> {
-                    hasMoved = boulderController.moveBoulderUp(p);
-                }
-                case LEFT -> {
-                    hasMoved = boulderController.moveBoulderLeft(p);
-                }
-                case RIGHT -> {
-                    hasMoved = boulderController.moveBoulderRight(p);
-                }
-                case DOWN -> {
-                    hasMoved = boulderController.moveBoulderDown(p);
-                }
+                case UP -> hasMoved = boulderController.moveBoulderUp(p);
+                case LEFT -> hasMoved = boulderController.moveBoulderLeft(p);
+                case RIGHT -> hasMoved = boulderController.moveBoulderRight(p);
+                case DOWN -> hasMoved = boulderController.moveBoulderDown(p);
             }
             if (hasMoved) getModel().getDozer().setPosition(p);
         } else if (!getModel().isWall(p)) {

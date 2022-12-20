@@ -28,7 +28,7 @@ public abstract class State<T> {
             System.out.print("Audio in use");
             throw new RuntimeException(e);
         } catch (IOException e) {
-            System.out.print("File doenst exist");
+            System.out.print("File doesn't exist");
             throw new RuntimeException(e);
         }
     }
