@@ -338,4 +338,11 @@ public class LanternaGUITest {
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
         Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "10:01");
     }
+
+    @Test
+    void drawTimeTestBound() {
+        gui.drawTime(new Position(5, 5), 2, "#F0F0F0");
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
+        Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "00:02");
+    }
 }
