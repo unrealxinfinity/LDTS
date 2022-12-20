@@ -24,7 +24,7 @@ public class ArenaBuilderTest{
     @BeforeEach
     public void setUp() throws IOException {
         reader = Mockito.mock(LevelReader.class);
-        List<String> lines = List.of("#########W+W########","#########W WWW######","########WW$ $+W#####","#######W+ $*WW######");
+        List<String> lines = List.of("#########W+W########","#########W WWW######","########WW& &+W#####","#######W+ &*WW######");
 
         Mockito.when(reader.readLevel(Mockito.anyInt())).thenReturn(lines);
     }

@@ -1,5 +1,6 @@
 package pt.up.fe.edu.dozer.state.menu;
 
+import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.controller.menu.MenuController;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
@@ -25,7 +26,8 @@ public class MenuState extends State<MainMenu> {
 
     @Override
     protected Controller<MainMenu> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        return new MenuController(getModel());
+        AudioManager audio=new AudioManager("/audio/menu.wav");
+        return new MenuController(getModel(),audio);
     }
 
 }

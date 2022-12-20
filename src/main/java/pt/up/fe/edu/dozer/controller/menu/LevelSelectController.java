@@ -17,8 +17,8 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class LevelSelectController extends Controller<LevelSelect> {
-    public LevelSelectController(LevelSelect menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(menu,new AudioManager("/audio/menu.wav"));
+    public LevelSelectController(LevelSelect menu,AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        super(menu,audio);
     }
 
     @Override
@@ -48,6 +48,7 @@ public class LevelSelectController extends Controller<LevelSelect> {
                             game.setState(new GameState(arena));
                         } catch (NullPointerException ignored) {
                             System.out.print("No correspondent level");
+                            throw new NullPointerException();
                         }
                     }
                     if (getModel().isSelectedBack()) {

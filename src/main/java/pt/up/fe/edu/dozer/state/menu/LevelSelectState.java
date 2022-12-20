@@ -1,5 +1,6 @@
 package pt.up.fe.edu.dozer.state.menu;
 
+import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.controller.menu.LevelSelectController;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
@@ -24,7 +25,8 @@ public class LevelSelectState extends State<LevelSelect> {
 
     @Override
     protected Controller<LevelSelect> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        return new LevelSelectController(getModel());
+        AudioManager audio= new AudioManager("/audio/menu.wav");
+        return new LevelSelectController(getModel(),audio);
     }
 
 }

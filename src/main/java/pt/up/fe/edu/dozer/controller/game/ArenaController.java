@@ -36,14 +36,11 @@ public class ArenaController extends GameController {
     public DozerController getDozerController() {
         return dozerController;
     }
-    public int getNumTargets() {
-        return numTargets;
-    }
     public TargetController getTargetController() {
         return targetController;
     }
-    public ArenaController(Arena arena) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(arena, new AudioManager("/audio/monkeyApplause.wav"));
+    public ArenaController(Arena arena,AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        super(arena, audio);
         this.targetController = new TargetController(arena);
         this.boulderController = new BoulderController(arena, this.targetController);
         this.dozerController = new DozerController(arena, this.boulderController);

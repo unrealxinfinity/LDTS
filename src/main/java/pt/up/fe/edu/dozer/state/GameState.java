@@ -1,5 +1,6 @@
 package pt.up.fe.edu.dozer.state;
 
+import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.controller.game.ArenaController;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
@@ -24,7 +25,7 @@ public class GameState extends State<Arena> {
     @Override
     protected Controller<Arena> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 
-        return new ArenaController(getModel());
+        return new ArenaController(getModel(),new AudioManager("/audio/monkeyApplause.wav"));
 
     }
 

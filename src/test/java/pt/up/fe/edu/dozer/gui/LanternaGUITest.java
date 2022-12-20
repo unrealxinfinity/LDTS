@@ -113,7 +113,7 @@ public class LanternaGUITest {
     void drawPlacer() {
         gui.drawPlacer(new Position(2,3));
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#B41EE2"));
-        Mockito.verify(graphics, Mockito.times(1)).putString(2, 4, "p");
+        Mockito.verify(graphics, Mockito.times(1)).putString(2, 4, "$");
     }
 
     @Test

@@ -1,6 +1,7 @@
 package pt.up.fe.edu.dozer.controller.game;
 
 import pt.up.fe.edu.dozer.MainGame;
+import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.state.EditedGameState;
 
@@ -12,7 +13,7 @@ public class EditedArenaController extends ArenaController {
     private final EditorArena baseArena;
 
     public EditedArenaController(EditorArena baseArena) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(baseArena);
+        super(baseArena,new AudioManager("/audio/monkeyApplause.wav"));
         this.baseArena = baseArena.getArena();
     }
 

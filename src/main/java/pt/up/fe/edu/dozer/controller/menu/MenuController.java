@@ -15,8 +15,8 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class MenuController extends Controller<MainMenu> {
-    public MenuController(MainMenu menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(menu, new AudioManager("/audio/menu.wav"));
+    public MenuController(MainMenu menu,AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        super(menu,audio);
     }
 
     @Override
