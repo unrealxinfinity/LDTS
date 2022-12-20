@@ -29,13 +29,13 @@ public class LevelSelectController extends Controller<LevelSelect> {
                     getSound().restartAudio();
                     getSound().play();
                     getModel().previousEntry();
-                    if (getModel().isSelectedTitle()) getModel().previousEntry();
+                    //if (getModel().isSelectedTitle()) getModel().previousEntry();
                     break;
                 case DOWN:
                     getSound().restartAudio();
                     getSound().play();
                     getModel().nextEntry();
-                    if (getModel().isSelectedTitle()) getModel().nextEntry();
+                    //if (getModel().isSelectedTitle()) getModel().nextEntry();
                     break;
                 case SELECT:
                     getSound().restartAudio();

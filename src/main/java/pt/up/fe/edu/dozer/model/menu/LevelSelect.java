@@ -45,4 +45,16 @@ public class LevelSelect extends Menu {
     public boolean isSelectedTitle() {
         return isSelected(0);
     }
+
+    @Override
+    public void nextEntry() {
+        super.nextEntry();
+        if (isSelectedTitle()) super.nextEntry();
+    }
+
+    @Override
+    public void previousEntry() {
+        super.previousEntry();
+        if (isSelectedTitle()) super.previousEntry();
+    }
 }
