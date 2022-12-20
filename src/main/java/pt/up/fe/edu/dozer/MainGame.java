@@ -16,7 +16,7 @@ import java.net.URISyntaxException;
 public class MainGame {
     private State state;
     private long initialTime = System.currentTimeMillis();
-    private AudioManager BGM;
+    private final AudioManager BGM;
     private boolean bgmMuted;
 
 

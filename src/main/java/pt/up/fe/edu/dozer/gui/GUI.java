@@ -28,6 +28,6 @@ public interface GUI {
     void drawPlacer(Position position);
 
 
-    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, PAUSE, SELECT, RESTART, CYCLE, REMOVE, SAVE,MUTE};
+    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, PAUSE, SELECT, RESTART, CYCLE, REMOVE, SAVE,MUTE}
 
 }
