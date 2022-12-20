@@ -9,8 +9,8 @@ import pt.up.fe.edu.dozer.state.editor.DozerEditorState;
 import pt.up.fe.edu.dozer.state.menu.LevelSelectState;
 
 public class MenuController extends GenericMenuController<MainMenu> {
-    public MenuController(MainMenu menu,AudioManager audio) {
-        super(menu,audio);
+    public MenuController(MainMenu menu, AudioManager audio) {
+        super(menu, audio);
     }
 
     @Override

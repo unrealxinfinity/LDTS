@@ -20,7 +20,6 @@ public class MainGame {
     private boolean bgmMuted;
 
 
-
     public void setState(State s) {
         state = s;
     }
@@ -28,23 +27,28 @@ public class MainGame {
     public void resetTimer() {
         initialTime = System.currentTimeMillis();
     }
-    public void muteBGM(){
+
+    public void muteBGM() {
         BGM.mute();
-        bgmMuted=true;
+        bgmMuted = true;
     }
-    public void resumeBGM(){
+
+    public void resumeBGM() {
         BGM.loopSound();
-        bgmMuted=false;
+        bgmMuted = false;
     }
-    public boolean isBgmMuted(){
+
+    public boolean isBgmMuted() {
         return bgmMuted;
     }
-    public AudioManager getBGM(){
+
+    public AudioManager getBGM() {
         return BGM;
     }
+
     public MainGame() throws FontFormatException, IOException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
         this.state = new MenuState(new MainMenu());
-        this.BGM=new AudioManager("/audio/initSound.wav");
+        this.BGM = new AudioManager("/audio/initSound.wav");
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {

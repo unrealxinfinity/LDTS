@@ -42,22 +42,18 @@ public abstract class EditorArenaController extends EditorController {
             } catch (UnsupportedAudioFileException | LineUnavailableException e) {
                 throw new RuntimeException(e);
             }
-        }
-        else if(action == GUI.ACTION.SAVE) {
+        } else if (action == GUI.ACTION.SAVE) {
             if (getModel().getDozer() != null) {
                 game.resetTimer();
                 //game.setState(new LevelEditorMenuState(new LevelEditorMenu()));
                 game.setState(new EditedGameState(getModel()));
             }
 
-        }
-        else if(action==GUI.ACTION.MUTE){
-            if(game.isBgmMuted()){
+        } else if (action == GUI.ACTION.MUTE) {
+            if (game.isBgmMuted()) {
                 game.resumeBGM();
-            }
-            else game.muteBGM();
-        }
-        else this.controller.step(game, action);
+            } else game.muteBGM();
+        } else this.controller.step(game, action);
     }
 
     protected abstract EditorState cycleState();

@@ -25,6 +25,7 @@ public class LanternaGUI implements GUI {
     public LanternaGUI(Screen screen) {
         this.screen = screen;
     }
+
     public LanternaGUI(int width, int height) throws URISyntaxException, IOException, FontFormatException {
         AWTTerminalFontConfiguration fontConfig = loadSquareFont();
         Terminal terminal = createTerminal(width, height, fontConfig);
@@ -97,7 +98,7 @@ public class LanternaGUI implements GUI {
         if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
         if (keyStroke.getKeyType() == KeyType.Tab) return ACTION.CYCLE;
         if (keyStroke.getKeyType() == KeyType.Backspace) return ACTION.REMOVE;
-        if(keyStroke.getKeyType()==KeyType.Character && keyStroke.getCharacter()=='m') return ACTION.MUTE;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'm') return ACTION.MUTE;
 
         return ACTION.NONE;
     }

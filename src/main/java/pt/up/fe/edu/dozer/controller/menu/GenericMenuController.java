@@ -39,7 +39,7 @@ public abstract class GenericMenuController<T extends Menu> extends Controller<T
                 stepSelect(game);
                 break;
             case MUTE:
-                if(game.isBgmMuted()) game.resumeBGM();
+                if (game.isBgmMuted()) game.resumeBGM();
                 else game.muteBGM();
                 break;
             default:
@@ -56,6 +56,7 @@ public abstract class GenericMenuController<T extends Menu> extends Controller<T
     }
 
     protected abstract void stepLeft();
+
     protected abstract void stepRight();
 
     protected abstract void stepSelect(MainGame game) throws UnsupportedAudioFileException, LineUnavailableException, IOException;

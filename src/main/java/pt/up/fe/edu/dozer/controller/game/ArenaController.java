@@ -22,9 +22,7 @@ public class ArenaController extends GameController {
     private final BoulderController boulderController;
 
 
-
     private final TargetController targetController;
-
 
 
     private final int numTargets;
@@ -36,10 +34,12 @@ public class ArenaController extends GameController {
     public DozerController getDozerController() {
         return dozerController;
     }
+
     public TargetController getTargetController() {
         return targetController;
     }
-    public ArenaController(Arena arena,AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+
+    public ArenaController(Arena arena, AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         super(arena, audio);
         this.targetController = new TargetController(arena);
         this.boulderController = new BoulderController(arena, this.targetController);
@@ -50,7 +50,7 @@ public class ArenaController extends GameController {
     @Override
     public void step(MainGame game, GUI.ACTION action) throws IOException {
         if (action == GUI.ACTION.PAUSE)
-            try{
+            try {
                 dozerController.getSound().close();
                 getSound().close();
                 game.setState(new MenuState(new MainMenu()));
@@ -68,7 +68,7 @@ public class ArenaController extends GameController {
                 game.setState(new GameState(arena));
             } catch (NullPointerException e) {
                 game.resetTimer();
-                try{
+                try {
                     game.setState(new MenuState(new MainMenu()));
                 } catch (UnsupportedAudioFileException | LineUnavailableException ex) {
                     throw new RuntimeException(ex);
@@ -76,14 +76,11 @@ public class ArenaController extends GameController {
 
             }
 
-        }
-        else if(action== GUI.ACTION.MUTE){
-            if(game.isBgmMuted()){
+        } else if (action == GUI.ACTION.MUTE) {
+            if (game.isBgmMuted()) {
                 game.resumeBGM();
-            }
-            else game.muteBGM();
-        }
-        else this.dozerController.step(game, action);
+            } else game.muteBGM();
+        } else this.dozerController.step(game, action);
 
     }
 

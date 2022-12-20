@@ -32,6 +32,7 @@ public abstract class State<T> {
             throw new RuntimeException(e);
         }
     }
+
     protected abstract Viewer<T> getViewer();
 
     protected abstract Controller<T> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException;

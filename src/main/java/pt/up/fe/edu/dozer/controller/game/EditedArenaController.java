@@ -13,7 +13,7 @@ public class EditedArenaController extends ArenaController {
     private final EditorArena baseArena;
 
     public EditedArenaController(EditorArena baseArena) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(baseArena,new AudioManager("/audio/monkeyApplause.wav"));
+        super(baseArena, new AudioManager("/audio/monkeyApplause.wav"));
         this.baseArena = baseArena.getArena();
     }
 

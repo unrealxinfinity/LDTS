@@ -27,24 +27,27 @@ public class AudioManager {
     public void restartAudio() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         // implementacao mais custosa mas menos bug
         //clip.close();
-        URL resource= AudioManager.class.getResource(filepath);
-        soundStream= AudioSystem.getAudioInputStream(resource);
-        DataLine.Info info = new DataLine.Info(Clip.class,soundStream.getFormat());
-        clip=(Clip) AudioSystem.getLine(info);
+        URL resource = AudioManager.class.getResource(filepath);
+        soundStream = AudioSystem.getAudioInputStream(resource);
+        DataLine.Info info = new DataLine.Info(Clip.class, soundStream.getFormat());
+        clip = (Clip) AudioSystem.getLine(info);
         clip.open(soundStream);
         //implementacao menos custosa mas se clicar 2 vezes o botao quase ao mesmo tempo o som so da uma vez
         //clip.setFramePosition(0);
 
     }
-    public void loopSound(){
+
+    public void loopSound() {
         clip.start();
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
-    public void mute(){
+
+    public void mute() {
         clip.setFramePosition(0);
         clip.stop();
     }
-    public void close(){
+
+    public void close() {
         clip.close();
     }
 }

@@ -15,8 +15,8 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class LevelSelectController extends GenericMenuController<LevelSelect> {
-    public LevelSelectController(LevelSelect menu,AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        super(menu,audio);
+    public LevelSelectController(LevelSelect menu, AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        super(menu, audio);
     }
 
     @Override

@@ -22,17 +22,17 @@ public class PlacerController extends EditorController {
             placer.setPosition(position);
         }
     }
-    
+
     public void movePlacerLeft() {
         Position position = getModel().getPlacer().getPosition().moveLeft();
         movePlacer(position);
     }
-    
+
     public void movePlacerRight() {
         Position position = getModel().getPlacer().getPosition().moveRight();
         movePlacer(position);
     }
-    
+
     public void movePlacerUp() {
         Position position = getModel().getPlacer().getPosition().moveUp();
         movePlacer(position);
@@ -49,7 +49,8 @@ public class PlacerController extends EditorController {
             case DOWN -> movePlacerDown();
             case LEFT -> movePlacerLeft();
             case RIGHT -> movePlacerRight();
-            default -> {}
+            default -> {
+            }
         }
     }
 }

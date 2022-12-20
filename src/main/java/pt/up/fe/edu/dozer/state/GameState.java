@@ -25,7 +25,7 @@ public class GameState extends State<Arena> {
     @Override
     protected Controller<Arena> getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 
-        return new ArenaController(getModel(),new AudioManager("/audio/monkeyApplause.wav"));
+        return new ArenaController(getModel(), new AudioManager("/audio/monkeyApplause.wav"));
 
     }
 
