@@ -8,7 +8,7 @@ import pt.up.fe.edu.dozer.model.game.elements.Boulder;
 
 import java.io.IOException;
 
-public class BoulderController extends GameController {
+public class BoulderController extends ElementController {
     private final TargetController targetController;
 
     public BoulderController(Arena arena, TargetController targetController) {
@@ -49,11 +49,6 @@ public class BoulderController extends GameController {
     public boolean moveBoulderDown(Position p) {
         Boulder boulder = findBoulder(p);
         return moveBoulder(p.moveDown(), boulder);
-    }
-
-    @Override
-    public void step(MainGame game, GUI.ACTION action) throws IOException {
-
     }
 
     private void notifyObserver() {

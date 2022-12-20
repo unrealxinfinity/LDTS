@@ -8,17 +8,12 @@ import pt.up.fe.edu.dozer.model.game.elements.Target;
 
 import java.io.IOException;
 
-public class TargetController extends GameController implements BoulderObserver {
+public class TargetController extends ElementController implements BoulderObserver {
     private int bouldersInTargets = 0;
 
     public TargetController(Arena arena) {
         super(arena);
     }
-
-    @Override
-    public void step(MainGame game, GUI.ACTION action) throws IOException {
-    }
-
 
     @Override
     public void update() {

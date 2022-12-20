@@ -69,9 +69,7 @@ public class ArenaController extends GameController {
                 game.resetTimer();
                 try{
                     game.setState(new MenuState(new MainMenu()));
-                } catch (UnsupportedAudioFileException ex) {
-                    throw new RuntimeException(ex);
-                } catch (LineUnavailableException ex) {
+                } catch (UnsupportedAudioFileException | LineUnavailableException ex) {
                     throw new RuntimeException(ex);
                 }
 
