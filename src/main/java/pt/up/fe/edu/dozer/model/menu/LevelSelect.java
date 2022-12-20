@@ -23,7 +23,8 @@ public class LevelSelect extends Menu {
     }
 
     protected void setCurrentEntryTo(String s) {
-        entries.set(getSelectedNum(), s);
+        int selectedNum = getSelectedNum();
+        entries.set(selectedNum, s);
     }
 
     public int getSelectedLevel() {

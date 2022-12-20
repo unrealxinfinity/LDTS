@@ -19,22 +19,15 @@ public class EditorArena extends Arena {
         int y = getDozer().getPosition().getY();
         arena.setDozer(new Dozer(x, y));
 
-        List<Wall> walls = new ArrayList<>();
-        for (Wall wall : getCollisionWalls()) {
-            x = wall.getPosition().getX();
-            y = wall.getPosition().getY();
-            walls.add(new ImportantWall(x, y));
-        }
-        arena.setCollisionWalls(walls);
+        createWalls(arena);
+        createTargets(arena);
+        createBoulders(arena);
+        return arena;
+    }
 
-        List<Target> targets = new ArrayList<>();
-        for (Target target : getTargets()) {
-            x = target.getPosition().getX();
-            y = target.getPosition().getY();
-            targets.add(new Target(x, y));
-        }
-        arena.setTargets(targets);
-
+    private void createBoulders(EditorArena arena) {
+        int x;
+        int y;
         List<Boulder> boulders = new ArrayList<>();
         for (Boulder boulder : getBoulders()) {
             x = boulder.getPosition().getX();
@@ -42,8 +35,30 @@ public class EditorArena extends Arena {
             boulders.add(new Boulder(x, y));
         }
         arena.setBoulders(boulders);
+    }
 
-        return arena;
+    private void createTargets(EditorArena arena) {
+        int x;
+        int y;
+        List<Target> targets = new ArrayList<>();
+        for (Target target : getTargets()) {
+            x = target.getPosition().getX();
+            y = target.getPosition().getY();
+            targets.add(new Target(x, y));
+        }
+        arena.setTargets(targets);
+    }
+
+    private void createWalls(EditorArena arena) {
+        int x;
+        int y;
+        List<Wall> walls = new ArrayList<>();
+        for (Wall wall : getCollisionWalls()) {
+            x = wall.getPosition().getX();
+            y = wall.getPosition().getY();
+            walls.add(new ImportantWall(x, y));
+        }
+        arena.setCollisionWalls(walls);
     }
 
     public Placer getPlacer() {
