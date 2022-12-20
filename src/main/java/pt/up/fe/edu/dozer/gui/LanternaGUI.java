@@ -105,7 +105,9 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawBoulder(Position position) {
         try {
-            if (Objects.equals(screen.newTextGraphics().getCharacter(position.getX(), position.getY() + 1).getCharacterString(), "+"))
+            int x = position.getX();
+            int y = position.getY();
+            if (Objects.equals(screen.newTextGraphics().getCharacter(x, y + 1).getCharacterString(), "+"))
                 drawCharacter(position, '~', "#D05E3B");
             else drawCharacter(position, '&', "#362F2D");
         } catch (NullPointerException e) {
@@ -131,21 +133,27 @@ public class LanternaGUI implements GUI {
     private void drawCharacter(Position position, Character c, String colour) {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(colour));
-        graphics.putString(position.getX(), position.getY() + 1, c.toString());
+        int x = position.getX();
+        int y = position.getY();
+        graphics.putString(x, y + 1, c.toString());
     }
 
     @Override
     public void drawText(Position position, String text, String color) {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(color));
-        graphics.putString(position.getX(), position.getY(), text);
+        int x = position.getX();
+        int y = position.getY();
+        graphics.putString(x, y, text);
     }
 
     @Override
     public void drawTime(Position position, long time, String color) {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString(color));
-        graphics.putString(position.getX(), position.getY(), getStringTime(time));
+        int x = position.getX();
+        int y = position.getY();
+        graphics.putString(x, y, getStringTime(time));
     }
 
     private String getStringTime(long time) {

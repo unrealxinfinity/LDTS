@@ -1,5 +1,6 @@
 package pt.up.fe.edu.dozer.model.game.arena;
 
+import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.elements.*;
 
 import java.util.ArrayList;
@@ -14,21 +15,32 @@ public class EditorArena extends Arena {
 
     public EditorArena getArena() {
         EditorArena arena = new EditorArena(getWidth(), getHeight());
-        arena.setDozer(new Dozer(getDozer().getPosition().getX(), getDozer().getPosition().getY()));
+        int x = getDozer().getPosition().getX();
+        int y = getDozer().getPosition().getY();
+        arena.setDozer(new Dozer(x, y));
 
         List<Wall> walls = new ArrayList<>();
-        for (Wall wall : getCollisionWalls())
-            walls.add(new ImportantWall(wall.getPosition().getX(), wall.getPosition().getY()));
+        for (Wall wall : getCollisionWalls()) {
+            x = wall.getPosition().getX();
+            y = wall.getPosition().getY();
+            walls.add(new ImportantWall(x, y));
+        }
         arena.setCollisionWalls(walls);
 
         List<Target> targets = new ArrayList<>();
-        for (Target target : getTargets())
-            targets.add(new Target(target.getPosition().getX(), target.getPosition().getY()));
+        for (Target target : getTargets()) {
+            x = target.getPosition().getX();
+            y = target.getPosition().getY();
+            targets.add(new Target(x, y));
+        }
         arena.setTargets(targets);
 
         List<Boulder> boulders = new ArrayList<>();
-        for (Boulder boulder : getBoulders())
-            boulders.add(new Boulder(boulder.getPosition().getX(), boulder.getPosition().getY()));
+        for (Boulder boulder : getBoulders()) {
+            x = boulder.getPosition().getX();
+            y = boulder.getPosition().getY();
+            boulders.add(new Boulder(x, y));
+        }
         arena.setBoulders(boulders);
 
         return arena;
