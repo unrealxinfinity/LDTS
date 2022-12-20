@@ -3,6 +3,7 @@ package pt.up.fe.edu.dozer.viewer.game;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
+import pt.up.fe.edu.dozer.model.game.elements.Placer;
 import pt.up.fe.edu.dozer.viewer.Viewer;
 
 public class EditorViewer extends Viewer<EditorArena> {
@@ -22,7 +23,8 @@ public class EditorViewer extends Viewer<EditorArena> {
         viewer.drawElements(gui, time);
         PlacerViewer placerViewer = builder.getPlacerViewer();
         gui.drawText(new Position(0, 0), "Placing: " + placingElem, "#FFFFFF");
-        placerViewer.draw(getModel().getPlacer(), gui);
+        Placer placer = getModel().getPlacer();
+        placerViewer.draw(placer, gui);
     }
 
 }
