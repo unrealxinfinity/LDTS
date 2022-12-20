@@ -7,6 +7,7 @@ import pt.up.fe.edu.dozer.model.game.elements.Boulder;
 import pt.up.fe.edu.dozer.model.game.elements.Target;
 
 import java.io.IOException;
+import java.util.List;
 
 public class TargetController extends ElementController implements BoulderObserver {
     private int bouldersInTargets = 0;
@@ -18,9 +19,14 @@ public class TargetController extends ElementController implements BoulderObserv
     @Override
     public void update() {
         this.bouldersInTargets = 0;
-        for (Target target : getModel().getTargets())
-            for (Boulder boulder : getModel().getBoulders())
-                if (target.getPosition().equals(boulder.getPosition())) bouldersInTargets++;
+        List<Target> targets = getModel().getTargets();
+        for (Target target : targets) {
+            List<Boulder> boulders = getModel().getBoulders();
+            for (Boulder boulder : boulders) {
+                boolean equals = target.getPosition().equals(boulder.getPosition());
+                if (equals) bouldersInTargets++;
+            }
+        }
     }
 
     public int getBouldersInTargets() {

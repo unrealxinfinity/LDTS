@@ -40,28 +40,32 @@ public class DozerController extends GameController {
 
     public void moveDozerLeft() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         this.direction = directions.LEFT;
-        moveDozer(getModel().getDozer().getPosition().moveLeft());
+        Position p = getModel().getDozer().getPosition().moveLeft();
+        moveDozer(p);
         getSound().restartAudio();
         getSound().play();
     }
 
     public void moveDozerRight() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         this.direction = directions.RIGHT;
-        moveDozer(getModel().getDozer().getPosition().moveRight());
+        Position p = getModel().getDozer().getPosition().moveRight();
+        moveDozer(p);
         getSound().restartAudio();
         getSound().play();
     }
 
     public void moveDozerUP() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         this.direction = directions.UP;
-        moveDozer(getModel().getDozer().getPosition().moveUp());
+        Position p = getModel().getDozer().getPosition().moveUp();
+        moveDozer(p);
         getSound().restartAudio();
         getSound().play();
     }
 
     public void moveDozerDown() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         this.direction = directions.DOWN;
-        moveDozer(getModel().getDozer().getPosition().moveDown());
+        Position p = getModel().getDozer().getPosition().moveDown();
+        moveDozer(p);
         getSound().restartAudio();
         getSound().play();
     }

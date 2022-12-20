@@ -4,6 +4,7 @@ import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
+import pt.up.fe.edu.dozer.model.game.elements.Placer;
 
 import java.io.IOException;
 
@@ -16,19 +17,25 @@ public class PlacerController extends EditorController {
     private void movePlacer(Position position) {
         boolean vertical = position.getY() >= 0 && position.getY() < getModel().getHeight();
         boolean horizontal = position.getX() >= 0 && position.getX() < getModel().getWidth();
-        if (vertical && horizontal) getModel().getPlacer().setPosition(position);
+        if (vertical && horizontal) {
+            Placer placer = getModel().getPlacer();
+            placer.setPosition(position);
+        }
     }
-
+    
     public void movePlacerLeft() {
-        movePlacer(getModel().getPlacer().getPosition().moveLeft());
+        Position position = getModel().getPlacer().getPosition().moveLeft();
+        movePlacer(position);
     }
-
+    
     public void movePlacerRight() {
-        movePlacer(getModel().getPlacer().getPosition().moveRight());
+        Position position = getModel().getPlacer().getPosition().moveRight();
+        movePlacer(position);
     }
-
+    
     public void movePlacerUp() {
-        movePlacer(getModel().getPlacer().getPosition().moveUp());
+        Position position = getModel().getPlacer().getPosition().moveUp();
+        movePlacer(position);
     }
 
     public void movePlacerDown() {

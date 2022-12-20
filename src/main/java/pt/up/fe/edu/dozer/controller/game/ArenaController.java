@@ -64,7 +64,8 @@ public class ArenaController extends GameController {
                 ArenaBuilder builder = new LoaderArenaBuilder(getModel().getLevelNum() + 1, new LevelReader());
                 game.resetTimer();
                 getSound().play();
-                game.setState(new GameState(builder.createArena(new Arena())));
+                Arena arena = builder.createArena(new Arena());
+                game.setState(new GameState(arena));
             } catch (NullPointerException e) {
                 game.resetTimer();
                 try{

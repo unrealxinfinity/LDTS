@@ -7,6 +7,7 @@ import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.elements.Boulder;
 
 import java.io.IOException;
+import java.util.List;
 
 public class BoulderController extends ElementController {
     private final TargetController targetController;
@@ -25,7 +26,8 @@ public class BoulderController extends ElementController {
     }
 
     private Boulder findBoulder(Position p) {
-        for (Boulder boulder : getModel().getBoulders())
+        List<Boulder> boulders = getModel().getBoulders();
+        for (Boulder boulder : boulders)
             if (p.equals(boulder.getPosition()))
                 return boulder;
         return null;
