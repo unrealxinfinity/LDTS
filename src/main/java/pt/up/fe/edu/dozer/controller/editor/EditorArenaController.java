@@ -2,6 +2,7 @@ package pt.up.fe.edu.dozer.controller.editor;
 
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.gui.GUI;
+import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.state.EditedGameState;
@@ -65,6 +66,7 @@ public abstract class EditorArenaController extends EditorController {
 
     private void clearPosition() {
         EditorPositionClearer clearer = new EditorPositionClearer(getModel());
-        clearer.clearPosition(getModel().getPlacer().getPosition());
+        Position position = getModel().getPlacer().getPosition();
+        clearer.clearPosition(position);
     }
 }

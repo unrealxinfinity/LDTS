@@ -1,5 +1,6 @@
 package pt.up.fe.edu.dozer.controller.editor;
 
+import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.game.elements.Dozer;
 import pt.up.fe.edu.dozer.state.editor.BoulderEditorState;
