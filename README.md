@@ -20,6 +20,10 @@ Yet to be done
 Heres a drawing for the level editor
 
 ![Heres a mock up for the level editor feature](https://cdn.discordapp.com/attachments/1030861260406935632/1045265120147820544/image.png)
+<p align="center" justify="center">
+<img src= "src/main/Docs/Gifs/SelectLevel.gif" width="208" height="280"/>
+<img src= "src/main/Docs/Gifs/play.gif" width="208" height="280"/>
+</p>
 
 ### Design Problems
 
