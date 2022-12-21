@@ -11,6 +11,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class EditedArenaTest {
+
     @Test
     public void restartTest() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         EditorArena arena = new EditorArena(20, 20);
