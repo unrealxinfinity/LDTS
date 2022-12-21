@@ -40,6 +40,7 @@ public class LevelSelectController extends GenericMenuController<LevelSelect> {
                 game.resetTimer();
                 game.setState(new GameState(arena));
             } catch (NullPointerException ignored) {
+                System.out.println("No Correspondent Level");
             }
         }
         if (getModel().isSelectedBack()) {

@@ -14,11 +14,19 @@ import java.net.URISyntaxException;
 
 
 public class MainGame {
+
+
     private State state;
     private long initialTime = System.currentTimeMillis();
     private final AudioManager BGM;
     private boolean bgmMuted;
 
+    public long getInitialTime(){
+        return initialTime;
+    }
+    public State getState() {
+        return state;
+    }
 
     public void setState(State s) {
         state = s;
@@ -46,20 +54,20 @@ public class MainGame {
         return BGM;
     }
 
-    public MainGame() throws FontFormatException, IOException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
-        this.state = new MenuState(new MainMenu());
-        this.BGM = new AudioManager("/audio/initSound.wav");
+    public MainGame(State state, AudioManager audio) throws FontFormatException, IOException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
+        this.state = state;
+        this.BGM = audio;
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
-        new MainGame().start();
+        try{
+            new MainGame(new MenuState(new MainMenu()),new AudioManager("/audio/initSound.wav")).start();
+        } catch (InterruptedException e) {
+            System.out.println("Program interrupted");
+        }
     }
 
-    public void start() throws IOException, FontFormatException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException {
-
-        //audio test -OK
-        //AudioManager valuescheck=new AudioManager("/audio/monkeyApplause.wav");
-        //valuescheck.play();
+    public void start() throws IOException, FontFormatException, URISyntaxException, UnsupportedAudioFileException, LineUnavailableException, InterruptedException {
         BGM.loopSound();
 
         LanternaGUI gui = new LanternaGUI(20, 15);
@@ -69,10 +77,10 @@ public class MainGame {
             long elapsedTime = System.currentTimeMillis() - startTime;
             state.step(this, gui, (startTime - initialTime) / 1000);
             long sleepTime = frameTime - elapsedTime;
-            try {
-                if (sleepTime > 0) Thread.sleep(sleepTime);
-            } catch (InterruptedException ignored) {
-            }
+
+            if (sleepTime > 0) Thread.sleep(sleepTime);
+
+            this.getBGM();//usado meramente para os testes
         }
         gui.close();
     }
