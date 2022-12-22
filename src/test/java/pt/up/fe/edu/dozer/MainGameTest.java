@@ -34,16 +34,10 @@ public class MainGameTest {
 
     }
     @Test
-    public void MainGameTest(){
+    public void mainGameTest(){
         Assertions.assertNotNull(spyCheck.getBGM());
-        Assertions.assertNotNull(spyCheck.getState());
     }
-    @Test
-    public void setStateTest(){
-        spyCheck.setState(stateMock);
-        Assertions.assertNotNull(spyCheck);
-        Assertions.assertEquals(stateMock,spyCheck.getState());
-    }
+
     @Test
     public void resetTimer(){
         spyCheck.resetTimer();
