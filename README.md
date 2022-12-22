@@ -10,190 +10,40 @@ The following screenshots give a general look of our game, as well as its functi
 
 ### Game preview
 
-
+![]()
 
 ### Menus
 
-<p align="center" justify="center">
-  <img src="Images/Main menu.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 1. Main Menu </i></b>
-</p>  
+![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Main%20menu.png?token=GHSAT0AAAAAAB25O7QPQOBVF5OJYXYIOJDIY5EWHXA)
+<p/>
+    <b><i>Fig 1. Main Menu </i></b>
 
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level Select.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 2. Select level Menu </i></b>  
-</p>  
+![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%20Select.png?token=GHSAT0AAAAAAB25O7QOUT5S7BJD2UG64ZBQY5EWH4A)
+<p/>
+    <b><i>Fig 2. Level Select Menu </i></b>  
 
 ### Level editor
 
-<p align="center" justify="center">
-  <img src="Images/Level editor.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 3. Level editor </i></b>
-</p>
+![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%20editor.png?token=GHSAT0AAAAAAB25O7QO3RO5Q4L6CVDD3DE2Y5EWIDQ)
+<p/>
+    <b><i>Fig 3. Level editor </i></b>
 
 ### Levels
 
-<p align="center" justify="center">
-  <img src="Images/Level 1.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 4. Level 1 </i></b>
-</p>
+![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%205.png?token=GHSAT0AAAAAAB25O7QOT75C6NJTMJH43BOEY5EWM3A)
+<p/>
+    <b><i>Fig 4. Level 5 </i></b>
 
-<br>
-<br />
+![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%2010.png?token=GHSAT0AAAAAAB25O7QPND6PYD3WPVV3QOC4Y5EWNWA)
+<p/>
+    <b><i>Fig 5. Level 10 </i></b>
 
-<p align="center" justify="center">
-  <img src="Images/Level 2.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 5. Level 2 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 3.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 6. Level 3 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 4.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 7. Level 4 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 5.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 8. Level 5 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 6.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 9. Level 6 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 7.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 10. Level 7 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 8.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 11. Level 8 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 9.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 12. Level 9 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 10.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 13. Level 10 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 11.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 14. Level 11 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 12.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 15. Level 12 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 13.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 16. Level 13 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 14.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 17. Level 14 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
-  <img src="Images/Level 15.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 18. Level 15 </i></b>
-</p>
+![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%2015.png?token=GHSAT0AAAAAAB25O7QOFX7HGOJ4G2XII7TEY5EWMVA)
+<p/>
+    <b><i>Fig 6. Level 15 </i></b>
 
 ### End Game
 
-<p align="center" justify="center">
-  <img src="Images/End Game.png" width="500" height="500"/>
-</p>
-<p align="center">
-  <b><i>Fig 19. End Game </i></b>
-</p>
+![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/End%20Game.png?token=GHSAT0AAAAAAB25O7QP6GP63OQMOHIRDTM2Y5EWKEA)
+<p/>
+    <b><i>Fig 7. End Game </i></b>

@@ -24,7 +24,11 @@ The structure of our project was one of our first concerns. As we had the idea o
 We applied the **_State Pattern_** and **_MVC Architecture Pattern_**. By using these patterns we can avoid what we stated before by integrating states to the game. We can also avoid a chunk of if statements by using polymorphism to switch to the right state.
 #### Implementation:
 In terms of implementation , we have 6 main classes, model (store data), controller (logic), audio (music), viewer (visual effects), gui (graphical interface) and state. They all are associated in this way:
-(...)
+
+![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/State%20pattern.png?token=GHSAT0AAAAAAB25O7QOCX7K2JPGURCKDC62Y5EW6ZQ)
+<p/>
+    <b><i>Fig 1. State pattern screenshot </i></b>
+
 The different states have implemented the **_MVC Architecture Pattern_**.
 #### Consequences:
 All the states that symbolize the menus are made more explicit in the code, and thus do not depend on flags. Thus, it also facilitates the addition of new features in the course of development.
