@@ -118,8 +118,10 @@ The Facade design pattern provides a unified interface to a set of interfaces in
 #### **Large Class**
 #### **Parallel Hierarchy**
 When we create a class to extend a functionality, we find the need to create more classes to complement the application.
-For exemple , such problem is found when we want to create a new object that moves but we need to create another controller specific to the object and the viewer to draw it.
+For exemple , such problem is found when we want to create a new object that moves but we need to create another controller specific to the object if it is necessary (walls don't need controllers, for example), the viewer to draw it, and the corresponding editor state.
+On the other hand, this allows us to better respect the Single Responsibility Principle by not having a class that stores, controls and draws an element, and it is also necessary to uphold the intent of the MVC architectural pattern.
 #### **Data Class**
+A lot of classes in the model package, notably the elements themselves, are simple data classes. Normally, this should be avoided, but the use of the MVC pattern makes it somewhat of a necessary evil to be able to keep the model, the view and the controller separate.
 #### **Alternative classes with different interfaces and Lazy Classes**
 #### **Refused bequest**
 #### **Feature envy and message chains**
