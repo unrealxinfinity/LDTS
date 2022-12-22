@@ -25,7 +25,7 @@ We applied the **_State Pattern_** and **_MVC Architecture Pattern_**. By using 
 #### Implementation:
 In terms of implementation , we have 6 main classes, model (store data), controller (logic), audio (music), viewer (visual effects), gui (graphical interface) and state. They all are associated in this way:
 
-![]()
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/StatePattern.png)
 <p/>
     <b><i>Fig 1. State pattern screenshot </i></b>
 
@@ -42,7 +42,7 @@ By implementing the **_Observer Pattern_** with target controllers as observers 
 #### Implementation:
 The BoulderController notifies the TargetController (which implements the BoulderObserver interface) that it has to do this check.
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/image.png?token=GHSAT0AAAAAAB25O7QOJBLNWIAYN26BHQLAY5EWRDA)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/image.png)
 <p/>
   <b><i>Fig 2. Observers screenshot </i></b>
 
@@ -60,11 +60,11 @@ The solution that came up was using the **_Decorator Method_**. It allows adding
 #### Implementation:
 By creating an "ImportantWall" class that is a subclass of Wall and is functionally identical, we can differentiate between walls that are just decoration (notably, walls behind walls) and walls that matter for collision. Thus, the level saves two lists of walls.
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Captura%20de%20ecr%C3%A3%20de%202022-12-18%2019-06-19.png?token=GHSAT0AAAAAAB25O7QO2YBX7IZKZJ53WBHGY5EWT5Q)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/Decorator.png)
 <p/>
   <b><i>Fig 3. Field Builder and loader </i></b>
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Captura%20de%20ecr%C3%A3%20de%202022-12-18%2019-06-26.png?token=GHSAT0AAAAAAB25O7QPBB3Y3BNSGI4S7UUCY5EWQZA)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/Decorator1.png)
 <p/>
   <b><i>Fig 4. Field Builder and loader </i></b>
 
@@ -80,11 +80,11 @@ As we have many objects that we need to instantiate, it becomes difficult to mai
 #### Implementation:
 Products were created (abstract and concrete) that execute the decision made in the factory. At runtime we don't know who will be called, instead of having if's and else's in the client, we have all the decision logic in the factory.
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/FactoryPatternEx.png?token=GHSAT0AAAAAAB25O7QOOSHHZRHF6LA53KV4Y5EWYXA)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/FactoryPatternEx.png)
 <p/>
   <b><i>Fig 5. Factory pattern : Viewer model</i></b>
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/FactoryPatternEx1.png?token=GHSAT0AAAAAAB25O7QPKMFSTHNMUKJAJJIIY5EWY2Q)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/FactoryPatternEx1.png)
 <p/>
   <b><i>Fig 6. Factory pattern : Controller model </i></b>
 
@@ -100,7 +100,7 @@ Another point to bear in mind is, when using the raw library, the game, which is
 **_Facade Pattern_** was the chosen method. The intent of this pattern is to encapsulate complicated logic in a high-level interface that makes accessing a subsystem very simple and easy to use.
 #### Implementation:
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Captura%20de%20ecr%C3%A3%20de%202022-12-19%2022-50-00.png?token=GHSAT0AAAAAAB25O7QOOEPDS3IW7I3JX3HSY5EWQ5A)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/GUI.png)
 <p/>
   <b><i>Fig 7. GUI implementation</i></b>
 
