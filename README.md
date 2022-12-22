@@ -10,40 +10,40 @@ The following screenshots give a general look of our game, as well as its functi
 
 ### Game preview
 
-![]()
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/play2fail.gif)
 
 ### Menus
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Main%20menu.png?token=GHSAT0AAAAAAB25O7QPQOBVF5OJYXYIOJDIY5EWHXA)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/MainMenu.png)
 <p/>
     <b><i>Fig 1. Main Menu </i></b>
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%20Select.png?token=GHSAT0AAAAAAB25O7QOUT5S7BJD2UG64ZBQY5EWH4A)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/LevelSelect.png)
 <p/>
     <b><i>Fig 2. Level Select Menu </i></b>  
 
 ### Level editor
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%20editor.png?token=GHSAT0AAAAAAB25O7QO3RO5Q4L6CVDD3DE2Y5EWIDQ)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/LevelEditor.png)
 <p/>
     <b><i>Fig 3. Level editor </i></b>
 
 ### Levels
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%205.png?token=GHSAT0AAAAAAB25O7QOT75C6NJTMJH43BOEY5EWM3A)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/Level%205.png)
 <p/>
     <b><i>Fig 4. Level 5 </i></b>
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%2010.png?token=GHSAT0AAAAAAB25O7QPND6PYD3WPVV3QOC4Y5EWNWA)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/Level%2010.png)
 <p/>
     <b><i>Fig 5. Level 10 </i></b>
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/Level%2015.png?token=GHSAT0AAAAAAB25O7QOFX7HGOJ4G2XII7TEY5EWMVA)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/Level%2015.png)
 <p/>
     <b><i>Fig 6. Level 15 </i></b>
 
 ### End Game
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/End%20Game.png?token=GHSAT0AAAAAAB25O7QP6GP63OQMOHIRDTM2Y5EWKEA)
+![](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/images/src/main/Docs/Images/End%20Game.png)
 <p/>
     <b><i>Fig 7. End Game </i></b>
