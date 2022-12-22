@@ -1,19 +1,20 @@
 package pt.up.fe.edu.dozer.controller.editor;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.gui.GUI;
-import pt.up.fe.edu.dozer.gui.LanternaGUI;
-import pt.up.fe.edu.dozer.model.game.arena.Arena;
+import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.game.elements.Dozer;
 import pt.up.fe.edu.dozer.model.game.elements.Placer;
+import pt.up.fe.edu.dozer.model.game.elements.Target;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EditorControllersTest {
 
@@ -143,5 +144,30 @@ public class EditorControllersTest {
         Mockito.verify(gameMock,Mockito.times(1)).muteBGM();
         Mockito.reset(gameMock);
 
-    }
+    }/* Error here with pitest
+
+    @Test
+    public void placeTargetTest(){
+        EditorArena arenaMock= Mockito.mock(EditorArena.class);
+        EditorArenaTargetController editorArenaTargetControllerSpy = Mockito.spy( new EditorArenaTargetController(arenaMock));
+        Placer placerMock = Mockito.mock(Placer.class);
+
+        //usado para as spy, para fzer behaviour test do add
+        List <Target> targets= new ArrayList<>();
+        targets.add(new Target(1,1));
+        List<Target> targetSpy=Mockito.spy(targets);
+
+        Mockito.when(editorArenaTargetControllerSpy.getModel()).thenReturn(arenaMock);
+        Mockito.when(arenaMock.getPlacer()).thenReturn(placerMock);
+        Mockito.when(placerMock.getPosition()).thenReturn(new Position(1,1));
+        Mockito.when(arenaMock.getTargets()).thenReturn(targetSpy);
+
+        editorArenaTargetControllerSpy.placeElement();
+        Mockito.verify(editorArenaTargetControllerSpy,Mockito.times(2)).getModel();
+        Mockito.verify(arenaMock,Mockito.times(1)).getPlacer();
+        Mockito.verify(arenaMock,Mockito.times(1)).getTargets();
+        Mockito.verify(placerMock,Mockito.times(1)).getPosition();
+        Mockito.verify(targetSpy,Mockito.times(1)).add(Mockito.any());
+
+    }*/
 }
