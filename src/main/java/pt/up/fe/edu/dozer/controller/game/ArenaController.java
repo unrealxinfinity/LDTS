@@ -27,17 +27,6 @@ public class ArenaController extends GameController {
 
     private final int numTargets;
 
-    public BoulderController getBoulderController() {
-        return boulderController;
-    }
-
-    public DozerController getDozerController() {
-        return dozerController;
-    }
-
-    public TargetController getTargetController() {
-        return targetController;
-    }
 
     public ArenaController(Arena arena, AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         super(arena, audio);
