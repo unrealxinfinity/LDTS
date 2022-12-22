@@ -93,11 +93,20 @@ Products were created (abstract and concrete) that execute the decision made in 
 
 #### Consequences:
 The pattern gives us a way to turn off the implementation of a Product. Adding or changing Products will not affect the Creator as they are not tightly linked. It encapsulates the code that creates objects and avoids duplication, plus we have a single place to maintain it.
- 
+
+### Editor View
+#### Problem in Context:
+When drawing the screen during level editing, we're drawing everything as if it were a regular level, but with the added placer icon.
+Therefore, we needed a viewer that could do everything that the GameViewer could do with a small addition.
+#### The Pattern:
+With the **_Decorator Pattern_**, we can take an existing class and extend its funcionality without over complicating the inheritance tree by wrapping an object of the initial class around a decorator that adds functionality.
+#### Implementation:
+The EditorViewer class has a field of type GameViewer. When calling draw() on an EditorViewer, it calls the draw() method of its own GameViewer and then draws the placer symbol on top.
+
 ### GUI
 #### Problem in Context:
 The Lanterna library has a vast list of unnecessary functions for our project, which many violate the Interface Segregation Principle.
-Another point to bear in mind is, when using the raw library, the game, which is a high-level module, started to depend on a low-level module, something not very profitable.
+Another point to bear in mind is, when using the raw library, the game, which is a high-level module, started to depend on a low-level module, which violates basic OOP principles.
 #### The Pattern:
 **_Facade Pattern_** was the chosen method. The intent of this pattern is to encapsulate complicated logic in a high-level interface that makes accessing a subsystem very simple and easy to use.
 #### Implementation:
@@ -115,26 +124,36 @@ The Facade design pattern provides a unified interface to a set of interfaces in
 
 
 ## Known Code Smells
-#### **Large Class**
-#### **Parallel Hierarchy**
+- #### **Large Class**
+There are classes that contain significant chunck of code that could be simplified;
+- #### **Parallel Hierarchy**
 When we create a class to extend a functionality, we find the need to create more classes to complement the application.
-For exemple , such problem is found when we want to create a new object that moves but we need to create another controller specific to the object and the viewer to draw it.
-#### **Data Class**
-#### **Alternative classes with different interfaces and Lazy Classes**
-#### **Refused bequest**
-#### **Feature envy and message chains**
+For exemple , such problem is found when we want to create a new object that moves but we need to create another controller specific to the object if it is necessary (walls don't need controllers, for example), the viewer to draw it, and the corresponding editor state.
+On the other hand, this allows us to better respect the Single Responsibility Principle by not having a class that stores, controls and draws an element, and it is also necessary to uphold the intent of the MVC architectural pattern.
+- #### **Data Class**
+A lot of classes in the model package, notably the elements themselves, are simple data classes. Normally, this should be avoided, but the use of the MVC pattern makes it somewhat of a necessary evil to be able to keep the model, the view and the controller separate.
+- #### **Alternative classes with different interfaces and Lazy Classes**
+- #### **Refused bequest**
+Classes that we 
+- #### **Feature envy and message chains**
 ## Refactoring suggestions
-#### **Extract Superclass**
+- #### **Extract Superclass**
 Having multiple subclasses that repeat the same kind of code/function made us extracts the repeated methods to a superclass that contains all the common methods in order to reduce the amount of code.
-#### **Inline Variable**
+- #### **Inline Variable**
 Some tasks are so obvious that we don't need a variable to make it more obvious.
-#### **Extract class**
+- #### **Extract class**
 Moving some methods from a class to another more appropriate class
 ## Testing
 We often find the need to use dependency injection in order to test certain functionalities within a method.
 By using mocks with Mockito and Assertions, we tested both the behaviour and the values of methods that we thought it was the best to.
 By using Pitest mutation testing, we were able to find holes in our tests that we needed to fix by covering more content of the methods, improving its coverage.
 
+### During the tests
+We followed many testing techniques, these include:
+- **Black box testing** : This type of testing was used in order to test the integrity of input and output relation in the methods, in some tests we used techniques such as *boundary value analysis* ;
+- **White box testing** : This type of testing was used in order to test the behaviour and the internal structure of the methods we wanted to test, in order to assure that within the methods we want to test everything went accoring to the expectations. We used techniques such as *path coverage*, to assure every method inside a method was invoked at least once, and *statement coverage* to test whether all the statements were covered.
+All of this was possile thanks to Mockito and Junit!
+But there´s a catch, it was not possible to cover every class and method, due to the nature of the MVC model because it makes testing more difficult. And with other factors accumulated like snowball effect makes the full coverage almost impossible!
 
 ### Screenshot of coverage report
 ### Link to mutation testing report

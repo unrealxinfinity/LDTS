@@ -1,6 +1,6 @@
 ## Game Description
 
-The Bulldozer is a game in which the player controls a tank named dozer and to win, he needs to push the boulders towards the targets. It consists of 15 levels, which increase in difficulty, with more obstacles and more targets to put the boulders.
+The Bulldozer is a game in which the player controls a tank named dozer and to win, he needs to push the boulders towards the targets. It consists of 15 levels, which will increase in difficulty each step the player takes to the end, with more obstacles and more targets to put the boulders.
 This project was developed by Afonso Castro Vaz Osório (up202108700@edu.fe.up.pt), Haochang Fu (up202108730@edu.fe.up.pt) and Inês Martin Soares (up202108852@edu.fe.pt) for LDTS 2022-23.
 For a more detailed version of this description click [here](./docs/README.md).
 
@@ -8,11 +8,24 @@ For a more detailed version of this description click [here](./docs/README.md).
 
 The following screenshots give a general look of our game, as well as its functionalities.
 
-### Game preview
+## Game preview
 
+<p align="center" justify="center">
+<img src= "src/main/Docs/Gifs/play.gif" width="208" height="280"/>
+</p>
 
-### Menus
+### Lack the brain to solve the problem? Call your dad and **reset the level**!
 
+<p align="center" justify="center">
+<img src= "src/main/Docs/Gifs/reset.gif" width="208" height="280"/>
+</p>
+As the player progress throught the game, it's only natural that the player get stuck in certain situations, hence why there's a reset button. The game is very family friendly so call someone else to help you!
+
+## Menus
+
+<p align="center" justify="center">
+<img src= "src/main/Docs/Gifs/SelectLevel.gif" width="208" height="280"/>
+</p>
 
 <p align="center" justify="center">
   <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-19-26.png"/>
@@ -31,7 +44,7 @@ The following screenshots give a general look of our game, as well as its functi
   <b><i>Fig 2. Select level Menu </i></b>  
 </p>  
 
-### Level editor
+## Level editor
 
 <p align="center" justify="center">
   <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-19-37.png"/>
@@ -40,7 +53,7 @@ The following screenshots give a general look of our game, as well as its functi
   <b><i>Fig 3. Level editor </i></b>
 </p>
 
-### Levels
+## Levels
 
 <p align="center" justify="center">
   <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-13-43.png"/>
@@ -189,7 +202,7 @@ The following screenshots give a general look of our game, as well as its functi
   <b><i>Fig 18. Level 15 </i></b>
 </p>
 
-### End Game
+## End Game
 
 <p align="center" justify="center">
   <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-57.png"/>
