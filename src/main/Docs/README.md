@@ -139,14 +139,14 @@ during the development we created many classes that were developed towards the t
 Classes that had nothing to do with the superclass because we needed some of the functions from the superclass.
 - #### **Feature envy and message chains**
 ## Refactoring suggestions
--#### **Extract Class**
-In order to fix refused bequest, we moved the related classes to new classes because the former had nothing to do with their superclasses.
 - #### **Extract Superclass**
 Having multiple subclasses that repeat the same kind of code/function made us extract the repeated methods to a superclass that contains all the common methods in order to reduce the amount of code.
 - #### **Inline Variable**
 Some tasks are so obvious that we don't need a variable to make it more obvious.
 - #### **Extract class**
-Moving some methods from a class to another more appropriate class
+Moving some methods from a class to another more appropriate class.
+In order to fix refused bequest, we moved the related classes to new classes because the former had nothing to do with their superclasses.
+
 ## Testing
 We often find the need to use dependency injection in order to test certain functionalities within a method.
 By using mocks with Mockito and Assertions, we tested both the behaviour and the values of methods that we thought it was the best to.
