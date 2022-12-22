@@ -93,11 +93,20 @@ Products were created (abstract and concrete) that execute the decision made in 
 
 #### Consequences:
 The pattern gives us a way to turn off the implementation of a Product. Adding or changing Products will not affect the Creator as they are not tightly linked. It encapsulates the code that creates objects and avoids duplication, plus we have a single place to maintain it.
- 
+
+### Editor View
+#### Problem in Context:
+When drawing the screen during level editing, we're drawing everything as if it were a regular level, but with the added placer icon.
+Therefore, we needed a viewer that could do everything that the GameViewer could do with a small addition.
+#### The Pattern:
+With the **_Decorator Pattern_**, we can take an existing class and extend its funcionality without over complicating the inheritance tree by wrapping an object of the initial class around a decorator that adds functionality.
+#### Implementation:
+The EditorViewer class has a field of type GameViewer. When calling draw() on an EditorViewer, it calls the draw() method of its own GameViewer and then draws the placer symbol on top.
+
 ### GUI
 #### Problem in Context:
 The Lanterna library has a vast list of unnecessary functions for our project, which many violate the Interface Segregation Principle.
-Another point to bear in mind is, when using the raw library, the game, which is a high-level module, started to depend on a low-level module, something not very profitable.
+Another point to bear in mind is, when using the raw library, the game, which is a high-level module, started to depend on a low-level module, which violates basic OOP principles.
 #### The Pattern:
 **_Facade Pattern_** was the chosen method. The intent of this pattern is to encapsulate complicated logic in a high-level interface that makes accessing a subsystem very simple and easy to use.
 #### Implementation:
