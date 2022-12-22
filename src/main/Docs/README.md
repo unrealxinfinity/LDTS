@@ -138,6 +138,7 @@ during the development we created many classes that were developed towards the t
 - #### **Refused bequest**
 Classes that had nothing to do with the superclass because we needed some of the functions from the superclass.
 - #### **Feature envy and message chains**
+Due to the nature of the MVC, message passing is common between classes and there are times that a subclass only propagates the messages between its subclass and its superclasss, making it a *middle man*.
 ## Refactoring suggestions
 - #### **Extract Superclass**
 Having multiple subclasses that repeat the same kind of code/function made us extract the repeated methods to a superclass that contains all the common methods in order to reduce the amount of code.
@@ -154,11 +155,10 @@ By using Pitest mutation testing, we were able to find holes in our tests that w
 
 ### During the tests
 We followed many testing techniques, these include:
-- **Black box testing** : This type of testing was used in order to test the integrity of input and output relation in the methods, in some tests we used techniques such as *boundary value analysis* ;
-- **White box testing** : This type of testing was used in order to test the behaviour and the internal structure of the methods we wanted to test, in order to assure that within the methods we want to test everything went accoring to the expectations. We used techniques such as *path coverage*, to assure every method inside a method was invoked at least once, and *statement coverage* to test whether all the statements were covered.
+- **Black box testing** : This type of testing was used in order to test the integrity of input and output relation in the methods, in some tests we used techniques such as **boundary value analysis** ;
+- **White box testing** : This type of testing was used in order to test the behaviour and the internal structure of the methods we wanted to test, in order to assure that within the methods we want to test everything went accoring to the expectations. We used techniques such as **path coverage**, to assure every method inside a method was invoked at least once, and **statement coverage** to test whether all the statements were covered.
 All of this was possile thanks to Mockito and Junit!
 But there´s a catch, it was not possible to cover every class and method, due to the nature of the MVC model because it makes testing more difficult. And with other factors accumulated like snowball effect makes the full coverage almost impossible!
 
 ### Screenshot of coverage report
 ### Link to mutation testing report
-## Self-evaluation
