@@ -25,7 +25,7 @@ We applied the **_State Pattern_** and **_MVC Architecture Pattern_**. By using 
 #### Implementation:
 In terms of implementation , we have 6 main classes, model (store data), controller (logic), audio (music), viewer (visual effects), gui (graphical interface) and state. They all are associated in this way:
 
-![](https://raw.githubusercontent.com/FEUP-LDTS-2022/project-l07gr08/images/src/main/Docs/Images/State%20pattern.png?token=GHSAT0AAAAAAB25O7QOCX7K2JPGURCKDC62Y5EW6ZQ)
+![]()
 <p/>
     <b><i>Fig 1. State pattern screenshot </i></b>
 
