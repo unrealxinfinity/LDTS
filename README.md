@@ -15,7 +15,7 @@ The following screenshots give a general look of our game, as well as its functi
 ### Menus
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-19-26.png"/>
+  <img src="Images/Main menu.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 1. Main Menu </i></b>
@@ -25,7 +25,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-19-30.png"/>
+  <img src="Images/Level Select.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 2. Select level Menu </i></b>  
@@ -34,7 +34,7 @@ The following screenshots give a general look of our game, as well as its functi
 ### Level editor
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-19-37.png"/>
+  <img src="Images/Level editor.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 3. Level editor </i></b>
@@ -43,7 +43,7 @@ The following screenshots give a general look of our game, as well as its functi
 ### Levels
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-13-43.png"/>
+  <img src="Images/Level 1.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 4. Level 1 </i></b>
@@ -53,7 +53,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-15-31.png"/>
+  <img src="Images/Level 2.png"/>
 </p>
 <p align="center">
   <b><i>Fig 5. Level 2 </i></b>
@@ -63,7 +63,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-15-44.png"/>
+  <img src="Images/Level 3.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 6. Level 3 </i></b>
@@ -73,7 +73,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-15-52.png"/>
+  <img src="Images/Level 4.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 7. Level 4 </i></b>
@@ -83,7 +83,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-02.png"/>
+  <img src="Images/Level 5.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 8. Level 5 </i></b>
@@ -93,7 +93,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-11.png"/>
+  <img src="Images/Level 6.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 9. Level 6 </i></b>
@@ -103,7 +103,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-59.png"/>
+  <img src="Images/Level 7.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 10. Level 7 </i></b>
@@ -113,7 +113,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-08.png"/>
+  <img src="Images/Level 8.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 11. Level 8 </i></b>
@@ -123,7 +123,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-15.png"/>
+  <img src="Images/Level 9.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 12. Level 9 </i></b>
@@ -133,7 +133,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-24.png"/>
+  <img src="Images/Level 10.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 13. Level 10 </i></b>
@@ -143,7 +143,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-48.png"/>
+  <img src="Images/Level 11.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 14. Level 11 </i></b>
@@ -153,7 +153,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-57.png"/>
+  <img src="Images/Level 12.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 15. Level 12 </i></b>
@@ -163,7 +163,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-05.png"/>
+  <img src="Images/Level 13.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 16. Level 13 </i></b>
@@ -173,7 +173,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-24.png"/>
+  <img src="Images/Level 14.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 17. Level 14 </i></b>
@@ -183,7 +183,7 @@ The following screenshots give a general look of our game, as well as its functi
 <br />
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-33.png"/>
+  <img src="Images/Level 15.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 18. Level 15 </i></b>
@@ -192,7 +192,7 @@ The following screenshots give a general look of our game, as well as its functi
 ### End Game
 
 <p align="center" justify="center">
-  <img src="Docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-57.png"/>
+  <img src="Images/End Game.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 19. End Game </i></b>

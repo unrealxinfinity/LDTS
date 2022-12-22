@@ -5,11 +5,11 @@ This project was developed by Afonso Castro Vaz Osório (up202108700@edu.fe.up.p
 
 ## Implemented Features
 
-**Menus** - The Main Menu has three options: Level Select, Level Editor and Quit. The Level Select Menu has the Select option, as well as the Start and Quit. Level Editor goes directly to the editor itself.
-**Buttons** - Functional and interactive buttons.
-**Keyboard control** - The keyboard inputs are received through the respective events and interpreted according to the current game state.
-**Player control** - The player may move with the keyboard control.
-**Collisions detection** - Collisions between different objects are verified. (Ex: Player, Walls, Boulders).
+- **Menus** - The Main Menu has three options: Level Select, Level Editor and Quit. The Level Select Menu has the Select option, as well as the Start and Quit. Level Editor goes directly to the editor itself;
+- **Buttons** - Functional and interactive buttons;
+- **Keyboard control** - The keyboard inputs are received through the respective events and interpreted according to the current game state;
+- **Player control** - The player may move with the keyboard control;
+- **Collisions detection** - Collisions between different objects are verified. (Ex: Player, Walls, Boulders);
 
 ## Planned Features
 
@@ -38,12 +38,13 @@ By implementing the **_Observer Pattern_** with target controllers as observers 
 #### Implementation:
 The BoulderController notifies the TargetController (which implements the BoulderObserver interface) that it has to do this check.
 <p align="center" justify="center">
-  <img src="Images/image.png"/>
+  <img src="Images/image.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 2. Observers screenshot </i></b>
 </p>
 In target controller, we have a private field that tells the number of boulders on the target and the boulder controller has the notify observer that at each movement or step of the bolder makes the target (observer) check if the bolder is in the target position to all targets. If so, it increments the number of bouldersInTargets.
+
 #### Consequences:
 This strategy made de code cleaner and easier to read, also respects the single responsibility principle (the observers only activate on their respective game state, when receiving an input warning).
 
@@ -51,18 +52,19 @@ This strategy made de code cleaner and easier to read, also respects the single 
 #### Problem in Context:
 The field has various elements in its composition which are the Walls (two types), the boulders, the targets and the dozer (player). Since we have different arenas depending on the level we are playing, instead having a builder to each level, we have a loader
 Checking collision with every wall is inefficient. In this game's levels, the areas of the screen that aren't relevant to the level are filled with walls, and since nothing will ever touch them, checking for collision with them is not necessary.
-#### The Pattern:
-The design pattern used is **_Decorator Pattern_**. It allows adding a behavior to an existing object at runtime, that is, it dynamically adds additional responsibilities to an object.
+#### The Solution:
+The solution that came up was using the **_Decorator Method_**. It allows adding a behavior to an existing object at runtime, that is, it dynamically adds additional responsibilities to an object.
 #### Implementation:
 By creating an "ImportantWall" class that is a subclass of Wall and is functionally identical, we can differentiate between walls that are just decoration (notably, walls behind walls) and walls that matter for collision. Thus, the level saves two lists of walls.
+
 <p align="center" justify="center">
-<img src="Images/UmlArenaBUilder.png"/>
+<img src="Images/UmlArenaBUilder.png" width="500" height="500" />
 </p>
 <p align="center">
   <b><i>Fig 3. Field Builder and loader </i></b>
 </p>
 <p align="center" justify="center">
-<img src="Images/Captura de ecrã de 2022-12-18 19-06-26.png"/>
+<img src="Images/Captura de ecrã de 2022-12-18 19-06-26.png" width="500" height="500" />
 </p>
 <p align="center">
   <b><i>Fig 4. Field Builder and loader </i></b>
@@ -79,13 +81,13 @@ As we have many objects that we need to instantiate, it becomes difficult to mai
 #### Implementation:
 Products were created (abstract and concrete) that execute the decision made in the factory. At runtime we don't know who will be called, instead of having if's and else's in the client, we have all the decision logic in the factory.
 <p align="center" justify="center">
-<img src="Images/FactoryPatternEx1.png"/>
+<img src="Images/FactoryPatternEx.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 5. Factory pattern : Viewer model</i></b>
 </p>
 <p align="center" justify="center">
-<img src="Images/FactoryPatternEx.png"/>
+<img src="Images/FactoryPatternEx1.png" width="500" height="500"/>
 </p>
 <p align="center">
   <b><i>Fig 6. Factory pattern : Controller model </i></b>
@@ -102,10 +104,10 @@ Another point to bear in mind is, when using the raw library, the game, which is
 **_Facade Pattern_** was the chosen method. The intent of this pattern is to encapsulate complicated logic in a high-level interface that makes accessing a subsystem very simple and easy to use.
 #### Implementation:
 <p align="center" justify="center">
-<img src="Images/Captura de ecrã de 2022-12-19 22-50-00.png"/>
+<img src="Images/Captura de ecrã de 2022-12-19 22-50-00.png" width="500" height="500"/>
 </p>
 <p align="center">
-  <b><i>Fig 6. GUI implementation</i></b>
+  <b><i>Fig 7. GUI implementation</i></b>
 </p>
 
 #### Consequences:
