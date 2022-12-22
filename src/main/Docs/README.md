@@ -133,12 +133,16 @@ On the other hand, this allows us to better respect the Single Responsibility Pr
 - #### **Data Class**
 A lot of classes in the model package, notably the elements themselves, are simple data classes. Normally, this should be avoided, but the use of the MVC pattern makes it somewhat of a necessary evil to be able to keep the model, the view and the controller separate.
 - #### **Alternative classes with different interfaces and Lazy Classes**
+There were classes that did similar jobs but had different interfaces and
+during the development we created many classes that were developed towards the thought of needing them in the future, but in the end these classes were useless. 
 - #### **Refused bequest**
-Classes that we 
+Classes that had nothing to do with the superclass because we needed some of the functions from the superclass.
 - #### **Feature envy and message chains**
 ## Refactoring suggestions
+-#### **Extract Class**
+In order to fix refused bequest, we moved the related classes to new classes because the former had nothing to do with their superclasses.
 - #### **Extract Superclass**
-Having multiple subclasses that repeat the same kind of code/function made us extracts the repeated methods to a superclass that contains all the common methods in order to reduce the amount of code.
+Having multiple subclasses that repeat the same kind of code/function made us extract the repeated methods to a superclass that contains all the common methods in order to reduce the amount of code.
 - #### **Inline Variable**
 Some tasks are so obvious that we don't need a variable to make it more obvious.
 - #### **Extract class**
