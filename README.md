@@ -9,10 +9,11 @@ For a more detailed version of this description click [here](./docs/README.md).
 The following screenshots give a general look of our game, as well as its functionalities.
 
 ## Game preview
-
+### Practise your problem solving abilities with this puzzle game!
 <p align="center" justify="center">
 <img src= "Docs/Gifs/play.gif" width="208" height="280"/>
 </p>
+This game allows you to develope your underdeveloped brain to solve trivial to difficult puzzles. Trust me, you'll like the brain you are going to accquire.
 
 ### Lack the brain to solve the problem? Call your dad and **reset the level**!
 
