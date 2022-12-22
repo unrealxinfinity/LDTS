@@ -24,7 +24,7 @@ public class MainGame {
     public long getInitialTime(){
         return initialTime;
     }
-    
+
     public void setState(State s) {
         state = s;
     }
