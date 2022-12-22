@@ -11,20 +11,20 @@ The following screenshots give a general look of our game, as well as its functi
 ## Game preview
 
 <p align="center" justify="center">
-<img src= "src/main/Docs/Gifs/play.gif" width="208" height="280"/>
+<img src= "Docs/Gifs/play.gif" width="208" height="280"/>
 </p>
 
 ### Lack the brain to solve the problem? Call your dad and **reset the level**!
 
 <p align="center" justify="center">
-<img src= "src/main/Docs/Gifs/reset.gif" width="208" height="280"/>
+<img src= "Docs/Gifs/reset.gif" width="208" height="280"/>
 </p>
 As the player progress throught the game, it's only natural that the player get stuck in certain situations, hence why there's a reset button. The game is very family friendly so call someone else to help you!
 
 ## Menus
 
 <p align="center" justify="center">
-<img src= "src/main/Docs/Gifs/SelectLevel.gif" width="208" height="280"/>
+<img src= "Docs/Gifs/SelectLevel.gif" width="208" height="280"/>
 </p>
 
 <p align="center" justify="center">
