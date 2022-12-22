@@ -136,7 +136,9 @@ A lot of classes in the model package, notably the elements themselves, are simp
 There were classes that did similar jobs but had different interfaces and
 during the development we created many classes that were developed towards the thought of needing them in the future, but in the end these classes were useless. 
 - #### **Refused bequest**
-Classes that had nothing to do with the superclass because we needed some of the functions from the superclass.
+There are cases where an inherited method is never used. An example that we don't consider to be too offensive is for the main menu controller (MenuController), which has empty stepLeft and stepRight methods.
+We say we find this smell less offensive because we saw putting the different abstract step methods on the GenericMenuController as telling each menu "these are the keys you can use" instead of "these are the keys you need to use",
+since naturally different menus will have different functionalities.
 - #### **Feature envy and message chains**
 Due to the nature of the MVC, message passing is common between classes and there are times that a subclass only propagates the messages between its subclass and its superclasss, making it a *middle man*.
 ## Refactoring suggestions
