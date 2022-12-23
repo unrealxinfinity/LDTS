@@ -45,7 +45,6 @@ public abstract class EditorArenaController extends EditorController {
         } else if (action == GUI.ACTION.SAVE) {
             if (getModel().getDozer() != null) {
                 game.resetTimer();
-                //game.setState(new LevelEditorMenuState(new LevelEditorMenu()));
                 game.setState(new EditedGameState(getModel()));
             }
 

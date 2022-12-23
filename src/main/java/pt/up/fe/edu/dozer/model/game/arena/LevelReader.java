@@ -13,9 +13,7 @@ import java.util.List;
 
 public class LevelReader {
     public List<String> readLevel(int level) throws IOException {
-        URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
         String path = "src/main/resources/levels/level" + level + ".lvl";
-        //BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
         BufferedReader br = Files.newBufferedReader(Paths.get(path), StandardCharsets.UTF_8);
 
         return readLines(br);
