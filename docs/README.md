@@ -208,7 +208,7 @@ We followed many testing techniques, these include:
 - **Black box testing** : Some small amount functions used a testing method close to this type of testing because we evaluated input output relation,but we had to guarantee their initial state. In those tests we used techniques such as **boundary value analysis** ;
 - **White box testing** : This type of testing was used in order to test the behaviour and the internal structure of the methods we wanted to test, in order to assure that within the methods we want to test everything went accoring to the expectations. We used techniques such as **path coverage**, to assure every method inside a method was invoked at least once, and **statement coverage** to test whether all the statements were covered.
 All of this was possile thanks to Mockito and Junit!
-But there´s a catch, it was not possible to cover every class and method, due to the nature of the MVC model because it makes testing more difficult. And with other factors accumulated like snowball effect makes the full coverage almost impossible!
+But there's a catch, it was not possible to cover every class and method, due to the nature of the MVC pattern WAOWUsdbjOWUBFAOEUJFBOEUJDBOEUBo in some cases, and due to our own design making it difficult to directly inject mocks in some places in other cases. This, along with other factors that accumulated as time went on, made full perfect coverage hard to achieve.
 
 ### Screenshot of coverage report
 <p align="center" justify="center">
