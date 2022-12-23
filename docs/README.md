@@ -1,6 +1,6 @@
 ## Game Description
 
-The Bulldozer is a game in which the player controls a tank named dozer and to win, he needs to push the boulders towards the targets. It consists of 15 levels, which increase in difficulty, with more obstacles and more targets to put the boulders.
+The Bulldozer is a game in which the player controls a tank named dozer and to win, he needs to push the boulders towards the targets. It consists of 15 levels, which increase in difficulty, with more obstacles and more targets on top of which to put the boulders.
 This project was developed by Afonso Castro Vaz Osório (up202108700@edu.fe.up.pt), Haochang Fu (up202108730@edu.fe.up.pt) and Inês Martin Soares (up202108852@edu.fe.pt) for LDTS 2022-23.
 
 ## Implemented Features
@@ -88,9 +88,9 @@ Since ImportantWall extends Wall, every method that works on Walls will work on 
 
 ### Various objects to instantiate
 #### Problem in Context:
-As we have many objects that we need to instantiate, it becomes difficult to maintain Rigidity of the game , having to make changes to all the components and functionalities everytime we add new type of objects.
+As we have many objects that we need to instantiate, it becomes difficult to avoid stuffing too much Rigidity into the game (in other words, making it difficult to make small changes in the code), having to make changes to all the components and functionalities everytime we add new type of objects.
 #### The Pattern:
-**_Factory Pattern_** was the chosen one. By using this design pattern,we ensure that we can instantiate different objects regardless their types by using their corresponding superclass, so we can add new features like new types of objects(ex: enemies or obstacles) without the need to worry about rigidity.
+**_Factory Pattern_** was the chosen one. By using this design pattern,we ensure that we can instantiate different objects regardless their types by using their corresponding superclass, so we can add new features like new types of objects(ex: enemies or obstacles) without the need to worry too much about rigidity.
 #### Implementation:
 Products were created (abstract and concrete) that execute the decision made in the factory. At runtime we don't know who will be called, instead of having if's and else's in the client, we have all the decision logic in the factory.
 <p align="center" justify="center">
@@ -186,7 +186,7 @@ Since most of the data is stored in the model, lots of classes access the data a
 Due to the nature of the MVC, message passing is common between classes and there are times that a subclass only propagates the messages between its subclass and its superclasss, making it a *middle man*.
 ## Refactoring examples
 - #### **Extract Superclass**
-During most of the project's lifetime, both menu controllers inherited directly from Controller, which meant there was quite a lot of repeated code between the two.
+During most of the project's lifetime, both menu controllers inherited directly from Controller, which meant there was quite a lot of repeated code between the two. By creating a superclass that both controllers inherit from, the amount of repeated code was greatly reduced.
 - #### **Extract Variable**
 Some one-liners that we had in our code weren't very readable, so we had to split up the calls/calculations between lines.
 - #### **Move method**
