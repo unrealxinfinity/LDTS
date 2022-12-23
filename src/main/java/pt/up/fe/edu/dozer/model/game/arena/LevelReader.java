@@ -4,13 +4,19 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LevelReader {
     public List<String> readLevel(int level) throws IOException {
         URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
-        BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
+        String path = "src/main/resources/levels/level" + level + ".lvl";
+        //BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
+        BufferedReader br = Files.newBufferedReader(Paths.get(path), StandardCharsets.UTF_8);
 
         return readLines(br);
     }

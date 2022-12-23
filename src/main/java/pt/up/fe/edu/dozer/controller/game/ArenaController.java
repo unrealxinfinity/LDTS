@@ -14,6 +14,7 @@ import pt.up.fe.edu.dozer.state.menu.MenuState;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 
 
 public class ArenaController extends GameController {
@@ -54,7 +55,7 @@ public class ArenaController extends GameController {
                 getSound().play();
                 Arena arena = builder.createArena(new Arena());
                 game.setState(new GameState(arena));
-            } catch (NullPointerException e) {
+            } catch (NoSuchFileException e) {
                 game.resetTimer();
                 try {
                     game.setState(new MenuState(new MainMenu()));
