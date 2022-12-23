@@ -19,7 +19,6 @@ import java.io.IOException;
 public class ArenaController extends GameController {
 
     private final DozerController dozerController;
-    private final BoulderController boulderController;
 
 
     private final TargetController targetController;
@@ -31,8 +30,8 @@ public class ArenaController extends GameController {
     public ArenaController(Arena arena, AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         super(arena, audio);
         this.targetController = new TargetController(arena);
-        this.boulderController = new BoulderController(arena, this.targetController);
-        this.dozerController = new DozerController(arena, this.boulderController);
+        BoulderController boulderController = new BoulderController(arena, this.targetController);
+        this.dozerController = new DozerController(arena, boulderController);
         this.numTargets = arena.getTargets().size();
     }
 
