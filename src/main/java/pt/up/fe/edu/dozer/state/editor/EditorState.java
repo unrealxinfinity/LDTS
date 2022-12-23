@@ -4,10 +4,10 @@ import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.state.State;
 import pt.up.fe.edu.dozer.viewer.Viewer;
-import pt.up.fe.edu.dozer.viewer.game.EditorViewer;
+import pt.up.fe.edu.dozer.viewer.editor.EditorViewer;
 import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
 import pt.up.fe.edu.dozer.viewer.game.GameViewer;
-import pt.up.fe.edu.dozer.viewer.game.PlacerViewerBuilder;
+import pt.up.fe.edu.dozer.viewer.editor.PlacerViewerBuilder;
 
 public abstract class EditorState extends State<EditorArena> {
     protected String placingElem;
