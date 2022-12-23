@@ -76,8 +76,6 @@ public class MainGame {
             long sleepTime = frameTime - elapsedTime;
 
             if (sleepTime > 0) Thread.sleep(sleepTime);
-
-            this.getBGM();//usado meramente para os testes
         }
         gui.close();
     }

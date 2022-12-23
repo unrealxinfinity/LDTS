@@ -27,57 +27,47 @@ public class MainGameTest {
 
     @BeforeEach
     public void setUp() throws UnsupportedAudioFileException, LineUnavailableException, IOException, URISyntaxException, FontFormatException {
-        audioMock=Mockito.mock(AudioManager.class);
-        stateMock=Mockito.mock(MenuState.class);
-        spyCheck= Mockito.spy(new MainGame(stateMock,audioMock));
-        guiMock=Mockito.mock(LanternaGUI.class);
+        audioMock = Mockito.mock(AudioManager.class);
+        stateMock = Mockito.mock(MenuState.class);
+        spyCheck = Mockito.spy(new MainGame(stateMock, audioMock));
+        guiMock = Mockito.mock(LanternaGUI.class);
 
     }
+
     @Test
-    public void mainGameTest(){
+    public void mainGameTest() {
         Assertions.assertNotNull(spyCheck.getBGM());
     }
 
     @Test
-    public void resetTimer(){
+    public void resetTimer() {
         spyCheck.resetTimer();
-        Assertions.assertEquals((float)System.currentTimeMillis(),(float)spyCheck.getInitialTime(),0.001);
+        Assertions.assertEquals((float) System.currentTimeMillis(), (float) spyCheck.getInitialTime(), 0.001);
     }
+
     @Test
-    public void muteBgmTest(){
+    public void muteBgmTest() {
         spyCheck.muteBGM();
-        Mockito.verify(audioMock,Mockito.times(1)).mute();
+        Mockito.verify(audioMock, Mockito.times(1)).mute();
     }
+
     @Test
-    public void resumeBgmTest(){
+    public void resumeBgmTest() {
         spyCheck.resumeBGM();
-        Mockito.verify(audioMock,Mockito.times(1)).loopSound();
+        Mockito.verify(audioMock, Mockito.times(1)).loopSound();
     }
+
     @Test
-    public void isBgmMutedTest(){
+    public void isBgmMutedTest() {
         spyCheck.muteBGM();
         Assertions.assertTrue(spyCheck.isBgmMuted());
 
         spyCheck.resumeBGM();
         Assertions.assertFalse(spyCheck.isBgmMuted());
     }
-    @Test
-    public void getBgmTest(){
-        Assertions.assertEquals(audioMock,spyCheck.getBGM());
-    }
-    /* uhmm este test faz com que o pitest nao passe
-    @Test
-    public void startTest() throws UnsupportedAudioFileException, LineUnavailableException, IOException, URISyntaxException, FontFormatException, InterruptedException {
-        try{
-            Mockito.doThrow(new RuntimeException()).when(spyCheck).getBGM();
-            spyCheck.start();
-        } catch (RuntimeException e){
-            Mockito.verify(spyCheck,Mockito.times(1)).getBGM();
-            Mockito.verify(audioMock,Mockito.times(1)).loopSound();
-            Mockito.verify(stateMock,Mockito.atLeastOnce()).step(Mockito.any(),Mockito.any(),Mockito.anyLong());
 
-        }
+    @Test
+    public void getBgmTest() {
+        Assertions.assertEquals(audioMock, spyCheck.getBGM());
     }
-    */
-
 }
