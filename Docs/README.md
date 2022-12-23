@@ -169,7 +169,7 @@ The Facade design pattern provides a unified interface to a set of interfaces in
 Some classes are significantly larger than others, mainly due to holding a lot of data, like Arena.
 - #### **Parallel Hierarchy**
 When we create a class to extend a functionality, we find the need to create more classes to complement the application.
-For exemple , such problem is found when we want to create a new object that moves but we need to create another controller specific to the object if it is necessary (walls don't need controllers, for example), the viewer to draw it, and the corresponding editor state.
+For example , such problem is found when we want to create a new object that moves but we need to create another controller specific to the object if it is necessary (walls don't need controllers, for example), the viewer to draw it, the corresponding editor state, and the corresponding editor controller.
 On the other hand, this allows us to better respect the Single Responsibility Principle by not having a class that stores, controls and draws an element, and it is also necessary to uphold the intent of the MVC architectural pattern.
 - #### **Switch Statements**
 At multiple points, we use switch statements, mainly when it comes to input processing.
