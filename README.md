@@ -8,14 +8,14 @@ For a more detailed version of this description click [here](./docs/README.md).
 
 ### Practise your problem solving abilities with this puzzle game!
 <p align="center" justify="center">
-<img src= "docs/Gifs/play.gif" width="208" height="280"/>
+<img src= "docs/Gifs/play.gif" width="308" height="380"/>
 </p>
 This game allows you to develope your underdeveloped brain to solve trivial to difficult puzzles. Trust me, you'll like the brain you are going to accquire.
 
 ### Lack the head to solve the problem? Call for help and *RESET the level*!
 
 <p align="center" justify="center">
-<img src= "docs/Gifs/reset.gif" width="208" height="280"/>
+<img src= "docs/Gifs/reset.gif" width="308" height="380"/>
 </p>
 As the player progress throught the game, it's only natural that the player get stuck in certain situations, hence why there's a reset button. The game is very family friendly so call someone else to help you!
 
@@ -24,14 +24,14 @@ Yes, this game has sound effects and music, to keep you engaged throughout your 
 
 ### Clock is ticking!
 <p align="center" justify="center">
-  <img src="docs/Gifs/timer.gif" width="208" height="280"/>
+  <img src="docs/Gifs/timer.gif" width="308" height="380"/>
 </p>
 This game has a timer that allows the player track their level time. Beat your buddies in this big brain game and have the fastest level clearing time<!doctype html>
 
 ### Edit your own level
 
 <p align="center" justify="center">
-  <img src="docs/Gifs/LevelEditor.gif" width="208" height="280"/>
+  <img src="docs/Gifs/LevelEditor.gif" width="308" height="380"/>
 </p>
 
 You can even edit your own level, sky is the limit for your imagination.
@@ -41,8 +41,8 @@ You can even edit your own level, sky is the limit for your imagination.
 - ### Menus
 
 <p align="center" justify="center">
-<img src= "docs/Gifs/SelectLevel.gif" width="208" height="280"/>
-<img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-19-30.png" width="208" height="280"/>
+<img src= "docs/Gifs/SelectLevel.gif" width="308" height="380"/>
+<img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-19-30.png" width="308" height="380"/>
 </p>
 
 <p align="center">
@@ -54,7 +54,7 @@ You can even edit your own level, sky is the limit for your imagination.
 - ### Some levels
 
 <p align="center" justify="center">
-  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-02.png" width="208" height="280"/>
+  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-02.png" width="308" height="380"/>
 </p>
 <p align="center">
   <b><i>Fig 4. Level 5 </i></b>
@@ -64,7 +64,7 @@ You can even edit your own level, sky is the limit for your imagination.
 <br />
 
 <p align="center" justify="center">
-  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-24.png" width="208" height="280"/>
+  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-24.png" width="308" height="380"/>
 </p>
 <p align="center">
   <b><i>Fig 5. Level 10 </i></b>
@@ -74,7 +74,7 @@ You can even edit your own level, sky is the limit for your imagination.
 <br />
 
 <p align="center" justify="center">
-  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-33.png" width="208" height="280"/>
+  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-33.png" width="308" height="380"/>
 </p>
 <p align="center">
   <b><i>Fig 6. Level 15 </i></b>
@@ -83,7 +83,7 @@ You can even edit your own level, sky is the limit for your imagination.
 ### End 
 
 <p align="center" justify="center">
-  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-57.png" width="208" height="280"/>
+  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-57.png" width="308" height="380"/>
 </p>
 <p align="center">
   <b><i>Fig 7. End Game </i></b>
