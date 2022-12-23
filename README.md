@@ -15,12 +15,21 @@ The following screenshots give a general look of our game, as well as its functi
 </p>
 This game allows you to develope your underdeveloped brain to solve trivial to difficult puzzles. Trust me, you'll like the brain you are going to accquire.
 
-### Lack the brain to solve the problem? Call your dad and **reset the level**!
+### Lack the head to solve the problem? Call for help and *RESET the level*!
 
 <p align="center" justify="center">
 <img src= "Docs/Gifs/reset.gif" width="208" height="280"/>
 </p>
 As the player progress throught the game, it's only natural that the player get stuck in certain situations, hence why there's a reset button. The game is very family friendly so call someone else to help you!
+
+### You won't need spotify with our *BGM*!
+Yes, this game has sound effects and music, to keep you engaged throughout your gaming session.
+
+### Clock is ticking!
+<p align="center" justify="center">
+  <img src="Docs/Gifs/timer.gif" width="208" height="280"/>
+</p>
+This game has a timer that allows the player track their level time. Beat your buddies in this big brain game and have the fastest level clearing time!
 
 ## Menus
 
