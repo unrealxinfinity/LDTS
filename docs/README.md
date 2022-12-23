@@ -74,7 +74,7 @@ We can differentiate two separate types of wall.
 By creating an "ImportantWall" class that is a subclass of Wall and is functionally identical, we can differentiate between walls that are just decoration (notably, walls behind walls) and walls that matter for collision. Thus, the level saves two lists of walls.
 
 <p align="center" justify="center">
-<img src="Images/Captura de ecrã de 2022-12-23 16-01-50.png"/>
+<img src="Images/FieldBuilder.png"/>
 </p>
 <p align="center">
   <b><i>Fig 3. Field Builder and loader </i></b>
