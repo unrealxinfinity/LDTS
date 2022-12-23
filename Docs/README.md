@@ -46,7 +46,7 @@ By implementing the **_Observer Pattern_** with target controllers as observers 
 #### Implementation:
 The BoulderController notifies the TargetController (which implements the BoulderObserver interface) that it has to do this check.
 <p align="center" justify="center">
-  <img src="Images/image.png"/>
+  <img src="Images/Observer.png"/>
 </p>
 <p align="center">
   <b><i>Fig 2. Observers screenshot </i></b>
@@ -72,17 +72,12 @@ Checking collision with every wall is inefficient, since only a handful of them 
 We can differentiate two separate types of wall.
 #### Implementation:
 By creating an "ImportantWall" class that is a subclass of Wall and is functionally identical, we can differentiate between walls that are just decoration (notably, walls behind walls) and walls that matter for collision. Thus, the level saves two lists of walls.
+
 <p align="center" justify="center">
-<img src="Images/UmlArenaBuilder.png"/>
+<img src="Images/Captura de ecrã de 2022-12-23 16-01-50.png"/>
 </p>
 <p align="center">
   <b><i>Fig 3. Field Builder and loader </i></b>
-</p>
-<p align="center" justify="center">
-<img src="Images/Captura de ecrã de 2022-12-18 19-06-26.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 4. Field Builder and loader </i></b>
 </p>
 
 #### Consequences:
@@ -96,16 +91,16 @@ As we have many objects that we need to instantiate, it becomes difficult to mai
 #### Implementation:
 Products were created (abstract and concrete) that execute the decision made in the factory. At runtime we don't know who will be called, instead of having if's and else's in the client, we have all the decision logic in the factory.
 <p align="center" justify="center">
-<img src="Images/FactoryPatternEx.png"/>
+<img src="Images/Factory1.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 5. Factory pattern : Viewer model</i></b>
+  <b><i>Fig 4. Factory pattern : Viewer model</i></b>
 </p>
 <p align="center" justify="center">
-<img src="Images/FactoryPatternEx1.png"/>
+<img src="Images/Factory.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 6. Factory pattern : Controller model </i></b>
+  <b><i>Fig 5. Factory pattern : Controller model </i></b>
 </p>
 
 #### Consequences:
@@ -128,7 +123,7 @@ The EditorViewer class has a field of type GameViewer. When calling draw() on an
 <img src="Images/EditorViewer.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 7. Decorator Pattern : EditorViewer </i></b>
+  <b><i>Fig 6. Decorator Pattern : EditorViewer </i></b>
 </p>
 
 #### Consequences:
@@ -145,10 +140,10 @@ Another point to bear in mind is, when using the raw library, the game, which is
 **_Facade Pattern_** was the chosen method. The intent of this pattern is to encapsulate complicated logic in a high-level interface that makes accessing a subsystem very simple and easy to use.
 #### Implementation:
 <p align="center" justify="center">
-<img src="Images/Captura de ecrã de 2022-12-19 22-50-00.png"/>
+<img src="Images/GUI.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 6. GUI implementation</i></b>
+  <b><i>Fig 7. GUI implementation</i></b>
 </p>
 
 #### Consequences:
