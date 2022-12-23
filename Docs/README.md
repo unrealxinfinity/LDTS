@@ -216,8 +216,7 @@ All of this was possile thanks to Mockito and Junit!
 But there´s a catch, it was not possible to cover every class and method, due to the nature of the MVC model because it makes testing more difficult. And with other factors accumulated like snowball effect makes the full coverage almost impossible!
 
 ### Screenshot of coverage report
-
 ![](Images/pitestReport.png)
 ### Link to mutation testing report
-[Click here to access the folder with html file that contains the report and open it with a browser](PitestReport/202212231510)
+[Click here to access the folder with index.html file that contains the report and open it with a browser](PitestReport/202212231510)
 ## Group Evaluation
