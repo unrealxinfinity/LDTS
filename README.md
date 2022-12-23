@@ -29,7 +29,18 @@ Yes, this game has sound effects and music, to keep you engaged throughout your 
 <p align="center" justify="center">
   <img src="Docs/Gifs/timer.gif" width="208" height="280"/>
 </p>
-This game has a timer that allows the player track their level time. Beat your buddies in this big brain game and have the fastest level clearing time!
+This game has a timer that allows the player track their level time. Beat your buddies in this big brain game and have the fastest level clearing time<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+             <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
 
 ## Menus
 
