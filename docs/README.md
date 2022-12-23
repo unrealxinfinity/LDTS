@@ -13,8 +13,8 @@ This project was developed by Afonso Castro Vaz Osório (up202108700@edu.fe.up.p
 
 ## Planned Features
 
-**Saving Levels** - Allow players to save levels from the editor and then select them from the Level Select
-**Editor Level Cleaning** - After a level is finished in the editor, check which walls are important for collision and which are not
+- **Saving Levels** - Allow players to save levels from the editor and then select them from the Level Select
+- **Editor Level Cleaning** - After a level is finished in the editor, check which walls are important for collision and which are not
 
 ## Design
 
