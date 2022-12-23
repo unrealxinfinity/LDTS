@@ -15,7 +15,7 @@ For a more detailed version of this description click [here](./docs/README.md).
 #### M - mute background music
 #### R - restart level
 
-### Practise your problem solving abilities with this puzzle game!
+### Practice your problem solving abilities with this puzzle game!
 <p align="center" justify="center">
 <img src= "docs/Gifs/play.gif" width="308" height="380"/>
 </p>
