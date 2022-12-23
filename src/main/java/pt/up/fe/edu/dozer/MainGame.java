@@ -24,9 +24,6 @@ public class MainGame {
     public long getInitialTime(){
         return initialTime;
     }
-    public State getState() {
-        return state;
-    }
 
     public void setState(State s) {
         state = s;
@@ -79,8 +76,6 @@ public class MainGame {
             long sleepTime = frameTime - elapsedTime;
 
             if (sleepTime > 0) Thread.sleep(sleepTime);
-
-            this.getBGM();//usado meramente para os testes
         }
         gui.close();
     }

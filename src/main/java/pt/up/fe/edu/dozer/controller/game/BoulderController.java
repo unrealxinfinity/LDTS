@@ -1,20 +1,17 @@
 package pt.up.fe.edu.dozer.controller.game;
 
-import pt.up.fe.edu.dozer.MainGame;
-import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.elements.Boulder;
 
-import java.io.IOException;
 import java.util.List;
 
 public class BoulderController extends ElementController {
-    private final TargetController targetController;
+    private final BoulderObserver observer;
 
-    public BoulderController(Arena arena, TargetController targetController) {
+    public BoulderController(Arena arena, BoulderObserver observer) {
         super(arena);
-        this.targetController = targetController;
+        this.observer = observer;
     }
 
     private boolean moveBoulder(Position p, Boulder boulder) {
@@ -54,6 +51,6 @@ public class BoulderController extends ElementController {
     }
 
     private void notifyObserver() {
-        targetController.update();
+        observer.update();
     }
 }

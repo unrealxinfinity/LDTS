@@ -14,12 +14,12 @@ import pt.up.fe.edu.dozer.state.menu.MenuState;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 
 
 public class ArenaController extends GameController {
 
     private final DozerController dozerController;
-    private final BoulderController boulderController;
 
 
     private final TargetController targetController;
@@ -27,23 +27,12 @@ public class ArenaController extends GameController {
 
     private final int numTargets;
 
-    public BoulderController getBoulderController() {
-        return boulderController;
-    }
-
-    public DozerController getDozerController() {
-        return dozerController;
-    }
-
-    public TargetController getTargetController() {
-        return targetController;
-    }
 
     public ArenaController(Arena arena, AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         super(arena, audio);
         this.targetController = new TargetController(arena);
-        this.boulderController = new BoulderController(arena, this.targetController);
-        this.dozerController = new DozerController(arena, this.boulderController);
+        BoulderController boulderController = new BoulderController(arena, this.targetController);
+        this.dozerController = new DozerController(arena, boulderController);
         this.numTargets = arena.getTargets().size();
     }
 
@@ -66,7 +55,7 @@ public class ArenaController extends GameController {
                 getSound().play();
                 Arena arena = builder.createArena(new Arena());
                 game.setState(new GameState(arena));
-            } catch (NullPointerException e) {
+            } catch (NoSuchFileException e) {
                 game.resetTimer();
                 try {
                     game.setState(new MenuState(new MainMenu()));

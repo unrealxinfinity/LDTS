@@ -4,22 +4,18 @@ import pt.up.fe.edu.dozer.controller.Controller;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.state.State;
 import pt.up.fe.edu.dozer.viewer.Viewer;
-import pt.up.fe.edu.dozer.viewer.game.EditorViewer;
+import pt.up.fe.edu.dozer.viewer.editor.EditorViewer;
 import pt.up.fe.edu.dozer.viewer.game.ElementViewerBuilder;
 import pt.up.fe.edu.dozer.viewer.game.GameViewer;
-import pt.up.fe.edu.dozer.viewer.game.PlacerViewerBuilder;
+import pt.up.fe.edu.dozer.viewer.editor.PlacerViewerBuilder;
 
 public abstract class EditorState extends State<EditorArena> {
-    //NEW
     protected String placingElem;
 
-    //added another parameter which each of the subclasses will do super(arena,string);
     public EditorState(EditorArena arena) {
         super(arena);
-        //NEW to pass the placingelem to the editor viewer
     }
 
-    //this was an attempt
     protected abstract void setPlacingElem();
 
     @Override

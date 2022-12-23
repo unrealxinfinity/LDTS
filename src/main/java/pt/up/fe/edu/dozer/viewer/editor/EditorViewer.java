@@ -1,10 +1,11 @@
-package pt.up.fe.edu.dozer.viewer.game;
+package pt.up.fe.edu.dozer.viewer.editor;
 
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.game.elements.Placer;
 import pt.up.fe.edu.dozer.viewer.Viewer;
+import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 
 public class EditorViewer extends Viewer<EditorArena> {
     private final GameViewer viewer;

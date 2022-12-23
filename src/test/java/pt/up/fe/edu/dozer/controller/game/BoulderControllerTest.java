@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class BoulderControllerTest {
     BoulderController behaviourCheck;
-    BoulderController valueCheck;
+
     BoulderController internalCheck;
 
     @BeforeEach

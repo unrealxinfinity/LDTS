@@ -40,9 +40,6 @@ public class ArenaControllerTest {
     public void arenaControllerTest(){
         Assertions.assertNotNull(internalCheck.getSound());
         Assertions.assertNotNull(internalCheck.getModel());
-        Assertions.assertNotNull(internalCheck.getBoulderController());
-        Assertions.assertNotNull(internalCheck.getTargetController());
-        Assertions.assertNotNull(internalCheck.getDozerController());
 
     }
     @Test

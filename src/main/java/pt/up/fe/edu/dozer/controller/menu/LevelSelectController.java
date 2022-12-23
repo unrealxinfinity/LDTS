@@ -13,6 +13,7 @@ import pt.up.fe.edu.dozer.state.menu.MenuState;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 
 public class LevelSelectController extends GenericMenuController<LevelSelect> {
     public LevelSelectController(LevelSelect menu, AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
@@ -39,7 +40,7 @@ public class LevelSelectController extends GenericMenuController<LevelSelect> {
                 Arena arena = new LoaderArenaBuilder(selectedLevel, new LevelReader()).createArena(new Arena());
                 game.resetTimer();
                 game.setState(new GameState(arena));
-            } catch (NullPointerException ignored) {
+            } catch (NoSuchFileException ignored) {
                 System.out.println("No Correspondent Level");
             }
         }
