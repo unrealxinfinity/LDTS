@@ -182,13 +182,15 @@ during the development we created many classes that were developed towards the t
 There are cases where an inherited method is never used. An example that we don't consider to be too offensive is for the main menu controller (MenuController), which has empty stepLeft and stepRight methods.
 We say we find this smell less offensive because we saw putting the different abstract step methods on the GenericMenuController as telling each menu "these are the keys you can use" instead of "these are the keys you need to use",
 since naturally different menus will have different functionalities.
-- #### **Feature envy and message chains**
+- #### **Feature Envy**
+Since most of the data is stored in the model, lots of classes access the data and methods of the model much more frequently than their own.
+- #### **Message chains**
 Due to the nature of the MVC, message passing is common between classes and there are times that a subclass only propagates the messages between its subclass and its superclasss, making it a *middle man*.
-## Refactoring suggestions
+## Refactoring examples
 - #### **Extract Superclass**
-Having multiple subclasses that repeat the same kind of code/function made us extract the repeated methods to a superclass that contains all the common methods in order to reduce the amount of code.
-- #### **Inline Variable**
-Some tasks are so obvious that we don't need a variable to make it more obvious.
+During most of the project's lifetime, both menu controllers inherited directly from Controller, which meant there was quite a lot of repeated code between the two.
+- #### **Extract Variable**
+Some one-liners that we had in our code weren't very readable, so we had to split up the calls/calculations between lines.
 - #### **Extract class**
 Moving some methods from a class to another more appropriate class.
 In order to fix refused bequest, we moved the related classes to new classes because the former had nothing to do with their superclasses.
