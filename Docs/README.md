@@ -5,11 +5,11 @@ This project was developed by Afonso Castro Vaz Osório (up202108700@edu.fe.up.p
 
 ## Implemented Features
 
-**Menus** - The Main Menu has three options: Level Select, Level Editor and Quit. The Level Select Menu has the Select option, as well as the Start and Quit. Level Editor goes directly to the editor itself.
-**Buttons** - Functional and interactive buttons.
-**Keyboard control** - The keyboard inputs are received through the respective events and interpreted according to the current game state.
-**Player control** - The player may move with the keyboard control.
-**Collisions detection** - Collisions between different objects are verified. (Ex: Player, Walls, Boulders).
+- **Menus** - The Main Menu has three options: Level Select, Level Editor and Quit. The Level Select Menu has the Select option, as well as the Start and Quit. Level Editor goes directly to the editor itself.
+- **Buttons** - Functional and interactive buttons.
+- **Keyboard control** - The keyboard inputs are received through the respective events and interpreted according to the current game state.
+- **Player control** - The player may move with the keyboard control.
+- **Collisions detection** - Collisions between different objects are verified. (Ex: Player, Walls, Boulders).
 
 ## Planned Features
 
@@ -145,7 +145,7 @@ Another point to bear in mind is, when using the raw library, the game, which is
 **_Facade Pattern_** was the chosen method. The intent of this pattern is to encapsulate complicated logic in a high-level interface that makes accessing a subsystem very simple and easy to use.
 #### Implementation:
 <p align="center" justify="center">
-<img src="Images/Captura de ecrã de 2022-12-19 22-50-00.png"/>
+<img src="Images/GuiUml.png"/>
 </p>
 <p align="center">
   <b><i>Fig 6. GUI implementation</i></b>
