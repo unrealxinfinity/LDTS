@@ -64,7 +64,7 @@ This strategy made de code cleaner and easier to read, also respects the single 
 
 - [Click here for the BoulderObserver](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/README/src/main/java/pt/up/fe/edu/dozer/controller/game/BoulderObserver.java)
 
-### Field builder
+### Unnecessary collision checks
 #### Problem in Context:
 In this game, the areas that the player can't reach are filled with walls. However, it is impossible to touch most of these walls.
 Checking collision with every wall is inefficient, since only a handful of them will ever be actually important for a collision check.
@@ -77,11 +77,14 @@ By creating an "ImportantWall" class that is a subclass of Wall and is functiona
 <img src="Images/FieldBuilder.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 3. Field Builder and loader </i></b>
+  <b><i>Fig 3. Model structure </i></b>
 </p>
 
 #### Consequences:
 Since ImportantWall extends Wall, every method that works on Walls will work on ImportantWalls, and due to polymorphism, a Wall container can hold ImportantWalls. If we ever need a container that has both Walls and ImportantWalls, we can differentiate between them with down-casting.
+
+#### Related classes in:
+- [Click here to view the model.game package](https://github.com/FEUP-LDTS-2022/project-l07gr08/tree/main/src/main/java/pt/up/fe/edu/dozer/model/game/elements)
 
 ### Various objects to instantiate
 #### Problem in Context:
