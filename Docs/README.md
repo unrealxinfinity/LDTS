@@ -13,7 +13,8 @@ This project was developed by Afonso Castro Vaz Osório (up202108700@edu.fe.up.p
 
 ## Planned Features
 
-All the planned features were successfully implemented.
+**Saving Levels** - Allow players to save levels from the editor and then select them from the Level Select
+**Editor Level Cleaning** - After a level is finished in the editor, check which walls are important for collision and which are not
 
 ## Design
 
@@ -23,7 +24,7 @@ The structure of our project was one of our first concerns. As we had the idea o
 #### The Pattern:
 We applied the **_State Pattern_** and **_MVC Architecture Pattern_**. By using these patterns we can avoid what we stated before by integrating states to the game. We can also avoid a chunk of if statements by using polymorphism to switch to the right state.
 #### Implementation:
-In terms of implementation , we have 6 main classes, model (store data), controller (logic), audio (music), viewer (visual effects), gui (graphical interface) and state. They all are associated in this way:
+In terms of implementation , we have 6 main packages, model (store data), controller (logic), audio (music), viewer (visual effects), gui (graphical interface) and state. They all are associated in this way:
 <p align="center" justify="center">
   <img src="Images/StatePattern.png"/>
 </p>
@@ -38,10 +39,10 @@ All the states that symbolize the menus are made more explicit in the code, and 
 
 ### Observers
 #### Problem in Context:
-Our project is controlled by the keyboard. The required input is mainly to select the option from the menus and after that it is used to move the dozer. In order for the game not to request input when necessary, thus avoiding unnecessary calls, we have implemented observers that are responsible for receiving input and redirecting it so as not to overload the game.
-For example, checking every cobblestone/target combination after every move is inefficient. Since there is no need to check for boulder/target collision on moves where a given boulder does not move, we must find a way to check this only when said boulder moves.
+During gameplay, there are things that don't need to be checked every frame.
+For example, checking every boulder/target combination after every move to determine how many boulders are in targets is inefficient. Since there is no need to check for boulder/target collision on moves where a given boulder does not move, we must find a way to check this only when said boulder moves.
 #### The Pattern:
-By implementing the **_Observer Pattern_** with target controllers as observers and boulder controllers as subjects, we can avoid unnecessary checks. Only when a boulder moves, its controller will notify the target controllers, which will then determine if the boulder has stepped into a target, out of a target, both, or neither. This result could then be used to increment/decrement an integer variable that determines how many boulders are in targets. When this is equal to the number of targets, the level is completed.
+By implementing the **_Observer Pattern_** with target controllers as observers and boulder controllers as subjects, we can avoid unnecessary checks. Only when a boulder moves, its controller will notify the target controllers, which will then determine how many boulders are currently in targets. This result is then used to update an integer variable. When this is equal to the number of targets, the level is completed.
 #### Implementation:
 The BoulderController notifies the TargetController (which implements the BoulderObserver interface) that it has to do this check.
 <p align="center" justify="center">
@@ -65,10 +66,10 @@ This strategy made de code cleaner and easier to read, also respects the single 
 
 ### Field builder
 #### Problem in Context:
-The field has various elements in its composition which are the Walls (two types), the boulders, the targets and the dozer (player). Since we have different arenas depending on the level we are playing, instead having a builder to each level, we have a loader
-Checking collision with every wall is inefficient. In this game's levels, the areas of the screen that aren't relevant to the level are filled with walls, and since nothing will ever touch them, checking for collision with them is not necessary.
-#### The Pattern:
-The design pattern used is **_Decorator Pattern_**. It allows adding a behavior to an existing object at runtime, that is, it dynamically adds additional responsibilities to an object.
+In this game, the areas that the player can't reach are filled with walls. However, it is impossible to touch most of these walls.
+Checking collision with every wall is inefficient, since only a handful of them will ever be actually important for a collision check.
+#### The Solution:
+We can differentiate two separate types of wall.
 #### Implementation:
 By creating an "ImportantWall" class that is a subclass of Wall and is functionally identical, we can differentiate between walls that are just decoration (notably, walls behind walls) and walls that matter for collision. Thus, the level saves two lists of walls.
 <p align="center" justify="center">
@@ -85,7 +86,7 @@ By creating an "ImportantWall" class that is a subclass of Wall and is functiona
 </p>
 
 #### Consequences:
-The biggest advantage of the used pattern is that it can enhance the extensibility of the object, because changes are made by coding new classes. It simplifies the coding by allowing you to develop a series of functionality from targeted classes instead of coding all of the behavior into the object.
+Since ImportantWall extends Wall, every method that works on Walls will work on ImportantWalls, and due to polymorphism, a Wall container can hold ImportantWalls. If we ever need a container that has both Walls and ImportantWalls, we can differentiate between them with down-casting.
 
 ### Various objects to instantiate
 #### Problem in Context:
@@ -130,6 +131,9 @@ The EditorViewer class has a field of type GameViewer. When calling draw() on an
   <b><i>Fig 7. Decorator Pattern : EditorViewer </i></b>
 </p>
 
+#### Consequences:
+The EditorViewer holds all the functionality of the GameViewer without subclassing it, and if at some point we change how the GameViewer draws the game, those changes will be reflected in the EditorViewer.
+
 #### The related classes in :
 - [Click here for the Editor Viewer](https://github.com/FEUP-LDTS-2022/project-l07gr08/blob/README/src/main/java/pt/up/fe/edu/dozer/viewer/game/EditorViewer.java)
 
@@ -162,11 +166,13 @@ The Facade design pattern provides a unified interface to a set of interfaces in
 
 ## Known Code Smells
 - #### **Large Class**
-There are classes that contain significant chunck of code that could be simplified;
+Some classes are significantly larger than others, mainly due to holding a lot of data, like Arena.
 - #### **Parallel Hierarchy**
 When we create a class to extend a functionality, we find the need to create more classes to complement the application.
 For exemple , such problem is found when we want to create a new object that moves but we need to create another controller specific to the object if it is necessary (walls don't need controllers, for example), the viewer to draw it, and the corresponding editor state.
 On the other hand, this allows us to better respect the Single Responsibility Principle by not having a class that stores, controls and draws an element, and it is also necessary to uphold the intent of the MVC architectural pattern.
+- #### **Switch Statements**
+At multiple points, we use switch statements, mainly when it comes to input processing.
 - #### **Data Class**
 A lot of classes in the model package, notably the elements themselves, are simple data classes. Normally, this should be avoided, but the use of the MVC pattern makes it somewhat of a necessary evil to be able to keep the model, the view and the controller separate.
 - #### **Alternative classes with different interfaces and Lazy Classes**
