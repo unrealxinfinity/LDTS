@@ -24,8 +24,15 @@ The structure of our project was one of our first concerns. As we had the idea o
 We applied the **_State Pattern_** and **_MVC Architecture Pattern_**. By using these patterns we can avoid what we stated before by integrating states to the game. We can also avoid a chunk of if statements by using polymorphism to switch to the right state.
 #### Implementation:
 In terms of implementation , we have 6 main classes, model (store data), controller (logic), audio (music), viewer (visual effects), gui (graphical interface) and state. They all are associated in this way:
-(...)
+<p align="center" justify="center">
+  <img src="Images/StatePattern.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 1. State pattern screenshot </i></b>
+</p>
+
 The different states have implemented the **_MVC Architecture Pattern_**.
+
 #### Consequences:
 All the states that symbolize the menus are made more explicit in the code, and thus do not depend on flags. Thus, it also facilitates the addition of new features in the course of development.
 
@@ -88,13 +95,13 @@ As we have many objects that we need to instantiate, it becomes difficult to mai
 #### Implementation:
 Products were created (abstract and concrete) that execute the decision made in the factory. At runtime we don't know who will be called, instead of having if's and else's in the client, we have all the decision logic in the factory.
 <p align="center" justify="center">
-<img src="Images/FactoryPatternEx1.png"/>
+<img src="Images/FactoryPatternEx.png"/>
 </p>
 <p align="center">
   <b><i>Fig 5. Factory pattern : Viewer model</i></b>
 </p>
 <p align="center" justify="center">
-<img src="Images/FactoryPatternEx.png"/>
+<img src="Images/FactoryPatternEx1.png"/>
 </p>
 <p align="center">
   <b><i>Fig 6. Factory pattern : Controller model </i></b>
