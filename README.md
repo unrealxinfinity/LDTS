@@ -6,6 +6,14 @@ For a more detailed version of this description click [here](./docs/README.md).
 
 ## Game preview
 
+### Instructions
+
+#### Arrow keys - movement and menu control
+#### Enter - select in menu / place element in editor
+#### Tab - cycle element in editor
+#### Backspace - delete element in editor
+#### M - mute background music
+
 ### Practise your problem solving abilities with this puzzle game!
 <p align="center" justify="center">
 <img src= "docs/Gifs/play.gif" width="308" height="380"/>
@@ -55,30 +63,15 @@ You can even edit your own level, sky is the limit for your imagination.
 
 <p align="center" justify="center">
   <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-02.png" width="308" height="380"/>
-</p>
-<p align="center">
-  <b><i>Fig 4. Level 5 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
   <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-24.png" width="308" height="380"/>
-</p>
-<p align="center">
-  <b><i>Fig 5. Level 10 </i></b>
-</p>
-
-<br>
-<br />
-
-<p align="center" justify="center">
   <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-33.png" width="308" height="380"/>
 </p>
+
 <p align="center">
-  <b><i>Fig 6. Level 15 </i></b>
-</p>
+  <b><i>Fig 2. Level 5  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</i></b>
+  <b><i>Fig 3. Level 10 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</i></b> 
+  <b><i>Fig 4. Level 15 </i></b>
+</p> 
 
 ### End 
 
@@ -86,5 +79,5 @@ You can even edit your own level, sky is the limit for your imagination.
   <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-57.png" width="308" height="380"/>
 </p>
 <p align="center">
-  <b><i>Fig 7. End Game </i></b>
+  <b><i>Fig 5. End Game </i></b>
 </p>
