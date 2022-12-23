@@ -10,7 +10,7 @@ For a more detailed version of this description click [here](./docs/README.md).
 <p align="center" justify="center">
 <img src= "docs/Gifs/play.gif" width="308" height="380"/>
 </p>
-This game allows you to develope your underdeveloped brain to solve trivial to difficult puzzles. Trust me, you'll like the brain you are going to accquire.
+This game allows you to develope your underdeveloped brain to solve trivial to difficult puzzles. Trust me, you'll like the brain you are going to accquire after playing.
 
 ### Lack the head to solve the problem? Call for help and *RESET the level*!
 
