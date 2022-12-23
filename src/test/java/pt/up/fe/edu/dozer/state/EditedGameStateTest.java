@@ -1,4 +1,4 @@
-package pt.up.fe.edu.dozer.state.game;
+package pt.up.fe.edu.dozer.state;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
