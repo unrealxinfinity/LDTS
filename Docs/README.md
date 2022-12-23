@@ -191,9 +191,17 @@ Due to the nature of the MVC, message passing is common between classes and ther
 During most of the project's lifetime, both menu controllers inherited directly from Controller, which meant there was quite a lot of repeated code between the two.
 - #### **Extract Variable**
 Some one-liners that we had in our code weren't very readable, so we had to split up the calls/calculations between lines.
-- #### **Extract class**
-Moving some methods from a class to another more appropriate class.
-In order to fix refused bequest, we moved the related classes to new classes because the former had nothing to do with their superclasses.
+- #### **Move method**
+At times, there were methods that didn't really belong in their class, so we had to move them somewhere else.
+For example, the game's screen was initialized in MainGame, and then the LanternaGUI was initialized with that screen. This defeats the entire purpose of LanternaGUI's existence, which is to hide all Lanterna calls from the rest of the code.
+Therefore, that method was moved to LanternaGUI.
+- #### **Extract Method**
+Some of our methods were much longer than others, so, to improve readability, we extracted some of their code to new methods, making the initial method shorter and easier to understand.
+For example, in the EditorArena, the getArena() was even bigger, before we extracted some of its parts to other, smaller methods.
+- #### **Replace Conditional with Polymorphism**
+Early on, we had some complicated conditional expressions that were later replaced with easier to read polymorphism.
+Notable examples are the menu controllers, which used to have down-casting, and the early ideas for the level editor, which had a lot of if statements for type checking.
+
 
 ## Testing
 We often find the need to use dependency injection in order to test certain functionalities within a method.
