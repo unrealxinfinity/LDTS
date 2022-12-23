@@ -140,7 +140,7 @@ Another point to bear in mind is, when using the raw library, the game, which is
 **_Facade Pattern_** was the chosen method. The intent of this pattern is to encapsulate complicated logic in a high-level interface that makes accessing a subsystem very simple and easy to use.
 #### Implementation:
 <p align="center" justify="center">
-<img src="Images/GuiUml.png"/>
+<img src="Images/GUIUml.png"/>
 </p>
 <p align="center">
   <b><i>Fig 7. GUI implementation</i></b>
