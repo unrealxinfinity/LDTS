@@ -225,3 +225,7 @@ But there´s a catch, it was not possible to cover every class and method, due t
 [Click here to access the folder with index.html file that contains the report and open it with a browser](PitestReport/202212231510)
 ## Group Evaluation
 We all work according to our availability, either dividing tasks or working together on the same topic. There were, however, external factors that meant that the work was not equally distributed among the group members, which led to some communication problems. However, despite the circumstances, in the end the development went better. There was still a small difference in performance, but the problems were overcome due to the help that there was among the members. In the end, the result was as expected.
+
+Afonso Osório - 60%
+Inês Soares - 10%
+Haochang Fu - 30%
