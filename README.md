@@ -51,7 +51,7 @@ You can even edit your own level, sky is the limit for your imagination.
 
 
 
-- ### Some levels
+- ### Some levels (not to spoil everything)
 
 <p align="center" justify="center">
   <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-02.png" width="308" height="380"/>
