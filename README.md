@@ -28,7 +28,7 @@ Yes, this game has sound effects and music, to keep you engaged throughout your 
 </p>
 This game has a timer that allows the player track their level time. Beat your buddies in this big brain game and have the fastest level clearing time<!doctype html>
 
-### Edit your own level
+### Edit your own level!
 
 <p align="center" justify="center">
   <img src="docs/Gifs/LevelEditor.gif" width="308" height="380"/>
