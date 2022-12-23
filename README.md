@@ -4,10 +4,6 @@ The Bulldozer is a game in which the player controls a tank named dozer and to w
 This project was developed by Afonso Castro Vaz Osório (up202108700@edu.fe.up.pt), Haochang Fu (up202108730@edu.fe.up.pt) and Inês Martin Soares (up202108852@edu.fe.pt) for LDTS 2022-23.
 For a more detailed version of this description click [here](./docs/README.md).
 
-## Screenshots
-
-The following screenshots give a general look of our game, as well as its functionalities.
-
 ## Game preview
 ### Practise your problem solving abilities with this puzzle game!
 <p align="center" justify="center">
@@ -42,8 +38,8 @@ This game has a timer that allows the player track their level time. Beat your b
 </body>
 </html>
 
-
-## Menus
+## Screenshots
+- ### Menus
 
 <p align="center" justify="center">
 <img src= "docs/Gifs/SelectLevel.gif"/>
@@ -75,7 +71,7 @@ This game has a timer that allows the player track their level time. Beat your b
   <b><i>Fig 3. Level editor </i></b>
 </p>
 
-## Levels
+- ### Some levels
 
 <p align="center" justify="center">
   <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-02.png"/>
@@ -104,7 +100,7 @@ This game has a timer that allows the player track their level time. Beat your b
   <b><i>Fig 6. Level 15 </i></b>
 </p>
 
-## End Game
+### End 
 
 <p align="center" justify="center">
   <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-57.png"/>
