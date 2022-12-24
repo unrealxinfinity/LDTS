@@ -14,7 +14,7 @@ import java.io.IOException;
 
 
 public class MenuState extends State<MainMenu> {
-    public MenuState(MainMenu menu) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public MenuState(MainMenu menu) throws UnsupportedAudioFileException, LineUnavailableException {
         super(menu);
 
     }

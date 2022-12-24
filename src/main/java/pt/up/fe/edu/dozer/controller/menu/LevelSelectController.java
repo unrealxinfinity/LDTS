@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 
 public class LevelSelectController extends GenericMenuController<LevelSelect> {
-    public LevelSelectController(LevelSelect menu, AudioManager audio) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public LevelSelectController(LevelSelect menu, AudioManager audio) {
         super(menu, audio);
     }
 
