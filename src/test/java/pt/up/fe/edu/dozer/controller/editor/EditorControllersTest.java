@@ -117,6 +117,7 @@ public class EditorControllersTest {
         Placer placerMock=Mockito.mock(Placer.class);
         Dozer dozerMock=Mockito.mock(Dozer.class);
 
+        Mockito.when(dozerMock.getPosition()).thenReturn(new Position(1, 1));
         Mockito.when(arenaMock.getPlacer()).thenReturn(placerMock);
         EditorArenaDozerController controllerMock=Mockito.spy(new EditorArenaDozerController(arenaMock));
         Mockito.when(arenaMock.getDozer()).thenReturn(dozerMock);
