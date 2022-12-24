@@ -25,7 +25,7 @@ public class EditorViewerTest {
         InOrder order = Mockito.inOrder(gameViewer, builder, placerViewer);
         editorViewer.drawElements(gui, 0);
 
-        order.verify(gameViewer, Mockito.times(1)).drawElements(Mockito.eq(gui), Mockito.eq((long)0));
+        order.verify(gameViewer, Mockito.times(1)).drawElements(Mockito.eq(gui), Mockito.eq((long) 0));
         order.verify(builder, Mockito.times(1)).getPlacerViewer();
         order.verify(placerViewer, Mockito.times(1)).draw(Mockito.eq(placer), Mockito.eq(gui));
     }

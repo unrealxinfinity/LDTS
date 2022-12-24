@@ -13,7 +13,7 @@ public class EditedGameStateTest {
     @Test
     public void getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         EditorArena arena = new EditorArena(20, 20);
-        arena.setDozer(new Dozer(2,2));
+        arena.setDozer(new Dozer(2, 2));
         EditedGameState state = new EditedGameState(arena);
 
         Assertions.assertNotNull(state.getController());

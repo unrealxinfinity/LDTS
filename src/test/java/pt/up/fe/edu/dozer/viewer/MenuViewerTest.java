@@ -17,6 +17,7 @@ public class MenuViewerTest {
     private LanternaGUI gui;
     private Screen screen;
     private TextGraphics graphics;
+
     @BeforeEach
     void setUp() {
         screen = Mockito.mock(Screen.class);
@@ -30,15 +31,15 @@ public class MenuViewerTest {
     @Test
     public void drawElementTest() {
         Menu main = new MainMenu();
-        MenuViewer<Menu> menu= new MenuViewer<>(main);
-        menu.drawElements(gui,0);
+        MenuViewer<Menu> menu = new MenuViewer<>(main);
+        menu.drawElements(gui, 0);
         InOrder order = Mockito.inOrder(graphics);
-        
+
         order.verify(graphics, Mockito.times(1)).setForegroundColor(Mockito.eq(TextColor.Factory.fromString("#FF0000")));
-        order.verify(graphics, Mockito.times(1)).putString(4,5 ,"Level Select");
+        order.verify(graphics, Mockito.times(1)).putString(4, 5, "Level Select");
         order.verify(graphics, Mockito.times(1)).setForegroundColor(Mockito.eq(TextColor.Factory.fromString("#FFFFFF")));
-        order.verify(graphics, Mockito.times(1)).putString(4,6 ,"Level Editor");
+        order.verify(graphics, Mockito.times(1)).putString(4, 6, "Level Editor");
         order.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
-        order.verify(graphics, Mockito.times(1)).putString(4,7 ,"Quit");
+        order.verify(graphics, Mockito.times(1)).putString(4, 7, "Quit");
     }
 }

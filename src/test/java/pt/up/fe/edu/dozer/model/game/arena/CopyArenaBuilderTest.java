@@ -10,11 +10,11 @@ public class CopyArenaBuilderTest {
     @Test
     public void copyTest() {
         EditorArena arena = new EditorArena(20, 20);
-        arena.setPlacer(new Placer(5,5));
-        arena.setDozer(new Dozer(5,5));
-        arena.setBoulders(Arrays.asList(new Boulder(3,4), new Boulder(7,7)));
-        arena.setTargets(Arrays.asList(new Target(7,7), new Target(8,9)));
-        arena.setCollisionWalls(Arrays.asList(new ImportantWall(3,3), new ImportantWall(11,11), new ImportantWall(13,14)));
+        arena.setPlacer(new Placer(5, 5));
+        arena.setDozer(new Dozer(5, 5));
+        arena.setBoulders(Arrays.asList(new Boulder(3, 4), new Boulder(7, 7)));
+        arena.setTargets(Arrays.asList(new Target(7, 7), new Target(8, 9)));
+        arena.setCollisionWalls(Arrays.asList(new ImportantWall(3, 3), new ImportantWall(11, 11), new ImportantWall(13, 14)));
 
         CopyArenaBuilder builder = new CopyArenaBuilder(arena);
         Arena copy = builder.createArena(new Arena());

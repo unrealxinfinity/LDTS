@@ -17,16 +17,17 @@ public class BoulderControllerTest {
     BoulderController internalCheck;
 
     @BeforeEach
-    public void setUp(){
-        behaviourCheck= Mockito.mock(BoulderController.class);
-        internalCheck=new BoulderController(Mockito.mock(Arena.class),Mockito.mock(TargetController.class));
+    public void setUp() {
+        behaviourCheck = Mockito.mock(BoulderController.class);
+        internalCheck = new BoulderController(Mockito.mock(Arena.class), Mockito.mock(TargetController.class));
     }
+
     @Test
     public void moveUp() throws IOException {
         TargetController controller = Mockito.mock(TargetController.class);
         BoulderController boulderController = new BoulderController(new LoaderArenaBuilder(1, new LevelReader()).createArena(new Arena()), controller);
 
-        boolean actual = boulderController.moveBoulderUp(new Position(12,5));
+        boolean actual = boulderController.moveBoulderUp(new Position(12, 5));
 
         Mockito.verify(controller, Mockito.times(0)).update();
         Assertions.assertFalse(actual);
@@ -37,7 +38,7 @@ public class BoulderControllerTest {
         TargetController controller = Mockito.mock(TargetController.class);
         BoulderController boulderController = new BoulderController(new LoaderArenaBuilder(1, new LevelReader()).createArena(new Arena()), controller);
 
-        boolean actual = boulderController.moveBoulderLeft(new Position(12,5));
+        boolean actual = boulderController.moveBoulderLeft(new Position(12, 5));
 
         Mockito.verify(controller, Mockito.times(1)).update();
         Assertions.assertTrue(actual);
@@ -48,7 +49,7 @@ public class BoulderControllerTest {
         TargetController controller = Mockito.mock(TargetController.class);
         BoulderController boulderController = new BoulderController(new LoaderArenaBuilder(1, new LevelReader()).createArena(new Arena()), controller);
 
-        boolean actual = boulderController.moveBoulderRight(new Position(12,5));
+        boolean actual = boulderController.moveBoulderRight(new Position(12, 5));
 
         Mockito.verify(controller, Mockito.times(1)).update();
         Assertions.assertTrue(actual);
@@ -59,7 +60,7 @@ public class BoulderControllerTest {
         TargetController controller = Mockito.mock(TargetController.class);
         BoulderController boulderController = new BoulderController(new LoaderArenaBuilder(1, new LevelReader()).createArena(new Arena()), controller);
 
-        boolean actual = boulderController.moveBoulderDown(new Position(12,5));
+        boolean actual = boulderController.moveBoulderDown(new Position(12, 5));
 
         Mockito.verify(controller, Mockito.times(0)).update();
         Assertions.assertFalse(actual);

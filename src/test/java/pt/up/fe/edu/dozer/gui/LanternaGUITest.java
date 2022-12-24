@@ -109,7 +109,7 @@ public class LanternaGUITest {
 
     @Test
     void drawPlacer() {
-        gui.drawPlacer(new Position(2,3));
+        gui.drawPlacer(new Position(2, 3));
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#B41EE2"));
         Mockito.verify(graphics, Mockito.times(1)).putString(2, 4, "$");
     }
@@ -280,9 +280,10 @@ public class LanternaGUITest {
 
         Assertions.assertEquals(GUI.ACTION.CYCLE, action);
     }
+
     @Test
     void drawTextTest() {
-        gui.drawText(new Position(5,5),"Welcome","#FFFFFA");
+        gui.drawText(new Position(5, 5), "Welcome", "#FFFFFA");
 
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#FFFFFA"));
         Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "Welcome");
@@ -290,7 +291,7 @@ public class LanternaGUITest {
 
     @Test
     void drawTimeTest() {
-        gui.drawTime(new Position(5,5), 0, "#F0F0F0");
+        gui.drawTime(new Position(5, 5), 0, "#F0F0F0");
         Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#F0F0F0"));
         Mockito.verify(graphics, Mockito.times(1)).putString(5, 5, "00:00");
     }

@@ -23,12 +23,12 @@ public class DozerControllerTest {
     public void setUp() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         arena = Mockito.mock(Arena.class);
         dozer = Mockito.mock(Dozer.class);
-        boulderMock=Mockito.mock(BoulderController.class);
+        boulderMock = Mockito.mock(BoulderController.class);
         position = Mockito.mock(Position.class);
         Mockito.when(arena.getDozer()).thenReturn(dozer);
         Mockito.when(dozer.getPosition()).thenReturn(position);
 
-        spyMock= Mockito.spy(new DozerController(arena,boulderMock));
+        spyMock = Mockito.spy(new DozerController(arena, boulderMock));
     }
 
     @Test
@@ -68,6 +68,7 @@ public class DozerControllerTest {
 
         Mockito.verify(position, Mockito.times(1)).moveUp();
     }
+
     @Test
     public void moveDozerTest() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 

@@ -21,14 +21,14 @@ public class GameStateTest {
 
     @Test
     public void getViewer() {
-        GameState state = new GameState(new Arena(20,20));
+        GameState state = new GameState(new Arena(20, 20));
 
         Assertions.assertNotNull(state.getViewer());
     }
 
     @Test
     public void getController() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        GameState state = new GameState(new Arena(20,20));
+        GameState state = new GameState(new Arena(20, 20));
 
         Assertions.assertNotNull(state.getController());
     }
@@ -38,7 +38,7 @@ public class GameStateTest {
         GUI gui = Mockito.mock(GUI.class);
         MainGame game = Mockito.mock(MainGame.class);
         Mockito.when(gui.getNextAction()).thenReturn(GUI.ACTION.LEFT);
-        GameState state = new GameState(new Arena(20,20));
+        GameState state = new GameState(new Arena(20, 20));
 
         state.step(game, gui, 0);
 

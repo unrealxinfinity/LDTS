@@ -15,13 +15,13 @@ public class EditedArenaTest {
     @Test
     public void restartTest() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         EditorArena arena = new EditorArena(20, 20);
-        arena.setDozer(new Dozer(5,7));
+        arena.setDozer(new Dozer(5, 7));
         EditedArenaController controller = new EditedArenaController(arena);
         MainGame game = Mockito.mock(MainGame.class);
 
         controller.restartArena(game);
 
-        Mockito.verify(game,Mockito.times(1)).resetTimer();
+        Mockito.verify(game, Mockito.times(1)).resetTimer();
         Mockito.verify(game, Mockito.times(1)).setState(Mockito.any());
     }
 }

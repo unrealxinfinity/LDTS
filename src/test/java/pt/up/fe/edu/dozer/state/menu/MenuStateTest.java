@@ -9,7 +9,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
-public class MenuStateTest  {
+public class MenuStateTest {
     @Test
     public void getViewerMain() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuState state = new MenuState(new MainMenu());

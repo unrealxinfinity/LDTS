@@ -15,9 +15,9 @@ public class PositionClearerTest {
     @Test
     public void clearPositionDozer() {
         EditorArena arena = Mockito.mock(EditorArena.class);
-        Mockito.when(arena.getDozer()).thenReturn(new Dozer(2,3));
+        Mockito.when(arena.getDozer()).thenReturn(new Dozer(2, 3));
         EditorPositionClearer clearer = new EditorPositionClearer(arena);
-        clearer.clearPosition(new Position(2,3));
+        clearer.clearPosition(new Position(2, 3));
         Mockito.verify(arena, Mockito.times(2)).getDozer();
         Mockito.verify(arena, Mockito.times(1)).getCollisionWalls();
         Mockito.verify(arena, Mockito.times(1)).getBoulders();
@@ -30,7 +30,7 @@ public class PositionClearerTest {
         EditorArena arena = Mockito.mock(EditorArena.class);
         Mockito.when(arena.getDozer()).thenReturn(null);
         EditorPositionClearer clearer = new EditorPositionClearer(arena);
-        clearer.clearPosition(new Position(5,5));
+        clearer.clearPosition(new Position(5, 5));
         Mockito.verify(arena, Mockito.times(1)).getDozer();
         Mockito.verify(arena, Mockito.times(1)).getCollisionWalls();
         Mockito.verify(arena, Mockito.times(1)).getBoulders();
@@ -42,7 +42,7 @@ public class PositionClearerTest {
         arena.setPlacer(new Placer(placerX, placerY));
         arena.setDozer(new Dozer(2, 3));
         arena.setBoulders(new ArrayList<>(Arrays.asList(new Boulder(1, 1), new Boulder(6, 7), new Boulder(6, 12))));
-        arena.setTargets(new ArrayList<>(Arrays.asList(new Target(2,2), new Target(10,10), new Target(18, 2))));
+        arena.setTargets(new ArrayList<>(Arrays.asList(new Target(2, 2), new Target(10, 10), new Target(18, 2))));
         arena.setCollisionWalls(new ArrayList<>(Arrays.asList(new ImportantWall(2, 1), new ImportantWall(10, 20), new ImportantWall(15, 5))));
         return arena;
     }

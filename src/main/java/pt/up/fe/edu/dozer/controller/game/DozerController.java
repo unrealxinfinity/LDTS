@@ -78,7 +78,8 @@ public class DozerController extends GameController {
                 case DOWN -> moveDozerDown();
                 case LEFT -> moveDozerLeft();
                 case RIGHT -> moveDozerRight();
-                default -> {}
+                default -> {
+                }
             }
         } catch (UnsupportedAudioFileException e) {
             System.out.print("Audio file format not supported ");

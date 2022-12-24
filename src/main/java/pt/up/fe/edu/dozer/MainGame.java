@@ -21,7 +21,7 @@ public class MainGame {
     private final AudioManager BGM;
     private boolean bgmMuted;
 
-    public long getInitialTime(){
+    public long getInitialTime() {
         return initialTime;
     }
 
@@ -57,8 +57,8 @@ public class MainGame {
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
-        try{
-            new MainGame(new MenuState(new MainMenu()),new AudioManager("/audio/initSound.wav")).start();
+        try {
+            new MainGame(new MenuState(new MainMenu()), new AudioManager("/audio/initSound.wav")).start();
         } catch (InterruptedException e) {
             System.out.println("Program interrupted");
         }

@@ -14,28 +14,28 @@ public class EditorStatesTest {
 
     @Test
     public void dozerState() {
-        DozerEditorState state = new DozerEditorState(new EditorArena(20,20));
+        DozerEditorState state = new DozerEditorState(new EditorArena(20, 20));
 
         Assertions.assertNotNull(state.getController());
     }
 
     @Test
     public void boulderState() {
-        BoulderEditorState state = new BoulderEditorState(new EditorArena(20,20));
+        BoulderEditorState state = new BoulderEditorState(new EditorArena(20, 20));
 
         Assertions.assertNotNull(state.getController());
     }
 
     @Test
     public void targetState() {
-        TargetEditorState state = new TargetEditorState(new EditorArena(20,20));
+        TargetEditorState state = new TargetEditorState(new EditorArena(20, 20));
 
         Assertions.assertNotNull(state.getController());
     }
 
     @Test
     public void wallState() {
-        WallEditorState state = new WallEditorState(new EditorArena(20,20));
+        WallEditorState state = new WallEditorState(new EditorArena(20, 20));
 
         Assertions.assertNotNull(state.getController());
     }

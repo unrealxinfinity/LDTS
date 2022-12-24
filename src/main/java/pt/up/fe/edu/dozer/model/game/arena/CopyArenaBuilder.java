@@ -5,13 +5,14 @@ import pt.up.fe.edu.dozer.model.game.elements.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CopyArenaBuilder extends ArenaBuilder{
+public class CopyArenaBuilder extends ArenaBuilder {
 
     private final Arena baseArena;
 
     public CopyArenaBuilder(Arena baseArena) {
         this.baseArena = baseArena;
     }
+
     @Override
     protected int getWidth() {
         return baseArena.getWidth();

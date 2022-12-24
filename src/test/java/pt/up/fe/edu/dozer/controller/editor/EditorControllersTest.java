@@ -16,28 +16,28 @@ public class EditorControllersTest {
 
     @Test
     public void boulderCycle() {
-        EditorArenaBoulderController controller = new EditorArenaBoulderController(new EditorArena(20,20));
+        EditorArenaBoulderController controller = new EditorArenaBoulderController(new EditorArena(20, 20));
 
         Assertions.assertNotNull(controller.cycleState());
     }
 
     @Test
     public void dozerCycle() {
-        EditorArenaDozerController controller = new EditorArenaDozerController(new EditorArena(20,20));
+        EditorArenaDozerController controller = new EditorArenaDozerController(new EditorArena(20, 20));
 
         Assertions.assertNotNull(controller.cycleState());
     }
 
     @Test
     public void wallCycle() {
-        EditorArenaWallController controller = new EditorArenaWallController(new EditorArena(20,20));
+        EditorArenaWallController controller = new EditorArenaWallController(new EditorArena(20, 20));
 
         Assertions.assertNotNull(controller.cycleState());
     }
 
     @Test
     public void targetCycle() {
-        EditorArenaTargetController controller = new EditorArenaTargetController(new EditorArena(20,20));
+        EditorArenaTargetController controller = new EditorArenaTargetController(new EditorArena(20, 20));
 
         Assertions.assertNotNull(controller.cycleState());
     }
@@ -80,65 +80,69 @@ public class EditorControllersTest {
         Mockito.verify(arena, Mockito.times(1)).getPlacer();
         Mockito.verify(placer, Mockito.times(1)).getPosition();
     }
+
     @Test
     public void stepTestRestart() throws IOException {
-        EditorArena arenaMock= Mockito.mock(EditorArena.class);
-        MainGame gameMock=Mockito.mock(MainGame.class);
-        Placer placerMock=Mockito.mock(Placer.class);
+        EditorArena arenaMock = Mockito.mock(EditorArena.class);
+        MainGame gameMock = Mockito.mock(MainGame.class);
+        Placer placerMock = Mockito.mock(Placer.class);
 
         Mockito.when(arenaMock.getPlacer()).thenReturn(placerMock);
-        EditorArenaDozerController controllerMock=Mockito.spy(new EditorArenaDozerController(arenaMock));
+        EditorArenaDozerController controllerMock = Mockito.spy(new EditorArenaDozerController(arenaMock));
 
-        controllerMock.step(gameMock,GUI.ACTION.RESTART);
-        Mockito.verify(gameMock,Mockito.atLeastOnce()).setState(Mockito.any());
+        controllerMock.step(gameMock, GUI.ACTION.RESTART);
+        Mockito.verify(gameMock, Mockito.atLeastOnce()).setState(Mockito.any());
 
     }
+
     @Test
     public void stepTestPause() throws IOException {
-        EditorArena arenaMock= Mockito.mock(EditorArena.class);
-        MainGame gameMock=Mockito.mock(MainGame.class);
-        Placer placerMock=Mockito.mock(Placer.class);
+        EditorArena arenaMock = Mockito.mock(EditorArena.class);
+        MainGame gameMock = Mockito.mock(MainGame.class);
+        Placer placerMock = Mockito.mock(Placer.class);
 
         Mockito.when(arenaMock.getPlacer()).thenReturn(placerMock);
-        EditorArenaDozerController controllerMock=Mockito.spy(new EditorArenaDozerController(arenaMock));
+        EditorArenaDozerController controllerMock = Mockito.spy(new EditorArenaDozerController(arenaMock));
 
-        controllerMock.step(gameMock,GUI.ACTION.PAUSE);
-        Mockito.verify(gameMock,Mockito.times(1)).resetTimer();
-        Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
+        controllerMock.step(gameMock, GUI.ACTION.PAUSE);
+        Mockito.verify(gameMock, Mockito.times(1)).resetTimer();
+        Mockito.verify(gameMock, Mockito.times(1)).setState(Mockito.any());
     }
+
     @Test
     public void stepTestSave() throws IOException {
-        EditorArena arenaMock= Mockito.mock(EditorArena.class);
-        MainGame gameMock=Mockito.mock(MainGame.class);
-        Placer placerMock=Mockito.mock(Placer.class);
-        Dozer dozerMock=Mockito.mock(Dozer.class);
+        EditorArena arenaMock = Mockito.mock(EditorArena.class);
+        MainGame gameMock = Mockito.mock(MainGame.class);
+        Placer placerMock = Mockito.mock(Placer.class);
+        Dozer dozerMock = Mockito.mock(Dozer.class);
 
         Mockito.when(dozerMock.getPosition()).thenReturn(new Position(1, 1));
         Mockito.when(arenaMock.getPlacer()).thenReturn(placerMock);
-        EditorArenaDozerController controllerMock=Mockito.spy(new EditorArenaDozerController(arenaMock));
+        EditorArenaDozerController controllerMock = Mockito.spy(new EditorArenaDozerController(arenaMock));
         Mockito.when(arenaMock.getDozer()).thenReturn(dozerMock);
 
-        controllerMock.step(gameMock,GUI.ACTION.SAVE);
-        Mockito.verify(gameMock,Mockito.times(1)).resetTimer();
-        Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
+        controllerMock.step(gameMock, GUI.ACTION.SAVE);
+        Mockito.verify(gameMock, Mockito.times(1)).resetTimer();
+        Mockito.verify(gameMock, Mockito.times(1)).setState(Mockito.any());
     }
+
     @Test
     public void stepMuteTest() throws IOException {
-        EditorArena arenaMock= Mockito.mock(EditorArena.class);
-        MainGame gameMock=Mockito.mock(MainGame.class);
-        Placer placerMock=Mockito.mock(Placer.class);
+        EditorArena arenaMock = Mockito.mock(EditorArena.class);
+        MainGame gameMock = Mockito.mock(MainGame.class);
+        Placer placerMock = Mockito.mock(Placer.class);
 
         Mockito.when(arenaMock.getPlacer()).thenReturn(placerMock);
-        EditorArenaDozerController controllerMock=Mockito.spy(new EditorArenaDozerController(arenaMock));
+        EditorArenaDozerController controllerMock = Mockito.spy(new EditorArenaDozerController(arenaMock));
 
         Mockito.when(gameMock.isBgmMuted()).thenReturn(true);
-        controllerMock.step(gameMock,GUI.ACTION.MUTE);
-        Mockito.verify(gameMock,Mockito.times(1)).resumeBGM();
+        controllerMock.step(gameMock, GUI.ACTION.MUTE);
+        Mockito.verify(gameMock, Mockito.times(1)).resumeBGM();
         Mockito.reset(gameMock);
 
         Mockito.when(gameMock.isBgmMuted()).thenReturn(false);
-        controllerMock.step(gameMock,GUI.ACTION.MUTE);
-        Mockito.verify(gameMock,Mockito.times(1)).muteBGM();
+        controllerMock.step(gameMock, GUI.ACTION.MUTE);
+        Mockito.verify(gameMock, Mockito.times(1)).muteBGM();
         Mockito.reset(gameMock);
 
     }/* Error here with pitest

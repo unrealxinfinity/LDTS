@@ -14,14 +14,14 @@ import pt.up.fe.edu.dozer.model.game.elements.Wall;
 import java.io.IOException;
 import java.util.List;
 
-public class ArenaBuilderTest{
+public class ArenaBuilderTest {
     private LevelReader reader;
 
 
     @BeforeEach
     public void setUp() throws IOException {
         reader = Mockito.mock(LevelReader.class);
-        List<String> lines = List.of("#########W+W########","#########W WWW######","########WW& &+W#####","#######W+ &*WW######");
+        List<String> lines = List.of("#########W+W########", "#########W WWW######", "########WW& &+W#####", "#######W+ &*WW######");
 
         Mockito.when(reader.readLevel(Mockito.anyInt())).thenReturn(lines);
     }
@@ -43,7 +43,7 @@ public class ArenaBuilderTest{
     @Test
     public void createDozerTest() throws IOException {
         LoaderArenaBuilder builder = new LoaderArenaBuilder(42, reader);
-        Position expected = new Position(11,3);
+        Position expected = new Position(11, 3);
 
         Dozer dozer = builder.createDozer();
         Position dozerPosition = dozer.getPosition();
@@ -96,19 +96,19 @@ public class ArenaBuilderTest{
 
     @Test
     public void createArenaTest() throws IOException {
-    LoaderArenaBuilder builder = new LoaderArenaBuilder(42, reader);
-    Arena arena = Mockito.mock(Arena.class);
-    InOrder order = Mockito.inOrder(arena);
+        LoaderArenaBuilder builder = new LoaderArenaBuilder(42, reader);
+        Arena arena = Mockito.mock(Arena.class);
+        InOrder order = Mockito.inOrder(arena);
 
-    builder.createArena(arena);
+        builder.createArena(arena);
 
-    order.verify(arena, Mockito.times(1)).setHeight(Mockito.anyInt());
-    order.verify(arena, Mockito.times(1)).setWidth(Mockito.anyInt());
-    order.verify(arena, Mockito.times(1)).setLevelNum(Mockito.anyInt());
-    order.verify(arena, Mockito.times(1)).setDozer(Mockito.any());
-    order.verify(arena, Mockito.times(1)).setWalls(Mockito.any());
-    order.verify(arena, Mockito.times(1)).setCollisionWalls(Mockito.any());
-    order.verify(arena, Mockito.times(1)).setBoulders(Mockito.any());
-    order.verify(arena, Mockito.times(1)).setTargets(Mockito.any());
+        order.verify(arena, Mockito.times(1)).setHeight(Mockito.anyInt());
+        order.verify(arena, Mockito.times(1)).setWidth(Mockito.anyInt());
+        order.verify(arena, Mockito.times(1)).setLevelNum(Mockito.anyInt());
+        order.verify(arena, Mockito.times(1)).setDozer(Mockito.any());
+        order.verify(arena, Mockito.times(1)).setWalls(Mockito.any());
+        order.verify(arena, Mockito.times(1)).setCollisionWalls(Mockito.any());
+        order.verify(arena, Mockito.times(1)).setBoulders(Mockito.any());
+        order.verify(arena, Mockito.times(1)).setTargets(Mockito.any());
     }
 }

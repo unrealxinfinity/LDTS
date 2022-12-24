@@ -31,101 +31,106 @@ public class MenuControllerTest {
     AudioManager audiomock;
     AudioManager audioSpy;
     TextGraphics graphics;
+
     @BeforeEach
     public void setUp() throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
-        behaviourCheck= Mockito.mock(MenuController.class);
-        menuMock=Mockito.mock(MainMenu.class);
-        audiomock=Mockito.mock(AudioManager.class);
-        InternalsCheck=new MenuController(menuMock,audiomock); // Passar para construtor para testar se o mock for chamado dentro dos metodos
-        valuesCheck= new MenuController(new MainMenu(),new AudioManager("/audio/menu.wav"));
-        gameMock=Mockito.mock(MainGame.class);
-        gui=Mockito.mock(LanternaGUI.class);
-        spyCheck=Mockito.spy(InternalsCheck);
+        behaviourCheck = Mockito.mock(MenuController.class);
+        menuMock = Mockito.mock(MainMenu.class);
+        audiomock = Mockito.mock(AudioManager.class);
+        InternalsCheck = new MenuController(menuMock, audiomock); // Passar para construtor para testar se o mock for chamado dentro dos metodos
+        valuesCheck = new MenuController(new MainMenu(), new AudioManager("/audio/menu.wav"));
+        gameMock = Mockito.mock(MainGame.class);
+        gui = Mockito.mock(LanternaGUI.class);
+        spyCheck = Mockito.spy(InternalsCheck);
 
 
     }
 
     @Test
-    public void menuControllerTest(){
-        Assertions.assertEquals(3,valuesCheck.getModel().getNumberEntries());
-        Assertions.assertNotEquals(null,valuesCheck.getSound());
+    public void menuControllerTest() {
+        Assertions.assertEquals(3, valuesCheck.getModel().getNumberEntries());
+        Assertions.assertNotEquals(null, valuesCheck.getSound());
         Assertions.assertNotNull(InternalsCheck.getSound());
         Assertions.assertNotNull(valuesCheck.getModel());
         Assertions.assertNotNull(InternalsCheck.getModel());
     }
+
     @Test
     public void stepTestUp() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
 
-        spyCheck.step(gameMock,GUI.ACTION.UP);
-        Mockito.verify(spyCheck,Mockito.times(2)).getSound();
-        Mockito.verify(menuMock,Mockito.times(1)).previousEntry();
-        Mockito.verify(audiomock,Mockito.times(1)).restartAudio();
-        Mockito.verify(audiomock,Mockito.times(1)).play();
+        spyCheck.step(gameMock, GUI.ACTION.UP);
+        Mockito.verify(spyCheck, Mockito.times(2)).getSound();
+        Mockito.verify(menuMock, Mockito.times(1)).previousEntry();
+        Mockito.verify(audiomock, Mockito.times(1)).restartAudio();
+        Mockito.verify(audiomock, Mockito.times(1)).play();
     }
+
     @Test
     public void stepTestDown() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
-        spyCheck.step(gameMock,GUI.ACTION.DOWN);
-        Mockito.verify(spyCheck,Mockito.times(2)).getSound();
-        Mockito.verify(menuMock,Mockito.times(1)).nextEntry();
-        Mockito.verify(audiomock,Mockito.times(1)).restartAudio();
-        Mockito.verify(audiomock,Mockito.times(1)).play();
+        spyCheck.step(gameMock, GUI.ACTION.DOWN);
+        Mockito.verify(spyCheck, Mockito.times(2)).getSound();
+        Mockito.verify(menuMock, Mockito.times(1)).nextEntry();
+        Mockito.verify(audiomock, Mockito.times(1)).restartAudio();
+        Mockito.verify(audiomock, Mockito.times(1)).play();
     }
+
     @Test
     public void stepTestSelect() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
 
-        spyCheck.step(gameMock,GUI.ACTION.SELECT);
-        Mockito.verify(spyCheck,Mockito.times(2)).getSound();
-        Mockito.verify(audiomock,Mockito.times(1)).restartAudio();
-        Mockito.verify(audiomock,Mockito.times(1)).play();
+        spyCheck.step(gameMock, GUI.ACTION.SELECT);
+        Mockito.verify(spyCheck, Mockito.times(2)).getSound();
+        Mockito.verify(audiomock, Mockito.times(1)).restartAudio();
+        Mockito.verify(audiomock, Mockito.times(1)).play();
         Mockito.reset(menuMock);
         Mockito.reset(spyCheck);
         Mockito.reset(audiomock);
 
         Mockito.when(menuMock.isSelectedSelect()).thenReturn(true);
-        InternalsCheck.step(gameMock,GUI.ACTION.SELECT);
-        Mockito.verify(gameMock,Mockito.times(1)).resetTimer();
-        Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
+        InternalsCheck.step(gameMock, GUI.ACTION.SELECT);
+        Mockito.verify(gameMock, Mockito.times(1)).resetTimer();
+        Mockito.verify(gameMock, Mockito.times(1)).setState(Mockito.any());
         Mockito.reset(gameMock);
         Mockito.reset(menuMock);
 
         Mockito.when(menuMock.isSelectedEditor()).thenReturn(true);
-        InternalsCheck.step(gameMock,GUI.ACTION.SELECT);
-        Mockito.verify(gameMock,Mockito.times(1)).resetTimer();
-        Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
+        InternalsCheck.step(gameMock, GUI.ACTION.SELECT);
+        Mockito.verify(gameMock, Mockito.times(1)).resetTimer();
+        Mockito.verify(gameMock, Mockito.times(1)).setState(Mockito.any());
         Mockito.reset(menuMock);
         Mockito.reset(gameMock);
 
-        AudioManager audioMock2=Mockito.mock(AudioManager.class);
+        AudioManager audioMock2 = Mockito.mock(AudioManager.class);
         Mockito.when(menuMock.isSelectedQuit()).thenReturn(true);
         Mockito.when(gameMock.getBGM()).thenReturn(audioMock2);
-        spyCheck.step(gameMock,GUI.ACTION.SELECT);
-        Mockito.verify(gameMock,Mockito.times(1)).getBGM();
-        Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
-        Mockito.verify(spyCheck,Mockito.times(3)).getSound();
-        Mockito.verify(audiomock,Mockito.times(1)).close();
-        Mockito.verify(audioMock2,Mockito.times(1)).close();
+        spyCheck.step(gameMock, GUI.ACTION.SELECT);
+        Mockito.verify(gameMock, Mockito.times(1)).getBGM();
+        Mockito.verify(gameMock, Mockito.times(1)).setState(Mockito.any());
+        Mockito.verify(spyCheck, Mockito.times(3)).getSound();
+        Mockito.verify(audiomock, Mockito.times(1)).close();
+        Mockito.verify(audioMock2, Mockito.times(1)).close();
 
     }
+
     @Test
     public void stepTestMute() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
-        AudioManager audioMock2=Mockito.mock(AudioManager.class);
+        AudioManager audioMock2 = Mockito.mock(AudioManager.class);
 
         Mockito.when(gameMock.getBGM()).thenReturn(audioMock2);
         Mockito.when(menuMock.isSelectedQuit()).thenReturn(true);
-        InternalsCheck.step(gameMock,GUI.ACTION.SELECT);
-        Mockito.verify(audiomock,Mockito.times(1)).close();
-        Mockito.verify(audiomock,Mockito.times(1)).close();
-        Mockito.verify(gameMock,Mockito.times(1)).setState(Mockito.any());
+        InternalsCheck.step(gameMock, GUI.ACTION.SELECT);
+        Mockito.verify(audiomock, Mockito.times(1)).close();
+        Mockito.verify(audiomock, Mockito.times(1)).close();
+        Mockito.verify(gameMock, Mockito.times(1)).setState(Mockito.any());
         Mockito.reset(gameMock);
 
         Mockito.when(gameMock.isBgmMuted()).thenReturn(true);
-        InternalsCheck.step(gameMock,GUI.ACTION.MUTE);
-        Mockito.verify(gameMock,Mockito.times(1)).resumeBGM();
+        InternalsCheck.step(gameMock, GUI.ACTION.MUTE);
+        Mockito.verify(gameMock, Mockito.times(1)).resumeBGM();
         Mockito.reset(gameMock);
 
         Mockito.when(gameMock.isBgmMuted()).thenReturn(false);
-        InternalsCheck.step(gameMock,GUI.ACTION.MUTE);
-        Mockito.verify(gameMock,Mockito.times(1)).muteBGM();
+        InternalsCheck.step(gameMock, GUI.ACTION.MUTE);
+        Mockito.verify(gameMock, Mockito.times(1)).muteBGM();
     }
 
 }

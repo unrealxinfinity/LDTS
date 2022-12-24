@@ -9,29 +9,32 @@ public class MenuTest {
     Menu behaviousCheck;
 
     @BeforeEach
-    public void SetUp(){
-        valueCheck=new MainMenu();
+    public void SetUp() {
+        valueCheck = new MainMenu();
     }
-    @Test
-    public void MenuTest(){
 
-        Assertions.assertEquals(3,valueCheck.getNumberEntries());
-    }
     @Test
-    public void nextPrevEntryTest(){
+    public void MenuTest() {
+
+        Assertions.assertEquals(3, valueCheck.getNumberEntries());
+    }
+
+    @Test
+    public void nextPrevEntryTest() {
 
         valueCheck.nextEntry();
-        Assertions.assertEquals(1,valueCheck.getSelectedNum());
+        Assertions.assertEquals(1, valueCheck.getSelectedNum());
         valueCheck.previousEntry();
-        Assertions.assertEquals(0,valueCheck.getSelectedNum());
+        Assertions.assertEquals(0, valueCheck.getSelectedNum());
         valueCheck.previousEntry();
-        Assertions.assertEquals(2,valueCheck.getSelectedNum());
+        Assertions.assertEquals(2, valueCheck.getSelectedNum());
         valueCheck.nextEntry();
-        Assertions.assertEquals(0,valueCheck.getSelectedNum());
+        Assertions.assertEquals(0, valueCheck.getSelectedNum());
     }
+
     @Test
-    public void getEntryTest(){
-        Assertions.assertEquals("Level Select",valueCheck.getEntry(0));
+    public void getEntryTest() {
+        Assertions.assertEquals("Level Select", valueCheck.getEntry(0));
         String entry = valueCheck.getEntry(1);
         Assertions.assertEquals("Level Editor", entry);
     }
@@ -40,10 +43,12 @@ public class MenuTest {
     public void getCurrentEntryTest() {
         Assertions.assertEquals("Level Select", valueCheck.getCurrentEntry());
     }
+
     @Test
     public void getNumberEntriesTest() {
         Assertions.assertEquals(3, valueCheck.getNumberEntries());
     }
+
     @Test
     public void isSelectedTest() {
         valueCheck.nextEntry();
@@ -77,17 +82,6 @@ public class MenuTest {
 
         Assertions.assertEquals("Quit", entry);
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

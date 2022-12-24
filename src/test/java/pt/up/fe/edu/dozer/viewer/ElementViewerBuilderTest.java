@@ -29,7 +29,8 @@ public class ElementViewerBuilderTest {
 
     @Test
     public void getBoulderViewer() {
-        BoulderViewer viewer = builder.getBoulderViewer();;
+        BoulderViewer viewer = builder.getBoulderViewer();
+        ;
 
         Assertions.assertNotNull(viewer);
     }
