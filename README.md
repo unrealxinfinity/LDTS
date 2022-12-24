@@ -4,9 +4,9 @@ The Bulldozer is a game in which the player controls a tank named dozer and to w
 This project was developed by Afonso Castro Vaz Osório (up202108700@edu.fe.up.pt), Haochang Fu (up202108730@edu.fe.up.pt) and Inês Martin Soares (up202108852@edu.fe.pt) for LDTS 2022-23.
 For a more detailed version of this description click [here](./docs/README.md).
 
-## Game preview
 
-### Instructions
+
+## Instructions
 
 #### Arrow keys - movement and menu control
 #### Enter - select in menu / place element in editor
@@ -14,7 +14,10 @@ For a more detailed version of this description click [here](./docs/README.md).
 #### Backspace - delete element in editor
 #### M - mute background music
 #### R - restart level
+#### ESC - invoke MainMenu
+#### S - save the edited level and play it during Level Editor
 
+## Game preview
 ### Practice your problem solving abilities with this puzzle game!
 <p align="center" justify="center">
 <img src= "docs/Gifs/play.gif" width="308" height="380"/>
@@ -43,7 +46,7 @@ This game has a timer that allows the player track their level time. Beat your b
   <img src="docs/Gifs/LevelEditor.gif" width="308" height="380"/>
 </p>
 
-You can even edit your own level, sky is the limit for your imagination.
+You can even edit your own level and play with your friends (if you have any)! Sky is the limit for your imagination.
 
 
 ## Screenshots
