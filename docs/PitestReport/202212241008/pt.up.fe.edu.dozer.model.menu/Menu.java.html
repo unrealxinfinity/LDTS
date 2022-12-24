@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=windows-1252">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Menu.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package pt.up.fe.edu.dozer.model.menu;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Arrays;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public abstract class Menu {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    protected List&#60;String&#62; entries;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private int currentEntry = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public Menu(String... strings) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        entries = Arrays.asList(strings);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void nextEntry() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_15'/>
+15
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_15'>1</a>
+<span>
+
+1. nextEntry : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        currentEntry++;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_16'/>
+16
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_16'>3</a>
+<span>
+
+1. nextEntry : changed conditional boundary &rarr; KILLED<br/>
+
+2. nextEntry : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+3. nextEntry : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (currentEntry &#62; this.entries.size() - 1) currentEntry = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void previousEntry() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_20'/>
+20
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_20'>1</a>
+<span>
+
+1. previousEntry : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        currentEntry--;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_21'/>
+21
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_21'>3</a>
+<span>
+
+1. previousEntry : changed conditional boundary &rarr; KILLED<br/>
+
+2. previousEntry : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+3. previousEntry : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (currentEntry &#60; 0) currentEntry = this.entries.size() - 1;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String getEntry(int i) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_25'/>
+25
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_25'>1</a>
+<span>
+
+1. getEntry : replaced return value with &#34;&#34; for pt/up/fe/edu/dozer/model/menu/Menu::getEntry &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return entries.get(i);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean isSelected(int i) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_29'/>
+29
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_29'>2</a>
+<span>
+
+1. isSelected : negated conditional &rarr; KILLED<br/>
+
+2. isSelected : replaced boolean return with true for pt/up/fe/edu/dozer/model/menu/Menu::isSelected &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return currentEntry == i;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int getNumberEntries() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_34'/>
+34
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_34'>1</a>
+<span>
+
+1. getNumberEntries : replaced int return with 0 for pt/up/fe/edu/dozer/model/menu/Menu::getNumberEntries &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return this.entries.size();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String getCurrentEntry() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_38'/>
+38
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_38'>1</a>
+<span>
+
+1. getCurrentEntry : replaced return value with &#34;&#34; for pt/up/fe/edu/dozer/model/menu/Menu::getCurrentEntry &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return entries.get(currentEntry);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int getSelectedNum() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_42'/>
+42
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_42'>1</a>
+<span>
+
+1. getSelectedNum : replaced int return with 0 for pt/up/fe/edu/dozer/model/menu/Menu::getSelectedNum &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return currentEntry;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@40729f01_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@40729f01_15'>15</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_15'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nextEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:isSelectedTest()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@40729f01_16'>16</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_16'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nextEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:isSelectedTest()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>nextEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:loopAroundIncrementTest()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>nextEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:isSelectedTest()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@40729f01_20'>20</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_20'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>previousEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:loopAroundDecrementTest()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@40729f01_21'>21</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_21'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>previousEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:nextPrevEntryTest()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>previousEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:loopAroundDecrementTest()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>previousEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:loopAroundDecrementTest()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@40729f01_25'>25</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_25'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:getEntryTest()]</span></span> replaced return value with &#34;&#34; for pt/up/fe/edu/dozer/model/menu/Menu::getEntry &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@40729f01_29'>29</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_29'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isSelected<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:isSelectedTest()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isSelected<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:isSelectedTest()]</span></span> replaced boolean return with true for pt/up/fe/edu/dozer/model/menu/Menu::isSelected &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@40729f01_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_34'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getNumberEntries<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:MenuTest()]</span></span> replaced int return with 0 for pt/up/fe/edu/dozer/model/menu/Menu::getNumberEntries &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@40729f01_38'>38</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_38'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCurrentEntry<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:loopAroundDecrementTest()]</span></span> replaced return value with &#34;&#34; for pt/up/fe/edu/dozer/model/menu/Menu::getCurrentEntry &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@40729f01_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@40729f01_42'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getSelectedNum<br/><b>Killed by : </b>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:nextPrevEntryTest()]</span></span> replaced int return with 0 for pt/up/fe/edu/dozer/model/menu/Menu::getSelectedNum &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+
+<li class='mutator'>EMPTY_RETURNS</li>
+
+<li class='mutator'>FALSE_RETURNS</li>
+
+<li class='mutator'>INCREMENTS</li>
+
+<li class='mutator'>INVERT_NEGS</li>
+
+<li class='mutator'>MATH</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+
+<li class='mutator'>NULL_RETURNS</li>
+
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+
+<li class='mutator'>TRUE_RETURNS</li>
+
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>pt.up.fe.edu.dozer.controller.MenuController.MenuControllerTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.controller.MenuController.MenuControllerTest]/[method:stepTestSelect()] (49 ms)</li><li>pt.up.fe.edu.dozer.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.MenuTest]/[method:getSelectedNumTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.model.menu.LevelSelectTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.LevelSelectTest]/[method:tryDecrementNotDigit()] (0 ms)</li><li>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:nextPrevEntryTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.model.menu.LevelSelectTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.LevelSelectTest]/[method:getSelectedLevelTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:getEntryTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.model.menu.LevelSelectTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.LevelSelectTest]/[method:incrementDigitTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.viewer.MenuViewerTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.viewer.MenuViewerTest]/[method:drawElementTest()] (3 ms)</li><li>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:getCurrentEntryTest()] (1 ms)</li><li>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:loopAroundIncrementTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.MenuTest]/[method:getEntryTest()] (1 ms)</li><li>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:getNumberEntriesTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.model.menu.LevelSelectTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.LevelSelectTest]/[method:LevelSelectTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.MenuTest]/[method:isSelectedTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.state.menu.MenuStateTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.state.menu.MenuStateTest]/[method:getControllerSelect()] (7 ms)</li><li>pt.up.fe.edu.dozer.menu.LevelSelectMenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.LevelSelectMenuTest]/[method:levelDecrementDigitTest()] (1 ms)</li><li>pt.up.fe.edu.dozer.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.MenuTest]/[method:getCurrentEntryTest()] (1 ms)</li><li>pt.up.fe.edu.dozer.menu.LevelSelectMenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.LevelSelectMenuTest]/[method:getSelectedLevel()] (1 ms)</li><li>pt.up.fe.edu.dozer.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.MenuTest]/[method:previousEntryTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.menu.LevelSelectMenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.LevelSelectMenuTest]/[method:levelIncrementDigitTest()] (1 ms)</li><li>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:loopAroundDecrementTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.model.menu.LevelSelectTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.LevelSelectTest]/[method:isSelectedFunctionsTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.MenuTest]/[method:MainMenuTest()] (1 ms)</li><li>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:isSelectedTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.state.menu.MenuStateTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.state.menu.MenuStateTest]/[method:getViewerSelect()] (3 ms)</li><li>pt.up.fe.edu.dozer.model.menu.LevelSelectTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.LevelSelectTest]/[method:decrementDigitTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.menu.LevelSelectMenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.LevelSelectMenuTest]/[method:levelSelectMenuTest()] (1 ms)</li><li>pt.up.fe.edu.dozer.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.MenuTest]/[method:getNumberEntriesTest()] (1 ms)</li><li>pt.up.fe.edu.dozer.controller.MenuController.MenuControllerTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.controller.MenuController.MenuControllerTest]/[method:menuControllerTest()] (6 ms)</li><li>pt.up.fe.edu.dozer.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.menu.MenuTest]/[method:nextEntryTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.model.menu.MenuTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.MenuTest]/[method:MenuTest()] (0 ms)</li><li>pt.up.fe.edu.dozer.model.menu.LevelSelectTest.[engine:junit-jupiter]/[class:pt.up.fe.edu.dozer.model.menu.LevelSelectTest]/[method:setCurrentEntryToTest()] (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.9.4
+
+</body>
+</html>
