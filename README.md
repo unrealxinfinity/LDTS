@@ -72,8 +72,8 @@ You can even edit your own level and play with your friends (if you have any)! S
 </p>
 
 <p align="center">
-  <b><i>Fig 2. Level 5  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</i></b>
-  <b><i>Fig 3. Level 10 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</i></b> 
+  <b><i>Fig 2. Level 5  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</i></b>
+  <b><i>Fig 3. Level 10 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</i></b> 
   <b><i>Fig 4. Level 15 </i></b>
 </p> 
 
