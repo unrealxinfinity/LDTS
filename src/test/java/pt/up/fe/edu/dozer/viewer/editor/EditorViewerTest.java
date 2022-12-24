@@ -6,9 +6,6 @@ import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.game.elements.Placer;
-import pt.up.fe.edu.dozer.viewer.editor.EditorViewer;
-import pt.up.fe.edu.dozer.viewer.editor.PlacerViewer;
-import pt.up.fe.edu.dozer.viewer.editor.PlacerViewerBuilder;
 import pt.up.fe.edu.dozer.viewer.game.GameViewer;
 
 public class EditorViewerTest {

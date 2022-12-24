@@ -1,12 +1,9 @@
 package pt.up.fe.edu.dozer.menu;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.model.menu.Menu;
 

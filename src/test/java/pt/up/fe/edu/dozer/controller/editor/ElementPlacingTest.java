@@ -6,8 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
-import pt.up.fe.edu.dozer.model.game.elements.*;
-import pt.up.fe.edu.dozer.model.menu.MainMenu;
+import pt.up.fe.edu.dozer.model.game.elements.Boulder;
+import pt.up.fe.edu.dozer.model.game.elements.Placer;
+import pt.up.fe.edu.dozer.model.game.elements.Target;
+import pt.up.fe.edu.dozer.model.game.elements.Wall;
 
 import java.util.ArrayList;
 import java.util.List;

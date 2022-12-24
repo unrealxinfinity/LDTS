@@ -3,7 +3,6 @@ package pt.up.fe.edu.dozer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.gui.LanternaGUI;
@@ -14,7 +13,6 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.awt.*;
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.net.URISyntaxException;
 
 public class MainGameTest {

@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pt.up.fe.edu.dozer.model.menu.LevelSelect;
 import pt.up.fe.edu.dozer.model.menu.MainMenu;
-import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;

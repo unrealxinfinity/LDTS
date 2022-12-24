@@ -7,7 +7,10 @@ import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.elements.*;
 import pt.up.fe.edu.dozer.viewer.editor.PlacerViewer;
-import pt.up.fe.edu.dozer.viewer.game.*;
+import pt.up.fe.edu.dozer.viewer.game.BoulderViewer;
+import pt.up.fe.edu.dozer.viewer.game.DozerViewer;
+import pt.up.fe.edu.dozer.viewer.game.TargetViewer;
+import pt.up.fe.edu.dozer.viewer.game.WallViewer;
 
 public class ElementViewerTest {
     GUI gui;

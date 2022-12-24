@@ -1,10 +1,6 @@
 package pt.up.fe.edu.dozer.model.game.arena;
 
-import pt.up.fe.edu.dozer.model.Position;
-import pt.up.fe.edu.dozer.model.game.elements.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import pt.up.fe.edu.dozer.model.game.elements.Placer;
 
 public class EditorArena extends Arena {
     public EditorArena(int width, int height) {

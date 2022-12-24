@@ -2,7 +2,6 @@ package pt.up.fe.edu.dozer.controller.editor;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.gui.GUI;
@@ -10,11 +9,8 @@ import pt.up.fe.edu.dozer.model.Position;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.model.game.elements.Dozer;
 import pt.up.fe.edu.dozer.model.game.elements.Placer;
-import pt.up.fe.edu.dozer.model.game.elements.Target;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EditorControllersTest {
 

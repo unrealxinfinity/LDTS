@@ -3,8 +3,6 @@ package pt.up.fe.edu.dozer.state.editor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
-import pt.up.fe.edu.dozer.state.editor.DozerEditorState;
-import pt.up.fe.edu.dozer.state.editor.EditorState;
 
 public class EditorStatesTest {
     @Test

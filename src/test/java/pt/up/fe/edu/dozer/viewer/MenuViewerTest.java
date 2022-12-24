@@ -13,9 +13,6 @@ import pt.up.fe.edu.dozer.model.menu.MainMenu;
 import pt.up.fe.edu.dozer.model.menu.Menu;
 import pt.up.fe.edu.dozer.viewer.menu.MenuViewer;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
-
 public class MenuViewerTest {
     private LanternaGUI gui;
     private Screen screen;

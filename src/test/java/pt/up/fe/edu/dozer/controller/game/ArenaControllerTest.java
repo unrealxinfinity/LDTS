@@ -3,7 +3,6 @@ package pt.up.fe.edu.dozer.controller.game;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.audio.AudioManager;
@@ -11,8 +10,6 @@ import pt.up.fe.edu.dozer.gui.GUI;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.elements.Target;
 
-import javax.crypto.spec.PSource;
-import javax.management.remote.JMXAddressable;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;

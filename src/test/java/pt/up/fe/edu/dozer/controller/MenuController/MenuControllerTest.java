@@ -2,12 +2,9 @@ package pt.up.fe.edu.dozer.controller.MenuController;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
-import com.sun.source.tree.ModuleTree;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import pt.up.fe.edu.dozer.MainGame;
 import pt.up.fe.edu.dozer.audio.AudioManager;
@@ -18,7 +15,6 @@ import pt.up.fe.edu.dozer.model.menu.MainMenu;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;

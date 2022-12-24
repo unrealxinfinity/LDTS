@@ -14,8 +14,6 @@ import pt.up.fe.edu.dozer.model.Position;
 
 import java.io.IOException;
 
-import static org.mockito.Mockito.spy;
-
 public class LanternaGUITest {
     private Screen screen;
     private LanternaGUI gui;

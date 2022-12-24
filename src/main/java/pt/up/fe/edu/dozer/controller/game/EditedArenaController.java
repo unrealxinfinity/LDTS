@@ -5,7 +5,6 @@ import pt.up.fe.edu.dozer.audio.AudioManager;
 import pt.up.fe.edu.dozer.model.game.arena.Arena;
 import pt.up.fe.edu.dozer.model.game.arena.ArenaBuilder;
 import pt.up.fe.edu.dozer.model.game.arena.CopyArenaBuilder;
-import pt.up.fe.edu.dozer.model.game.arena.EditorArena;
 import pt.up.fe.edu.dozer.state.EditedGameState;
 
 import javax.sound.sampled.LineUnavailableException;
