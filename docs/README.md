@@ -199,6 +199,8 @@ For example, in the EditorArena, the getArena() was even bigger, before we extra
 - #### **Replace Conditional with Polymorphism**
 Early on, we had some complicated conditional expressions that were later replaced with easier to read polymorphism.
 Notable examples are the menu controllers, which used to have down-casting, and the early ideas for the level editor, which had a lot of if statements for type checking.
+- #### **Extract Class**
+Previously, the arena copying code found in CopyArenaBuilder was in EditorArena, since due to not having files from which to load the level, edited levels must be restarted by storing a copy of the original arena. This violated the Single Responsibility Principle and we already had an ArenaBuilder abstract class, so we moved the arena copying logic to a new ArenaBuilder subclass.
 
 
 ## Testing
