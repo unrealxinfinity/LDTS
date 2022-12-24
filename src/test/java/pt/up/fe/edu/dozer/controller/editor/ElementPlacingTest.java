@@ -16,9 +16,9 @@ import java.util.List;
 
 public class ElementPlacingTest {
     private EditorArena arena;
-    private List<Boulder> boulderList = new ArrayList<>();
-    private List<Target> targetList = new ArrayList<>();
-    private List<Wall> wallList = new ArrayList<>();
+    private final List<Boulder> boulderList = new ArrayList<>();
+    private final List<Target> targetList = new ArrayList<>();
+    private final List<Wall> wallList = new ArrayList<>();
     private Placer placer;
     private final Position placerPosition = new Position(5, 5);
 

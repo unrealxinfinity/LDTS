@@ -32,12 +32,12 @@ public class MenuTest {
 
     @Test
     public void isSelectedTest() {
-        Assertions.assertEquals(valuesCheck.isSelected(0), true);
+        Assertions.assertTrue(valuesCheck.isSelected(0));
         valuesCheck.nextEntry();
-        Assertions.assertEquals(valuesCheck.isSelected(0), false);
-        Assertions.assertEquals(valuesCheck.isSelected(-1), false);
-        Assertions.assertEquals(valuesCheck.isSelected(3), false);
-        Assertions.assertEquals(valuesCheck.isSelected(1), true);
+        Assertions.assertFalse(valuesCheck.isSelected(0));
+        Assertions.assertFalse(valuesCheck.isSelected(-1));
+        Assertions.assertFalse(valuesCheck.isSelected(3));
+        Assertions.assertTrue(valuesCheck.isSelected(1));
     }
 
     @Test
