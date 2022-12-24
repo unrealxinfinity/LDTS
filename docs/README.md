@@ -90,9 +90,9 @@ Since ImportantWall extends Wall, every method that works on Walls will work on 
 
 ### Various objects to instantiate
 #### Problem in Context:
-As we have many objects that we need to instantiate, adding functionalities becomes difficult and not having an appropriate pattern it will make the game rigid, having to make changes to all the components and functionalities everytime we add new type of objects.
+As we have many objects that we need to instantiate, adding functionalities becomes difficult and not having an appropriate pattern will make the game rigid, forcing us to make changes to all the components and functionalities everytime we add new type of objects.
 #### The Pattern:
-**_Factory Pattern_** was the chosen one. By using this design pattern,we ensure that we can instantiate different objects regardless their types by using their corresponding superclass, so we can add new features like new types of objects(ex: enemies or obstacles) without the need to worry about rigidity.
+**_Factory Pattern_** was the chosen one. By using this design pattern,we ensure that we can instantiate different objects regardless their types by using their corresponding superclass, so we can add new features like new types of objects(ex: enemies or obstacles) without the need to worry about rigidity so much.
 #### Implementation:
 Products were created (abstract and concrete) that execute the decision made in the factory. At runtime we don't know who will be called, instead of having if's and else's in the client, we have all the decision logic in the factory.
 <p align="center" justify="center">
