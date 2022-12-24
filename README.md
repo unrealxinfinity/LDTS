@@ -66,9 +66,9 @@ You can even edit your own level and play with your friends (if you have any)! S
 - ### Some levels (not to spoil everything)
 
 <p align="center" justify="center">
-  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-02.png" width="308" height="380"/>
-  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-24.png" width="308" height="380"/>
-  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-33.png" width="308" height="380"/>
+  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-16-02.png" width="208" height="280"/>
+  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-17-24.png" width="208" height="280"/>
+  <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-33.png" width="208" height="280"/>
 </p>
 
 <p align="center">
@@ -77,7 +77,7 @@ You can even edit your own level and play with your friends (if you have any)! S
   <b><i>Fig 4. Level 15 </i></b>
 </p> 
 
-### End 
+- ### End 
 
 <p align="center" justify="center">
   <img src="docs/Images/Screenshots/Captura de ecrã de 2022-12-21 21-18-57.png" width="308" height="380"/>
