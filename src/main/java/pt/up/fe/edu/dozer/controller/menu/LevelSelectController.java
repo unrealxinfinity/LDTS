@@ -41,6 +41,7 @@ public class LevelSelectController extends GenericMenuController<LevelSelect> {
                 game.resetTimer();
                 game.setState(new GameState(arena));
             } catch (NoSuchFileException ignored) {
+                //The level doesn't exist, therefore the game remains in the LevelSelect menu until the player chooses a valid level.
             }
         }
         if (getModel().isSelectedBack()) {
